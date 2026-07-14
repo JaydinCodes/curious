@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#12211C">
+<meta name="color-scheme" content="dark">
+<title>The Curiosity Catalog</title>
+<meta name="description" content="A filed catalog of things worth learning: mind, maths, physics, engineering, infrastructure, computing, language, theology, art, music, film, craft, sport, history, research method, and strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#12211C;
+    --card-stock:#F1E9D2;
+    --card-line:#cfc19a;
+    --ink:#211C12;
+    --ink-soft:#55503f;
+    --brass:#B8873D;
+    --brass-bright:#E0AE5F;
+    --teal:#5C8C7E;
+    --text:#E8E2CF;
+    --text-soft:#9FAFA6;
+
+    --mind:#9C6B92; --prax:#8A7BB8; --math:#4F8FA8; --cosm:#5A80B8;
+    --vita:#7E9C5E; --engn:#B8873D; --infr:#A2743F; --comp:#59A08C;
+    --ling:#C08A5A; --theo:#C2A03C; --art:#C25F63;  --musc:#7C6BC4;
+    --scrn:#4E9BB5; --make:#B07A46; --sprt:#6FA34B; --hist:#B6704F;
+    --rsch:#8D9BA8; --econ:#A85F6B;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+  }
+  body{
+    margin:0; background:var(--bg-deep); color:var(--text);
+    font-family:'Inter',sans-serif; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:rgba(224,174,95,.25);
+    overflow-x:hidden;
+    overscroll-behavior-y:none;
+    text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+  }
+  a{ color:inherit; }
+  ::selection{ background:var(--brass); color:var(--ink); }
+  :focus-visible{ outline:2px solid var(--brass-bright); outline-offset:3px; }
+  .visually-hidden{
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap;
+  }
+
+  /* ---------- NAV ---------- */
+  .drawer-nav{
+    position:sticky; top:0; z-index:30;
+    display:flex; gap:2px; overflow-x:auto;
+    background:rgba(18,33,28,.95);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(184,135,61,.35);
+    padding:0 14px; scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
+  }
+  .drawer-nav::-webkit-scrollbar{ display:none; }
+  .drawer-nav a{
+    flex:0 0 auto;
+    scroll-snap-align:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.7rem; letter-spacing:.08em;
+    text-decoration:none; color:var(--text-soft);
+    padding:14px 11px; white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .2s ease,border-color .2s ease;
+  }
+  .drawer-nav a:hover{ color:var(--brass-bright); }
+  .drawer-nav a.active{ color:var(--brass-bright); border-color:var(--brass-bright); }
+
+  /* ---------- HERO ---------- */
+  .hero{ max-width:1000px; margin:0 auto; padding:70px 24px 40px; }
+  .stamp{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.7rem; letter-spacing:.14em;
+    color:var(--brass-bright);
+    border:1px solid var(--brass);
+    padding:5px 10px; transform:rotate(-1.5deg); margin-bottom:22px;
+  }
+  h1{
+    font-family:'Fraunces',serif; font-weight:700;
+    font-size:clamp(2.4rem,6.5vw,4.6rem);
+    line-height:1.02; margin:0 0 18px; letter-spacing:-.015em;
+  }
+  .lede{ font-size:1.1rem; color:var(--text-soft); max-width:58ch; margin:0 0 10px; }
+  .meta{
+    font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em;
+    color:var(--teal); text-transform:uppercase; margin:0 0 26px;
+  }
+
+  .controls{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .search{
+    flex:1 1 240px; max-width:340px;
+    background:transparent; border:1px solid rgba(184,135,61,.5);
+    color:var(--text); font-family:'IBM Plex Mono',monospace;
+    font-size:16px; /* below 16px iOS zooms the page on focus */
+    padding:12px 14px; min-height:46px; border-radius:0;
+    -webkit-appearance:none; appearance:none;
+  }
+  .search::placeholder{ color:var(--text-soft); }
+  .search:focus{ border-color:var(--brass-bright); outline:none; }
+
+  .seg{ display:flex; border:1px solid rgba(184,135,61,.5); }
+  .seg button{
+    background:transparent; border:none; cursor:pointer;
+    font-family:'IBM Plex Mono',monospace; font-size:.72rem;
+    letter-spacing:.06em; text-transform:uppercase;
+    color:var(--text-soft); padding:13px 14px; min-height:46px;
+    transition:background .15s ease,color .15s ease;
+  }
+  .seg button + button{ border-left:1px solid rgba(184,135,61,.35); }
+  .seg button:hover{ color:var(--brass-bright); }
+  .seg button.on{ background:var(--brass-bright); color:var(--ink); }
+
+  .btn-draw{
+    font-family:'IBM Plex Mono',monospace; font-size:.8rem;
+    letter-spacing:.06em; text-transform:uppercase;
+    background:var(--brass-bright); color:var(--ink);
+    border:none; padding:13px 18px; cursor:pointer; min-height:46px;
+    box-shadow:3px 3px 0 rgba(0,0,0,.35);
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .btn-draw:hover{ transform:translate(-2px,-2px); box-shadow:5px 5px 0 rgba(0,0,0,.35); }
+  .btn-draw:active{ transform:translate(0,0); box-shadow:1px 1px 0 rgba(0,0,0,.35); }
+
+  /* progress */
+  .progress-wrap{ margin-top:22px; max-width:520px; }
+  .progress-line{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem;
+    letter-spacing:.08em; color:var(--text-soft); margin-bottom:7px;
+  }
+  .progress-track{ height:3px; background:rgba(232,226,207,.12); }
+  .progress-bar{ height:3px; width:0%; background:var(--brass-bright); transition:width .35s ease; }
+  .btn-reset{
+    background:none; border:none; cursor:pointer; padding:0;
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem;
+    color:var(--text-soft); text-decoration:underline; letter-spacing:.04em;
+  }
+  .btn-reset:hover{ color:var(--brass-bright); }
+
+  /* draw slip */
+  .draw-slip{
+    margin-top:24px; max-width:520px;
+    background:var(--card-stock); color:var(--ink);
+    padding:22px 24px; border:1px solid var(--card-line);
+    box-shadow:6px 8px 0 rgba(0,0,0,.3);
+    opacity:0; transform:translateY(18px) rotate(-1deg);
+    transition:opacity .28s ease,transform .28s ease; pointer-events:none;
+  }
+  .draw-slip.show{ opacity:1; transform:translateY(0) rotate(-.6deg); pointer-events:auto; }
+  .slip-code{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em; color:var(--ink-soft); }
+  .slip-title{ font-family:'Fraunces',serif; font-weight:600; font-size:1.35rem; margin:6px 0 8px; }
+  .slip-hook{ font-size:.95rem; color:var(--ink-soft); margin:0 0 14px; }
+  .slip-links{ display:flex; gap:10px; flex-wrap:wrap; }
+
+  /* ---------- SHELVES ---------- */
+  main{ max-width:1200px; margin:0 auto; padding:0 24px 40px; }
+  .shelf{ padding:42px 0 6px; scroll-margin-top:52px; }
+  .shelf.hidden{ display:none; }
+  .shelf-head{ display:flex; align-items:baseline; gap:13px; margin-bottom:6px; flex-wrap:wrap; }
+  .shelf-numeral{
+    font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em;
+    color:var(--brass-bright); border:1px solid var(--brass); padding:2px 7px;
+  }
+  .shelf-name{ font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; margin:0; }
+  .shelf-count{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--text-soft); }
+  .shelf-rule{ flex:1 1 auto; height:1px; background:linear-gradient(to right,var(--brass),transparent); min-width:30px; }
+  .shelf-blurb{ font-size:.92rem; color:var(--text-soft); margin:0 0 20px; max-width:64ch; }
+  .shelf-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px; }
+
+  .card{
+    position:relative;
+    background:var(--card-stock); color:var(--ink);
+    border:1px solid var(--card-line);
+    padding:17px 17px 15px;
+    display:flex; flex-direction:column;
+    opacity:0; transform:translateY(10px);
+    transition:opacity .4s ease,transform .4s ease,box-shadow .2s ease,border-color .2s ease;
+  }
+  .card.in{ opacity:1; transform:translateY(0); }
+  .card.hidden{ display:none; }
+  .card:hover{ box-shadow:5px 6px 0 rgba(0,0,0,.28); border-color:var(--cat,var(--brass)); }
+  .card.done{ background:#e2dcc7; }
+  .card.done .card-title{ text-decoration:line-through; text-decoration-thickness:1px; color:var(--ink-soft); }
+
+  .card-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .card-dot{ width:9px; height:9px; background:var(--cat,var(--brass)); margin-bottom:9px; flex:0 0 auto; }
+  .card-code{ font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.08em; color:var(--ink-soft); margin-bottom:5px; }
+  .card-title{ font-family:'Fraunces',serif; font-weight:600; font-size:1.08rem; margin:0 0 8px; line-height:1.2; }
+  .card-hook{ font-size:.86rem; color:var(--ink-soft); margin:0 0 15px; flex:1; }
+  .card-links{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+
+  .chip{
+    display:inline-flex; align-items:center;
+    font-family:'IBM Plex Mono',monospace; font-size:.69rem; letter-spacing:.04em;
+    text-decoration:none; padding:8px 11px; min-height:34px;
+    border:1px solid var(--ink); color:var(--ink);
+    transition:background .15s ease,color .15s ease;
+  }
+  .chip-watch{ background:var(--ink); color:var(--card-stock); }
+  .chip:active{ transform:translateY(1px); }
+
+  .mark{
+    margin-left:auto;
+    background:none; border:1px solid var(--card-line); cursor:pointer;
+    width:34px; height:34px; line-height:1; padding:0;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--ink-soft);
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .card.done .mark{ background:var(--ink); color:var(--card-stock); border-color:var(--ink); }
+
+  /* hover styles only where hovering is real, so phones do not get stuck hover states */
+  @media (hover:hover) and (pointer:fine){
+    .chip-watch:hover{ background:var(--brass); border-color:var(--brass); color:var(--ink); }
+    .chip-read:hover{ background:var(--ink); color:var(--card-stock); }
+    .mark:hover{ border-color:var(--ink); color:var(--ink); }
+  }
+  @media (hover:none){
+    .card:hover{ box-shadow:none; border-color:var(--card-line); }
+    .card:active{ box-shadow:3px 4px 0 rgba(0,0,0,.28); border-color:var(--cat,var(--brass)); }
+  }
+
+  .no-results{
+    display:none; max-width:1200px; margin:0 auto; padding:60px 24px;
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--text-soft);
+  }
+  .no-results.show{ display:block; }
+
+  .to-top{
+    position:fixed; right:16px; z-index:25;
+    bottom:calc(16px + env(safe-area-inset-bottom));
+    background:var(--brass-bright); color:var(--ink); border:none;
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.08em;
+    min-width:46px; min-height:46px; padding:10px 12px; cursor:pointer;
+    box-shadow:3px 3px 0 rgba(0,0,0,.35);
+    opacity:0; pointer-events:none; transition:opacity .25s ease;
+  }
+  .to-top.show{ opacity:1; pointer-events:auto; }
+
+  footer{
+    max-width:1000px; margin:40px auto 80px; padding:24px 24px 0;
+    border-top:1px solid rgba(184,135,61,.3);
+    font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--text-soft);
+  }
+  footer p{ margin:6px 0; }
+  kbd{
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem;
+    border:1px solid rgba(184,135,61,.5); padding:1px 5px; color:var(--brass-bright);
+  }
+
+  /* tablets and large phones */
+  @media (max-width:820px){
+    main{ padding:0 18px 32px; }
+    .hero{ padding:52px 18px 34px; }
+    footer{ padding:24px 18px 0; }
+    .shelf-grid{ grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; }
+  }
+
+  /* phones */
+  @media (max-width:620px){
+    .drawer-nav a{ font-size:.68rem; padding:13px 10px; }
+    .hero{ padding:40px 16px 30px; }
+    main{ padding:0 16px 28px; }
+    footer{ padding:22px 16px 0; margin-bottom:calc(70px + env(safe-area-inset-bottom)); }
+    h1{ font-size:clamp(2.1rem,10vw,3rem); }
+    .lede{ font-size:1rem; }
+    .stamp{ margin-bottom:16px; }
+
+    .controls{ gap:8px; }
+    .search{ flex:1 1 100%; max-width:none; order:1; }
+    .seg{ order:2; flex:1 1 auto; }
+    .seg button{ flex:1; padding:13px 8px; }
+    .btn-draw{ order:3; flex:1 1 auto; }
+
+    .progress-wrap{ max-width:none; }
+    .draw-slip{ max-width:none; padding:20px; }
+    .shelf{ padding:30px 0 4px; scroll-margin-top:48px; }
+    .shelf-name{ font-size:1.3rem; }
+    .shelf-blurb{ font-size:.88rem; margin-bottom:16px; }
+    .shelf-grid{ grid-template-columns:1fr; gap:12px; }
+
+    .card{ padding:16px; }
+    .card-title{ font-size:1.05rem; }
+    .card-hook{ font-size:.88rem; margin-bottom:14px; }
+    .card-links{ gap:8px; }
+    .chip{ flex:1 1 auto; justify-content:center; min-height:42px; font-size:.72rem; }
+    .mark{ flex:0 0 auto; width:42px; height:42px; }
+
+    .kbd-line{ display:none; }
+    .to-top{ right:12px; }
+  }
+
+  /* very small phones */
+  @media (max-width:360px){
+    .drawer-nav a{ padding:12px 8px; }
+    .card{ padding:14px; }
+    .chip{ padding:8px 8px; }
+  }
+
+  @media print{
+    body{ background:#fff; color:#000; }
+    .drawer-nav,.controls,.draw-slip,.to-top,.progress-wrap,.mark{ display:none !important; }
+    .card{ opacity:1 !important; transform:none !important; break-inside:avoid; border-color:#999; }
+    .shelf-grid{ grid-template-columns:repeat(2,1fr); }
+    h1,.shelf-name{ color:#000; }
+    .lede,.meta,.shelf-blurb,footer{ color:#444; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="drawer-nav" id="nav" aria-label="Section jump links"></nav>
+
+<header class="hero">
+  <span class="stamp">CATALOGUED &middot; JUL 2026</span>
+  <h1>The Curiosity Catalog</h1>
+  <p class="lede">Every rabbit hole worth falling into, filed by drawer. Pick one, watch something short, then read something longer, then mark it off.</p>
+  <p class="meta" id="metaLine">&nbsp;</p>
+
+  <div class="controls">
+    <input class="search" id="search" type="search" placeholder="Filter the drawers  ( / )" aria-label="Filter topics">
+    <div class="seg" role="group" aria-label="Show which entries">
+      <button type="button" data-view="all" class="on">All</button>
+      <button type="button" data-view="todo">To do</button>
+      <button type="button" data-view="done">Done</button>
+    </div>
+    <button class="btn-draw" id="drawBtn" type="button">Draw a Card</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-line">
+      <span id="progressText">0 of 0 marked off</span>
+      <button class="btn-reset" id="resetBtn" type="button">Clear all marks</button>
+    </div>
+    <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+  </div>
+
+  <div class="draw-slip" id="drawSlip" aria-live="polite">
+    <div class="slip-code" id="slipCode">&nbsp;</div>
+    <div class="slip-title" id="slipTitle">&nbsp;</div>
+    <div class="slip-hook" id="slipHook">&nbsp;</div>
+    <div class="slip-links">
+      <a class="chip chip-watch" id="slipWatch" target="_blank" rel="noopener">Watch &#9656;</a>
+      <a class="chip chip-read" id="slipRead" target="_blank" rel="noopener">Read &#9656;</a>
+    </div>
+  </div>
+</header>
+
+<main id="main"></main>
+<p class="no-results" id="noResults">Nothing in the drawers matches that. Try a shorter word.</p>
+
+<button class="to-top" id="toTop" type="button">&#8593; TOP</button>
+
+<footer>
+  <p>Watch opens a YouTube search. Read opens Wikipedia, which is the doorway and not the destination: follow its reference list out.</p>
+  <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks are saved in this browser.</p>
+</footer>
+
+<script>
+const sections = [
+  {k:'mind',n:'I',    l:'MIND', name:'Mind & Behavior',              b:'How the brain fools itself, and why that is kind of the point.'},
+  {k:'prax',n:'II',   l:'PRAX', name:'Philosophy & Practice',        b:'Frameworks for thinking and acting when nobody hands you an instruction manual.'},
+  {k:'math',n:'III',  l:'MATH', name:'Mathematics',                  b:'The results that broke mathematicians, and the tools that still run the world.'},
+  {k:'cosm',n:'IV',   l:'COSM', name:'Physics, Time & Cosmos',       b:'Time, disorder, the very small, the very large, and whether anyone else is out there.'},
+  {k:'vita',n:'V',    l:'VITA', name:'Life Sciences',                b:'The machinery you are made of, most of it older than the animals it lives in.'},
+  {k:'engn',n:'VI',   l:'ENGN', name:'Engineering & How Things Work',b:'Real machines, and the physics people bent in order to build them.'},
+  {k:'infr',n:'VII',  l:'INFR', name:'Infrastructure & Hidden Systems',b:'The invisible scaffolding holding up modern life. Notice it once, notice it forever.'},
+  {k:'comp',n:'VIII', l:'COMP', name:'Computing & Information',      b:'Below the frameworks: packets, silicon, proofs, and the theory underneath your job.'},
+  {k:'ling',n:'IX',   l:'LING', name:'Language & Linguistics',       b:'How languages are born, drift, split, die, and occasionally get invented on purpose.'},
+  {k:'theo',n:'X',    l:'THEO', name:'Theology & Scripture',         b:'Texts, councils, canons, and the arguments that shaped how the Bible is read.'},
+  {k:'art', n:'XI',   l:'ART',  name:'Art & Design',                 b:'Where the technique is invisible until someone shows you the trick, and then you cannot unsee it.'},
+  {k:'musc',n:'XII',  l:'MUSC', name:'Music & Sound',                b:'Physics, maths, and culture arguing with each other in twelve notes.'},
+  {k:'scrn',n:'XIII', l:'SCRN', name:'Film, Story & Media',          b:'The grammar of moving images, and the rules of story that predate the camera by millennia.'},
+  {k:'make',n:'XIV',  l:'MAKE', name:'Craft, Food & Materials',      b:'Chemistry you can taste, and craft traditions that got there centuries before the science did.'},
+  {k:'sprt',n:'XV',   l:'SPRT', name:'Sport & Performance',          b:'What happens when you point statistics and physiology at a game.'},
+  {k:'hist',n:'XVI',  l:'HIST', name:'History & Curiosities',        b:'The stranger footnotes of the human record, no less true for being odd.'},
+  {k:'rsch',n:'XVII', l:'RSCH', name:'Research, Evidence & Method',  b:'How knowledge is actually made, and the many ways it quietly goes wrong.'},
+  {k:'econ',n:'XVIII',l:'ECON', name:'Strategy, Games & Economics',  b:'Decisions where the right move depends on what everyone else decides too.'},
+];
+
+const topics = [
+  // MIND
+  {c:'mind',t:'The IKEA Effect',h:'People wildly overvalue things they assembled themselves, even when the result is objectively mediocre.',w:'IKEA effect psychology explained',r:'IKEA effect'},
+  {c:'mind',t:'Mirror Neurons',h:'Cells that fire both when you act and when you watch someone act. The evidence for the empathy story is messier than the pop version.',w:'mirror neurons explained neuroscience',r:'mirror neuron'},
+  {c:'mind',t:'The Paradox of Choice',h:'Past a certain point, more options produce less satisfaction and more paralysis, not more freedom.',w:'paradox of choice Barry Schwartz',r:'overchoice paradox of choice'},
+  {c:'mind',t:'Synchronicity',h:'Jung argued some coincidences are meaningfully connected without being causally connected. Critics call it pattern hunger.',w:'synchronicity Carl Jung explained',r:'synchronicity'},
+  {c:'mind',t:'Neuroplasticity',h:'The brain keeps rewiring itself in response to use, well past the age people assume it stops.',w:'neuroplasticity explained brain rewiring',r:'neuroplasticity'},
+  {c:'mind',t:'Cognitive Dissonance',h:'Holding two clashing beliefs is so uncomfortable that people rewrite one of them rather than sit with it.',w:'cognitive dissonance explained',r:'cognitive dissonance'},
+  {c:'mind',t:'The Dunning Kruger Effect',h:'The famous version says the incompetent are confident. The statistical critique of the original graph is the more interesting half.',w:'Dunning Kruger effect explained criticism',r:'Dunning Kruger effect'},
+  {c:'mind',t:'Flow State',h:'Csikszentmihalyi mapped the narrow band where challenge and skill match exactly, and self-consciousness disappears.',w:'flow state Csikszentmihalyi explained',r:'flow psychology'},
+  {c:'mind',t:'Sleep & Memory Consolidation',h:'Memories are not really stored during the day so much as filed overnight. Skip the sleep and you skip the filing.',w:'how sleep consolidates memory',r:'memory consolidation'},
+  {c:'mind',t:'Predictive Processing',h:'A theory that the brain does not receive reality but constantly predicts it, and only attends to the errors.',w:'predictive processing brain explained',r:'predictive coding'},
+  {c:'mind',t:'Spaced Repetition',h:'Ebbinghaus mapped the forgetting curve in 1885. Everything from Anki to med school revision is built on beating it.',w:'spaced repetition forgetting curve explained',r:'spaced repetition'},
+  {c:'mind',t:'The Bystander Effect',h:'The more witnesses present, the less likely any single one intervenes. The famous case that launched it was badly reported.',w:'bystander effect explained Kitty Genovese',r:'bystander effect'},
+
+  // PRAX
+  {c:'prax',t:'Mushin',h:'The Zen martial arts state of no mind: acting correctly and instantly, without conscious thought getting in the way.',w:'mushin no mind martial arts explained',r:'mushin mental state'},
+  {c:'prax',t:'Existentialism vs Absurdism',h:'Both begin with a universe that hands you no meaning. One says build your own anyway, the other says stop demanding one and live inside the contradiction.',w:'existentialism vs absurdism Camus Sartre explained',r:'absurdism'},
+  {c:'prax',t:'Antifragility',h:'Taleb\u2019s claim that some systems do not merely survive shocks, they need them. Remove all stress and the thing rots.',w:'antifragile Nassim Taleb explained',r:'antifragility'},
+  {c:'prax',t:'Note Taking Systems',h:'Zettelkasten, PARA, Cornell: methods for linking notes so old thinking compounds instead of evaporating.',w:'Zettelkasten note taking system explained',r:'Zettelkasten'},
+  {c:'prax',t:'Stoicism',h:'Not the emotionless caricature. A working system for sorting what you control from what you do not, then acting anyway.',w:'Stoicism explained Epictetus Marcus Aurelius',r:'Stoicism'},
+  {c:'prax',t:'Chesterton\u2019s Fence',h:'Do not tear down a fence until you know why it was put there. The best argument against confident refactoring.',w:"Chesterton's fence principle explained",r:'G. K. Chesterton fence'},
+  {c:'prax',t:'The Ship of Theseus',h:'Replace every plank one at a time and you have a question about identity that software versioning quietly inherits.',w:'Ship of Theseus paradox explained',r:'Ship of Theseus'},
+  {c:'prax',t:'Occam\u2019s Razor',h:'Prefer the explanation with fewer assumptions. Widely quoted, frequently misapplied as prefer the simpler story.',w:"Occam's razor explained philosophy",r:"Occam's razor"},
+  {c:'prax',t:'The Trolley Problem',h:'A deliberately artificial dilemma that exposes the gap between consequences and rules, and now shows up in self driving car ethics.',w:'trolley problem ethics explained',r:'trolley problem'},
+  {c:'prax',t:'Wu Wei',h:'Taoist effortless action: the strength of water, not of stone. A close cousin of mushin from a completely different tradition.',w:'wu wei Taoism explained',r:'wu wei'},
+  {c:'prax',t:'Deliberate Practice',h:'Ericsson\u2019s research: hours alone do nothing. What matters is working at the edge of failure with immediate feedback.',w:'deliberate practice Anders Ericsson explained',r:'practice deliberate'},
+  {c:'prax',t:'Via Negativa',h:'Improve by subtraction. What to remove is often knowable with far more confidence than what to add.',w:'via negativa subtraction philosophy explained',r:'via negativa'},
+
+  // MATH
+  {c:'math',t:'G\u00f6del\u2019s Incompleteness Theorems',h:'Any system strong enough to describe arithmetic contains true statements it cannot prove. Mathematics found its own ceiling.',w:'Godel incompleteness theorem explained',r:"Godel's incompleteness theorems"},
+  {c:'math',t:'Bayes\u2019 Theorem',h:'How to update a belief when new evidence arrives. The one formula that changes how you read every medical test and headline.',w:'Bayes theorem explained intuition',r:"Bayes' theorem"},
+  {c:'math',t:'The Sizes of Infinity',h:'Some infinities are strictly larger than others, and Cantor\u2019s diagonal argument proving it fits on a napkin.',w:'Cantor diagonal argument infinity explained',r:"Cantor's diagonal argument"},
+  {c:'math',t:'P vs NP',h:'If checking an answer is easy, must finding it be easy too? A million dollars and most of cryptography ride on the answer being no.',w:'P vs NP problem explained',r:'P versus NP problem'},
+  {c:'math',t:'The Fourier Transform',h:'Any signal can be rebuilt from pure sine waves. This is why MP3, JPEG, and MRI all exist.',w:'Fourier transform explained visually',r:'Fourier transform'},
+  {c:'math',t:'Euler\u2019s Identity',h:'e, i, pi, 1, and 0 in a single equation. It looks like coincidence and is not.',w:"Euler's identity explained",r:"Euler's identity"},
+  {c:'math',t:'Chaos Theory',h:'Fully deterministic systems can be permanently unpredictable, because tiny differences at the start grow without bound.',w:'chaos theory butterfly effect explained',r:'chaos theory'},
+  {c:'math',t:'Topology',h:'The branch where a coffee mug and a donut are the same object, and that turns out to be genuinely useful.',w:'topology explained mug donut',r:'topology'},
+  {c:'math',t:'Monte Carlo Methods',h:'When the maths is too hard, throw millions of random darts at it. Used for nuclear physics, finance, and game AI alike.',w:'Monte Carlo method explained',r:'Monte Carlo method'},
+  {c:'math',t:'The Central Limit Theorem',h:'Average enough of almost anything and you get a normal distribution. The reason statistics works at all.',w:'central limit theorem explained intuition',r:'central limit theorem'},
+  {c:'math',t:'Graph Theory',h:'Born from a walk over seven bridges, now the substrate of routing, social networks, and dependency resolution.',w:'graph theory Konigsberg bridges explained',r:'Seven Bridges of Konigsberg'},
+  {c:'math',t:'The Birthday Problem',h:'In a room of 23 people the odds of a shared birthday pass 50 percent. Your intuition about collisions is broken, and hash tables prove it.',w:'birthday problem paradox explained',r:'birthday problem'},
+
+  // COSM
+  {c:'cosm',t:'The Nature of Time',h:'Does time flow, or is the flow an illusion and past and future equally real? Physics and philosophy still disagree.',w:'nature of time physics philosophy explained',r:'philosophy of space and time'},
+  {c:'cosm',t:'Entropy',h:'Disorder in a closed system only increases. This one law hands time its only clear direction.',w:'entropy arrow of time explained',r:'entropy'},
+  {c:'cosm',t:'The Fermi Paradox',h:'The universe is enormous and old, so it should be crowded. It looks empty. Every explanation is unsettling.',w:'Fermi paradox explained',r:'Fermi paradox'},
+  {c:'cosm',t:'Special & General Relativity',h:'Time is not the same for everyone, and gravity is not a force but the shape of spacetime itself.',w:'general relativity explained visually',r:'general relativity'},
+  {c:'cosm',t:'Quantum Entanglement',h:'Two particles correlated so tightly that measuring one fixes the other. Einstein hated it. The experiments backed Bohr.',w:'quantum entanglement Bell test explained',r:'quantum entanglement'},
+  {c:'cosm',t:'The Double Slit Experiment',h:'The single experiment that makes quantum mechanics impossible to explain away.',w:'double slit experiment explained',r:'double-slit experiment'},
+  {c:'cosm',t:'Dark Matter & Dark Energy',h:'Around 95 percent of the universe is stuff we cannot see and cannot identify. We know it only by its pull.',w:'dark matter dark energy explained',r:'dark matter'},
+  {c:'cosm',t:'The Standard Model',h:'Every particle and force we have confirmed, in one table that is both stunningly accurate and obviously incomplete.',w:'Standard Model particle physics explained',r:'Standard Model'},
+  {c:'cosm',t:'The Black Hole Information Paradox',h:'If nothing escapes a black hole but black holes evaporate, where did the information go? Still unsettled.',w:'black hole information paradox explained',r:'black hole information paradox'},
+  {c:'cosm',t:'The Cosmic Microwave Background',h:'A faint glow in every direction: the literal afterimage of the universe becoming transparent.',w:'cosmic microwave background explained',r:'cosmic microwave background'},
+  {c:'cosm',t:'Heat Death of the Universe',h:'Follow entropy far enough and everything ends not in fire but in uniform, useless warmth.',w:'heat death of the universe explained',r:'heat death of the universe'},
+  {c:'cosm',t:'Emergence',h:'Simple rules, followed by enough agents, produce behavior no rule describes. Ant colonies, markets, minds.',w:'emergence complex systems explained',r:'emergence'},
+
+  // VITA
+  {c:'vita',t:'Epigenetics',h:'Environment can switch genes on and off without touching the DNA sequence, and some switches survive a generation.',w:'epigenetics explained',r:'epigenetics'},
+  {c:'vita',t:'CRISPR',h:'A bacterial immune system repurposed into programmable molecular scissors for editing genomes.',w:'CRISPR gene editing explained',r:'CRISPR gene editing'},
+  {c:'vita',t:'The Gut Microbiome',h:'Trillions of bacteria influencing digestion, immunity, possibly mood. Also a field drowning in overclaims.',w:'gut microbiome explained science',r:'human microbiome'},
+  {c:'vita',t:'Endosymbiosis',h:'Mitochondria were once free living bacteria that got swallowed and stayed. Your cells are a merger.',w:'endosymbiotic theory mitochondria explained',r:'symbiogenesis'},
+  {c:'vita',t:'Protein Folding',h:'A chain of amino acids folds into exactly one shape, and that shape is the function. AlphaFold cracked predicting it.',w:'protein folding AlphaFold explained',r:'protein folding'},
+  {c:'vita',t:'How Vaccines Work',h:'Show the immune system a harmless preview so it recognises the real thing instantly. mRNA changed how fast the preview can be made.',w:'how vaccines work immune system explained',r:'vaccine'},
+  {c:'vita',t:'Convergent Evolution',h:'Eyes evolved independently dozens of times. Nature keeps rediscovering the same solutions from different starting points.',w:'convergent evolution explained',r:'convergent evolution'},
+  {c:'vita',t:'Photosynthesis',h:'Plants run a light harvesting reaction so efficient that we still cannot match it industrially.',w:'photosynthesis explained biology',r:'photosynthesis'},
+  {c:'vita',t:'Antibiotic Resistance',h:'Evolution happening on a timescale of weeks, driven by us, heading toward a post antibiotic era.',w:'antibiotic resistance explained',r:'antimicrobial resistance'},
+  {c:'vita',t:'Circadian Rhythm',h:'An internal clock in nearly every cell, entrained by light, and violently unimpressed by your sleep schedule.',w:'circadian rhythm explained biology',r:'circadian rhythm'},
+  {c:'vita',t:'Telomeres & Ageing',h:'Chromosome caps that shorten with each division. One of several competing accounts of why bodies wear out.',w:'telomeres ageing explained',r:'telomere'},
+  {c:'vita',t:'The Action Potential',h:'How a neuron actually fires: an electrochemical wave, not a wire carrying current.',w:'action potential neuron explained',r:'action potential'},
+
+  // ENGN
+  {c:'engn',t:'How IMAX Works',h:'A larger negative, taller screens, and geometry chosen so the image spills past your peripheral vision.',w:'how IMAX works explained',r:'IMAX'},
+  {c:'engn',t:'The Engineering Behind F1',h:'Ground effect aero, hybrid energy recovery, and tyre chemistry pushed to the exact edge of the regulations.',w:'F1 car engineering aerodynamics explained',r:'Formula One car'},
+  {c:'engn',t:'How Bluetooth Works',h:'Low power radio that hops between frequencies fast enough to dodge interference and pair without a cable.',w:'how Bluetooth works explained',r:'Bluetooth'},
+  {c:'engn',t:'How CPUs Are Made',h:'Sand to wafer to billions of transistors, patterned with light at wavelengths smaller than the features it draws.',w:'how CPUs are made semiconductor fabrication EUV',r:'semiconductor device fabrication'},
+  {c:'engn',t:'Old School Cartoon Animation',h:'Cels, painted backgrounds, and the tricks that faked fluid motion on twelve drawings a second.',w:'traditional cel animation how classic cartoons were made',r:'traditional animation'},
+  {c:'engn',t:'Jet Engines',h:'Suck, squeeze, bang, blow. The turbine blade runs above its own melting point and survives by being cooled from the inside.',w:'how jet engines work turbine blade explained',r:'turbofan'},
+  {c:'engn',t:'Noise Cancelling Headphones',h:'Measure the incoming wave, generate its exact inverse, add them together. Silence by destructive interference.',w:'how noise cancelling headphones work',r:'active noise control'},
+  {c:'engn',t:'Suspension Bridges',h:'Every cable in pure tension, every tower in pure compression. Tacoma Narrows shows what happens when you forget the wind.',w:'how suspension bridges work Tacoma Narrows',r:'suspension bridge'},
+  {c:'engn',t:'Nuclear Reactors',h:'Controlled fission, moderated neutrons, and the layered defences designed for the day something fails.',w:'how nuclear reactors work explained',r:'nuclear reactor'},
+  {c:'engn',t:'Lithium Ion Batteries',h:'Ions shuttling between electrodes. Understand dendrites and thermal runaway and every battery fire headline makes sense.',w:'how lithium ion batteries work explained',r:'lithium-ion battery'},
+  {c:'engn',t:'GPS',h:'Satellites broadcasting the time. Your phone trilaterates from the delays, and the clocks must be corrected for relativity or the fix drifts kilometres a day.',w:'how GPS works relativity correction explained',r:'Global Positioning System'},
+  {c:'engn',t:'Camera Sensors & Lenses',h:'Photons to charge to pixels, plus the optics deciding what is sharp. Rolling shutter is why propellers look bent.',w:'how camera sensors work rolling shutter explained',r:'image sensor'},
+
+  // INFR
+  {c:'infr',t:'Undersea Internet Cables',h:'Almost all intercontinental traffic runs through a few hundred fibre cables on the seabed, laid by a handful of ships.',w:'undersea internet cables explained',r:'submarine communications cable'},
+  {c:'infr',t:'The Power Grid',h:'Supply must match demand every second or frequency drifts and things trip. A continent sized balancing act with almost no storage.',w:'how the power grid works frequency balancing',r:'electrical grid'},
+  {c:'infr',t:'The Shipping Container',h:'A steel box that standardised the world. Arguably a bigger economic event than most technologies of its century.',w:'shipping container containerization history',r:'containerization'},
+  {c:'infr',t:'Water Treatment & Sewers',h:'The least glamorous infrastructure, and probably the one that has saved the most lives.',w:'how water treatment plants work explained',r:'water treatment'},
+  {c:'infr',t:'Air Traffic Control',h:'Thousands of aircraft separated by procedure, radar, and human working memory, in real time with no undo.',w:'how air traffic control works explained',r:'air traffic control'},
+  {c:'infr',t:'The Haber Bosch Process',h:'Pulling nitrogen from the air to make fertiliser. Roughly half the nitrogen in your body passed through this reaction.',w:'Haber Bosch process explained',r:'Haber process'},
+  {c:'infr',t:'Concrete',h:'The most used material on earth after water. Chemically fascinating, and a huge share of global emissions.',w:'how concrete works cement chemistry',r:'concrete'},
+  {c:'infr',t:'The Cold Chain',h:'Unbroken refrigeration from farm or lab to you. Vaccines and fresh food both live or die on it.',w:'cold chain logistics refrigeration explained',r:'cold chain'},
+  {c:'infr',t:'How Card Payments Clear',h:'Tapping takes a second. Authorisation, clearing, and settlement take days and pass through four institutions.',w:'how card payment processing works clearing settlement',r:'payment card'},
+  {c:'infr',t:'Standards Bodies',h:'Rail gauge, pallets, containers, USB. Someone had to agree on a number, and the fights were real.',w:'ISO standardization history why standards matter',r:'technical standard'},
+  {c:'infr',t:'The Chip Supply Chain',h:'One Dutch company makes the machines. One Taiwanese company makes most leading edge chips. That is the whole bottleneck.',w:'semiconductor supply chain ASML TSMC explained',r:'semiconductor industry'},
+  {c:'infr',t:'Time Synchronisation',h:'NTP, atomic clocks, and leap seconds. Distributed systems break in fascinating ways when clocks disagree.',w:'NTP time synchronization leap second explained',r:'Network Time Protocol'},
+
+  // COMP
+  {c:'comp',t:'How the Internet Actually Works',h:'Packets, TCP/IP, and the fact that nothing in the middle knows or cares what you are sending.',w:'how the internet works packets TCP IP explained',r:'Internet protocol suite'},
+  {c:'comp',t:'DNS',h:'A globally distributed, cached, hierarchical database that turns names into addresses. Also why half of all outages are DNS.',w:'how DNS works explained',r:'Domain Name System'},
+  {c:'comp',t:'BGP',h:'The routing protocol running on trust. One misconfiguration can black hole traffic for an entire continent.',w:'BGP routing explained hijack',r:'Border Gateway Protocol'},
+  {c:'comp',t:'Public Key Cryptography',h:'Two keys, one shared freely. The counterintuitive idea that made private communication over a hostile network possible.',w:'public key cryptography RSA Diffie Hellman explained',r:'public-key cryptography'},
+  {c:'comp',t:'Compilers',h:'Lexing, parsing, IR, optimisation, codegen. Writing even a small one permanently changes how you read code.',w:'how compilers work lexer parser codegen explained',r:'compiler'},
+  {c:'comp',t:'Kernels & Scheduling',h:'Context switches, interrupts, and the scheduler deciding who runs next. The layer your abstractions are lying about.',w:'operating system kernel scheduler explained',r:'scheduling computing'},
+  {c:'comp',t:'ACID & Isolation Levels',h:'Isolation levels are where most correctness bugs hide. Serializable is not the default, and you should know why.',w:'database transactions ACID isolation levels explained',r:'isolation database systems'},
+  {c:'comp',t:'Distributed Consensus',h:'Paxos, Raft, and CAP: how machines that can lie, lag, or die still agree on a single value.',w:'Raft consensus algorithm CAP theorem explained',r:'consensus computer science'},
+  {c:'comp',t:'The Halting Problem',h:'Some problems are not hard, they are impossible. Turing drew the line and nothing crosses it.',w:'Turing machine halting problem explained',r:'halting problem'},
+  {c:'comp',t:'How Transformers Work',h:'Attention, embeddings, and next token prediction. The architecture behind every model you currently use.',w:'transformer architecture attention explained',r:'transformer deep learning'},
+  {c:'comp',t:'Compression',h:'Huffman coding, entropy, and the proof that a universal lossless compressor cannot exist. Directly downstream of thermodynamics.',w:'data compression Huffman entropy explained',r:'data compression'},
+  {c:'comp',t:'The Memory Hierarchy',h:'Registers to cache to RAM to disk, each roughly two orders of magnitude slower. Cache locality is most of real performance.',w:'CPU cache memory hierarchy explained',r:'CPU cache'},
+  {c:'comp',t:'Floating Point',h:'Why 0.1 plus 0.2 is not 0.3, and why IEEE 754 is nonetheless a masterpiece of engineering compromise.',w:'IEEE 754 floating point explained',r:'IEEE 754'},
+
+  // LING
+  {c:'ling',t:'How Languages Are Created',h:'Natural drift over centuries versus conlangs built on purpose. Both follow rules you can learn.',w:'how languages evolve and are created conlang',r:'language change'},
+  {c:'ling',t:'Proto Indo European',h:'A language nobody wrote down, reconstructed from its descendants by comparing sound shifts. Linguistics as forensics.',w:'Proto Indo European reconstruction explained',r:'Proto-Indo-European language'},
+  {c:'ling',t:'The Sapir Whorf Hypothesis',h:'Does your language shape what you can think? The strong version is dead. The weak version is quietly interesting.',w:'Sapir Whorf linguistic relativity explained',r:'linguistic relativity'},
+  {c:'ling',t:'Writing Systems',h:'Alphabets, abjads, syllabaries, logographies. Four fundamentally different answers to the same problem.',w:'writing systems alphabet abjad logographic explained',r:'writing system'},
+  {c:'ling',t:'Universal Grammar',h:'Chomsky argued the capacity for grammar is innate. Decades later it is still one of the field\u2019s live fault lines.',w:'Chomsky universal grammar debate explained',r:'universal grammar'},
+  {c:'ling',t:'Pidgins & Creoles',h:'Adults improvise a trade language; their children turn it into a full one with complete grammar in a single generation.',w:'pidgin creole language explained',r:'creole language'},
+  {c:'ling',t:'Language Death & Revival',h:'A language dies roughly every two weeks. Hebrew proves revival is possible, and shows how rare the conditions are.',w:'language death revival Hebrew explained',r:'language revitalization'},
+  {c:'ling',t:'The Rosetta Stone',h:'How one trilingual decree let Champollion crack hieroglyphs and reopen three thousand years of records.',w:'Rosetta Stone hieroglyphs Champollion decipherment',r:'Rosetta Stone'},
+  {c:'ling',t:'Semantic Drift',h:'Nice once meant ignorant. Meanings wander, and the paths they take are surprisingly patterned.',w:'semantic change etymology drift explained',r:'semantic change'},
+  {c:'ling',t:'Phonetics & the IPA',h:'Every sound a human mouth can make, mapped to a symbol. Learn it and you can pronounce a language you cannot speak.',w:'International Phonetic Alphabet explained',r:'International Phonetic Alphabet'},
+  {c:'ling',t:'Sign Languages',h:'Not gestured English. Full languages with their own grammar, syntax, poetry, and regional dialects.',w:'sign language grammar linguistics explained',r:'sign language'},
+  {c:'ling',t:'Untranslatability',h:'What survives a translation and what cannot. Every translator is quietly making philosophical decisions.',w:'untranslatability translation theory explained',r:'untranslatability'},
+
+  // THEO
+  {c:'theo',t:'The Pauline Epistles',h:'Authorship, chronology, and the disputed letters. Read them as occasional letters to real churches, not as systematic theology.',w:'Pauline epistles authorship introduction explained',r:'Pauline epistles'},
+  {c:'theo',t:'Hermeneutics & Exegesis',h:'Reading a text on its own terms: genre, historical setting, and authorial intent before application.',w:'biblical hermeneutics exegesis explained',r:'biblical hermeneutics'},
+  {c:'theo',t:'Formation of the Canon',h:'Which books made it, which did not, who decided, and on what criteria. Slower and messier than either polemic suggests.',w:'formation of the biblical canon explained',r:'biblical canon'},
+  {c:'theo',t:'The Synoptic Problem',h:'Matthew, Mark, and Luke overlap in ways that demand an explanation. Markan priority and the hypothetical Q are the standard answer.',w:'Synoptic problem Q source Markan priority explained',r:'synoptic problem'},
+  {c:'theo',t:'Textual Criticism',h:'Thousands of manuscripts, none identical. How scholars reconstruct the likeliest original wording from the variants.',w:'New Testament textual criticism explained',r:'textual criticism'},
+  {c:'theo',t:'The Dead Sea Scrolls',h:'A library sealed in caves, and what it revealed about how faithfully the Hebrew scriptures were transmitted.',w:'Dead Sea Scrolls significance explained',r:'Dead Sea Scrolls'},
+  {c:'theo',t:'Second Temple Judaism',h:'The world Jesus and Paul actually lived in: Pharisees, Sadducees, Essenes, Rome, and messianic expectation.',w:'Second Temple Judaism background explained',r:'Second Temple Judaism'},
+  {c:'theo',t:'The Ecumenical Councils',h:'Nicaea, Chalcedon, and the rest: where doctrine got argued into precise language, usually against a specific error.',w:'Council of Nicaea Chalcedon creeds explained',r:'first seven ecumenical councils'},
+  {c:'theo',t:'Theodicy',h:'The problem of evil and the major responses: free will, soul making, skeptical theism. The oldest live argument in philosophy of religion.',w:'problem of evil theodicy explained',r:'theodicy'},
+  {c:'theo',t:'The Reformation',h:'Sola scriptura, the printing press, and how a dispute over indulgences split Western Christendom.',w:'Protestant Reformation Luther explained',r:'Reformation'},
+  {c:'theo',t:'The Septuagint',h:'The Greek Old Testament that the New Testament writers usually quoted. Its differences from the Hebrew matter more than people expect.',w:'Septuagint significance explained',r:'Septuagint'},
+  {c:'theo',t:'Classical Arguments for God',h:'Cosmological, teleological, ontological, moral. Worth learning in their strongest forms, alongside their strongest objections.',w:'arguments for the existence of God cosmological ontological explained',r:'existence of God'},
+
+  // ART
+  {c:'art',t:'Linear Perspective',h:'Brunelleschi worked out vanishing points around 1420 and Western painting abruptly gained depth. It is geometry, not talent.',w:'linear perspective Brunelleschi Renaissance explained',r:'perspective graphical'},
+  {c:'art',t:'Colour Theory',h:'Simultaneous contrast, complementaries, and why the same grey looks like two different greys depending on what surrounds it.',w:'color theory simultaneous contrast Albers explained',r:'color theory'},
+  {c:'art',t:'Chiaroscuro & Tenebrism',h:'Caravaggio killed the ambient light and let a single source do the storytelling. Cinema is still copying him.',w:'chiaroscuro tenebrism Caravaggio explained',r:'chiaroscuro'},
+  {c:'art',t:'The History of Pigments',h:'Ultramarine cost more than gold, mummy brown was made from actual mummies, and some colours simply did not exist yet.',w:'history of pigments ultramarine mummy brown explained',r:'pigment history'},
+  {c:'art',t:'Ukiyo-e & Japonisme',h:'Japanese woodblock prints reached Paris, and Van Gogh, Monet, and Degas quietly rebuilt their compositions around them.',w:'ukiyo-e woodblock prints Japonisme influence impressionism',r:'ukiyo-e'},
+  {c:'art',t:'The Bauhaus',h:'A school that decided form should follow function, and ended up shaping nearly every object you own.',w:'Bauhaus design school explained',r:'Bauhaus'},
+  {c:'art',t:'Typography',h:'Anatomy, kerning, x-height, and the reason two fonts saying the same word can mean different things.',w:'typography explained kerning typefaces',r:'typography'},
+  {c:'art',t:'Composition & Negative Space',h:'The rule of thirds is a beginner\u2019s crutch. What actually organises an image is weight, tension, and what you leave empty.',w:'composition negative space art explained rule of thirds myth',r:'composition visual arts'},
+  {c:'art',t:'Art Forgery',h:'Han van Meegeren fooled the experts and the Nazis. What finally caught him was chemistry, not connoisseurship.',w:'art forgery Han van Meegeren detection explained',r:'art forgery'},
+  {c:'art',t:'Art Restoration',h:'Cleaning a painting means deciding what the original was, which is an argument, not a fact. The Sistine cleaning is still disputed.',w:'art restoration controversy Sistine Chapel cleaning',r:'conservation and restoration of paintings'},
+  {c:'art',t:'Impressionism & the Paint Tube',h:'The collapsible metal tube let painters leave the studio. The movement follows from the packaging.',w:'impressionism paint tube plein air history',r:'Impressionism'},
+  {c:'art',t:'Why Art Stopped Being Realistic',h:'Photography took realism\u2019s job, so painting went looking for a new one. Duchamp then asked whether skill was required at all.',w:'why modern art became abstract Duchamp readymade explained',r:'modern art'},
+
+  // MUSC
+  {c:'musc',t:'Equal Temperament',h:'Every piano is slightly out of tune on purpose, because you cannot have pure intervals in all keys at once. A mathematical compromise.',w:'equal temperament tuning explained why pianos out of tune',r:'equal temperament'},
+  {c:'musc',t:'The Harmonic Series',h:'One note is never one note. The overtones stacked above it are why a violin and a flute at the same pitch sound nothing alike.',w:'harmonic series overtones timbre explained',r:'harmonic series music'},
+  {c:'musc',t:'Why Minor Sounds Sad',h:'Partly acoustics, largely convention. Cross-cultural evidence complicates the story you were told in school.',w:'why minor keys sound sad music psychology explained',r:'minor scale'},
+  {c:'musc',t:'Counterpoint',h:'Independent melodic lines that also work vertically. Bach solved a constraint problem so tight it reads like code.',w:'counterpoint Bach fugue explained',r:'counterpoint'},
+  {c:'musc',t:'Psychoacoustics',h:'Shepard tones that rise forever, missing fundamentals your brain invents. Hearing is a reconstruction, not a recording.',w:'psychoacoustics Shepard tone missing fundamental explained',r:'psychoacoustics'},
+  {c:'musc',t:'Synthesis & ADSR',h:'Oscillators, filters, envelopes. Learn attack, decay, sustain, and release and you can build any sound from nothing.',w:'subtractive synthesis ADSR envelope explained',r:'synthesizer'},
+  {c:'musc',t:'The Amen Break',h:'Six seconds of drums from 1969 became the backbone of hip hop, jungle, and drum and bass. Nobody was paid.',w:'Amen break history sampling explained',r:'Amen break'},
+  {c:'musc',t:'The Roland TR-808',h:'A commercial failure whose broken sounding drum machine defined hip hop, techno, and pop for forty years.',w:'Roland TR-808 history influence explained',r:'Roland TR-808'},
+  {c:'musc',t:'Auto-Tune',h:'Built from oil exploration signal processing, then broken deliberately by a producer and turned into an instrument.',w:'Auto-Tune history how it works explained',r:'Auto-Tune'},
+  {c:'musc',t:'Concert Hall Acoustics',h:'Reverberation time, early reflections, and why some halls are legendary and some cost a fortune and sound dead.',w:'concert hall acoustics reverberation explained',r:'architectural acoustics'},
+  {c:'musc',t:'Polyrhythm',h:'Two pulses at once, felt rather than counted. West African traditions built an entire vocabulary Western notation struggles to write down.',w:'polyrhythm explained African music',r:'polyrhythm'},
+  {c:'musc',t:'The Loudness War',h:'Decades of masters compressed louder and louder until dynamic range collapsed. Streaming loudness normalisation quietly ended it.',w:'loudness war dynamic range compression explained',r:'loudness war'},
+
+  // SCRN
+  {c:'scrn',t:'The Kuleshov Effect',h:'Cut the same neutral face against different images and audiences read different emotions into it. Meaning is made in the cut.',w:'Kuleshov effect montage explained',r:'Kuleshov effect'},
+  {c:'scrn',t:'The Hero\u2019s Journey',h:'Campbell\u2019s monomyth, its Hollywood adoption, and the good arguments that it is a template imposed on stories rather than found in them.',w:"hero's journey monomyth criticism explained",r:"hero's journey"},
+  {c:'scrn',t:'Continuity Editing',h:'The 180 degree rule, eyeline match, and the invisible craft of cutting so that nobody notices a cut happened.',w:'continuity editing 180 degree rule explained',r:'continuity editing'},
+  {c:'scrn',t:'Cinematography',h:'Lens choice, lighting ratio, and framing. Three decisions that carry more emotional weight than most of the dialogue.',w:'cinematography lenses lighting framing explained',r:'cinematography'},
+  {c:'scrn',t:'Foley & Sound Design',h:'Almost nothing you hear in a film was recorded on set. Punches are celery. The illusion is total.',w:'Foley sound design film explained',r:'Foley filmmaking'},
+  {c:'scrn',t:'Colour Grading',h:'Why blockbusters are orange and teal, and how colour became a narrative instrument rather than a correction step.',w:'color grading film orange teal explained',r:'color grading'},
+  {c:'scrn',t:'Practical Effects vs CGI',h:'Why some 1980s effects still hold up and some 2010s effects already look dated. It is about light, not polygons.',w:'practical effects vs CGI why practical holds up',r:'special effect'},
+  {c:'scrn',t:'The Grammar of Comics',h:'McCloud showed the reader does the animating: the action happens in the gutter between panels, not inside them.',w:'Scott McCloud Understanding Comics gutter closure explained',r:'comics'},
+  {c:'scrn',t:'Leitmotif & Film Scoring',h:'Wagner assigned themes to characters. Williams did it to a shark, and you learned to fear two notes.',w:'leitmotif film score explained John Williams',r:'leitmotif'},
+  {c:'scrn',t:'Narrative Economy',h:'Chekhov\u2019s gun, setup and payoff, and why a story feels tight or baggy for reasons audiences feel but cannot name.',w:"Chekhov's gun setup payoff storytelling explained",r:"Chekhov's gun"},
+  {c:'scrn',t:'Censorship as a Style Engine',h:'The Hays Code banned so much that filmmakers invented an entire language of implication to smuggle it past.',w:'Hays Code censorship influence film style explained',r:'Motion Picture Production Code'},
+  {c:'scrn',t:'Aspect Ratios',h:'Widescreen was invented to fight television. The shape of the frame is a business decision that became an artistic one.',w:'aspect ratio film history widescreen explained',r:'aspect ratio image'},
+
+  // MAKE
+  {c:'make',t:'The Maillard Reaction',h:'Amino acids and sugars rearranging into hundreds of new compounds. Every browned, savoury, delicious thing owes it.',w:'Maillard reaction explained cooking chemistry',r:'Maillard reaction'},
+  {c:'make',t:'Fermentation',h:'Controlled rot. Microbes preserve food, generate flavour, and made bread, beer, cheese, kimchi, and soy sauce possible.',w:'fermentation food science explained',r:'fermentation in food processing'},
+  {c:'make',t:'Chocolate Tempering',h:'Cocoa butter crystallises into six forms and only one of them snaps and shines. Tempering is polymorph selection.',w:'chocolate tempering crystal polymorphs explained',r:'chocolate tempering'},
+  {c:'make',t:'Coffee Extraction',h:'Grind size, temperature, time, pressure. Bitter means over extracted, sour means under. It is a solubility curve.',w:'coffee extraction science grind ratio explained',r:'coffee preparation'},
+  {c:'make',t:'Bread & Gluten',h:'Two proteins meet water and form an elastic net that traps gas. Everything else in baking is managing that net.',w:'gluten bread science explained',r:'gluten'},
+  {c:'make',t:'Cheese',h:'Curds, cultures, rennet, and time. Every cheese on earth is a variation on the same short list of decisions.',w:'how cheese is made science explained',r:'cheesemaking'},
+  {c:'make',t:'Whisky & Barrel Ageing',h:'Distillation concentrates; the barrel does the rest. Wood chemistry supplies most of the colour and much of the flavour.',w:'whisky distillation barrel aging explained',r:'whisky'},
+  {c:'make',t:'Pattern Welded Steel',h:'Damascus blades and the metallurgy of folding. The mythology is thick, and the real science is better.',w:'Damascus steel pattern welding metallurgy explained',r:'Damascus steel'},
+  {c:'make',t:'Glassblowing',h:'Glass is not a solid or a liquid in the usual sense. Working it is a race against its own cooling curve.',w:'glassblowing explained glass science',r:'glassblowing'},
+  {c:'make',t:'Ceramics & Glaze',h:'Clay chemistry, kiln temperature, and glazes that are essentially engineered glass, fused on in a controlled fire.',w:'ceramics glaze chemistry kiln explained',r:'ceramic glaze'},
+  {c:'make',t:'Japanese Joinery',h:'Timber joints so precise they hold buildings together for centuries with no nails, no glue, and no fasteners.',w:'Japanese joinery woodworking explained',r:'Japanese carpentry'},
+  {c:'make',t:'Indigo & Natural Dyes',h:'Indigo is not water soluble until you chemically reduce it. The colour appears in the air, after the cloth comes out.',w:'indigo dyeing chemistry explained natural dyes',r:'indigo dye'},
+
+  // SPRT
+  {c:'sprt',t:'Expected Goals (xG)',h:'A shot quality model built from historical conversion rates. It changed how clubs value chances over outcomes.',w:'expected goals xG football model explained',r:'expected goals'},
+  {c:'sprt',t:'Moneyball & Sabermetrics',h:'The original story of finding market inefficiencies with statistics, and what happened once everyone else caught on.',w:'Moneyball sabermetrics explained',r:'sabermetrics'},
+  {c:'sprt',t:'Marginal Gains',h:'One percent improvements everywhere. Genuinely effective in cycling, and genuinely overused as a business metaphor.',w:'aggregation of marginal gains Team Sky explained',r:'aggregation of marginal gains'},
+  {c:'sprt',t:'Periodisation & Training Load',h:'Stress, adapt, recover, repeat. Get the ordering wrong and you get overtraining instead of progress.',w:'training periodization sports science explained',r:'sports periodization'},
+  {c:'sprt',t:'VO2 Max & Lactate Threshold',h:'The two numbers that largely determine endurance performance, and what actually moves them.',w:'VO2 max lactate threshold explained',r:'VO2 max'},
+  {c:'sprt',t:'The Bosman Ruling',h:'One court case in 1995 rewrote football\u2019s transfer market and player power permanently.',w:'Bosman ruling football explained',r:'Bosman ruling'},
+  {c:'sprt',t:'Tactical Evolution in Football',h:'From WM to catenaccio to gegenpressing to positional play. Tactics are a conversation across generations.',w:'football tactics evolution gegenpressing positional play explained',r:'formation association football'},
+  {c:'sprt',t:'Elo & Rating Systems',h:'Built for chess, now used for football, esports, and matchmaking. A tidy Bayesian update in disguise.',w:'Elo rating system explained',r:'Elo rating system'},
+  {c:'sprt',t:'Home Advantage',h:'Real, measurable, and mostly not what fans assume. Empty stadium seasons handed researchers a natural experiment.',w:'home advantage sports referee bias explained',r:'home advantage'},
+  {c:'sprt',t:'Biomechanics',h:'Force plates, kinematics, and why the most efficient technique is often the ugliest looking one.',w:'sports biomechanics explained',r:'sports biomechanics'},
+  {c:'sprt',t:'Doping & Detection',h:'The chemistry, the biological passport, and the permanent arms race between testers and cheats.',w:'doping detection biological passport explained',r:'doping in sport'},
+  {c:'sprt',t:'Injury Prediction Models',h:'Workload data, ACWR, and the reason most published injury models collapse on a new squad.',w:'football injury prediction workload ACWR explained',r:'sports injury'},
+
+  // HIST
+  {c:'hist',t:'The Great Emu War',h:'In 1932 Australia sent soldiers with machine guns against emus. The emus were largely unbothered.',w:'Great Emu War 1932 documentary',r:'Emu War'},
+  {c:'hist',t:'History of Spices',h:'Pepper and nutmeg once justified empires, monopolies, wars, and voyages that redrew the world.',w:'history of the spice trade documentary',r:'spice trade'},
+  {c:'hist',t:'The Printing Press',h:'Gutenberg did not just make books cheaper. He changed who was allowed to have ideas in public.',w:'Gutenberg printing press impact explained',r:'printing press'},
+  {c:'hist',t:'The Phantom Time Hypothesis',h:'A fringe claim that roughly three centuries of the early medieval calendar were fabricated. Wrong, but instructive about how chronology gets verified.',w:'phantom time hypothesis debunked explained',r:'phantom time hypothesis'},
+  {c:'hist',t:'The Bronze Age Collapse',h:'Around 1177 BC several advanced civilisations fell within decades. The cause is still argued over.',w:'Bronze Age collapse 1177 BC explained',r:'Late Bronze Age collapse'},
+  {c:'hist',t:'The Antikythera Mechanism',h:'A geared analogue computer from roughly 100 BC that predicted eclipses. Nothing that complex reappears for a thousand years.',w:'Antikythera mechanism explained',r:'Antikythera mechanism'},
+  {c:'hist',t:'The Library of Alexandria',h:'It did not burn down in one dramatic night. The slow version of how knowledge is lost is far more sobering.',w:'Library of Alexandria destruction explained',r:'Library of Alexandria'},
+  {c:'hist',t:'The Manhattan Project',h:'The physics, the industrial scale, and the ethics the physicists themselves could not agree on.',w:'Manhattan Project documentary explained',r:'Manhattan Project'},
+  {c:'hist',t:'The Dancing Plague of 1518',h:'Hundreds of people in Strasbourg danced for weeks, some to death. Mass psychogenic illness is real and recurring.',w:'dancing plague 1518 explained',r:'dancing plague of 1518'},
+  {c:'hist',t:'The Radium Girls',h:'Factory workers painted watch dials with radium and were told to lick the brushes. Their lawsuit built modern labour safety law.',w:'Radium Girls history explained',r:'Radium Girls'},
+  {c:'hist',t:'The Great Molasses Flood',h:'A tank burst in Boston in 1919 and a wave of molasses killed twenty one people. The engineering negligence is the real story.',w:'Great Molasses Flood 1919 explained',r:'Great Molasses Flood'},
+  {c:'hist',t:'Cargo Cults',h:'Post war islanders built runways and wooden radios expecting the planes to return. A parable people cite constantly and understand poorly.',w:'cargo cult history explained',r:'cargo cult'},
+
+  // RSCH
+  {c:'rsch',t:'The Replication Crisis',h:'Large fractions of published findings fail to replicate. Psychology took the first hit; it is not alone.',w:'replication crisis science explained',r:'replication crisis'},
+  {c:'rsch',t:'p-hacking',h:'Slice the data enough ways and something crosses p < 0.05. Usually not fraud, just a garden of forking paths.',w:'p-hacking garden of forking paths explained',r:'data dredging'},
+  {c:'rsch',t:'How Peer Review Works',h:'What it actually catches, what it never could, and why reviewers are unpaid strangers with a spare weekend.',w:'how peer review works and fails explained',r:'peer review'},
+  {c:'rsch',t:'How to Read a Paper',h:'Abstract, then figures, then methods. Methods are where the claims either hold or quietly fall apart.',w:'how to read a scientific paper effectively',r:'scientific literature'},
+  {c:'rsch',t:'Randomised Controlled Trials',h:'Why randomisation is the strongest tool we have for causation, and where it still misleads.',w:'randomized controlled trial explained',r:'randomized controlled trial'},
+  {c:'rsch',t:'Causal Inference',h:'Correlation is not causation, but there are formal routes from one to the other. Confounders, colliders, and DAGs.',w:'causal inference DAG confounder collider explained',r:'causal inference'},
+  {c:'rsch',t:'Publication Bias',h:'Null results do not get published, so the literature is a survivor pool. The funnel plot is how you catch it.',w:'publication bias file drawer problem explained',r:'publication bias'},
+  {c:'rsch',t:'Meta-analysis',h:'Pooling many studies into one estimate. Powerful, and only ever as good as the studies it swallows.',w:'meta analysis systematic review explained',r:'meta-analysis'},
+  {c:'rsch',t:'Preregistration',h:'State the hypothesis and analysis before you see the data. A simple fix that removes an entire class of self deception.',w:'preregistration open science explained',r:'preregistration'},
+  {c:'rsch',t:'Statistical Power',h:'Underpowered studies do not just miss real effects, they also inflate the ones they do find.',w:'statistical power sample size explained',r:'power statistics'},
+  {c:'rsch',t:'Survivorship Bias',h:'Wald\u2019s bombers: armour the parts with no bullet holes, because the planes hit there never came back.',w:'survivorship bias Abraham Wald explained',r:'survivorship bias'},
+  {c:'rsch',t:'The Prosecutor\u2019s Fallacy',h:'Confusing the probability of the evidence given innocence with the probability of innocence given the evidence. It has jailed people.',w:"prosecutor's fallacy base rate explained",r:"prosecutor's fallacy"},
+
+  // ECON
+  {c:'econ',t:'Game Theory',h:'The mathematics of choosing when the best move depends on what everyone else chooses.',w:'game theory explained introduction',r:'game theory'},
+  {c:'econ',t:'The Prisoner\u2019s Dilemma',h:'Two rational players both defect and both lose. Repeat the game and cooperation can claw its way back.',w:"prisoner's dilemma tit for tat explained",r:"prisoner's dilemma"},
+  {c:'econ',t:'Nash Equilibrium',h:'A state where nobody improves by changing strategy alone. Notably, it does not have to be good for anyone.',w:'Nash equilibrium explained',r:'Nash equilibrium'},
+  {c:'econ',t:'Schelling Points',h:'Without communicating, people converge on the obvious answer. Coordination often runs on shared salience, not agreement.',w:'Schelling focal point explained',r:'focal point game theory'},
+  {c:'econ',t:'Tragedy of the Commons',h:'Individually rational use, collectively ruinous. Ostrom then showed communities solve it far more often than the theory predicted.',w:'tragedy of the commons Ostrom explained',r:'tragedy of the commons'},
+  {c:'econ',t:'Moral Hazard',h:'Insulate someone from the downside and their appetite for risk changes. It explains bailouts, insurance, and a lot of workplaces.',w:'moral hazard principal agent problem explained',r:'moral hazard'},
+  {c:'econ',t:'Comparative Advantage',h:'Trade helps even when one side is better at everything. The most counterintuitive result in economics.',w:'comparative advantage Ricardo explained',r:'comparative advantage'},
+  {c:'econ',t:'Auction Theory',h:'Second price auctions, the winner\u2019s curse, and the design behind every ad you have ever been served.',w:'auction theory second price winners curse explained',r:'auction theory'},
+  {c:'econ',t:'How Money Is Created',h:'Mostly by commercial banks issuing loans, not by printing. Inflation makes far more sense once you know this.',w:'how money is created banks loans explained',r:'money creation'},
+  {c:'econ',t:'Network Effects',h:'A product improves as more people use it, which makes it very hard to dislodge. The core moat of the platform era.',w:'network effects explained business',r:'network effect'},
+  {c:'econ',t:'Costly Signalling',h:'A signal is only credible if faking it would hurt. Peacock tails, degrees, and expensive rings, on one theory.',w:'costly signalling theory explained',r:'signalling economics'},
+  {c:'econ',t:'Mechanism Design',h:'Game theory in reverse: pick the outcome you want, then design the rules that make it the rational one.',w:'mechanism design explained',r:'mechanism design'},
+];
+
+const watchHref = q => 'https://www.youtube.com/results?search_query=' + encodeURIComponent(q);
+const readHref  = q => 'https://en.wikipedia.org/w/index.php?search=' + encodeURIComponent(q);
+
+/* safe storage: falls back to memory if the browser blocks it */
+const store = (() => {
+  const KEY = 'curiosity-catalog:done';
+  let mem = {};
+  let ok = true;
+  try {
+    const probe = '__cc__';
+    window.localStorage.setItem(probe, '1');
+    window.localStorage.removeItem(probe);
+  } catch (e) { ok = false; }
+
+  return {
+    load(){
+      if (!ok) return mem;
+      try { return JSON.parse(window.localStorage.getItem(KEY) || '{}'); }
+      catch (e) { return {}; }
+    },
+    save(state){
+      mem = state;
+      if (!ok) return;
+      try { window.localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* quota or blocked */ }
+    }
+  };
+})();
+
+let done = store.load();
+
+const main = document.getElementById('main');
+const nav = document.getElementById('nav');
+
+sections.forEach(sec => {
+  const a = document.createElement('a');
+  a.href = '#' + sec.k;
+  a.dataset.key = sec.k;
+  a.textContent = sec.n + ' \u00b7 ' + sec.l;
+  nav.appendChild(a);
+
+  const items = topics.filter(t => t.c === sec.k);
+  const shelf = document.createElement('section');
+  shelf.className = 'shelf';
+  shelf.id = sec.k;
+  shelf.innerHTML = `
+    <div class="shelf-head">
+      <span class="shelf-numeral">${sec.n}</span>
+      <h2 class="shelf-name">${sec.name}</h2>
+      <span class="shelf-count">${items.length} entries</span>
+      <span class="shelf-rule"></span>
+    </div>
+    <p class="shelf-blurb">${sec.b}</p>
+    <div class="shelf-grid"></div>`;
+  main.appendChild(shelf);
+
+  const grid = shelf.querySelector('.shelf-grid');
+  items.forEach((t, i) => {
+    t.code = sec.l + '.' + String(i + 1).padStart(2, '0');
+    const card = document.createElement('article');
+    card.className = 'card' + (done[t.code] ? ' done' : '');
+    card.style.setProperty('--cat', `var(--${sec.k})`);
+    card.dataset.code = t.code;
+    card.dataset.search = (t.t + ' ' + t.h + ' ' + sec.name + ' ' + sec.l).toLowerCase();
+    card.innerHTML = `
+      <span class="card-dot"></span>
+      <div class="card-code">${t.code}</div>
+      <h3 class="card-title">${t.t}</h3>
+      <p class="card-hook">${t.h}</p>
+      <div class="card-links">
+        <a class="chip chip-watch" href="${watchHref(t.w)}" target="_blank" rel="noopener">Watch &#9656;</a>
+        <a class="chip chip-read" href="${readHref(t.r)}" target="_blank" rel="noopener">Read &#9656;</a>
+        <button class="mark" type="button" aria-pressed="${!!done[t.code]}" aria-label="Mark ${t.t} as done">&#10003;</button>
+      </div>`;
+    grid.appendChild(card);
+  });
+});
+
+document.getElementById('metaLine').textContent =
+  `${topics.length} entries \u00b7 ${sections.length} sections \u00b7 no prerequisites`;
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.card').forEach(c => io.observe(c));
+
+/* active section in nav */
+const navLinks = Object.fromEntries([...nav.querySelectorAll('a')].map(a => [a.dataset.key, a]));
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* keeps the current drawer visible in the scrolling nav strip, without moving the page */
+function centerInNav(link){
+  const target = link.offsetLeft - (nav.clientWidth / 2) + (link.clientWidth / 2);
+  nav.scrollTo({ left: Math.max(0, target), behavior: prefersReduced ? 'auto' : 'smooth' });
+}
+
+const spy = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      Object.values(navLinks).forEach(a => a.classList.remove('active'));
+      const link = navLinks[e.target.id];
+      if (link) { link.classList.add('active'); centerInNav(link); }
+    }
+  });
+}, { rootMargin: '-50px 0px -70% 0px' });
+document.querySelectorAll('.shelf').forEach(s => spy.observe(s));
+
+/* progress */
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+function updateProgress(){
+  const n = Object.values(done).filter(Boolean).length;
+  progressBar.style.width = (n / topics.length * 100) + '%';
+  progressText.textContent = `${n} of ${topics.length} marked off`;
+}
+updateProgress();
+
+/* mark done */
+main.addEventListener('click', e => {
+  const btn = e.target.closest('.mark');
+  if (!btn) return;
+  const card = btn.closest('.card');
+  const code = card.dataset.code;
+  if (done[code]) { delete done[code]; } else { done[code] = 1; }
+  card.classList.toggle('done', !!done[code]);
+  btn.setAttribute('aria-pressed', !!done[code]);
+  store.save(done);
+  updateProgress();
+  applyFilters();
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  done = {};
+  store.save(done);
+  document.querySelectorAll('.card').forEach(c => {
+    c.classList.remove('done');
+    c.querySelector('.mark').setAttribute('aria-pressed', 'false');
+  });
+  updateProgress();
+  applyFilters();
+});
+
+/* filters */
+const search = document.getElementById('search');
+const noResults = document.getElementById('noResults');
+let view = 'all';
+
+function applyFilters(){
+  const q = search.value.trim().toLowerCase();
+  let total = 0;
+  document.querySelectorAll('.shelf').forEach(shelf => {
+    let shown = 0;
+    shelf.querySelectorAll('.card').forEach(card => {
+      const isDone = card.classList.contains('done');
+      const textHit = !q || card.dataset.search.includes(q);
+      const viewHit = view === 'all' || (view === 'done' ? isDone : !isDone);
+      const hit = textHit && viewHit;
+      card.classList.toggle('hidden', !hit);
+      if (hit) { card.classList.add('in'); shown++; }
+    });
+    shelf.classList.toggle('hidden', shown === 0);
+    total += shown;
+  });
+  noResults.classList.toggle('show', total === 0);
+}
+
+search.addEventListener('input', applyFilters);
+document.querySelectorAll('.seg button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.seg button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    view = btn.dataset.view;
+    applyFilters();
+  });
+});
+
+/* draw a card */
+const drawBtn = document.getElementById('drawBtn');
+const slip = document.getElementById('drawSlip');
+const slipCode = document.getElementById('slipCode');
+const slipTitle = document.getElementById('slipTitle');
+const slipHook = document.getElementById('slipHook');
+const slipWatch = document.getElementById('slipWatch');
+const slipRead = document.getElementById('slipRead');
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function renderSlip(t){
+  slipCode.textContent = t.code;
+  slipTitle.textContent = t.t;
+  slipHook.textContent = t.h;
+  slipWatch.href = watchHref(t.w);
+  slipRead.href = readHref(t.r);
+  slip.classList.add('show');
+}
+
+let last = null;
+function draw(){
+  const pool = topics.filter(t => !done[t.code]);
+  const from = pool.length ? pool : topics;
+  let pick = from[Math.floor(Math.random() * from.length)];
+  if (from.length > 1) { while (pick === last) pick = from[Math.floor(Math.random() * from.length)]; }
+  last = pick;
+  if (reduce) { renderSlip(pick); revealSlip(); return; }
+  let i = 0;
+  const timer = setInterval(() => {
+    renderSlip(topics[Math.floor(Math.random() * topics.length)]);
+    if (++i >= 7) { clearInterval(timer); renderSlip(pick); revealSlip(); }
+  }, 60);
+}
+function revealSlip(){
+  if (window.innerWidth <= 620) {
+    slip.scrollIntoView({ block:'nearest', behavior: reduce ? 'auto' : 'smooth' });
+  }
+}
+drawBtn.addEventListener('click', draw);
+
+/* back to top */
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  toTop.classList.toggle('show', window.scrollY > 700);
+}, { passive:true });
+toTop.addEventListener('click', () => window.scrollTo({ top:0, behavior: reduce ? 'auto' : 'smooth' }));
+
+/* keyboard */
+document.addEventListener('keydown', e => {
+  const typing = ['INPUT','TEXTAREA'].includes(document.activeElement.tagName);
+  if (e.key === '/' && !typing) { e.preventDefault(); search.focus(); }
+  else if (e.key === 'Escape' && typing) { search.value = ''; applyFilters(); search.blur(); }
+  else if ((e.key === 'r' || e.key === 'R') && !typing) { draw(); }
+});
+</script>
+</body>
+</html>
