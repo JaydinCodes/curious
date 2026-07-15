@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\\(Get-Content index.html | Measure-Object -Line\\).Lines)",
+      "WebFetch(domain:upstash.com)",
+      "WebFetch(domain:community.vercel.com)",
+      "WebFetch(domain:vercel.com)",
+      "PowerShell(npm view @upstash/redis version)",
+      "PowerShell(node --version)",
+      "PowerShell(npm install --no-audit --no-fund)",
+      "PowerShell(node --check api/progress.js)",
+      "PowerShell(if \\($?\\) { \"api syntax OK\" })",
+      "PowerShell(node \"C:\\\\Users\\\\Bron\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Bron-projects-curious\\\\59d8ecce-c447-4cfa-856f-e706879d86c7\\\\scratchpad\\\\verify.mjs\")"
+    ]
+  }
+}

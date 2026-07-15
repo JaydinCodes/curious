@@ -315,9 +315,69 @@
     .chip{ padding:8px 8px; }
   }
 
+  /* ---------- PROGRESS+ : pins, streak, hint, sync ---------- */
+  .stat-line{
+    display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem;
+    letter-spacing:.08em; color:var(--text-soft); margin-top:8px;
+  }
+  .hint-line{
+    display:flex; align-items:center; gap:10px; max-width:520px;
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.06em;
+    color:var(--teal); margin:16px 0 0; transition:opacity .6s ease;
+  }
+  .hint-x{
+    background:none; border:none; cursor:pointer; padding:2px 6px;
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--text-soft);
+  }
+  .hint-x:hover{ color:var(--brass-bright); }
+
+  .sync-panel{
+    display:none; margin-top:12px; padding:14px 16px; max-width:520px;
+    border:1px solid rgba(184,135,61,.5);
+    font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--text-soft);
+  }
+  .sync-panel.show{ display:block; }
+  .sync-row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0; }
+  .sync-note{ margin:6px 0; font-size:.68rem; line-height:1.55; }
+  .sync-code{
+    color:var(--brass-bright); letter-spacing:.06em; word-break:break-all;
+    -webkit-user-select:all; user-select:all;
+  }
+  .sync-btn{
+    background:transparent; border:1px solid rgba(184,135,61,.5); cursor:pointer;
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--text-soft); padding:9px 12px; min-height:38px;
+    transition:color .15s ease,border-color .15s ease;
+  }
+  .sync-btn:hover{ color:var(--brass-bright); border-color:var(--brass-bright); }
+  .sync-input{
+    flex:1 1 200px; background:transparent; border:1px solid rgba(184,135,61,.5);
+    color:var(--text); font-family:'IBM Plex Mono',monospace; font-size:16px;
+    padding:9px 12px; min-height:38px; border-radius:0;
+    -webkit-appearance:none; appearance:none;
+  }
+  .sync-input:focus{ border-color:var(--brass-bright); outline:none; }
+
+  .pin{
+    background:none; border:1px solid var(--card-line); cursor:pointer;
+    width:34px; height:34px; line-height:1; padding:0; flex:0 0 auto;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--ink-soft);
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .card.pinned .pin{ background:var(--brass); color:var(--card-stock); border-color:var(--brass); }
+  @media (hover:hover) and (pointer:fine){
+    .pin:hover{ border-color:var(--brass); color:var(--brass); }
+  }
+  @media (max-width:620px){
+    .pin{ width:42px; height:42px; }
+    .sync-panel,.hint-line{ max-width:none; }
+  }
+
   @media print{
     body{ background:#fff; color:#000; }
-    .drawer-nav,.controls,.draw-slip,.to-top,.progress-wrap,.mark{ display:none !important; }
+    .drawer-nav,.controls,.draw-slip,.to-top,.progress-wrap,.mark,.pin,.hint-line,.sync-panel{ display:none !important; }
     .card{ opacity:1 !important; transform:none !important; break-inside:avoid; border-color:#999; }
     .shelf-grid{ grid-template-columns:repeat(2,1fr); }
     h1,.shelf-name{ color:#000; }
@@ -371,7 +431,7 @@
 
 <footer>
   <p>Watch opens a YouTube search. Read opens Wikipedia, which is the doorway and not the destination: follow its reference list out.</p>
-  <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks are saved in this browser.</p>
+  <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks are saved in this browser; sync (under the progress bar) carries them between devices.</p>
 </footer>
 
 <script>
@@ -654,10 +714,12 @@ const topics = [
 const watchHref = q => 'https://www.youtube.com/results?search_query=' + encodeURIComponent(q);
 const readHref  = q => 'https://en.wikipedia.org/w/index.php?search=' + encodeURIComponent(q);
 
-/* safe storage: falls back to memory if the browser blocks it */
+/* safe storage: falls back to memory if the browser blocks it.
+   generic get/set added for the progress+ layer; 'done' keeps its
+   original key so existing installs keep their marks. */
 const store = (() => {
-  const KEY = 'curiosity-catalog:done';
-  let mem = {};
+  const NS = 'curiosity-catalog:';
+  const mem = {};
   let ok = true;
   try {
     const probe = '__cc__';
@@ -665,17 +727,23 @@ const store = (() => {
     window.localStorage.removeItem(probe);
   } catch (e) { ok = false; }
 
+  const get = (key, fallback) => {
+    if (!ok) return (key in mem) ? mem[key] : fallback;
+    try {
+      const raw = window.localStorage.getItem(NS + key);
+      return raw == null ? fallback : JSON.parse(raw);
+    } catch (e) { return fallback; }
+  };
+  const set = (key, value) => {
+    mem[key] = value;
+    if (!ok) return;
+    try { window.localStorage.setItem(NS + key, JSON.stringify(value)); } catch (e) { /* quota or blocked */ }
+  };
+
   return {
-    load(){
-      if (!ok) return mem;
-      try { return JSON.parse(window.localStorage.getItem(KEY) || '{}'); }
-      catch (e) { return {}; }
-    },
-    save(state){
-      mem = state;
-      if (!ok) return;
-      try { window.localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* quota or blocked */ }
-    }
+    get, set,
+    load(){ return get('done', {}); },
+    save(state){ set('done', state); }
   };
 })();
 
@@ -768,18 +836,21 @@ function updateProgress(){
 }
 updateProgress();
 
-/* mark done */
+/* mark done — a topic can render twice (its shelf + the pinned shelf),
+   so update every instance of the card, not just the one clicked */
 main.addEventListener('click', e => {
   const btn = e.target.closest('.mark');
   if (!btn) return;
-  const card = btn.closest('.card');
-  const code = card.dataset.code;
+  const code = btn.closest('.card').dataset.code;
   if (done[code]) { delete done[code]; } else { done[code] = 1; }
-  card.classList.toggle('done', !!done[code]);
-  btn.setAttribute('aria-pressed', !!done[code]);
+  document.querySelectorAll(`.card[data-code="${code}"]`).forEach(c => {
+    c.classList.toggle('done', !!done[code]);
+    c.querySelector('.mark').setAttribute('aria-pressed', !!done[code]);
+  });
   store.save(done);
   updateProgress();
   applyFilters();
+  if (window.CC) CC.onMark(code, !!done[code]);
 });
 
 document.getElementById('resetBtn').addEventListener('click', () => {
@@ -791,6 +862,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   });
   updateProgress();
   applyFilters();
+  if (window.CC) CC.onReset();
 });
 
 /* filters */
@@ -848,7 +920,9 @@ function renderSlip(t){
 
 let last = null;
 function draw(){
-  const pool = topics.filter(t => !done[t.code]);
+  /* the progress+ layer may offer a biased pool (least-explored drawer) */
+  const bias = window.CC ? CC.drawPool() : null;
+  const pool = (bias && bias.length) ? bias : topics.filter(t => !done[t.code]);
   const from = pool.length ? pool : topics;
   let pick = from[Math.floor(Math.random() * from.length)];
   if (from.length > 1) { while (pick === last) pick = from[Math.floor(Math.random() * from.length)]; }
@@ -881,6 +955,504 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'Escape' && typing) { search.value = ''; applyFilters(); search.blur(); }
   else if ((e.key === 'r' || e.key === 'R') && !typing) { draw(); }
 });
+</script>
+
+<script>
+/* ---------------------------------------------------------------------------
+   progress+ : pins, last-touched, streak, neglected-drawer hint, device sync.
+   A separate enhancement layer: if anything in here throws, the catalog above
+   keeps working untouched. Script 1 reaches in only through window.CC, and
+   only when it exists.
+
+   Sync model: localStorage stays the source of truth and the site never
+   blocks on the network. The KV record is a carbon copy that devices
+   union-merge through: done unions, lastTouched takes the newer timestamp
+   per topic, pins union capped at three (most recent win), streak follows
+   the newer day. The server is last-write-wins on the whole record;
+   merging BEFORE pushing is what stops one device from erasing another's
+   marks. The accepted cost: removals (un-marking, "clear all") don't
+   propagate reliably — a device that still holds a mark locally will
+   re-contribute it on its next sync. For a personal tracker, resurrecting
+   a mark beats silently losing one. updatedAt is display-only.
+--------------------------------------------------------------------------- */
+(() => {
+'use strict';
+
+/* ---- pure logic (DOM-free; also exercised by tests) CC:PURE ---- */
+const P = {
+  todayStr(d = new Date()){
+    const p = n => String(n).padStart(2, '0');
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  },
+  yesterdayStr(d = new Date()){
+    return P.todayStr(new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1));
+  },
+  /* advance streak state for one mark-done action happening now */
+  streakMark(s, now = new Date()){
+    const today = P.todayStr(now);
+    const current = s && s.lastDay === today ? s.current
+      : s && s.lastDay === P.yesterdayStr(now) ? s.current + 1
+      : 1;
+    return { current, best: Math.max(current, (s && s.best) || 0), lastDay: today };
+  },
+  /* what to display; a lapsed streak just reads as 0, nothing louder */
+  streakNow(s, now = new Date()){
+    if (!s) return { current: 0, best: 0 };
+    const live = s.lastDay === P.todayStr(now) || s.lastDay === P.yesterdayStr(now);
+    return { current: live ? s.current : 0, best: s.best || 0 };
+  },
+  mergeStreak(a, b){
+    if (!a) return b || null;
+    if (!b) return a;
+    const base = a.lastDay > b.lastDay ? a
+      : b.lastDay > a.lastDay ? b
+      : { current: Math.max(a.current, b.current), lastDay: a.lastDay };
+    return { current: base.current, best: Math.max(a.best || 0, b.best || 0, base.current), lastDay: base.lastDay };
+  },
+  mergePins(a, b){
+    const m = {};
+    for (const k of Object.keys(a || {})) m[k] = a[k];
+    for (const k of Object.keys(b || {})) m[k] = Math.max(m[k] || 0, b[k]);
+    const keep = Object.keys(m).sort((x, y) => m[y] - m[x]).slice(0, 3);
+    const out = {};
+    keep.sort((x, y) => m[x] - m[y]).forEach(k => { out[k] = m[k]; });
+    return out;
+  },
+  /* canonical JSON of a flat map, for change detection */
+  cj(o){ return o == null ? 'null' : JSON.stringify(o, Object.keys(o).sort()); },
+  mergeRecords(local, remote){
+    const doneM = Object.assign({}, remote.done || {}, local.done || {});
+    const touchedM = {};
+    for (const k of Object.keys(local.touched || {})) touchedM[k] = local.touched[k];
+    for (const k of Object.keys(remote.touched || {})) touchedM[k] = Math.max(touchedM[k] || 0, remote.touched[k]);
+    const rec = {
+      done: doneM,
+      touched: touchedM,
+      pins: P.mergePins(local.pins, remote.pins),
+      streak: P.mergeStreak(local.streak || null, remote.streak || null)
+    };
+    const parts = ['done', 'touched', 'pins', 'streak'];
+    const differs = base => parts.some(f => P.cj(rec[f]) !== P.cj(f === 'streak' ? base[f] || null : base[f] || {}));
+    return { rec, changedLocal: differs(local), changedRemote: differs(remote) };
+  },
+  /* lowest done-ratio drawer; ties broken by fewest touched; finished drawers skipped */
+  neglected(sectionList, topicList, doneMap, touchedMap){
+    let best = null;
+    for (const sec of sectionList){
+      const items = topicList.filter(t => t.c === sec.k);
+      if (!items.length) continue;
+      const d = items.filter(t => doneMap[t.code]).length;
+      if (d === items.length) continue;
+      const touch = items.filter(t => touchedMap[t.code]).length;
+      const ratio = d / items.length;
+      if (!best || ratio < best.ratio || (ratio === best.ratio && touch < best.touch)){
+        best = { sec, ratio, done: d, total: items.length, touch };
+      }
+    }
+    return best;
+  },
+  normalizeCode(raw){
+    if (typeof raw !== 'string') return null;
+    const c = raw.trim().toLowerCase().replace(/[-\s]/g, '');
+    return /^[a-f0-9]{32}$/.test(c) ? c : null;
+  },
+  groupCode(code){ return code.replace(/(.{4})(?=.)/g, '$1-'); }
+};
+/* ---- CC:END-PURE ---- */
+
+try {
+
+  const touched = store.get('touched', {});
+  const pins = store.get('pins', {});
+  let streak = store.get('streak', null);
+  const syncCfg = store.get('sync', null) || {};
+
+  const el = html => {
+    const t = document.createElement('template');
+    t.innerHTML = html.trim();
+    return t.content.firstElementChild;
+  };
+  const ssGet = k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } };
+  const ssSet = (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} };
+
+  /* ---------------- pins ---------------- */
+
+  const cardByCode = {};
+  document.querySelectorAll('.card').forEach(c => { cardByCode[c.dataset.code] = c; });
+
+  Object.values(cardByCode).forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'pin';
+    b.textContent = '⚑';
+    b.setAttribute('aria-pressed', 'false');
+    b.setAttribute('aria-label', 'Pin ' + c.querySelector('.card-title').textContent + ' as currently exploring');
+    c.querySelector('.card-links').appendChild(b);
+  });
+
+  const pinnedShelf = el(`<section class="shelf hidden" id="pinned">
+    <div class="shelf-head">
+      <span class="shelf-numeral">NOW</span>
+      <h2 class="shelf-name">Currently exploring</h2>
+      <span class="shelf-count" data-el="count"></span>
+      <span class="shelf-rule"></span>
+    </div>
+    <p class="shelf-blurb" data-el="note"></p>
+    <div class="shelf-grid" data-el="grid"></div>
+  </section>`);
+  main.insertBefore(pinnedShelf, main.firstChild);
+  const pinGrid = pinnedShelf.querySelector('[data-el="grid"]');
+  const pinCount = pinnedShelf.querySelector('[data-el="count"]');
+  const pinNote = pinnedShelf.querySelector('[data-el="note"]');
+  const defaultPinNote = 'Up to three drawers open at once. Pin a fourth and the oldest goes back.';
+  pinNote.textContent = defaultPinNote;
+  let bumpTimer = 0;
+
+  function renderPins(){
+    document.querySelectorAll('.card').forEach(c => {
+      const on = !!pins[c.dataset.code];
+      c.classList.toggle('pinned', on);
+      const b = c.querySelector('.pin');
+      if (b) b.setAttribute('aria-pressed', String(on));
+    });
+    const codes = Object.keys(pins).sort((a, b) => pins[a] - pins[b]);
+    pinGrid.innerHTML = '';
+    codes.forEach(code => {
+      const orig = cardByCode[code];
+      if (!orig) return;
+      const clone = orig.cloneNode(true);
+      clone.classList.add('in');
+      clone.classList.remove('hidden');
+      pinGrid.appendChild(clone);
+    });
+    pinCount.textContent = codes.length ? codes.length + ' of 3 slots' : '';
+    applyFilters(); /* re-evaluates visibility for clones; hides the shelf when empty */
+  }
+
+  function showBump(code){
+    const t = topics.find(x => x.code === code);
+    pinNote.textContent = 'Returned “' + (t ? t.t : code) + '” to its drawer to make room.';
+    clearTimeout(bumpTimer);
+    bumpTimer = setTimeout(() => { pinNote.textContent = defaultPinNote; }, 5000);
+  }
+
+  main.addEventListener('click', e => {
+    const b = e.target.closest('.pin');
+    if (!b) return;
+    const code = b.closest('.card').dataset.code;
+    let bumped = null;
+    if (pins[code]){
+      delete pins[code];
+    } else {
+      pins[code] = Date.now();
+      const order = Object.keys(pins).sort((x, y) => pins[x] - pins[y]);
+      if (order.length > 3){ bumped = order[0]; delete pins[bumped]; }
+    }
+    store.set('pins', pins);
+    renderPins();
+    if (bumped) showBump(bumped);
+    schedulePush();
+  });
+
+  /* ---------------- last touched ---------------- */
+
+  function touch(code){
+    touched[code] = Date.now();
+    store.set('touched', touched);
+    schedulePush();
+  }
+  main.addEventListener('click', e => {
+    const a = e.target.closest('a.chip');
+    if (!a) return;
+    const card = a.closest('.card');
+    if (card) touch(card.dataset.code);
+  });
+  [slipWatch, slipRead].forEach(a =>
+    a.addEventListener('click', () => { if (last) touch(last.code); }));
+
+  /* ---------------- streak + sync line ---------------- */
+
+  const statLine = el(`<div class="stat-line">
+    <span id="streakText"></span>
+    <button class="btn-reset" id="syncToggle" type="button">sync: off</button>
+  </div>`);
+  document.querySelector('.progress-wrap').appendChild(statLine);
+  const streakText = statLine.querySelector('#streakText');
+  const syncToggle = statLine.querySelector('#syncToggle');
+
+  function renderStreak(){
+    const s = P.streakNow(streak);
+    streakText.textContent = s.best === 0 ? ''
+      : s.current > 0 ? 'streak ' + s.current + 'd · best ' + s.best + 'd'
+      : 'best streak ' + s.best + 'd';
+  }
+
+  /* ---------------- sync ---------------- */
+
+  const panel = el(`<div class="sync-panel">
+    <div data-sync="off">
+      <p class="sync-note">Marks live in this browser. Sync copies them to a small cloud record so another device can pick them up &mdash; no account, just a code.</p>
+      <div class="sync-row">
+        <button class="sync-btn" data-act="start" type="button">Start syncing</button>
+        <span class="sync-note">or pair with a code from another device:</span>
+      </div>
+      <div class="sync-row">
+        <input class="sync-input" data-el="input" type="text" placeholder="paste sync code" aria-label="Sync code from another device" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button class="sync-btn" data-act="pair" type="button">Pair</button>
+      </div>
+      <p class="sync-note" data-el="err" hidden></p>
+    </div>
+    <div data-sync="on" hidden>
+      <p class="sync-note">Your sync code. Paste it on another device to share one set of marks:</p>
+      <div class="sync-row">
+        <span class="sync-code" data-el="code"></span>
+        <button class="sync-btn" data-act="copy" type="button">Copy</button>
+      </div>
+      <div class="sync-row">
+        <button class="sync-btn" data-act="now" type="button">Sync now</button>
+        <button class="sync-btn" data-act="off" type="button">Turn off</button>
+      </div>
+      <p class="sync-note">Anyone with this code can read or change these marks &mdash; it is a reading list, not a vault. Turning sync off here leaves the cloud copy; pasting the code again reconnects it.</p>
+    </div>
+  </div>`);
+  document.querySelector('.progress-wrap').appendChild(panel);
+  const errEl = panel.querySelector('[data-el="err"]');
+  const codeEl = panel.querySelector('[data-el="code"]');
+  const inputEl = panel.querySelector('[data-el="input"]');
+
+  let dirty = false, inflight = false, pushTimer = 0, retryDelay = 0;
+
+  const setStatus = s => { syncToggle.textContent = 'sync: ' + s; };
+  const fmtTime = ms => {
+    const d = new Date(ms);
+    return P.todayStr(d) === P.todayStr()
+      ? d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      : d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+  };
+  const record = () => ({ code: syncCfg.code, done, touched, pins, streak, updatedAt: Date.now() });
+
+  function api(url, opts){
+    const o = Object.assign({}, opts);
+    if (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) o.signal = AbortSignal.timeout(8000);
+    return fetch(url, o);
+  }
+
+  function markSynced(){
+    syncCfg.lastSyncAt = Date.now();
+    store.set('sync', syncCfg);
+    setStatus('synced ' + fmtTime(syncCfg.lastSyncAt));
+  }
+
+  /* debounced so a run of clicks becomes one write, never one per click */
+  function schedulePush(delay = 2000){
+    if (!syncCfg.code) return;
+    dirty = true;
+    clearTimeout(pushTimer);
+    pushTimer = setTimeout(flush, delay);
+  }
+
+  async function flush(){
+    if (!syncCfg.code || !dirty || inflight) return;
+    inflight = true; dirty = false; retryDelay = 0;
+    setStatus('syncing…');
+    try {
+      const r = await api('/api/progress', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(record())
+      });
+      if (!r.ok) throw new Error('http ' + r.status);
+      markSynced();
+    } catch (err) {
+      dirty = true; retryDelay = 30000;
+      setStatus('offline');
+    } finally {
+      inflight = false;
+      if (dirty){ clearTimeout(pushTimer); pushTimer = setTimeout(flush, retryDelay || 1000); }
+    }
+  }
+
+  /* apply merged remote state to the page */
+  function applyAll(){
+    document.querySelectorAll('.card').forEach(c => {
+      const code = c.dataset.code;
+      c.classList.toggle('done', !!done[code]);
+      const m = c.querySelector('.mark');
+      if (m) m.setAttribute('aria-pressed', String(!!done[code]));
+    });
+    updateProgress();
+    renderStreak();
+    renderPins(); /* also runs applyFilters() */
+  }
+
+  async function pull(){
+    if (!syncCfg.code) return;
+    setStatus('syncing…');
+    let remote;
+    try {
+      const r = await api('/api/progress?code=' + syncCfg.code);
+      if (!r.ok) throw new Error('http ' + r.status);
+      remote = await r.json();
+    } catch (err) {
+      setStatus('offline');
+      return;
+    }
+    const { rec, changedLocal, changedRemote } = P.mergeRecords({ done, touched, pins, streak }, remote);
+    if (changedLocal){
+      Object.assign(done, rec.done);
+      Object.assign(touched, rec.touched);
+      for (const k of Object.keys(pins)) delete pins[k]; /* the 3-pin cap can drop a local pin */
+      Object.assign(pins, rec.pins);
+      streak = rec.streak;
+      store.save(done);
+      store.set('touched', touched);
+      store.set('pins', pins);
+      store.set('streak', streak);
+      applyAll();
+    }
+    if (changedRemote){ dirty = true; flush(); } else { markSynced(); }
+  }
+
+  function renderSyncUI(){
+    const on = !!syncCfg.code;
+    panel.querySelector('[data-sync="off"]').hidden = on;
+    panel.querySelector('[data-sync="on"]').hidden = !on;
+    if (on) codeEl.textContent = P.groupCode(syncCfg.code);
+    if (!on) setStatus('off');
+    else if (syncCfg.lastSyncAt) setStatus('synced ' + fmtTime(syncCfg.lastSyncAt));
+    else setStatus('on');
+  }
+
+  const showErr = msg => { errEl.textContent = msg; errEl.hidden = false; };
+
+  syncToggle.addEventListener('click', () => panel.classList.toggle('show'));
+  panel.addEventListener('click', e => {
+    const btn = e.target.closest('[data-act]');
+    if (!btn) return;
+    const act = btn.dataset.act;
+    if (act === 'start'){
+      if (!window.crypto || !crypto.getRandomValues){ showErr('This browser cannot generate a secure code.'); return; }
+      const bytes = new Uint8Array(16);
+      crypto.getRandomValues(bytes);
+      syncCfg.code = Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('');
+      delete syncCfg.lastSyncAt;
+      store.set('sync', syncCfg);
+      errEl.hidden = true;
+      renderSyncUI();
+      schedulePush(0);
+    } else if (act === 'pair'){
+      const code = P.normalizeCode(inputEl.value);
+      if (!code){ showErr('That does not look like a sync code (32 letters and digits).'); return; }
+      syncCfg.code = code;
+      delete syncCfg.lastSyncAt;
+      store.set('sync', syncCfg);
+      inputEl.value = '';
+      errEl.hidden = true;
+      renderSyncUI();
+      pull();
+    } else if (act === 'copy'){
+      const grouped = P.groupCode(syncCfg.code);
+      const flash = () => { btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = 'Copy'; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(grouped).then(flash, () => {});
+      } else {
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(codeEl);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    } else if (act === 'now'){
+      pull();
+    } else if (act === 'off'){
+      clearTimeout(pushTimer);
+      dirty = false;
+      delete syncCfg.code;
+      delete syncCfg.lastSyncAt;
+      store.set('sync', syncCfg);
+      renderSyncUI();
+    }
+  });
+
+  /* flush pending changes when the tab goes away; keepalive lets it finish */
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && dirty && syncCfg.code){
+      try {
+        fetch('/api/progress', {
+          method: 'POST',
+          keepalive: true,
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(record())
+        });
+      } catch (err) {}
+    }
+  });
+  window.addEventListener('online', () => { if (syncCfg.code) pull(); });
+
+  /* ---------------- neglected-drawer hint ---------------- */
+
+  let hintSec = null, hintUsed = false, hintLine = null;
+  function initHint(){
+    if (ssGet('cc-hint-dismissed')) return;
+    if (!Object.keys(done).length) return; /* untouched catalog: nothing is neglected yet */
+    const n = P.neglected(sections, topics, done, touched);
+    if (!n) return;
+    hintSec = n.sec.k;
+    const msg = n.done === 0 && n.touch === 0
+      ? 'Haven’t touched ' + n.sec.name + ' yet — next draw pulls from there.'
+      : 'Least explored: ' + n.sec.name + ' (' + n.done + ' of ' + n.total + ' done) — next draw pulls from there.';
+    hintLine = el('<p class="hint-line"><span></span><button class="hint-x" type="button" aria-label="Dismiss hint">&times;</button></p>');
+    hintLine.querySelector('span').textContent = msg;
+    hintLine.querySelector('.hint-x').addEventListener('click', () => {
+      hintLine.remove();
+      hintSec = null;
+      ssSet('cc-hint-dismissed', '1');
+    });
+    document.querySelector('.controls').insertAdjacentElement('afterend', hintLine);
+  }
+
+  /* ---------------- wire-up ---------------- */
+
+  renderSyncUI();
+  renderStreak();
+  renderPins();
+  initHint();
+  if (syncCfg.code) pull();
+
+  window.CC = {
+    onMark(code, isDone){
+      if (isDone){
+        touched[code] = Date.now();
+        store.set('touched', touched);
+        streak = P.streakMark(streak);
+        store.set('streak', streak);
+        renderStreak();
+      }
+      schedulePush();
+    },
+    onReset(){
+      /* the cleared state pushes as-is; a device still holding marks locally
+         will union them back on its next sync — see README */
+      schedulePush(0);
+    },
+    drawPool(){
+      if (!hintSec || hintUsed) return null;
+      const pool = topics.filter(t => t.c === hintSec && !done[t.code]);
+      if (!pool.length) return null;
+      hintUsed = true; /* one biased draw, then back to normal */
+      if (hintLine){
+        hintLine.style.opacity = '0';
+        setTimeout(() => hintLine.remove(), 700);
+      }
+      return pool;
+    }
+  };
+
+} catch (err) {
+  /* the enhancement layer failing must never take the catalog with it */
+  console.warn('progress+ disabled:', err);
+}
+})();
 </script>
 </body>
 </html>
