@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "about": "Curated, human-verified resources per topic code. Keyed by code (e.g. MIND.01). Loaded at runtime by index.html and merged over the search fallback; any code without an entry keeps its Watch/Read search links. See CURATING.md for the schema and quality rubric, and run `npm run verify-links` after every change.",
+    "schemaVersion": 1,
+    "curatedSections": ["MIND"],
+    "knownVerifierWarnings": "britannica.com, newsinhealth.nih.gov, and aeon.co bot-wall or rate-limit automated checkers, so verify-links.js reports them as WARN. All three were confirmed to return HTTP 200 in a real browser on 2026-07-16 — WARN here means 'checker was blocked', not 'link is dead'."
+  },
+
+  "MIND.01": {
+    "note": "Article explains the effect and cites the source study; deeper is the original Norton/Mochon/Ariely paper. No video cleared the bar (no dedicated, rigorous explainer), so Watch stays on search.",
+    "article": {
+      "title": "The IKEA Effect",
+      "url": "https://thedecisionlab.com/biases/ikea-effect",
+      "source": "The Decision Lab",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "The IKEA effect: When labor leads to love (Norton, Mochon & Ariely, 2012)",
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=41121",
+      "type": "paper"
+    }
+  },
+
+  "MIND.02": {
+    "note": "Jarrett is the definitive 'the pop story is overhyped' piece; deeper is the Kilner & Lemon review (open access) that the hype critique rests on. Video left on search to avoid Ramachandran-style overclaiming.",
+    "article": {
+      "title": "Mirror Neurons: The Most Hyped Concept in Neuroscience?",
+      "url": "https://www.psychologytoday.com/us/blog/brain-myths/201212/mirror-neurons-the-most-hyped-concept-in-neuroscience",
+      "source": "Christian Jarrett, Psychology Today",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "What We Know Currently about Mirror Neurons (Kilner & Lemon, Current Biology 2013)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3898692/",
+      "type": "paper"
+    }
+  },
+
+  "MIND.03": {
+    "note": "Schwartz's own TED talk is the claim; Collins + the Scheibehenne meta-analysis are the replication reality (the jam-study effect is near zero on average). Pairing them is the honest version of this topic.",
+    "video": {
+      "title": "The paradox of choice",
+      "url": "https://www.youtube.com/watch?v=VO6XEQIsCoM",
+      "source": "TED (Barry Schwartz)",
+      "verifiedAt": "2026-07-16"
+    },
+    "article": {
+      "title": "Not the jam study again",
+      "url": "https://www.jasoncollins.blog/posts/not-the-jam-study-again",
+      "source": "Jason Collins",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload (Scheibehenne et al., 2010)",
+      "url": "https://scheibehenne.com/ScheibehenneGreifenederTodd2010.pdf",
+      "type": "paper"
+    }
+  },
+
+  "MIND.04": {
+    "note": "The hook already frames synchronicity as contested and 'pattern hunger'. Rather than a credulous Jung explainer, the curated Read is Shermer on patternicity — the skeptical mechanism critics point to. Left video on search.",
+    "article": {
+      "title": "Patternicity: Finding Meaningful Patterns in Meaningless Noise",
+      "url": "https://michaelshermer.com/sciam-columns/patternicity/",
+      "source": "Michael Shermer, Scientific American",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    }
+  },
+
+  "MIND.05": {
+    "note": "Neuroplasticity is heavily hyped; Britannica is a sober, non-salesy overview (avoids the 'rewire your brain' self-help genre). No video cleared the rigor bar, so Watch stays on search.",
+    "article": {
+      "title": "Neuroplasticity",
+      "url": "https://www.britannica.com/science/neuroplasticity",
+      "source": "Encyclopaedia Britannica",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    }
+  },
+
+  "MIND.06": {
+    "note": "Britannica for the concept; deeper is the founding Festinger & Carlsmith (1959) forced-compliance experiment (open PDF, MIT course page).",
+    "article": {
+      "title": "Cognitive dissonance",
+      "url": "https://www.britannica.com/science/cognitive-dissonance",
+      "source": "Encyclopaedia Britannica",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Cognitive consequences of forced compliance (Festinger & Carlsmith, 1959)",
+      "url": "https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Motivation/Festinger_Carlsmith_1959_Cognitive_consequences_of_forced_compliance.pdf",
+      "type": "paper"
+    }
+  },
+
+  "MIND.07": {
+    "note": "The catalog frames the statistical critique as the interesting half, so the curated Read is Jarry's 'probably not real' — the effect is largely reproduced by random data (autocorrelation). This is the whole point of the entry.",
+    "article": {
+      "title": "The Dunning-Kruger Effect Is Probably Not Real",
+      "url": "https://www.mcgill.ca/oss/article/critical-thinking/dunning-kruger-effect-probably-not-real",
+      "source": "Jonathan Jarry, McGill Office for Science and Society",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    }
+  },
+
+  "MIND.08": {
+    "note": "Csikszentmihalyi's own TED talk (primary source) plus a Society for Neuroscience piece on the neuroscience of flow, rather than a productivity-guru take.",
+    "video": {
+      "title": "Flow, the secret to happiness",
+      "url": "https://www.youtube.com/watch?v=fXIeFJCqsPs",
+      "source": "TED (Mihaly Csikszentmihalyi)",
+      "verifiedAt": "2026-07-16"
+    },
+    "article": {
+      "title": "Turning on Flow Means Turning Off Parts of the Brain",
+      "url": "https://www.brainfacts.org/thinking-sensing-and-behaving/thinking-and-awareness/2024/turning-on-flow-means-turning-off-parts-of-the-brain-031224",
+      "source": "BrainFacts (Society for Neuroscience)",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    }
+  },
+
+  "MIND.09": {
+    "note": "TED-Ed for the accessible mechanism; Harvard's Healthy Sleep for the overview; deeper is the Rasch & Born review (open access), the standard citation. Deliberately not leaning on Walker's contested popular claims.",
+    "video": {
+      "title": "The benefits of a good night's sleep",
+      "url": "https://www.youtube.com/watch?v=gedoSfZvBgE",
+      "source": "TED-Ed (Shai Marcu)",
+      "verifiedAt": "2026-07-16"
+    },
+    "article": {
+      "title": "Sleep On It: How Snoozing Strengthens Memories",
+      "url": "https://newsinhealth.nih.gov/2013/04/sleep-it",
+      "source": "NIH News in Health",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "About Sleep's Role in Memory (Rasch & Born, Physiological Reviews 2013)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/",
+      "type": "paper"
+    }
+  },
+
+  "MIND.10": {
+    "note": "Anil Seth's TED talk and Aeon essay are the most accessible on-ramp to 'the brain predicts, not receives'; deeper is Andy Clark's field-defining 'Whatever next?' (open PDF).",
+    "video": {
+      "title": "Your brain hallucinates your conscious reality",
+      "url": "https://www.youtube.com/watch?v=lyu7v7nWzfo",
+      "source": "TED (Anil Seth)",
+      "verifiedAt": "2026-07-16"
+    },
+    "article": {
+      "title": "The hard problem of consciousness is a distraction from the real one",
+      "url": "https://aeon.co/essays/the-hard-problem-of-consciousness-is-a-distraction-from-the-real-one",
+      "source": "Anil Seth, Aeon",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Whatever next? Predictive brains, situated agents, and the future of cognitive science (Clark, 2013)",
+      "url": "https://www.fil.ion.ucl.ac.uk/~karl/Whatever%20next.pdf",
+      "type": "paper"
+    }
+  },
+
+  "MIND.11": {
+    "note": "Nielsen's essay is the best single piece on spaced repetition as a practice, not just a definition — the forgetting curve, why self-made cards matter, and how it builds understanding.",
+    "article": {
+      "title": "Augmenting Long-term Memory",
+      "url": "https://augmentingcognition.com/ltm.html",
+      "source": "Michael Nielsen",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    }
+  },
+
+  "MIND.12": {
+    "note": "Jarry's piece both debunks the '38 witnesses' fabrication and reports the modern CCTV evidence (help is common, and more likely with more bystanders) — exactly the correction the topic's hook points at.",
+    "article": {
+      "title": "The Bystander Effect Started from a Lie",
+      "url": "https://www.mcgill.ca/oss/article/critical-thinking-history/bystander-effect-started-lie",
+      "source": "Jonathan Jarry, McGill Office for Science and Society",
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    }
+  }
+}

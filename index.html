@@ -217,6 +217,19 @@
   .chip-watch{ background:var(--ink); color:var(--card-stock); }
   .chip:active{ transform:translateY(1px); }
 
+  /* curated marker: the card-dot idiom shrunk into the chip.
+     outline square = plain search link; filled (section colour) = a
+     hand-verified resource. quiet on purpose. */
+  .chip-mark{
+    width:7px; height:7px; margin-right:7px; flex:0 0 auto;
+    border:1px solid currentColor; background:transparent;
+  }
+  .chip.is-curated .chip-mark{ background:var(--cat,var(--brass)); border-color:var(--cat,var(--brass)); }
+  .chip-deeper{ background:transparent; color:var(--ink); }
+  @media (hover:hover) and (pointer:fine){
+    .chip-deeper:hover{ background:var(--ink); color:var(--card-stock); }
+  }
+
   .mark{
     margin-left:auto;
     background:none; border:1px solid var(--card-line); cursor:pointer;
@@ -418,8 +431,9 @@
     <div class="slip-title" id="slipTitle">&nbsp;</div>
     <div class="slip-hook" id="slipHook">&nbsp;</div>
     <div class="slip-links">
-      <a class="chip chip-watch" id="slipWatch" target="_blank" rel="noopener">Watch &#9656;</a>
-      <a class="chip chip-read" id="slipRead" target="_blank" rel="noopener">Read &#9656;</a>
+      <a class="chip chip-watch" id="slipWatch" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Watch &#9656;</a>
+      <a class="chip chip-read" id="slipRead" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Read &#9656;</a>
+      <a class="chip chip-deeper" id="slipDeeper" target="_blank" rel="noopener" hidden><span class="chip-mark" aria-hidden="true"></span>Deeper &#9656;</a>
     </div>
   </div>
 </header>
@@ -788,8 +802,8 @@ sections.forEach(sec => {
       <h3 class="card-title">${t.t}</h3>
       <p class="card-hook">${t.h}</p>
       <div class="card-links">
-        <a class="chip chip-watch" href="${watchHref(t.w)}" target="_blank" rel="noopener">Watch &#9656;</a>
-        <a class="chip chip-read" href="${readHref(t.r)}" target="_blank" rel="noopener">Read &#9656;</a>
+        <a class="chip chip-watch" href="${watchHref(t.w)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Watch &#9656;</a>
+        <a class="chip chip-read" href="${readHref(t.r)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Read &#9656;</a>
         <button class="mark" type="button" aria-pressed="${!!done[t.code]}" aria-label="Mark ${t.t} as done">&#10003;</button>
       </div>`;
     grid.appendChild(card);
@@ -907,14 +921,38 @@ const slipTitle = document.getElementById('slipTitle');
 const slipHook = document.getElementById('slipHook');
 const slipWatch = document.getElementById('slipWatch');
 const slipRead = document.getElementById('slipRead');
+const slipDeeper = document.getElementById('slipDeeper');
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* point a slip chip at a curated resource when one exists, else the search
+   fallback. window.CURATED is populated async by the curated module; until
+   then (or if the file never loads) every branch here degrades to search. */
+function slipChip(a, resource, fallbackHref, label){
+  if (resource && resource.url){
+    a.href = resource.url;
+    a.classList.add('is-curated');
+    a.title = resource.title ? resource.title + (resource.source ? ' — ' + resource.source : '') : '';
+  } else {
+    a.href = fallbackHref;
+    a.classList.remove('is-curated');
+    a.removeAttribute('title');
+  }
+}
 
 function renderSlip(t){
   slipCode.textContent = t.code;
   slipTitle.textContent = t.t;
   slipHook.textContent = t.h;
-  slipWatch.href = watchHref(t.w);
-  slipRead.href = readHref(t.r);
+  const cur = (window.CURATED && window.CURATED[t.code]) || null;
+  slipChip(slipWatch, cur && cur.video, watchHref(t.w));
+  slipChip(slipRead, cur && cur.article, readHref(t.r));
+  if (cur && cur.deeper && cur.deeper.url){
+    slipDeeper.href = cur.deeper.url;
+    slipDeeper.title = cur.deeper.title ? cur.deeper.title : '';
+    slipDeeper.hidden = false;
+  } else {
+    slipDeeper.hidden = true;
+  }
   slip.classList.add('show');
 }
 
@@ -1452,6 +1490,103 @@ try {
   /* the enhancement layer failing must never take the catalog with it */
   console.warn('progress+ disabled:', err);
 }
+})();
+</script>
+
+<script>
+/* ---------------------------------------------------------------------------
+   curated links : a progressive enhancement over the search fallback.
+
+   Cards render (script 1) with Watch/Read pointing at YouTube/Wikipedia
+   searches. This layer fetches curated-links.json — a sidecar keyed by topic
+   code — and, for any code with an entry, repoints those chips at a
+   hand-verified resource, marks them visually (filled square vs outline), and
+   adds a third "deeper" chip when present. Everything degrades cleanly: if the
+   file is missing, blocked (file:// CORS in local testing), malformed, or has
+   no entry for a code, that card keeps exactly today's search links.
+
+   Curated data is read-only reference material, not user state, so it is
+   deliberately NOT part of the sync payload.
+
+   Chips are upgraded by data-code across every instance, so pinned-shelf
+   clones that already exist get upgraded too; pins created later clone from
+   an already-upgraded original.
+--------------------------------------------------------------------------- */
+(() => {
+'use strict';
+
+const CODE_RE = /^[A-Z]{2,6}\.\d{2,3}$/;
+const DEEPER_LABEL = { book: 'Book', paper: 'Paper', documentary: 'Doc', course: 'Course' };
+
+const setCurated = (a, resource) => {
+  a.href = resource.url;
+  a.classList.add('is-curated');
+  a.title = (resource.title || '') + (resource.source ? ' — ' + resource.source : '');
+};
+
+function upgradeInstance(card, entry){
+  if (card.dataset.curated === '1') return; /* idempotent: never double-inject */
+  const links = card.querySelector('.card-links');
+  if (!links) return;
+
+  if (entry.video && entry.video.url){
+    const w = links.querySelector('.chip-watch');
+    if (w) setCurated(w, entry.video);
+  }
+  if (entry.article && entry.article.url){
+    const r = links.querySelector('.chip-read');
+    if (r) setCurated(r, entry.article);
+  }
+  if (entry.deeper && entry.deeper.url){
+    const d = document.createElement('a');
+    d.className = 'chip chip-deeper is-curated';
+    d.target = '_blank';
+    d.rel = 'noopener';
+    d.href = entry.deeper.url;
+    d.title = entry.deeper.title || '';
+    const label = DEEPER_LABEL[entry.deeper.type] || 'Deeper';
+    d.innerHTML = '<span class="chip-mark" aria-hidden="true"></span>' + label + ' ▸';
+    const mark = links.querySelector('.mark');
+    links.insertBefore(d, mark || null); /* keep [watch][read][deeper] … [mark][pin] */
+  }
+  card.dataset.curated = '1';
+}
+
+async function load(){
+  let data;
+  try {
+    const res = await fetch('./curated-links.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    data = await res.json();
+  } catch (err) {
+    /* file:// CORS, offline, or missing file — stay on search, silently */
+    return;
+  }
+  if (!data || typeof data !== 'object') return;
+
+  const map = {};
+  for (const code of Object.keys(data)){
+    if (CODE_RE.test(code) && data[code] && typeof data[code] === 'object') map[code] = data[code];
+  }
+  window.CURATED = map;
+
+  let n = 0;
+  for (const code of Object.keys(map)){
+    const instances = document.querySelectorAll('.card[data-code="' + code + '"]');
+    if (!instances.length) continue; /* a code in the file with no matching topic */
+    instances.forEach(card => upgradeInstance(card, map[code]));
+    n++;
+  }
+
+  if (n > 0){
+    const meta = document.getElementById('metaLine');
+    if (meta && !/curated/.test(meta.textContent)){
+      meta.textContent = meta.textContent + ' · ' + n + ' curated';
+    }
+  }
+}
+
+load();
 })();
 </script>
 </body>

@@ -2,6 +2,10 @@
   "name": "curiosity-catalog",
   "private": true,
   "type": "module",
+  "scripts": {
+    "verify-links": "node verify-links.js",
+    "serve": "npx serve ."
+  },
   "dependencies": {
     "@upstash/redis": "^1.38.0"
   }

@@ -47,9 +47,23 @@ Until the env vars exist, `/api/progress` answers `503 sync not configured` and 
 - What's in the record if leaked: which topics you've marked done/pinned/opened, and timestamps. That's the entire blast radius. For a personal reading tracker this is a reasonable trade for having no logins and no server to run. Don't reuse this pattern for anything sensitive.
 - Server-side the function validates code format, whitelists the record shape, caps payload size (64 KB), and rate-limits per IP (100 req/min) via the same Redis. Records live under `cc:<code>` with no TTL — a full record is ~15 KB.
 
+## Curated links
+
+By default Watch/Read are *search* links (YouTube/Wikipedia). Curation upgrades individual topics to hand-verified resources, tracked in `curated-links.json` (a sidecar keyed by topic code) and loaded at runtime — the `topics` array is never touched. A curated chip shows a small **filled** marker; a plain search chip shows an **outline** one. Topics with no curated entry keep their search links, so curation can grow one section at a time. The **Mind & Behavior** section (MIND.01–MIND.12) is curated; the rest are on search fallback by design.
+
+- **Extending it / the rubric:** see [CURATING.md](CURATING.md).
+- **Verify links:** `npm run verify-links` (or `node verify-links.js MIND` for one section). No dependencies; run it after any change and periodically to catch link rot.
+- **Local testing needs a static server, not `file://`.** The page fetches `./curated-links.json`, and browsers block `fetch` of a local file over `file://` (CORS). Opening `index.html` by double-click still works — it just silently falls back to search links. To see curated links locally, serve the folder:
+  ```bash
+  npx serve .            # or: npm run serve
+  # or: python -m http.server
+  ```
+  then open the printed `http://localhost:…` URL. On Vercel this is a non-issue; the JSON is served over HTTPS.
+
 ## Notes
 
 - `vercel.json` sets clean URLs, a few security headers, `no-store` on the API, and stops `index.html` from being cached stale.
+- Curated links are read-only reference data, so they are deliberately **not** part of the sync payload — only your own progress (`done`/`touched`/`pins`/`streak`) syncs.
 - Storage keys, all under the `curiosity-catalog:` prefix in localStorage: `done` (code → 1, the original key — existing installs keep their marks), `touched` (code → last-opened ms), `pins` (code → pinned-at ms, max 3), `streak` (`{current, best, lastDay}`), `sync` (`{code, lastSyncAt}`).
 - The streak counts local-timezone calendar days with at least one mark-done. A lapse just resets it to 0 — deliberately no warnings, colors, or "streak broken" copy anywhere.
 - The "Currently exploring" shelf, streak line, neglected-drawer hint, and sync control are all built by the second `<script>` block (`progress+`); if it ever throws, the original catalog keeps working untouched.

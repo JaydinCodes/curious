@@ -10,7 +10,22 @@
       "PowerShell(npm install --no-audit --no-fund)",
       "PowerShell(node --check api/progress.js)",
       "PowerShell(if \\($?\\) { \"api syntax OK\" })",
-      "PowerShell(node \"C:\\\\Users\\\\Bron\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Bron-projects-curious\\\\59d8ecce-c447-4cfa-856f-e706879d86c7\\\\scratchpad\\\\verify.mjs\")"
+      "PowerShell(node \"C:\\\\Users\\\\Bron\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Bron-projects-curious\\\\59d8ecce-c447-4cfa-856f-e706879d86c7\\\\scratchpad\\\\verify.mjs\")",
+      "PowerShell(\"--- files ---\")",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:www.mcgill.ca)",
+      "WebFetch(domain:augmentingcognition.com)",
+      "WebFetch(domain:www.bps.org.uk)",
+      "WebFetch(domain:www.psychologytoday.com)",
+      "WebFetch(domain:thedecisionlab.com)",
+      "WebFetch(domain:healthysleep.med.harvard.edu)",
+      "WebFetch(domain:aeon.co)",
+      "PowerShell(node verify-links.js)",
+      "WebFetch(domain:newsinhealth.nih.gov)",
+      "Bash(curl -sS -L -A 'Mozilla/5.0 \\(curiosity-catalog link verifier; +https://github.com/\\)' --max-time 25 https://newsinhealth.nih.gov/2013/04/sleep-it)",
+      "Bash(node C:/Users/Bron/AppData/Local/Temp/claude/c--Users-Bron-projects-curious/59d8ecce-c447-4cfa-856f-e706879d86c7/scratchpad/server.mjs C:/Users/Bron/AppData/Local/Temp/claude/c--Users-Bron-projects-curious/59d8ecce-c447-4cfa-856f-e706879d86c7/scratchpad)",
+      "Bash(taskkill //F //IM node.exe)",
+      "PowerShell(git -C c:\\\\Users\\\\Bron\\\\projects\\\\curious status --short)"
     ]
   }
 }
