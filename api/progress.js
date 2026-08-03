@@ -23,12 +23,33 @@
 import { Redis } from '@upstash/redis';
 
 const CODE_RE = /^[a-f0-9]{32}$/;
-const TOPIC_RE = /^[A-Z]{2,6}\.\d{2,3}$/;
+const TOPIC_RE = /^([A-Z]{2,6})\.(\d{2,3})$/;
 const DAY_MS = 86400000;
 const MAX_BODY = 64 * 1024; // a full 217-topic record is ~15 KB; 64 KB is generous
 const MAX_KEYS = 2048;
 const MAX_PINS = 3;
 const RATE_LIMIT = 100; // requests per IP per minute
+
+const TOPIC_LIMITS = Object.freeze({
+  MIND: 12,
+  PRAX: 12,
+  MATH: 12,
+  COSM: 12,
+  VITA: 12,
+  ENGN: 12,
+  INFR: 12,
+  COMP: 13,
+  LING: 12,
+  THEO: 12,
+  ART: 12,
+  MUSC: 12,
+  SCRN: 12,
+  MAKE: 12,
+  SPRT: 12,
+  HIST: 12,
+  RSCH: 12,
+  ECON: 12,
+});
 
 let redis = null;
 function client() {
@@ -47,6 +68,18 @@ export function normalizeCode(raw) {
   return CODE_RE.test(code) ? code : null;
 }
 
+export function isTopicCode(raw){
+  if (typeof raw !== 'string') return false;
+
+  const match = raw.match(TOPIC_RE);
+  if (!match) return false
+
+  const limit = TOPIC_LIMITS[match[1]];
+  const number = Number(match[2]);
+
+  return Number.isInteger(limit) && number >= 1 && number <= limit;
+}
+
 // Reduce any client-supplied record to exactly the shape we store. Run on
 // writes, and again on reads as defence in depth.
 export function sanitizeRecord(input) {
@@ -56,7 +89,7 @@ export function sanitizeRecord(input) {
   const done = {};
   if (src.done && typeof src.done === 'object') {
     for (const k of Object.keys(src.done).slice(0, MAX_KEYS)) {
-      if (TOPIC_RE.test(k) && src.done[k]) done[k] = 1;
+      if (isTopicCode(k) && src.done[k]) done[k] = 1;
     }
   }
 
@@ -64,7 +97,7 @@ export function sanitizeRecord(input) {
   if (src.touched && typeof src.touched === 'object') {
     for (const k of Object.keys(src.touched).slice(0, MAX_KEYS)) {
       const v = Number(src.touched[k]);
-      if (TOPIC_RE.test(k) && Number.isFinite(v) && v > 0) {
+      if (isTopicCode(k) && Number.isFinite(v) && v > 0) {
         touched[k] = Math.min(Math.floor(v), now + DAY_MS);
       }
     }
@@ -74,7 +107,7 @@ export function sanitizeRecord(input) {
   if (src.pins && typeof src.pins === 'object') {
     for (const k of Object.keys(src.pins).slice(0, MAX_KEYS)) {
       const v = Number(src.pins[k]);
-      if (TOPIC_RE.test(k) && Number.isFinite(v) && v > 0) {
+      if (isTopicCode(k) && Number.isFinite(v) && v > 0) {
         pins[k] = Math.min(Math.floor(v), now + DAY_MS);
       }
     }
@@ -95,6 +128,8 @@ export function sanitizeRecord(input) {
 
   return { done, touched, pins, streak, updatedAt };
 }
+
+
 
 const EMPTY = { done: {}, touched: {}, pins: {}, streak: null, updatedAt: null };
 

@@ -1259,7 +1259,7 @@ try {
   const inputEl = panel.querySelector('[data-el="input"]');
 
   let dirty = false, inflight = false, pushTimer = 0, retryDelay = 0;
-
+  let syncUnavailable = false;
   const setStatus = s => { syncToggle.textContent = 'sync: ' + s; };
   const fmtTime = ms => {
     const d = new Date(ms);
@@ -1275,6 +1275,12 @@ try {
     return fetch(url, o);
   }
 
+  function responseError(response){
+    const error = new Error('http ' + response.status);
+    error.status = response.status;
+    return error
+  }
+
   function markSynced(){
     syncCfg.lastSyncAt = Date.now();
     store.set('sync', syncCfg);
@@ -1285,6 +1291,12 @@ try {
   function schedulePush(delay = 2000){
     if (!syncCfg.code) return;
     dirty = true;
+
+    if (syncUnavailable) {
+      setStatus('unavailable');
+      return;
+    }
+
     clearTimeout(pushTimer);
     pushTimer = setTimeout(flush, delay);
   }
@@ -1294,19 +1306,37 @@ try {
     inflight = true; dirty = false; retryDelay = 0;
     setStatus('syncing…');
     try {
-      const r = await api('/api/progress', {
+      const response = await api('api/progress', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(record())
+        headers: { 'content-type': 'application/json'},
+        body: JSON.stringify(record()),
       });
-      if (!r.ok) throw new Error('http ' + r.status);
+
+      if (!response.ok) throw responseError(response);
+
+      syncUnavailable = false;
       markSynced();
-    } catch (err) {
-      dirty = true; retryDelay = 30000;
-      setStatus('offline');
-    } finally {
-      inflight = false;
-      if (dirty){ clearTimeout(pushTimer); pushTimer = setTimeout(flush, retryDelay || 1000); }
+    } catch (error) {
+      dirty = true;
+      syncUnavailable = error.status === 503;
+
+      if(syncUnavailable){
+        setStatus('unavailable');
+        showErr(
+          'Cloud sync is unavailable. Connect Upstash Redis in Vercel, then use "Sync now".',
+        );
+      } else {
+        retryDelay = 30000;
+        setStatus('offline');
+      } 
+      }
+      finally {
+        inflight = false;
+
+        if (dirty && retryDelay > 0){
+          clearTimeout(pushTimer);
+          pushTimer = setTimeout(flush, retryDelay);
+        }
     }
   }
 
@@ -1328,11 +1358,19 @@ try {
     setStatus('syncing…');
     let remote;
     try {
-      const r = await api('/api/progress?code=' + syncCfg.code);
-      if (!r.ok) throw new Error('http ' + r.status);
-      remote = await r.json();
+      const response = await api('/api/progress?code=' + syncCfg.code);
+      if (!response.ok) throw new Error('http ' + r.status);
+      remote = await response.json();
     } catch (err) {
-      setStatus('offline');
+      syncUnavailable = error.status === 503;
+      setStatus(syncUnavailable ? 'unavailable' : 'offline');
+
+      if (syncUnavailable) {
+        showErr(
+          'Cloud sync is unavailable. Connect Upstash Redis in Vercel, then use “Sync now”.',
+        );
+      }
+
       return;
     }
     const { rec, changedLocal, changedRemote } = P.mergeRecords({ done, touched, pins, streak }, remote);
@@ -1357,6 +1395,7 @@ try {
     panel.querySelector('[data-sync="on"]').hidden = !on;
     if (on) codeEl.textContent = P.groupCode(syncCfg.code);
     if (!on) setStatus('off');
+    else if (syncUnavailable) setStatus('unavailable');
     else if (syncCfg.lastSyncAt) setStatus('synced ' + fmtTime(syncCfg.lastSyncAt));
     else setStatus('on');
   }
@@ -1374,6 +1413,7 @@ try {
       crypto.getRandomValues(bytes);
       syncCfg.code = Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('');
       delete syncCfg.lastSyncAt;
+      syncUnavailable = false;
       store.set('sync', syncCfg);
       errEl.hidden = true;
       renderSyncUI();
@@ -1383,6 +1423,7 @@ try {
       if (!code){ showErr('That does not look like a sync code (32 letters and digits).'); return; }
       syncCfg.code = code;
       delete syncCfg.lastSyncAt;
+      syncUnavailable = false;
       store.set('sync', syncCfg);
       inputEl.value = '';
       errEl.hidden = true;
@@ -1401,6 +1442,7 @@ try {
         sel.addRange(range);
       }
     } else if (act === 'now'){
+      syncUnavailable = false;
       pull();
     } else if (act === 'off'){
       clearTimeout(pushTimer);
@@ -1425,7 +1467,7 @@ try {
       } catch (err) {}
     }
   });
-  window.addEventListener('online', () => { if (syncCfg.code) pull(); });
+  window.addEventListener('online', () => { if (syncCfg.code && !syncUnavailable) pull(); });
 
   /* ---------------- neglected-drawer hint ---------------- */
 

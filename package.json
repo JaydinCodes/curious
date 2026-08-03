@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "node --test",
+    "check": "node --check api/progress.js && node --check verify-links.js && npm test",
     "verify-links": "node verify-links.js",
     "serve": "npx serve ."
+  
   },
   "dependencies": {
     "@upstash/redis": "^1.38.0"
