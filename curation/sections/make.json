@@ -1,1 +1,206 @@
-{}
+{
+  "MAKE.01": {
+    "difficulty": "intermediate",
+    "note": "The ACS review explains the Maillard reaction as a network beginning with reducing sugars and amino groups and producing aromas, colours and texture changes that depend strongly on heat, water activity and pH.",
+    "article": {
+      "title": "Control of Maillard Reactions in Foods: Strategies and Chemical Mechanisms",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.jafc.7b00882",
+      "source": "Journal of Agricultural and Food Chemistry — ACS",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Brown identical onion or bread samples under different moisture, temperature and pH conditions, then compare colour, aroma, texture and time to browning.",
+      "minutes": 45
+    }
+  },
+  "MAKE.02": {
+    "difficulty": "introductory",
+    "note": "University of Minnesota Extension distinguishes lactic-acid, yeast and other food fermentations while emphasizing salt, acidity, oxygen control, temperature and safe handling.",
+    "article": {
+      "title": "Preserving Food at Home: Fermentation",
+      "url": "https://extension.umn.edu/preserve-your-own-food/fermentation",
+      "source": "University of Minnesota Extension",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan a vegetable fermentation with ingredient mass, salt percentage, temperature, oxygen exclusion, pH checks, spoilage signs and a discard rule.",
+      "minutes": 30
+    }
+  },
+  "MAKE.03": {
+    "difficulty": "intermediate",
+    "note": "The ACS material explains chocolate manufacture through cocoa-butter crystallisation, heating, cooling and controlled formation of the stable crystal structure responsible for gloss and snap.",
+    "article": {
+      "title": "The Chemistry of Romance, Flavor, and Drink: Roses, Chocolate, and Wine",
+      "url": "https://www.acs.org/content/dam/acsorg/acs-webinars/2026/labnotes/2026-02-06-labnotes-the-chemistry-of-romance-flavor-and-drink.pdf",
+      "source": "American Chemical Society",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Temper one batch correctly and let another cool without seeding or temperature control, then compare gloss, snap, contraction, texture and fat bloom over several days.",
+      "minutes": 45
+    }
+  },
+  "MAKE.04": {
+    "difficulty": "intermediate",
+    "note": "The Specialty Coffee Association connects brew ratio, total dissolved solids and extraction yield, correcting the oversimple rule that sour always means under-extracted and bitter always means over-extracted.",
+    "article": {
+      "title": "Towards a New Brewing Chart",
+      "url": "https://sca.coffee/sca-news/25/issue-13/towards-a-new-brewing-chart-xpj8t",
+      "source": "Specialty Coffee Association",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Brew the same coffee at three grind sizes while holding dose and water constant, record brew time and taste, and separate strength from extraction balance.",
+      "minutes": 40
+    }
+  },
+  "MAKE.05": {
+    "difficulty": "intermediate",
+    "note": "The research explains how gliadin-rich and glutenin-rich protein mixtures produce different viscous, elastic and strain-hardening behaviour underlying dough extensibility and strength.",
+    "article": {
+      "title": "Flow of Gluten with Tunable Protein Composition: From Stress Undershoot to Stress Overshoot and Strain Hardening",
+      "url": "https://arxiv.org/abs/2207.13542",
+      "source": "Ameur Louhichi et al. — arXiv",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Mix and wash a small dough to isolate gluten, then compare development after short mixing, intensive mixing and resting using stretch, windowpane and gas-retention tests.",
+      "minutes": 45
+    }
+  },
+  "MAKE.06": {
+    "difficulty": "introductory",
+    "note": "Penn State's guide reduces cheesemaking to its controlling decisions: milk treatment, starter culture, acidification, rennet coagulation, curd cutting, cooking, draining, salting and ageing.",
+    "article": {
+      "title": "Introduction to Making Cheese",
+      "url": "https://extension.psu.edu/introduction-to-making-cheese",
+      "source": "Penn State Extension",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a decision tree showing how acid versus rennet coagulation, curd size, cooking, pressing, salt, moisture, rind organisms and ageing produce different cheese families.",
+      "minutes": 35
+    }
+  },
+  "MAKE.07": {
+    "difficulty": "introductory",
+    "note": "The Scotch Whisky Association traces malting, mashing, fermentation, distillation and oak maturation and distinguishes legal requirements from marketing mythology.",
+    "article": {
+      "title": "How Scotch Whisky Is Made",
+      "url": "https://www.scotch-whisky.org.uk/discover-scotch/how-its-made/",
+      "source": "Scotch Whisky Association",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace starch to bottled whisky and mark where enzymes, yeast, still shape, cut points, oak extraction, oxidation, evaporation and blending alter the final spirit.",
+      "minutes": 30
+    }
+  },
+  "MAKE.08": {
+    "difficulty": "intermediate",
+    "note": "The Met distinguishes pattern welding—forge-welded bars arranged and twisted for structure and pattern—from crucible or watered steels often grouped loosely under the Damascus label.",
+    "article": {
+      "title": "Techniques of Decoration on Arms and Armor",
+      "url": "https://www.metmuseum.org/essays/techniques-of-decoration-on-arms-and-armor",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Diagram a pattern-welded billet through stacking, forge welding, drawing, twisting, cutting and restacking, then contrast it with historical crucible steel.",
+      "minutes": 30
+    }
+  },
+  "MAKE.09": {
+    "difficulty": "introductory",
+    "note": "The American Ceramic Society connects glassblowing craft to viscosity, temperature control, thermal expansion, annealing and the non-crystalline structure of glass.",
+    "article": {
+      "title": "Scientific Glassblowing—Part Science, Part Art, All Awesome",
+      "url": "https://ceramics.org/ceramic-tech-today/scientific-glassblowing-part-science-part-art-all-awesome/",
+      "source": "The American Ceramic Society",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plot a qualitative glass-working temperature curve and mark gathering, blowing, shaping, strain point, annealing and the risks of uneven cooling.",
+      "minutes": 25
+    }
+  },
+  "MAKE.10": {
+    "difficulty": "intermediate",
+    "note": "The American Ceramic Society introduces ceramics as inorganic non-metallic materials and provides the materials-science foundation for clay transformation, sintering and glassy glaze layers.",
+    "article": {
+      "title": "What Are Ceramics?",
+      "url": "https://ceramics.org/about/what-are-ceramics/",
+      "source": "The American Ceramic Society",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a kiln schedule and materials map for one glazed clay body, identifying water loss, burnout, quartz change, sintering, vitrification, glaze melting and cooling defects.",
+      "minutes": 35
+    }
+  },
+  "MAKE.11": {
+    "difficulty": "introductory",
+    "note": "Japan's only museum devoted to carpentry tools presents timber selection, marking, hand tools, post-and-beam framing, joinery and the repairable traditions of temple and tea-house construction.",
+    "article": {
+      "title": "Takenaka Carpentry Tools Museum",
+      "url": "https://www.dougukan.jp/?lang=en",
+      "source": "Takenaka Carpentry Tools Museum",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model a mortise-and-tenon or scarf joint from card or soft wood and identify the surfaces resisting tension, compression, shear, rotation and withdrawal.",
+      "minutes": 45
+    }
+  },
+  "MAKE.12": {
+    "difficulty": "intermediate",
+    "note": "The Met explains natural-dye practice through fibres, mordants and the unusual reduction-oxidation chemistry that makes insoluble indigo enter cloth and turn blue in air.",
+    "article": {
+      "title": "The Materials and Techniques of American Quilts and Coverlets",
+      "url": "https://www.metmuseum.org/essays/the-materials-and-techniques-of-american-quilts-and-coverlets",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the indigo vat cycle from insoluble pigment through chemical reduction, dissolved leuco-indigo, fibre uptake, air oxidation and repeated dipping for depth.",
+      "minutes": 30
+    }
+  }
+}
