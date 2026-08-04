@@ -4,105 +4,33 @@ import {
   formatLabel,
   formatMinutes,
   getResources,
-  getResourceType,
   getTotalMinutes,
   isFullyEnriched,
 } from './curation-model.js';
 
-const DEEPER_LABELS = Object.freeze({
-  book: 'Book',
-  paper: 'Paper',
-  documentary: 'Doc',
-  course: 'Course',
-  reference: 'Deeper',
-});
-
-function setCuratedLink(anchor, resource, fallbackLabel, slot) {
-  anchor.href = resource.url;
-  anchor.classList.add('is-curated');
-  anchor.dataset.resourceSlot = slot;
-  anchor.dataset.resourceType = getResourceType(slot, resource);
-
-  const title = resource.title || fallbackLabel;
-  const source = resource.source ? ` — ${resource.source}` : '';
-
-  anchor.title = `${title}${source}`;
-  anchor.setAttribute(
-    'aria-label',
-    `${fallbackLabel}: ${title}${source}`,
-  );
-}
-
-function createResourceEntry(slot, resource) {
-  const anchor = document.createElement('a');
-  anchor.className = 'resource-entry';
-  anchor.href = resource.url;
-  anchor.target = '_blank';
-  anchor.rel = 'noopener';
-  anchor.dataset.resourceSlot = slot;
-  anchor.dataset.resourceType = getResourceType(slot, resource);
-
-  const title = document.createElement('span');
-  title.className = 'resource-title';
-  title.textContent = resource.title || 'Curated resource';
-
-  const metadata = document.createElement('span');
-  metadata.className = 'resource-meta';
-  metadata.textContent = [
-    resource.source,
-    formatLabel(getResourceType(slot, resource)),
-    formatMinutes(resource.minutes),
-    resource.paywalled ? 'Paywalled' : '',
-  ]
-    .filter(Boolean)
-    .join(' · ');
-
-  anchor.append(title, metadata);
-  return anchor;
-}
-
-function createResourcePanel(entry) {
+function createCompactMeta(entry) {
   const resources = getResources(entry);
-  if (resources.length === 0) return null;
-
-  const panel = document.createElement('div');
-  panel.className = 'resource-panel';
-
   const totalMinutes = getTotalMinutes(entry);
-  const summary = document.createElement('div');
-  summary.className = 'resource-summary';
-  summary.textContent = [
-    formatLabel(entry.difficulty),
-    totalMinutes > 0 ? `${formatMinutes(totalMinutes)} learning path` : '',
-  ]
-    .filter(Boolean)
-    .join(' · ');
-  panel.appendChild(summary);
+  const meta = document.createElement('div');
+  meta.className = 'card-learning-meta';
 
-  for (const { slot, resource } of resources) {
-    panel.appendChild(createResourceEntry(slot, resource));
+  const values = [
+    formatLabel(entry?.difficulty || 'unrated'),
+    totalMinutes > 0 ? formatMinutes(totalMinutes) : 'Open-ended',
+    `${resources.length} resource${resources.length === 1 ? '' : 's'}`,
+  ];
+
+  if (entry?.exercise?.prompt) {
+    values.push('Exercise');
   }
 
-  if (entry.exercise?.prompt?.trim()) {
-    const exercise = document.createElement('div');
-    exercise.className = 'resource-exercise';
-
-    const label = document.createElement('span');
-    label.className = 'exercise-label';
-    label.textContent = 'Try';
-
-    const prompt = document.createElement('span');
-    prompt.textContent = entry.exercise.prompt.trim();
-
-    const duration = document.createElement('span');
-    duration.className = 'exercise-time';
-    duration.textContent = formatMinutes(entry.exercise.minutes);
-
-    exercise.append(label, prompt, duration);
-    panel.appendChild(exercise);
+  for (const value of values) {
+    const badge = document.createElement('span');
+    badge.textContent = value;
+    meta.appendChild(badge);
   }
 
-  return panel;
+  return meta;
 }
 
 function upgradeInstance(card, entry) {
@@ -111,41 +39,7 @@ function upgradeInstance(card, entry) {
   const links = card.querySelector('.card-links');
   if (!links) return;
 
-  if (entry.video?.url) {
-    const watchLink = links.querySelector('.chip-watch');
-    if (watchLink) {
-      setCuratedLink(watchLink, entry.video, 'Watch', 'video');
-    }
-  }
-
-  if (entry.article?.url) {
-    const readLink = links.querySelector('.chip-read');
-    if (readLink) {
-      setCuratedLink(readLink, entry.article, 'Read', 'article');
-    }
-  }
-
-  if (entry.deeper?.url) {
-    const deeperLink = document.createElement('a');
-    deeperLink.className = 'chip chip-deeper is-curated';
-    deeperLink.target = '_blank';
-    deeperLink.rel = 'noopener';
-    setCuratedLink(deeperLink, entry.deeper, 'Deeper', 'deeper');
-
-    const marker = document.createElement('span');
-    marker.className = 'chip-mark';
-    marker.setAttribute('aria-hidden', 'true');
-
-    const label = DEEPER_LABELS[entry.deeper.type] ?? 'Deeper';
-    deeperLink.append(marker, document.createTextNode(`${label} ▸`));
-
-    const details = links.querySelector('.chip-details');
-    const markButton = links.querySelector('.mark');
-    links.insertBefore(deeperLink, details || markButton || null);
-  }
-
-  const resourcePanel = createResourcePanel(entry);
-  if (resourcePanel) card.insertBefore(resourcePanel, links);
+  card.insertBefore(createCompactMeta(entry), links);
 
   const searchableMetadata = getResources(entry)
     .flatMap(({ resource }) => [
