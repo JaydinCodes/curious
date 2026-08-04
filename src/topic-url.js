@@ -1,4 +1,14 @@
 const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '::1']);
+const STATIC_PREVIEW_SUFFIXES = Object.freeze([
+  '.app.github.dev',
+  '.githubpreview.dev',
+]);
+
+function needsStaticFallback(hostname) {
+  const host = String(hostname || '').toLowerCase();
+  return LOCAL_HOSTS.has(host) ||
+    STATIC_PREVIEW_SUFFIXES.some(suffix => host.endsWith(suffix));
+}
 
 export function slugify(value) {
   return String(value ?? '')
@@ -55,7 +65,7 @@ export function topicHref(
 ) {
   const host = locationLike?.hostname || '';
 
-  if (LOCAL_HOSTS.has(host)) {
+  if (needsStaticFallback(host)) {
     const startQuery = start ? '&start=1' : '';
     return `/topic.html?code=${encodeURIComponent(topic.code)}${startQuery}`;
   }
@@ -87,7 +97,7 @@ export function collectionHref(
 ) {
   const host = locationLike?.hostname || '';
 
-  if (LOCAL_HOSTS.has(host)) {
+  if (needsStaticFallback(host)) {
     return `/collection.html?slug=${encodeURIComponent(collection.slug)}`;
   }
 
