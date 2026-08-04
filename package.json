@@ -2,9 +2,9 @@
   "name": "curiosity-catalog",
   "private": true,
   "type": "module",
-  "scripts": {
+   "scripts": {
     "test": "node --test",
-    "check:client": "node --check src/app.js && node --check src/catalog.js && node --check src/progress-plus.js && node --check src/curation.js && node --check src/data/catalog.js && node --check src/data/sections.js && node --check src/data/topics/index.js",
+    "check:client": "node --check src/app.js && node --check src/catalog.js && node --check src/progress-logic.js && node --check src/progress-plus.js && node --check src/curation.js && node --check src/data/catalog.js && node --check src/data/sections.js && node --check src/data/topics/index.js",
     "check": "npm run check:client && node --check api/progress.js && node --check verify-links.js && npm test",
     "verify-links": "node verify-links.js",
     "serve": "npx serve ."

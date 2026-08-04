@@ -10,7 +10,7 @@ import {
   updateProgress,
   applyFilters,
 } from './catalog.js';
-
+import * as P from './progress-logic.js';
 /* ---------------------------------------------------------------------------
    progress+ : pins, last-touched, streak, neglected-drawer hint, device sync.
    A separate enhancement layer: if anything in here throws, the catalog above
@@ -31,87 +31,7 @@ import {
 (() => {
 'use strict';
 
-/* ---- pure logic (DOM-free; also exercised by tests) CC:PURE ---- */
-const P = {
-  todayStr(d = new Date()){
-    const p = n => String(n).padStart(2, '0');
-    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
-  },
-  yesterdayStr(d = new Date()){
-    return P.todayStr(new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1));
-  },
-  /* advance streak state for one mark-done action happening now */
-  streakMark(s, now = new Date()){
-    const today = P.todayStr(now);
-    const current = s && s.lastDay === today ? s.current
-      : s && s.lastDay === P.yesterdayStr(now) ? s.current + 1
-      : 1;
-    return { current, best: Math.max(current, (s && s.best) || 0), lastDay: today };
-  },
-  /* what to display; a lapsed streak just reads as 0, nothing louder */
-  streakNow(s, now = new Date()){
-    if (!s) return { current: 0, best: 0 };
-    const live = s.lastDay === P.todayStr(now) || s.lastDay === P.yesterdayStr(now);
-    return { current: live ? s.current : 0, best: s.best || 0 };
-  },
-  mergeStreak(a, b){
-    if (!a) return b || null;
-    if (!b) return a;
-    const base = a.lastDay > b.lastDay ? a
-      : b.lastDay > a.lastDay ? b
-      : { current: Math.max(a.current, b.current), lastDay: a.lastDay };
-    return { current: base.current, best: Math.max(a.best || 0, b.best || 0, base.current), lastDay: base.lastDay };
-  },
-  mergePins(a, b){
-    const m = {};
-    for (const k of Object.keys(a || {})) m[k] = a[k];
-    for (const k of Object.keys(b || {})) m[k] = Math.max(m[k] || 0, b[k]);
-    const keep = Object.keys(m).sort((x, y) => m[y] - m[x]).slice(0, 3);
-    const out = {};
-    keep.sort((x, y) => m[x] - m[y]).forEach(k => { out[k] = m[k]; });
-    return out;
-  },
-  /* canonical JSON of a flat map, for change detection */
-  cj(o){ return o == null ? 'null' : JSON.stringify(o, Object.keys(o).sort()); },
-  mergeRecords(local, remote){
-    const doneM = Object.assign({}, remote.done || {}, local.done || {});
-    const touchedM = {};
-    for (const k of Object.keys(local.touched || {})) touchedM[k] = local.touched[k];
-    for (const k of Object.keys(remote.touched || {})) touchedM[k] = Math.max(touchedM[k] || 0, remote.touched[k]);
-    const rec = {
-      done: doneM,
-      touched: touchedM,
-      pins: P.mergePins(local.pins, remote.pins),
-      streak: P.mergeStreak(local.streak || null, remote.streak || null)
-    };
-    const parts = ['done', 'touched', 'pins', 'streak'];
-    const differs = base => parts.some(f => P.cj(rec[f]) !== P.cj(f === 'streak' ? base[f] || null : base[f] || {}));
-    return { rec, changedLocal: differs(local), changedRemote: differs(remote) };
-  },
-  /* lowest done-ratio drawer; ties broken by fewest touched; finished drawers skipped */
-  neglected(sectionList, topicList, doneMap, touchedMap){
-    let best = null;
-    for (const sec of sectionList){
-      const items = topicList.filter(t => t.c === sec.k);
-      if (!items.length) continue;
-      const d = items.filter(t => doneMap[t.code]).length;
-      if (d === items.length) continue;
-      const touch = items.filter(t => touchedMap[t.code]).length;
-      const ratio = d / items.length;
-      if (!best || ratio < best.ratio || (ratio === best.ratio && touch < best.touch)){
-        best = { sec, ratio, done: d, total: items.length, touch };
-      }
-    }
-    return best;
-  },
-  normalizeCode(raw){
-    if (typeof raw !== 'string') return null;
-    const c = raw.trim().toLowerCase().replace(/[-\s]/g, '');
-    return /^[a-f0-9]{32}$/.test(c) ? c : null;
-  },
-  groupCode(code){ return code.replace(/(.{4})(?=.)/g, '$1-'); }
-};
-/* ---- CC:END-PURE ---- */
+
 
 try {
 
