@@ -4,182 +4,1623 @@
     "schemaVersion": 2,
     "curatedSections": [
       "MIND",
-      "COMP"
+      "PRAX",
+      "MATH",
+      "COSM",
+      "VITA",
+      "ENGN",
+      "INFR",
+      "COMP",
+      "LING",
+      "THEO",
+      "ART",
+      "MUSC",
+      "SCRN",
+      "MAKE",
+      "SPRT",
+      "HIST",
+      "RSCH",
+      "ECON"
     ],
     "knownVerifierWarnings": "britannica.com, newsinhealth.nih.gov, and aeon.co bot-wall or rate-limit automated checkers, so verify-links.js reports them as WARN. All three were confirmed to return HTTP 200 in a real browser on 2026-07-16 — WARN here means 'checker was blocked', not 'link is dead'."
   },
   "MIND.01": {
-    "note": "Article explains the effect and cites the source study; deeper is the original Norton/Mochon/Ariely paper. No video cleared the bar (no dedicated, rigorous explainer), so Watch stays on search.",
+    "difficulty": "introductory",
+    "note": "Article explains the effect and cites the source study; deeper is the original Norton/Mochon/Ariely paper. No video cleared the bar, so Watch stays on search.",
     "article": {
       "title": "The IKEA Effect",
       "url": "https://thedecisionlab.com/biases/ikea-effect",
       "source": "The Decision Lab",
+      "type": "article",
+      "minutes": 10,
       "verifiedAt": "2026-07-16",
       "paywalled": false
     },
     "deeper": {
       "title": "The IKEA effect: When labor leads to love (Norton, Mochon & Ariely, 2012)",
       "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=41121",
-      "type": "paper"
+      "source": "Norton, Mochon and Ariely — Harvard Business School",
+      "type": "paper",
+      "minutes": 30,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare how much you value two similar objects or outputs when you assembled one yourself, then identify effort, ownership and quality as competing explanations.",
+      "minutes": 20
     }
   },
   "MIND.02": {
-    "note": "Jarrett is the definitive 'the pop story is overhyped' piece; deeper is the Kilner & Lemon review (open access) that the hype critique rests on. Video left on search to avoid Ramachandran-style overclaiming.",
+    "difficulty": "intermediate",
+    "note": "Jarrett is the definitive 'the pop story is overhyped' piece; deeper is the Kilner and Lemon review that the critique rests on. Video stays on search to avoid overclaiming.",
     "article": {
       "title": "Mirror Neurons: The Most Hyped Concept in Neuroscience?",
       "url": "https://www.psychologytoday.com/us/blog/brain-myths/201212/mirror-neurons-the-most-hyped-concept-in-neuroscience",
-      "source": "Christian Jarrett, Psychology Today",
+      "source": "Christian Jarrett — Psychology Today",
+      "type": "article",
+      "minutes": 12,
       "verifiedAt": "2026-07-16",
       "paywalled": false
     },
     "deeper": {
-      "title": "What We Know Currently about Mirror Neurons (Kilner & Lemon, Current Biology 2013)",
+      "title": "What We Know Currently about Mirror Neurons",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3898692/",
-      "type": "paper"
+      "source": "Kilner and Lemon — Current Biology / PubMed Central",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Separate what mirror-neuron experiments directly measure from claims about imitation, empathy, language and autism, then label each claim as evidence, inference or speculation.",
+      "minutes": 25
     }
   },
   "MIND.03": {
-    "note": "Schwartz's own TED talk is the claim; Collins + the Scheibehenne meta-analysis are the replication reality (the jam-study effect is near zero on average). Pairing them is the honest version of this topic.",
+    "difficulty": "introductory",
+    "note": "Schwartz's TED talk is the claim; Collins and the Scheibehenne meta-analysis provide the replication reality. Pairing them is the honest version of this topic.",
     "video": {
-      "title": "The paradox of choice",
+      "title": "The Paradox of Choice",
       "url": "https://www.youtube.com/watch?v=VO6XEQIsCoM",
-      "source": "TED (Barry Schwartz)",
-      "verifiedAt": "2026-07-16"
+      "source": "TED — Barry Schwartz",
+      "type": "video",
+      "minutes": 20,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
     },
     "article": {
-      "title": "Not the jam study again",
+      "title": "Not the Jam Study Again",
       "url": "https://www.jasoncollins.blog/posts/not-the-jam-study-again",
       "source": "Jason Collins",
+      "type": "article",
+      "minutes": 10,
       "verifiedAt": "2026-07-16",
       "paywalled": false
     },
     "deeper": {
-      "title": "Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload (Scheibehenne et al., 2010)",
+      "title": "Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload",
       "url": "https://scheibehenne.com/ScheibehenneGreifenederTodd2010.pdf",
-      "type": "paper"
+      "source": "Scheibehenne, Greifeneder and Todd — Journal of Consumer Research",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design a choice experiment that varies number of options while holding quality, familiarity and decision stakes constant, then define what would count as overload.",
+      "minutes": 25
     }
   },
   "MIND.04": {
-    "note": "The hook already frames synchronicity as contested and 'pattern hunger'. Rather than a credulous Jung explainer, the curated Read is Shermer on patternicity — the skeptical mechanism critics point to. Left video on search.",
+    "difficulty": "introductory",
+    "note": "The hook frames synchronicity as contested and pattern hunger. The curated resource therefore explains patternicity rather than endorsing a supernatural interpretation.",
     "article": {
       "title": "Patternicity: Finding Meaningful Patterns in Meaningless Noise",
       "url": "https://michaelshermer.com/sciam-columns/patternicity/",
-      "source": "Michael Shermer, Scientific American",
+      "source": "Michael Shermer — Scientific American",
+      "type": "article",
+      "minutes": 10,
       "verifiedAt": "2026-07-16",
       "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Keep a one-week log of striking coincidences and also record the ordinary non-matches that could have become coincidences, then compare remembered hits with the full opportunity set.",
+      "minutes": 20
     }
   },
   "MIND.05": {
-    "note": "Neuroplasticity is heavily hyped; Britannica is a sober, non-salesy overview (avoids the 'rewire your brain' self-help genre). No video cleared the rigor bar, so Watch stays on search.",
+    "difficulty": "introductory",
+    "note": "Neuroplasticity is heavily hyped; Britannica supplies a sober overview that avoids the self-help claim that any habit can freely rewire any brain function.",
     "article": {
       "title": "Neuroplasticity",
       "url": "https://www.britannica.com/science/neuroplasticity",
       "source": "Encyclopaedia Britannica",
+      "type": "reference",
+      "minutes": 15,
       "verifiedAt": "2026-07-16",
       "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Classify examples of plasticity as developmental, learning-related, compensatory or injury-related and identify biological constraints on each.",
+      "minutes": 20
     }
   },
   "MIND.06": {
-    "note": "Britannica for the concept; deeper is the founding Festinger & Carlsmith (1959) forced-compliance experiment (open PDF, MIT course page).",
+    "difficulty": "introductory",
+    "note": "Britannica provides the concept; the deeper resource is Festinger and Carlsmith's founding forced-compliance experiment.",
     "article": {
-      "title": "Cognitive dissonance",
+      "title": "Cognitive Dissonance",
       "url": "https://www.britannica.com/science/cognitive-dissonance",
       "source": "Encyclopaedia Britannica",
+      "type": "reference",
+      "minutes": 15,
       "verifiedAt": "2026-07-16",
       "paywalled": false
     },
     "deeper": {
-      "title": "Cognitive consequences of forced compliance (Festinger & Carlsmith, 1959)",
+      "title": "Cognitive Consequences of Forced Compliance",
       "url": "https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Motivation/Festinger_Carlsmith_1959_Cognitive_consequences_of_forced_compliance.pdf",
-      "type": "paper"
+      "source": "Festinger and Carlsmith — Journal of Abnormal and Social Psychology / MIT",
+      "type": "paper",
+      "minutes": 30,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map one inconsistency among belief, action and self-image, then list several possible dissonance-reduction strategies and the evidence each would leave behind.",
+      "minutes": 20
     }
   },
   "MIND.07": {
-    "note": "The catalog frames the statistical critique as the interesting half, so the curated Read is Jarry's 'probably not real' — the effect is largely reproduced by random data (autocorrelation). This is the whole point of the entry.",
+    "difficulty": "intermediate",
+    "note": "The catalogue emphasizes the statistical critique, so the resource explains how random data, measurement boundaries and regression effects can reproduce the familiar graph.",
     "article": {
       "title": "The Dunning-Kruger Effect Is Probably Not Real",
       "url": "https://www.mcgill.ca/oss/article/critical-thinking/dunning-kruger-effect-probably-not-real",
-      "source": "Jonathan Jarry, McGill Office for Science and Society",
+      "source": "Jonathan Jarry — McGill Office for Science and Society",
+      "type": "article",
+      "minutes": 12,
       "verifiedAt": "2026-07-16",
       "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Generate random true scores and noisy self-assessments, group people by observed performance and graph average error to see how statistical artefacts can resemble the published effect.",
+      "minutes": 30
     }
   },
   "MIND.08": {
-    "note": "Csikszentmihalyi's own TED talk (primary source) plus a Society for Neuroscience piece on the neuroscience of flow, rather than a productivity-guru take.",
+    "difficulty": "introductory",
+    "note": "Csikszentmihalyi's own TED talk supplies the primary popular account; BrainFacts provides a neuroscience-oriented secondary view without turning flow into a productivity guarantee.",
     "video": {
-      "title": "Flow, the secret to happiness",
+      "title": "Flow, the Secret to Happiness",
       "url": "https://www.youtube.com/watch?v=fXIeFJCqsPs",
-      "source": "TED (Mihaly Csikszentmihalyi)",
-      "verifiedAt": "2026-07-16"
+      "source": "TED — Mihaly Csikszentmihalyi",
+      "type": "video",
+      "minutes": 19,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
     },
     "article": {
       "title": "Turning on Flow Means Turning Off Parts of the Brain",
       "url": "https://www.brainfacts.org/thinking-sensing-and-behaving/thinking-and-awareness/2024/turning-on-flow-means-turning-off-parts-of-the-brain-031224",
-      "source": "BrainFacts (Society for Neuroscience)",
+      "source": "BrainFacts — Society for Neuroscience",
+      "type": "article",
+      "minutes": 10,
       "verifiedAt": "2026-07-16",
       "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one activity and vary challenge, skill, goals and feedback over several sessions, recording boredom, anxiety, absorption and performance rather than assuming flow occurred.",
+      "minutes": 30
     }
   },
   "MIND.09": {
-    "note": "TED-Ed for the accessible mechanism; Harvard's Healthy Sleep for the overview; deeper is the Rasch & Born review (open access), the standard citation. Deliberately not leaning on Walker's contested popular claims.",
+    "difficulty": "introductory",
+    "note": "TED-Ed provides the accessible mechanism, NIH gives the overview, and the Rasch and Born review is the deeper open-access source on sleep-dependent memory consolidation.",
     "video": {
-      "title": "The benefits of a good night's sleep",
+      "title": "The Benefits of a Good Night's Sleep",
       "url": "https://www.youtube.com/watch?v=gedoSfZvBgE",
-      "source": "TED-Ed (Shai Marcu)",
-      "verifiedAt": "2026-07-16"
+      "source": "TED-Ed — Shai Marcu",
+      "type": "video",
+      "minutes": 6,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
     },
     "article": {
       "title": "Sleep On It: How Snoozing Strengthens Memories",
       "url": "https://newsinhealth.nih.gov/2013/04/sleep-it",
       "source": "NIH News in Health",
+      "type": "article",
+      "minutes": 10,
       "verifiedAt": "2026-07-16",
       "paywalled": false
     },
     "deeper": {
-      "title": "About Sleep's Role in Memory (Rasch & Born, Physiological Reviews 2013)",
+      "title": "About Sleep's Role in Memory",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/",
-      "type": "paper"
+      "source": "Rasch and Born — Physiological Reviews / PubMed Central",
+      "type": "paper",
+      "minutes": 55,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Learn two matched sets of material before sleep and before an equally long waking interval, test delayed recall and identify the controls needed before attributing differences to consolidation.",
+      "minutes": 35
     }
   },
   "MIND.10": {
-    "note": "Anil Seth's TED talk and Aeon essay are the most accessible on-ramp to 'the brain predicts, not receives'; deeper is Andy Clark's field-defining 'Whatever next?' (open PDF).",
+    "difficulty": "intermediate",
+    "note": "Anil Seth supplies the accessible on-ramp to predictive perception; Andy Clark's review is the field-defining deeper treatment of prediction, action and error correction.",
     "video": {
-      "title": "Your brain hallucinates your conscious reality",
+      "title": "Your Brain Hallucinates Your Conscious Reality",
       "url": "https://www.youtube.com/watch?v=lyu7v7nWzfo",
-      "source": "TED (Anil Seth)",
-      "verifiedAt": "2026-07-16"
+      "source": "TED — Anil Seth",
+      "type": "video",
+      "minutes": 17,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
     },
     "article": {
-      "title": "The hard problem of consciousness is a distraction from the real one",
+      "title": "The Hard Problem of Consciousness Is a Distraction from the Real One",
       "url": "https://aeon.co/essays/the-hard-problem-of-consciousness-is-a-distraction-from-the-real-one",
-      "source": "Anil Seth, Aeon",
+      "source": "Anil Seth — Aeon",
+      "type": "article",
+      "minutes": 20,
       "verifiedAt": "2026-07-16",
       "paywalled": false
     },
     "deeper": {
-      "title": "Whatever next? Predictive brains, situated agents, and the future of cognitive science (Clark, 2013)",
+      "title": "Whatever Next? Predictive Brains, Situated Agents, and the Future of Cognitive Science",
       "url": "https://www.fil.ion.ucl.ac.uk/~karl/Whatever%20next.pdf",
-      "type": "paper"
+      "source": "Andy Clark — Behavioral and Brain Sciences / UCL",
+      "type": "paper",
+      "minutes": 60,
+      "verifiedAt": "2026-07-16",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use one ambiguous image or sound to describe prior expectation, sensory evidence, prediction error and how changing context alters the final percept.",
+      "minutes": 25
     }
   },
   "MIND.11": {
-    "note": "Nielsen's essay is the best single piece on spaced repetition as a practice, not just a definition — the forgetting curve, why self-made cards matter, and how it builds understanding.",
+    "difficulty": "introductory",
+    "note": "Nielsen's essay is the strongest single practical treatment of spaced repetition as a system for building long-term understanding rather than merely memorizing isolated trivia.",
     "article": {
-      "title": "Augmenting Long-term Memory",
+      "title": "Augmenting Long-Term Memory",
       "url": "https://augmentingcognition.com/ltm.html",
       "source": "Michael Nielsen",
+      "type": "article",
+      "minutes": 45,
       "verifiedAt": "2026-07-16",
       "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create ten atomic retrieval cards from one difficult concept, schedule them over two weeks and revise cards that produce guessing, ambiguity or rote wording without understanding.",
+      "minutes": 35
     }
   },
   "MIND.12": {
-    "note": "Jarry's piece both debunks the '38 witnesses' fabrication and reports the modern CCTV evidence (help is common, and more likely with more bystanders) — exactly the correction the topic's hook points at.",
+    "difficulty": "introductory",
+    "note": "The resource debunks the fabricated '38 silent witnesses' version of Kitty Genovese and summarizes modern evidence showing that help is common and can increase with more bystanders.",
     "article": {
       "title": "The Bystander Effect Started from a Lie",
       "url": "https://www.mcgill.ca/oss/article/critical-thinking-history/bystander-effect-started-lie",
-      "source": "Jonathan Jarry, McGill Office for Science and Society",
+      "source": "Jonathan Jarry — McGill Office for Science and Society",
+      "type": "article",
+      "minutes": 12,
       "verifiedAt": "2026-07-16",
       "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Break an emergency response into noticing, interpreting, taking responsibility, knowing what to do and acting, then design instructions that reduce ambiguity at each stage.",
+      "minutes": 25
+    }
+  },
+  "PRAX.01": {
+    "difficulty": "intermediate",
+    "note": "Stanford's Zen entry discusses mushin as no-mind within a larger philosophical and embodied practice, avoiding the pop-performance caricature.",
+    "article": {
+      "title": "Japanese Zen Buddhist Philosophy",
+      "url": "https://plato.stanford.edu/entries/japanese-zen/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one well-learned physical skill and describe which parts can become automatic, which still require attention, and why mushin is not mere mindlessness.",
+      "minutes": 20
+    }
+  },
+  "PRAX.02": {
+    "difficulty": "intermediate",
+    "note": "The paired Stanford entries distinguish the wider existentialist tradition from Camus's self-described philosophy of the absurd and his criticism of existentialist escape routes.",
+    "article": {
+      "title": "Existentialism",
+      "url": "https://plato.stanford.edu/entries/existentialism/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Albert Camus",
+      "url": "https://plato.stanford.edu/entries/camus/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare Sartrean meaning-making and Camusian revolt in a two-column table, then apply both responses to the same meaningless setback.",
+      "minutes": 25
+    }
+  },
+  "PRAX.03": {
+    "difficulty": "advanced",
+    "note": "Taleb and Douady's paper gives antifragility a mathematical definition through convex response to variability rather than treating it as a vague synonym for resilience.",
+    "article": {
+      "title": "Mathematical Definition, Mapping, and Detection of (Anti)Fragility",
+      "url": "https://arxiv.org/abs/1208.1189",
+      "source": "Nassim Nicholas Taleb and Raphaël Douady — arXiv",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw one concave and one convex response curve and explain why added variability harms the first system but can benefit the second.",
+      "minutes": 25
+    }
+  },
+  "PRAX.04": {
+    "difficulty": "introductory",
+    "note": "Cornell's official guide provides a concrete, evidence-oriented note workflow with capture, cue, summary, recitation, reflection, and review.",
+    "article": {
+      "title": "The Cornell Note Taking System",
+      "url": "https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/",
+      "source": "Cornell University Learning Strategies Center",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one page of Cornell notes from a lecture or article, add retrieval questions in the cue column, and write a five-sentence summary without looking back.",
+      "minutes": 30
+    }
+  },
+  "PRAX.05": {
+    "difficulty": "intermediate",
+    "note": "Stanford presents Stoic logic, physics, and ethics as one system, correcting the modern reduction of Stoicism to emotional suppression.",
+    "article": {
+      "title": "Stoicism",
+      "url": "https://plato.stanford.edu/entries/stoicism/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "For one current problem, separate what is up to you from what is not, then write one action guided by virtue rather than by outcome control.",
+      "minutes": 20
+    }
+  },
+  "PRAX.06": {
+    "difficulty": "introductory",
+    "note": "The original passage in Chesterton's The Thing is used instead of later paraphrases, preserving his argument about understanding an institution before reforming it.",
+    "article": {
+      "title": "The Thing — The Drift from Domesticity",
+      "url": "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FContemporary-EN%2FXCT.165.html",
+      "source": "G. K. Chesterton — Catholic Library",
+      "type": "book",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one annoying rule or legacy feature, investigate the failure it originally prevented, and propose a replacement that preserves that function.",
+      "minutes": 25
+    }
+  },
+  "PRAX.07": {
+    "difficulty": "intermediate",
+    "note": "Stanford's current identity-over-time entry uses Theseus' ship to introduce competing accounts of persistence, constitution, replacement, and reassembly.",
+    "article": {
+      "title": "Identity Over Time",
+      "url": "https://plato.stanford.edu/entries/identity-time/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Apply the Ship of Theseus puzzle to a software system whose modules are gradually rewritten, then define three different criteria for calling it the same system.",
+      "minutes": 25
+    }
+  },
+  "PRAX.08": {
+    "difficulty": "intermediate",
+    "note": "Stanford's simplicity entry separates evidential, pragmatic, syntactic, and ontological simplicity and explains why Occam's Razor is not simply 'pick the easiest story.'",
+    "article": {
+      "title": "Simplicity",
+      "url": "https://plato.stanford.edu/entries/simplicity/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare two explanations by counting assumptions, parameters, predictive consequences, and ad hoc exceptions rather than judging which sounds simpler.",
+      "minutes": 25
+    }
+  },
+  "PRAX.09": {
+    "difficulty": "intermediate",
+    "note": "Yale's lecture introduces the classic trolley cases within a broader course on moral psychology, consequentialism, intention, and doing versus allowing harm.",
+    "article": {
+      "title": "Lecture 14 — The Trolley Problem",
+      "url": "https://oyc.yale.edu/philosophy/phil-181/lecture-14",
+      "source": "Open Yale Courses",
+      "type": "course",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare switch, footbridge, and loop variants, stating what changes in intention, physical means, personal force, and expected consequences.",
+      "minutes": 30
+    }
+  },
+  "PRAX.10": {
+    "difficulty": "intermediate",
+    "note": "Stanford's Daoism entry situates wu wei within early Chinese debates about action, guidance, spontaneity, and non-coercive rule.",
+    "article": {
+      "title": "Daoism",
+      "url": "https://plato.stanford.edu/entries/daoism/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Identify one task where extra force creates resistance, then redesign the process around timing, environment, and response rather than direct control.",
+      "minutes": 20
+    }
+  },
+  "PRAX.11": {
+    "difficulty": "intermediate",
+    "note": "Ericsson and Harwell clarify the original definition of deliberate practice and distinguish structured improvement from accumulated hours or casual repetition.",
+    "article": {
+      "title": "Deliberate Practice and Proposed Limits on the Effects of Practice on the Acquisition of Expert Performance",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/",
+      "source": "K. Anders Ericsson and Kyle W. Harwell — Frontiers in Psychology",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Turn one broad skill into a 30-minute practice block with a narrow target, measurable error, immediate feedback, repetition, and reflection.",
+      "minutes": 30
+    }
+  },
+  "PRAX.12": {
+    "difficulty": "intermediate",
+    "note": "The resource covers the classical via negativa—speaking by negation about what exceeds concepts—while the exercise carefully adapts subtraction as a practical heuristic.",
+    "article": {
+      "title": "Philosophy of Religion",
+      "url": "https://plato.stanford.edu/entries/philosophy-religion/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one overloaded routine or system and remove one element at a time, recording which removals preserve the goal and which destroy a necessary function.",
+      "minutes": 25
+    }
+  },
+  "MATH.01": {
+    "difficulty": "advanced",
+    "note": "Stanford's entry explains the first and second incompleteness theorems, their formal assumptions, and common overstatements about what Gödel proved.",
+    "article": {
+      "title": "Gödel’s Incompleteness Theorems",
+      "url": "https://plato.stanford.edu/entries/goedel-incompleteness/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write down the difference between consistency, completeness, and decidability, then explain which property each incompleteness theorem limits.",
+      "minutes": 20
+    }
+  },
+  "MATH.02": {
+    "difficulty": "intermediate",
+    "note": "The Stanford entry develops Bayes' theorem from conditional probability and distinguishes the mathematical rule from broader Bayesian inference.",
+    "article": {
+      "title": "Bayes’ Theorem",
+      "url": "https://plato.stanford.edu/entries/bayes-theorem/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose a medical-test example with a low base rate and calculate the posterior probability after one positive result.",
+      "minutes": 20
+    }
+  },
+  "MATH.03": {
+    "difficulty": "intermediate",
+    "note": "Stanford's set-theory overview introduces cardinality, Cantor's theory of the infinite, and why different infinite sets can have different sizes.",
+    "article": {
+      "title": "Set Theory",
+      "url": "https://plato.stanford.edu/entries/set-theory/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Construct a diagonal argument showing that binary sequences cannot be completely listed, then connect it to the uncountability of the real numbers.",
+      "minutes": 25
+    }
+  },
+  "MATH.04": {
+    "difficulty": "intermediate",
+    "note": "The Clay Mathematics Institute gives the official Millennium Prize framing of efficient verification, efficient solution, and the significance of P versus NP.",
+    "article": {
+      "title": "P vs NP",
+      "url": "https://www.claymath.org/millennium/p-vs-np/",
+      "source": "Clay Mathematics Institute",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one search problem such as Sudoku or travelling salesperson and separate the work needed to verify a proposed answer from the work needed to find one.",
+      "minutes": 20
+    }
+  },
+  "MATH.05": {
+    "difficulty": "intermediate",
+    "note": "MIT's signals-and-systems lecture treats the Fourier transform as the continuous-frequency extension of Fourier-series analysis.",
+    "article": {
+      "title": "Lecture 16: Fourier Transform",
+      "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-16-fourier-transform/",
+      "source": "MIT OpenCourseWare",
+      "type": "course",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Generate a signal made from two sine waves, plot it in time, compute its discrete Fourier transform, and identify the two frequency peaks.",
+      "minutes": 35
+    }
+  },
+  "MATH.06": {
+    "difficulty": "intermediate",
+    "note": "MathWorld gives a compact derivation and reference treatment of Euler's formula, from which Euler's identity follows by substituting pi.",
+    "article": {
+      "title": "Euler Formula",
+      "url": "https://mathworld.wolfram.com/EulerFormula.html",
+      "source": "Wolfram MathWorld",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use the power-series expansions of exponential, sine, and cosine to derive Euler's formula term by term.",
+      "minutes": 25
+    }
+  },
+  "MATH.07": {
+    "difficulty": "intermediate",
+    "note": "Scholarpedia's expert-authored history connects nonlinear dynamical systems, sensitive dependence, attractors, bifurcations, and deterministic chaos.",
+    "article": {
+      "title": "History of Dynamical Systems",
+      "url": "https://www.scholarpedia.org/article/History_of_dynamical_systems",
+      "source": "Scholarpedia — Philip Holmes",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Iterate the logistic map for two initial values that differ only in the sixth decimal place and graph how their trajectories separate.",
+      "minutes": 30
+    }
+  },
+  "MATH.08": {
+    "difficulty": "introductory",
+    "note": "MIT's plane-geometry and topology course supplies an accessible route into continuity, deformation, winding, and topological invariants.",
+    "article": {
+      "title": "Geometry and Topology in the Plane",
+      "url": "https://ocw.mit.edu/courses/18-900-geometry-and-topology-in-the-plane-spring-2023/",
+      "source": "MIT OpenCourseWare",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Classify several drawn shapes by connected components and holes, then explain which can be continuously deformed into one another.",
+      "minutes": 25
+    }
+  },
+  "MATH.09": {
+    "difficulty": "introductory",
+    "note": "NIST's Monte Carlo tool and documentation provide a practical institutional introduction to simulation-based uncertainty analysis.",
+    "article": {
+      "title": "Monte Carlo Tool",
+      "url": "https://www.nist.gov/services-resources/software/monte-carlo-tool",
+      "source": "National Institute of Standards and Technology",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Estimate pi by sampling random points in a square, counting those inside the inscribed circle, and plotting error against sample size.",
+      "minutes": 30
+    }
+  },
+  "MATH.10": {
+    "difficulty": "intermediate",
+    "note": "NIST's normal-distribution handbook entry explains the distribution and explicitly identifies the central limit theorem as its main theoretical justification.",
+    "article": {
+      "title": "Normal Distribution",
+      "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda3661.htm",
+      "source": "NIST/SEMATECH e-Handbook of Statistical Methods",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Simulate repeated samples from a strongly skewed distribution and compare histograms of the raw values with histograms of their sample means.",
+      "minutes": 30
+    }
+  },
+  "MATH.11": {
+    "difficulty": "intermediate",
+    "note": "MIT's opening graph-theory lecture introduces graphs as mathematical objects and connects structural questions to modern combinatorics.",
+    "article": {
+      "title": "Lecture 1: Introduction to Graph Theory and Additive Combinatorics",
+      "url": "https://ocw.mit.edu/courses/18-225-graph-theory-and-additive-combinatorics-fall-2023/resources/lecture-1-introduction-to-graph-theory-and-additive-combinatorics/",
+      "source": "MIT OpenCourseWare",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model the Seven Bridges of Königsberg as a graph, calculate every vertex degree, and use Euler's criterion to explain why the walk is impossible.",
+      "minutes": 20
+    }
+  },
+  "MATH.12": {
+    "difficulty": "introductory",
+    "note": "Princeton's programming assignment turns the birthday collision result into an experiment and connects probability calculations with simulation.",
+    "article": {
+      "title": "The Birthday Problem",
+      "url": "https://www.cs.princeton.edu/courses/archive/fall10/cos126/assignments/05bday.html",
+      "source": "Princeton University Computer Science",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Simulate rooms of increasing size until the shared-birthday probability crosses 50 percent, then compare the simulation with the exact formula.",
+      "minutes": 30
+    }
+  },
+  "COSM.01": {
+    "difficulty": "intermediate",
+    "note": "Stanford's philosophy-of-time entry maps the main disputes about passage, persistence, past and future reality, and time's relation to physics.",
+    "article": {
+      "title": "Time",
+      "url": "https://plato.stanford.edu/entries/time/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare presentism, eternalism, and the growing-block view in a table, including what each says exists now.",
+      "minutes": 25
+    }
+  },
+  "COSM.02": {
+    "difficulty": "advanced",
+    "note": "The Stanford entry separates thermodynamic irreversibility, statistical mechanics, boundary conditions, and the arrow of time instead of reducing entropy to vague disorder.",
+    "article": {
+      "title": "Thermodynamic Asymmetry in Time",
+      "url": "https://plato.stanford.edu/entries/time-thermo/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Describe one reversible microscopic process and one irreversible macroscopic process, then identify the statistical assumption connecting them.",
+      "minutes": 25
+    }
+  },
+  "COSM.03": {
+    "difficulty": "introductory",
+    "note": "The SETI Institute presents the paradox, its assumptions, the Drake-equation context, and major families of proposed resolutions.",
+    "article": {
+      "title": "The Fermi Paradox",
+      "url": "https://www.seti.org/research/seti-101/fermi-paradox/",
+      "source": "SETI Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "List five possible filters or explanations for the silence, then rank them by how much evidence would be needed to distinguish them.",
+      "minutes": 20
+    }
+  },
+  "COSM.04": {
+    "difficulty": "intermediate",
+    "note": "Einstein Online's Elementary Einstein collection provides connected introductions to special relativity, spacetime, gravity, and general relativity.",
+    "article": {
+      "title": "Elementary Einstein",
+      "url": "https://www.einstein-online.info/en/category/elementary/",
+      "source": "Einstein Online — Max Planck Institute for Gravitational Physics",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Calculate the Lorentz factor at several fractions of light speed and explain why Newtonian time is a good approximation at everyday speeds.",
+      "minutes": 30
+    }
+  },
+  "COSM.05": {
+    "difficulty": "intermediate",
+    "note": "The Nobel Prize's 2022 popular information explains entanglement, Bell inequalities, and the experiments that ruled out broad classes of local hidden-variable models.",
+    "article": {
+      "title": "The Nobel Prize in Physics 2022 — Popular Information",
+      "url": "https://www.nobelprize.org/prizes/physics/2022/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a plain-language explanation of correlation, entanglement, and Bell inequality violation without using faster-than-light messaging as an explanation.",
+      "minutes": 25
+    }
+  },
+  "COSM.06": {
+    "difficulty": "introductory",
+    "note": "OpenStax develops double-slit interference quantitatively and shows how path difference produces bright and dark fringes.",
+    "article": {
+      "title": "Young’s Double-Slit Interference",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/3-1-youngs-double-slit-interference",
+      "source": "OpenStax University Physics",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use the double-slit fringe-spacing formula to predict how the pattern changes when wavelength, slit spacing, or screen distance is doubled.",
+      "minutes": 20
+    }
+  },
+  "COSM.07": {
+    "difficulty": "introductory",
+    "note": "NASA's universe overview distinguishes ordinary matter, dark matter, and dark energy and summarizes the observations used to infer each component.",
+    "article": {
+      "title": "Building Blocks",
+      "url": "https://science.nasa.gov/universe/overview/building-blocks/",
+      "source": "NASA Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create an evidence table for dark matter and dark energy, separating what is directly observed from what is inferred.",
+      "minutes": 25
+    }
+  },
+  "COSM.08": {
+    "difficulty": "introductory",
+    "note": "CERN's official overview explains the Standard Model's matter particles, force carriers, Higgs field, successes, and known omissions.",
+    "article": {
+      "title": "The Standard Model",
+      "url": "https://home.cern/science/physics/standard-model",
+      "source": "CERN",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Recreate the Standard Model table from memory, grouping quarks, leptons, and bosons and adding charge and force interaction notes.",
+      "minutes": 30
+    }
+  },
+  "COSM.09": {
+    "difficulty": "advanced",
+    "note": "David Wallace's review explains precisely why combining black-hole evaporation with ordinary quantum mechanics appears to destroy information.",
+    "article": {
+      "title": "Why Black Hole Information Loss is Paradoxical",
+      "url": "https://arxiv.org/abs/1710.03783",
+      "source": "David Wallace — arXiv",
+      "type": "paper",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write the paradox as a sequence of assumptions and identify which assumption each major proposed resolution must reject or modify.",
+      "minutes": 30
+    }
+  },
+  "COSM.10": {
+    "difficulty": "introductory",
+    "note": "NASA's WMAP overview explains the microwave background as relic radiation and connects its measured fluctuations to the age, geometry, and composition of the universe.",
+    "article": {
+      "title": "WMAP Overview",
+      "url": "https://science.nasa.gov/mission/wmap/wmap-overview/",
+      "source": "NASA Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Explain why the cosmic microwave background is not light from the Big Bang instant itself and what the anisotropy map measures.",
+      "minutes": 20
+    }
+  },
+  "COSM.11": {
+    "difficulty": "intermediate",
+    "note": "NASA's discussion of dark energy and cosmic expansion provides the observational basis for considering long-term expansion-dominated futures, including increasingly cold and dilute outcomes.",
+    "article": {
+      "title": "Dark Energy Changes the Universe",
+      "url": "https://science.nasa.gov/missions/hubble/dark-energy-changes-the-universe/",
+      "source": "NASA Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare heat death, Big Crunch, and Big Rip scenarios by stating the required expansion behavior and the final availability of usable energy.",
+      "minutes": 25
+    }
+  },
+  "COSM.12": {
+    "difficulty": "introductory",
+    "note": "The Santa Fe Institute introduces complex-systems science through nonlinearity, collective dynamics, hierarchy, randomness, and emergence.",
+    "article": {
+      "title": "What is Complex Systems Science?",
+      "url": "https://www.santafe.edu/what-is-complex-systems-science",
+      "source": "Santa Fe Institute",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose an emergent system and identify its agents, local rules, feedback loops, macro-pattern, and why the macro-pattern is not written into any one rule.",
+      "minutes": 25
+    }
+  },
+  "VITA.01": {
+    "difficulty": "introductory",
+    "note": "NHGRI explains epigenomic marks, gene regulation, development, environmental response, and the limited senses in which marks can persist through cell division or generations.",
+    "article": {
+      "title": "Epigenomics Fact Sheet",
+      "url": "https://www.genome.gov/about-genomics/fact-sheets/Epigenomics-Fact-Sheet",
+      "source": "National Human Genome Research Institute",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw how DNA methylation and histone modification can alter gene expression without changing nucleotide sequence, then distinguish mitotic from transgenerational inheritance.",
+      "minutes": 25
+    }
+  },
+  "VITA.02": {
+    "difficulty": "introductory",
+    "note": "NHGRI's genome-editing overview explains targeted cutting and repair, why CRISPR changed the field, and the difference between research use and clinical application.",
+    "article": {
+      "title": "What is genome editing?",
+      "url": "https://www.genome.gov/about-genomics/policy-issues/what-is-Genome-Editing",
+      "source": "National Human Genome Research Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Sketch a CRISPR-Cas9 edit from guide-RNA targeting through DNA cutting and repair, comparing knockout by end joining with precise editing by a repair template.",
+      "minutes": 25
+    }
+  },
+  "VITA.03": {
+    "difficulty": "intermediate",
+    "note": "This review balances established roles in metabolism and immunity with unresolved definitions of a healthy microbiome and uncertainty about whether many associations are causes or consequences.",
+    "article": {
+      "title": "Establishing What Constitutes a Healthy Human Gut Microbiome: State of the Science, Regulatory Considerations, and Future Directions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6825832/",
+      "source": "National Academies workshop authors — PubMed Central",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one microbiome-health headline and classify its evidence as association, mechanism, animal experiment, or human causal trial, noting plausible confounders.",
+      "minutes": 30
+    }
+  },
+  "VITA.04": {
+    "difficulty": "introductory",
+    "note": "OpenStax presents the evidence that mitochondria and plastids descend from engulfed bacteria, including membranes, DNA, ribosomes, and gene transfer.",
+    "article": {
+      "title": "Eukaryotic Origins",
+      "url": "https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins",
+      "source": "OpenStax Biology 2e",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create an evidence table for endosymbiosis covering double membranes, circular DNA, ribosomes, binary fission, phylogeny, and transferred nuclear genes.",
+      "minutes": 25
+    }
+  },
+  "VITA.05": {
+    "difficulty": "intermediate",
+    "note": "DeepMind's official AlphaFold overview explains sequence-to-structure prediction and its scientific impact while leaving experimental validation and protein dynamics visible as separate problems.",
+    "article": {
+      "title": "AlphaFold",
+      "url": "https://deepmind.google/science/alphafold/",
+      "source": "Google DeepMind",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Look up one protein in AlphaFold DB and identify high- and low-confidence regions, then list questions a static prediction cannot answer about function or dynamics.",
+      "minutes": 30
+    }
+  },
+  "VITA.06": {
+    "difficulty": "introductory",
+    "note": "CDC explains antigens, adaptive immune memory, vaccine platforms, and why temporary immune symptoms differ from the disease being prevented.",
+    "article": {
+      "title": "Explaining How Vaccines Work",
+      "url": "https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html",
+      "source": "Centers for Disease Control and Prevention",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace antigen presentation, helper T-cell signalling, B-cell activation, antibodies, and memory cells after vaccination, then compare first and later exposure.",
+      "minutes": 25
+    }
+  },
+  "VITA.07": {
+    "difficulty": "introductory",
+    "note": "OpenStax distinguishes convergent from divergent evolution and shows how similar selection pressures can independently produce analogous traits.",
+    "article": {
+      "title": "Understanding Evolution",
+      "url": "https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution",
+      "source": "OpenStax Biology 2e",
+      "type": "book",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare wings in bats, birds, and insects, distinguishing shared function, developmental origin, homology, analogy, and the selection pressure involved.",
+      "minutes": 25
+    }
+  },
+  "VITA.08": {
+    "difficulty": "introductory",
+    "note": "OpenStax connects chloroplast structure, pigments, light reactions, carbon fixation, and energy storage in a standard biology treatment.",
+    "article": {
+      "title": "Overview of Photosynthesis",
+      "url": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis",
+      "source": "OpenStax Biology 2e",
+      "type": "book",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the light reactions and Calvin cycle, labelling where photons, water, oxygen, ATP, NADPH, carbon dioxide, and carbohydrate enter or leave.",
+      "minutes": 30
+    }
+  },
+  "VITA.09": {
+    "difficulty": "introductory",
+    "note": "WHO's current fact sheet explains natural selection for resistance, misuse and overuse, transmission across humans, animals and environments, and the public-health consequences.",
+    "article": {
+      "title": "Antimicrobial resistance",
+      "url": "https://www.who.int/news-room/fact-sheets/antimicrobial-resistance",
+      "source": "World Health Organization",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model a bacterial population before and after antibiotic exposure and explain selection, mutation, horizontal transfer, incomplete treatment, and transmission without saying bacteria choose to adapt.",
+      "minutes": 25
+    }
+  },
+  "VITA.10": {
+    "difficulty": "introductory",
+    "note": "NIGMS explains molecular clocks, the suprachiasmatic nucleus, peripheral clocks, environmental cues, and the consequences of chronic misalignment.",
+    "article": {
+      "title": "Circadian Rhythms",
+      "url": "https://www.nigms.nih.gov/education/fact-sheets/Pages/circadian-rhythms",
+      "source": "National Institute of General Medical Sciences",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Track light exposure, meals, exercise, sleepiness, and sleep timing for three days, then identify cues that may advance, delay, or desynchronise your clocks.",
+      "minutes": 30
+    }
+  },
+  "VITA.11": {
+    "difficulty": "intermediate",
+    "note": "NIA explains telomeres as chromosome-end protection and places shortening among several interacting ageing processes rather than presenting it as a single master clock.",
+    "article": {
+      "title": "Section for Telomere Maintenance",
+      "url": "https://www.nia.nih.gov/research/labs/lgg/section-telomere-maintenance",
+      "source": "National Institute on Aging",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the trade-off between unlimited cell division and tumour suppression, including telomere shortening, telomerase, senescence, apoptosis, stem cells, and cancer.",
+      "minutes": 25
+    }
+  },
+  "VITA.12": {
+    "difficulty": "intermediate",
+    "note": "OpenStax gives a quantitative account of resting potential, threshold, voltage-gated sodium and potassium channels, refractory periods, and propagation.",
+    "article": {
+      "title": "The Action Potential",
+      "url": "https://openstax.org/books/anatomy-and-physiology/pages/12-4-the-action-potential",
+      "source": "OpenStax Anatomy and Physiology",
+      "type": "book",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plot membrane voltage over time and label rest, threshold, depolarisation, repolarisation, hyperpolarisation, sodium-channel state, potassium-channel state, and refractory periods.",
+      "minutes": 30
+    }
+  },
+  "ENGN.01": {
+    "difficulty": "introductory",
+    "note": "IMAX's official overview explains the integrated system of large-format capture, projection, sound, screen geometry, and theatre design rather than treating IMAX as only a screen size.",
+    "article": {
+      "title": "The IMAX Experience",
+      "url": "https://www.imax.com/the-imax-experience",
+      "source": "IMAX",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare standard cinema and IMAX by capture format, image area, projection, aspect ratio, screen geometry, seating field of view, and sound system.",
+      "minutes": 25
+    }
+  },
+  "ENGN.02": {
+    "difficulty": "intermediate",
+    "note": "Formula 1's technical explainer uses a current race car to connect wing profiles, pressure differences, ground effect, downforce, drag, and setup compromises.",
+    "article": {
+      "title": "F1 EXPLAINS: Downforce and why F1 cars have wings — with McLaren aero specialist Emel Cankaya",
+      "url": "https://www.formula1.com/en/latest/article/f1-explains-downforce-and-why-f1-cars-have-wings-with-mclaren-aero.10xj8CJPz8s7CmwfoyWmCU",
+      "source": "Formula 1",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the aerodynamic forces on an F1 car and explain how increasing wing angle changes cornering grip, tyre load, drag, top speed, and energy use.",
+      "minutes": 25
+    }
+  },
+  "ENGN.03": {
+    "difficulty": "introductory",
+    "note": "The Bluetooth SIG overview introduces the radio, protocol stack, topology, Classic and Low Energy modes, frequency use, and interoperability ecosystem.",
+    "article": {
+      "title": "Bluetooth Technology Overview",
+      "url": "https://www.bluetooth.com/learn-about-bluetooth/tech-overview/",
+      "source": "Bluetooth Special Interest Group",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace a Bluetooth Low Energy connection from advertising and scanning through connection, service discovery, characteristic access, and disconnection.",
+      "minutes": 25
+    }
+  },
+  "ENGN.04": {
+    "difficulty": "intermediate",
+    "note": "Intel's manufacturing overview follows processor fabrication from purified silicon and wafers through repeated deposition, lithography, etching, doping, interconnect, testing, cutting, and packaging.",
+    "article": {
+      "title": "How Are Intel® Processors Made?",
+      "url": "https://www.intel.com/content/www/us/en/support/articles/000096573/processors.html",
+      "source": "Intel",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a process flow from silicon ingot to packaged CPU and mark which stages add material, remove material, change electrical properties, or inspect defects.",
+      "minutes": 30
+    }
+  },
+  "ENGN.05": {
+    "difficulty": "introductory",
+    "note": "D23's animation glossary entry explains the transparent celluloid layer that allowed moving characters to be painted separately from reusable backgrounds.",
+    "article": {
+      "title": "Cel",
+      "url": "https://d23.com/a-to-z/cel/",
+      "source": "D23 — The Official Disney Fan Club",
+      "type": "reference",
+      "minutes": 10,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan a two-second animation on twos: draw 12 numbered poses, identify keyframes and in-betweens, and separate the moving subject from a reusable background.",
+      "minutes": 40
+    }
+  },
+  "ENGN.06": {
+    "difficulty": "introductory",
+    "note": "NASA's propulsion guide explains the compressor, combustor, turbine and nozzle, then distinguishes turbojet, turbofan, turboprop and turboshaft arrangements.",
+    "article": {
+      "title": "Gas Turbine Propulsion",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/turbine-engines/",
+      "source": "NASA Glenn Research Center",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Label a turbofan cutaway and track pressure, temperature, velocity, energy transfer, and airflow through fan, compressor, combustor, turbine, bypass and nozzle.",
+      "minutes": 30
+    }
+  },
+  "ENGN.07": {
+    "difficulty": "intermediate",
+    "note": "BYU's acoustics group explains active noise control as destructive interference produced through sensing, processing, and secondary sound sources, including practical limitations.",
+    "article": {
+      "title": "Active Noise Control",
+      "url": "https://acoustics.byu.edu/active-noise-control",
+      "source": "Brigham Young University Acoustics Research Group",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw a feedforward ANC system with reference microphone, adaptive filter, speaker, error microphone and listener, then explain why low steady frequencies are easiest to cancel.",
+      "minutes": 25
+    }
+  },
+  "ENGN.08": {
+    "difficulty": "intermediate",
+    "note": "WSDOT's Tacoma Narrows history explains the load path of suspension bridges and uses the 1940 failure to show why aerodynamic stability must be designed, not assumed.",
+    "article": {
+      "title": "Suspension Bridge Basics",
+      "url": "https://www.wsdot.wa.gov/TNBHistory/suspension-bridges.htm",
+      "source": "Washington State Department of Transportation",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Why the Tacoma Narrows Bridge Collapsed",
+      "url": "https://wsdot.wa.gov/TNBhistory/bridges-failure.htm",
+      "source": "Washington State Department of Transportation",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the load path from deck to suspenders, main cables, towers and anchorages, then add wind-induced torsion and the design features used to resist it.",
+      "minutes": 30
+    }
+  },
+  "ENGN.09": {
+    "difficulty": "intermediate",
+    "note": "The NRC definition identifies the universal reactor functions: controlled fission, fuel, moderation where applicable, neutron economy, cooling, monitoring, control rods, shielding and protection.",
+    "article": {
+      "title": "Nuclear reactor",
+      "url": "https://www.nrc.gov/reading-rm/basic-ref/glossary/nuclear-reactor",
+      "source": "U.S. Nuclear Regulatory Commission",
+      "type": "reference",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw a thermal reactor and explain the separate jobs of fuel, moderator, coolant, control rods, pressure boundary, steam system, containment and emergency cooling.",
+      "minutes": 30
+    }
+  },
+  "ENGN.10": {
+    "difficulty": "introductory",
+    "note": "DOE explains batteries through chemical potential, electron flow in the external circuit, ion flow through electrolyte, charging reversibility, degradation and safety research.",
+    "article": {
+      "title": "DOE Explains...Batteries",
+      "url": "https://www.energy.gov/science/doe-explainsbatteries",
+      "source": "U.S. Department of Energy Office of Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw charge and discharge for a lithium-ion cell, showing electron and ion directions, anode, cathode, electrolyte, separator and one pathway to thermal runaway.",
+      "minutes": 25
+    }
+  },
+  "ENGN.11": {
+    "difficulty": "introductory",
+    "note": "GPS.gov explains the space, control and user segments, satellite time broadcasts and receiver positioning; its trilateration activity turns signal travel time into measured distance.",
+    "article": {
+      "title": "GPS",
+      "url": "https://www.gps.gov/gps",
+      "source": "GPS.gov — U.S. Government",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Trilateration",
+      "url": "https://www.gps.gov/trilateration",
+      "source": "GPS.gov / NOAA",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use four simulated satellite positions and travel times to solve receiver location and clock offset, then list atmospheric, orbital and multipath error sources.",
+      "minutes": 40
+    }
+  },
+  "ENGN.12": {
+    "difficulty": "introductory",
+    "note": "OpenStax connects focal length, aperture, shutter and image formation to the sensor plane, giving the optical foundation beneath digital-camera electronics.",
+    "article": {
+      "title": "The Camera",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/2-6-the-camera",
+      "source": "OpenStax University Physics Volume 3",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Understanding Focal Length",
+      "url": "https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/understanding-focal-length",
+      "source": "Nikon Learn & Explore",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Photograph one subject using different focal lengths, apertures and shutter speeds, then explain changes in angle of view, perspective, depth of field, motion and sensor exposure.",
+      "minutes": 40
+    }
+  },
+  "INFR.01": {
+    "difficulty": "introductory",
+    "note": "TeleGeography's continuously maintained FAQ explains fibre construction, routing, ownership, capacity, landing, repair, faults and why satellites carry only a small share of international traffic.",
+    "article": {
+      "title": "Submarine Cable Frequently Asked Questions",
+      "url": "https://www2.telegeography.com/submarine-cable-faqs-frequently-asked-questions",
+      "source": "TeleGeography",
+      "type": "reference",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use the submarine cable map to trace two independent routes between South Africa and Europe, then identify shared landing or geographic failure points.",
+      "minutes": 30
+    }
+  },
+  "INFR.02": {
+    "difficulty": "intermediate",
+    "note": "DOE explains generation, transmission, substations and distribution, then shows why system operators must continuously balance real power to protect frequency and reliability.",
+    "article": {
+      "title": "Electricity",
+      "url": "https://www.energy.gov/topics/electricity",
+      "source": "U.S. Department of Energy",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Keeping the Lights On: Essential Reliability Services",
+      "url": "https://www.energy.gov/cmei/articles/keeping-lights-essential-reliability-services",
+      "source": "U.S. Department of Energy",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Simulate a generator trip on a supply-demand graph and sequence inertia, primary frequency response, automatic control, dispatch and load shedding.",
+      "minutes": 30
+    }
+  },
+  "INFR.03": {
+    "difficulty": "introductory",
+    "note": "The Smithsonian account connects Malcolm McLean's experiment, intermodal transfer, port transformation, labour disruption and standard boxes as one system innovation.",
+    "article": {
+      "title": "Transforming the Waterfront",
+      "url": "https://americanhistory.si.edu/explore/exhibitions/america-on-the-move/online/transforming-waterfront",
+      "source": "Smithsonian National Museum of American History",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "How Container Shipping Works",
+      "url": "https://www.worldshipping.org/how-container-shipping-works",
+      "source": "World Shipping Council",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map one container from factory to customer, including stuffing, trucking, terminal gate, crane, vessel, customs, rail or road transfer, empty return and documentation.",
+      "minutes": 30
+    }
+  },
+  "INFR.04": {
+    "difficulty": "introductory",
+    "note": "CDC explains the conventional drinking-water train; EPA's municipal wastewater primer adds preliminary, primary, biological secondary and advanced treatment before discharge or reuse.",
+    "article": {
+      "title": "How Water Treatment Works",
+      "url": "https://www.cdc.gov/drinking-water/about/how-water-treatment-works.html",
+      "source": "Centers for Disease Control and Prevention",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Primer for Municipal Wastewater Treatment Systems",
+      "url": "https://www.epa.gov/sites/default/files/2015-09/documents/primer.pdf",
+      "source": "U.S. Environmental Protection Agency",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the complete urban water loop from source through drinking treatment, distribution, household use, sewer collection, wastewater treatment, receiving water and possible reuse.",
+      "minutes": 35
+    }
+  },
+  "INFR.05": {
+    "difficulty": "intermediate",
+    "note": "ICAO frames air traffic management as a total system combining airspace organization, communication, navigation, surveillance, separation assurance, collision avoidance and traffic-flow optimization.",
+    "article": {
+      "title": "Air Traffic Management (ATM)",
+      "url": "https://www.icao.int/air-traffic-management-atm",
+      "source": "International Civil Aviation Organization",
+      "type": "reference",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan two crossing flights through controlled airspace and show how clearances, altitude, route, surveillance, handoffs, flow control and separation minima prevent conflict.",
+      "minutes": 30
+    }
+  },
+  "INFR.06": {
+    "difficulty": "intermediate",
+    "note": "Nobel's account links Haber's catalytic ammonia synthesis to Bosch's engineering of a safe, durable high-pressure industrial process and large-scale fertilizer production.",
+    "article": {
+      "title": "Nitrogen becomes artificial fertilizer",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2007/8923-nitrogen-becomes-artificial-fertilizer/",
+      "source": "NobelPrize.org",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Carl Bosch — Facts",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1931/bosch/facts/",
+      "source": "NobelPrize.org",
+      "type": "reference",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Apply Le Châtelier's principle to nitrogen plus hydrogen forming ammonia and explain the engineering trade-offs among pressure, temperature, catalyst, conversion, recycle and energy use.",
+      "minutes": 30
+    }
+  },
+  "INFR.07": {
+    "difficulty": "introductory",
+    "note": "The American Cement Association separates cement from concrete and explains hydration, aggregate binding, placement, curing, strength development and durability.",
+    "article": {
+      "title": "Applications of Cement",
+      "url": "https://www.cement.org/cement-concrete/applications-of-cement/",
+      "source": "American Cement Association",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "How Cement Is Made",
+      "url": "https://www.cement.org/cement-concrete/how-cement-is-made/",
+      "source": "American Cement Association",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare four mixes by water-cement ratio, aggregate, curing and reinforcement, predicting workability, porosity, compressive strength, cracking and embodied emissions.",
+      "minutes": 30
+    }
+  },
+  "INFR.08": {
+    "difficulty": "introductory",
+    "note": "WHO treats the cold chain as an end-to-end quality system involving forecasting, packaging, storage, transport, monitoring, stock control, equipment and contingency planning.",
+    "article": {
+      "title": "Supply chain and logistics",
+      "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/essential-programme-on-immunization/supply-chain",
+      "source": "World Health Organization",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design a cold-chain route to a remote clinic, including temperature range, packaging, data loggers, storage capacity, transport delays, power failure and product quarantine rules.",
+      "minutes": 35
+    }
+  },
+  "INFR.09": {
+    "difficulty": "introductory",
+    "note": "The U.S. Treasury's acquiring-service explanation clearly separates the real-time authorization message from later clearing, net obligations and interbank settlement.",
+    "article": {
+      "title": "How CAS Works",
+      "url": "https://fiscal.treasury.gov/payments-to-government/card-acquiring-service-cas/how-cas-works",
+      "source": "U.S. Department of the Treasury — Bureau of the Fiscal Service",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace a card purchase through cardholder, merchant, gateway or processor, acquirer, network and issuer during authorization, capture, clearing, settlement and chargeback.",
+      "minutes": 30
+    }
+  },
+  "INFR.10": {
+    "difficulty": "introductory",
+    "note": "ISO explains standards as expert consensus that creates repeatable specifications, interoperability, safety, quality and access to markets rather than rules chosen by a single vendor.",
+    "article": {
+      "title": "Standards",
+      "url": "https://www.iso.org/cms/live/live/en/sites/isoorg/home/standards.html",
+      "source": "International Organization for Standardization",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one everyday interface and list the dimensions, protocols, tests, terminology and governance that must be standardized for products from different firms to interoperate.",
+      "minutes": 25
+    }
+  },
+  "INFR.11": {
+    "difficulty": "intermediate",
+    "note": "NIST describes the semiconductor supply chain as globally distributed, highly specialized and dependent on thousands of suppliers, with important geographic concentrations in tools and materials.",
+    "article": {
+      "title": "Vision for Success: Facilities for Semiconductor Materials and Manufacturing Equipment",
+      "url": "https://www.nist.gov/chips/vision-success-facilities-semiconductor-materials-and-manufacturing-equipment",
+      "source": "National Institute of Standards and Technology",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map the supply chain for one advanced chip across design software, architecture IP, wafers, chemicals, lithography, fabrication, packaging, testing and final assembly, marking single points of concentration.",
+      "minutes": 35
+    }
+  },
+  "INFR.12": {
+    "difficulty": "intermediate",
+    "note": "The NTP Project explains the hierarchy of reference clocks and servers, timestamp exchange, network-delay estimation, clock discipline, UTC and leap-second complications.",
+    "article": {
+      "title": "The NTP FAQ and HOWTO",
+      "url": "https://www.ntp.org/ntpfaq/",
+      "source": "Network Time Protocol Project",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Record four NTP timestamps, calculate round-trip delay and clock offset, then explain asymmetry, drift, stratum, leap seconds and why monotonic time differs from wall-clock time.",
+      "minutes": 35
     }
   },
   "COMP.01": {
@@ -419,6 +1860,2082 @@
     "exercise": {
       "prompt": "In your main programming language, test 0.1 + 0.2, repeated addition, equality near zero, NaN, positive infinity, and negative zero. Explain each result.",
       "minutes": 25
+    }
+  },
+  "LING.01": {
+    "difficulty": "introductory",
+    "note": "The Annual Review separates deliberately constructed languages from naturally changing languages, while showing that both exhibit systematic phonology, grammar, vocabulary and social use.",
+    "article": {
+      "title": "Constructed Languages",
+      "url": "https://www.annualreviews.org/doi/10.1146/annurev-linguistics-030421-064707",
+      "source": "Annual Review of Linguistics",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Create a tiny language with a sound inventory, word-order rule, plural rule and ten-word vocabulary, then describe how ordinary use could make those rules drift over generations.",
+      "minutes": 40
+    }
+  },
+  "LING.02": {
+    "difficulty": "intermediate",
+    "note": "Leiden University's course demonstrates the comparative method through regular sound correspondences, reconstruction and the Indo-European family rather than treating Proto-Indo-European as a recorded language.",
+    "article": {
+      "title": "Introduction to Comparative Indo-European Linguistics",
+      "url": "https://www.coursera.org/learn/comparative-indo-european-linguistics",
+      "source": "Leiden University — Coursera",
+      "type": "course",
+      "minutes": 90,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare a small set of cognates across three Indo-European languages, mark regular sound correspondences and propose one reconstructed ancestral form.",
+      "minutes": 35
+    }
+  },
+  "LING.03": {
+    "difficulty": "intermediate",
+    "note": "The Ask-a-Linguist overview distinguishes linguistic determinism from weaker linguistic-relativity claims and reflects the field's rejection of the strong popular version.",
+    "article": {
+      "title": "The Sapir-Whorf Hypothesis",
+      "url": "https://old.linguistlist.org/ask-ling/sapir.cfm",
+      "source": "The LINGUIST List — Ask a Linguist",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one claimed language-thought effect and separate vocabulary availability, attention, memory, categorisation, cultural practice and the stronger claim that thought is impossible without a word.",
+      "minutes": 25
+    }
+  },
+  "LING.04": {
+    "difficulty": "introductory",
+    "note": "The Unicode Standard surveys alphabetic, abjad, syllabic, abugida and logographic systems through the practical problem of representing their characters digitally.",
+    "article": {
+      "title": "Writing Systems and Punctuation",
+      "url": "https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-6/",
+      "source": "The Unicode Standard, Version 16.0",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Classify twelve scripts as alphabet, abjad, abugida, syllabary, logography or mixed system, and state what linguistic unit each basic sign represents.",
+      "minutes": 30
+    }
+  },
+  "LING.05": {
+    "difficulty": "advanced",
+    "note": "Stanford's entry presents the evidence and arguments around innate language capacity while distinguishing broad biological preparedness from specific Universal Grammar proposals.",
+    "article": {
+      "title": "Innateness and Language",
+      "url": "https://plato.stanford.edu/entries/innateness-language/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build the strongest poverty-of-the-stimulus argument you can, then list alternative explanations based on statistical learning, cognition, interaction and cultural evolution.",
+      "minutes": 35
+    }
+  },
+  "LING.06": {
+    "difficulty": "intermediate",
+    "note": "The Annual Review explains current debates about pidgin and creole formation, contact ecologies and the problems with treating all creoles as one exceptional language type.",
+    "article": {
+      "title": "Pidgins and Creoles: Debates and Issues",
+      "url": "https://www.annualreviews.org/doi/10.1146/annurev-anthro-121319-071304",
+      "source": "Annual Review of Anthropology",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Compare a pidgin and a creole by social history, native-speaker status, vocabulary sources, grammar and community identity without assuming a universal one-generation pathway.",
+      "minutes": 30
+    }
+  },
+  "LING.07": {
+    "difficulty": "introductory",
+    "note": "UNESCO frames language revitalisation as community-led work involving education, intergenerational transmission, documentation, technology, public services and language rights.",
+    "article": {
+      "title": "International Decade of Indigenous Languages 2022–2032",
+      "url": "https://www.unesco.org/en/decades/indigenous-languages",
+      "source": "UNESCO",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design a ten-year revitalisation plan covering fluent elders, children, teacher training, orthography, media, public domains, digital tools and community ownership.",
+      "minutes": 35
+    }
+  },
+  "LING.08": {
+    "difficulty": "introductory",
+    "note": "The British Museum explains the decree's three scripts and how comparison, earlier work and Champollion's insight made Egyptian hieroglyphs readable again.",
+    "article": {
+      "title": "Everything You Ever Wanted to Know About the Rosetta Stone",
+      "url": "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone",
+      "source": "The British Museum",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Egyptian Hieroglyphs: The Decipherment Timeline",
+      "url": "https://www.britishmuseum.org/exhibitions/hieroglyphs-unlocking-ancient-egypt/egyptian-hieroglyphs-decipherment-timeline",
+      "source": "The British Museum",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Explain why a trilingual inscription helps decipherment, then distinguish identifying proper names from proving the phonetic and grammatical values of an entire script.",
+      "minutes": 25
+    }
+  },
+  "LING.09": {
+    "difficulty": "introductory",
+    "note": "The open linguistics textbook classifies widening, narrowing, amelioration, pejoration, metaphor and metonymy as recurring pathways of semantic change.",
+    "article": {
+      "title": "Semantic Change",
+      "url": "https://ecampusontario.pressbooks.pub/essentialsoflinguistics2/chapter/14-6-semantic-change/",
+      "source": "Essentials of Linguistics, 2nd edition",
+      "type": "book",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Research five words whose meanings changed and classify each change as widening, narrowing, amelioration, pejoration, metaphor, metonymy or another documented pathway.",
+      "minutes": 30
+    }
+  },
+  "LING.10": {
+    "difficulty": "introductory",
+    "note": "The International Phonetic Association's official chart maps consonants, vowels, suprasegmentals and diacritics to articulatory categories and standard symbols.",
+    "article": {
+      "title": "Full IPA Chart",
+      "url": "https://www.internationalphoneticassociation.org/IPAcharts/IPA_charts_E/IPA_charts_E.html",
+      "source": "International Phonetic Association",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Transcribe ten words from your own accent, labelling each consonant by place, manner and voicing and each vowel by height, backness and rounding.",
+      "minutes": 35
+    }
+  },
+  "LING.11": {
+    "difficulty": "introductory",
+    "note": "The paper begins from the linguistic fact that signed languages are natural human languages with their own phonology, morphology, syntax and communities, not encoded spoken language.",
+    "article": {
+      "title": "Including Signed Languages in Natural Language Processing",
+      "url": "https://arxiv.org/abs/2105.05222",
+      "source": "Julie A. Hochgesang et al. — arXiv",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare one signed and one spoken language across phonological units, word formation, syntax, discourse, regional variation and the role of physical modality.",
+      "minutes": 30
+    }
+  },
+  "LING.12": {
+    "difficulty": "advanced",
+    "note": "Stanford's treatment of translating Chinese philosophy shows how lexical range, grammar, historical concepts and philosophical commitments make translation an interpretive argument rather than word substitution.",
+    "article": {
+      "title": "Translating and Interpreting Chinese Philosophy",
+      "url": "https://plato.stanford.edu/entries/chinese-translate-interpret/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare three translations of one short passage, identify where wording encodes interpretation, and write an annotated translation explaining each unavoidable trade-off.",
+      "minutes": 35
+    }
+  },
+  "THEO.01": {
+    "difficulty": "intermediate",
+    "note": "Yale's Thessalonians course models how Pauline letters are read as occasional correspondence and directly addresses chronology, community setting, and disputed authorship.",
+    "article": {
+      "title": "Thessalonians (1 and 2)",
+      "url": "https://online.yale.edu/courses/thessalonians-1-and-2",
+      "source": "Yale Online / Yale Bible Study",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one Pauline letter and outline its sender, recipients, occasion, major argument, and current scholarly authorship status.",
+      "minutes": 30
+    }
+  },
+  "THEO.02": {
+    "difficulty": "intermediate",
+    "note": "The Stanford entry provides the broader philosophical history of hermeneutics and the disciplined interpretation of texts, meaning, context, and understanding.",
+    "article": {
+      "title": "Hermeneutics",
+      "url": "https://plato.stanford.edu/entries/hermeneutics/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Interpret one short biblical passage in three stages: historical-literary context, textual claim, and contemporary application, keeping the stages distinct.",
+      "minutes": 30
+    }
+  },
+  "THEO.03": {
+    "difficulty": "intermediate",
+    "note": "Yale's course treats canon formation historically, including the gradual recognition of texts and differences between communities rather than a single one-time decision.",
+    "article": {
+      "title": "Formation of the Biblical Canon",
+      "url": "https://online.yale.edu/courses/formation-biblical-canon",
+      "source": "Yale Online / Yale Bible Study",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a timeline of major Hebrew Bible and New Testament canon milestones, noting where different Christian traditions retain different collections.",
+      "minutes": 30
+    }
+  },
+  "THEO.04": {
+    "difficulty": "intermediate",
+    "note": "Bible.org's scholarly overview lays out the literary relationships among Matthew, Mark, and Luke and compares the main proposed source theories.",
+    "article": {
+      "title": "The Synoptic Problem",
+      "url": "https://bible.org/article/synoptic-problem",
+      "source": "Bible.org",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Place one triple-tradition passage from Matthew, Mark, and Luke side by side and mark identical wording, omissions, additions, and changed order.",
+      "minutes": 35
+    }
+  },
+  "THEO.05": {
+    "difficulty": "intermediate",
+    "note": "CSNTM explains why manuscripts matter and provides a concrete entry into the surviving witnesses that textual critics compare.",
+    "article": {
+      "title": "Why Manuscripts?",
+      "url": "https://www.csntm.org/why-manuscripts/",
+      "source": "Center for the Study of New Testament Manuscripts",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare two textual variants using manuscript age, geographical spread, transcriptional difficulty, and internal context; then defend a preferred reading.",
+      "minutes": 30
+    }
+  },
+  "THEO.06": {
+    "difficulty": "introductory",
+    "note": "The Israel Antiquities Authority introduces the discovery, date range, languages, contents, and significance of the Dead Sea Scrolls.",
+    "article": {
+      "title": "Introduction to the Dead Sea Scrolls",
+      "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/introduction?locale=en_US",
+      "source": "Leon Levy Dead Sea Scrolls Digital Library — Israel Antiquities Authority",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Sort examples of scrolls into biblical manuscripts, apocryphal works, and sectarian writings, then explain what each category can and cannot establish.",
+      "minutes": 20
+    }
+  },
+  "THEO.07": {
+    "difficulty": "intermediate",
+    "note": "The Israel Antiquities Authority's historical background places the scrolls within Hellenistic and Roman Judea and the diverse Jewish groups of the Second Temple period.",
+    "article": {
+      "title": "Historical Background",
+      "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/historical-background?locale=en_US",
+      "source": "Leon Levy Dead Sea Scrolls Digital Library — Israel Antiquities Authority",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a comparison chart for Pharisees, Sadducees, Essenes, revolutionary movements, and the early Jesus movement, including sources and uncertainties.",
+      "minutes": 30
+    }
+  },
+  "THEO.08": {
+    "difficulty": "intermediate",
+    "note": "This historian-written overview uses Nicaea and Chalcedon to show how imperial politics, episcopal authority, and precise Christological language interacted in the councils.",
+    "article": {
+      "title": "Council of Chalcedon",
+      "url": "https://www.worldhistory.org/Council_of_Chalcedon/",
+      "source": "World History Encyclopedia — Rebecca Denova",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Make a council table for Nicaea, Constantinople, Ephesus, and Chalcedon listing date, controversy, principal decision, and later dissent.",
+      "minutes": 30
+    }
+  },
+  "THEO.09": {
+    "difficulty": "advanced",
+    "note": "The Stanford entry surveys major theodicies and defenses while distinguishing attempts to explain evil from attempts to show logical compatibility.",
+    "article": {
+      "title": "Theodicies",
+      "url": "https://plato.stanford.edu/entries/theodicies/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare free-will, soul-making, and skeptical-theist responses to one concrete case of suffering, including the strongest objection to each.",
+      "minutes": 30
+    }
+  },
+  "THEO.10": {
+    "difficulty": "introductory",
+    "note": "Smarthistory connects theology, institutional conflict, vernacular scripture, visual culture, and print in a broad introduction to the Protestant Reformation.",
+    "article": {
+      "title": "The Protestant Reformation",
+      "url": "https://smarthistory.org/the-protestant-reformation/",
+      "source": "Smarthistory",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace one Reformation dispute from the original church practice through Luther's objection, print circulation, political adoption, and Catholic response.",
+      "minutes": 30
+    }
+  },
+  "THEO.11": {
+    "difficulty": "introductory",
+    "note": "This joint Greek Orthodox Archdiocese and Hellenic Bible Society project introduces the Septuagint as the ancient Greek translation used widely in early Christianity.",
+    "article": {
+      "title": "About Septuagint.Bible",
+      "url": "https://www.septuagint.bible/",
+      "source": "Greek Orthodox Archdiocese of America and Hellenic Bible Society",
+      "type": "reference",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare one Old Testament quotation in the New Testament with its Septuagint and Masoretic Hebrew-based English forms, then describe the meaningful differences.",
+      "minutes": 30
+    }
+  },
+  "THEO.12": {
+    "difficulty": "advanced",
+    "note": "Stanford's philosophy-of-religion overview situates cosmological, teleological, ontological, moral, and evidential arguments alongside major objections.",
+    "article": {
+      "title": "Philosophy of Religion",
+      "url": "https://plato.stanford.edu/entries/philosophy-religion/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Steelman one classical argument for God as numbered premises and a conclusion, then write the strongest objection and a possible reply.",
+      "minutes": 35
+    }
+  },
+  "ART.01": {
+    "difficulty": "introductory",
+    "note": "Smarthistory reconstructs Brunelleschi's demonstration and Alberti's later codification, showing linear perspective as a geometric viewing system rather than a general measure of realism.",
+    "article": {
+      "title": "Linear Perspective: Brunelleschi’s Experiment",
+      "url": "https://smarthistory.org/linear-perspective-brunelleschis-experiment/",
+      "source": "Smarthistory",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Construct a one-point-perspective room with horizon line, station point, vanishing point, orthogonals and repeated floor tiles that diminish consistently.",
+      "minutes": 35
+    }
+  },
+  "ART.02": {
+    "difficulty": "intermediate",
+    "note": "The Met connects nineteenth-century colour science to Neo-Impressionist experiments in simultaneous contrast, optical mixture, divisionism and pointillism.",
+    "article": {
+      "title": "Georges Seurat (1859–1891) and Neo-Impressionism",
+      "url": "https://www.metmuseum.org/toah/hd/seni/hd_seni.htm",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Place identical grey swatches on different coloured grounds, record the apparent changes, and build a small image using optical rather than palette mixing.",
+      "minutes": 35
+    }
+  },
+  "ART.03": {
+    "difficulty": "introductory",
+    "note": "The National Gallery defines chiaroscuro through modelling with light and dark, while Smarthistory separates the more extreme theatrical darkness of tenebrism.",
+    "article": {
+      "title": "Chiaroscuro",
+      "url": "https://www.nationalgallery.org.uk/paintings/glossary/chiaroscuro",
+      "source": "The National Gallery, London",
+      "type": "reference",
+      "minutes": 10,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Tenebrism",
+      "url": "https://smarthistory.org/technique/tenebrism/",
+      "source": "Smarthistory",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Light one object from a single side and make two studies: one using gradual chiaroscuro modelling and another using a tenebrist jump from darkness to illumination.",
+      "minutes": 40
+    }
+  },
+  "ART.04": {
+    "difficulty": "introductory",
+    "note": "The Met's technical study of Thomas Cole shows how microscopy, X-radiography, infrared imaging and pigment analysis reveal both ancient and newly industrialised colours in one artist's practice.",
+    "article": {
+      "title": "Modern Pigments Found in Thomas Cole's Paintings Shed New Light on the Artist's Practice",
+      "url": "https://www.metmuseum.org/articles/thomas-cole-conservation",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a pigment timeline for natural ultramarine, Prussian blue, synthetic ultramarine, chrome yellow and modern organic pigments, including cost, chemistry and conservation risks.",
+      "minutes": 30
+    }
+  },
+  "ART.05": {
+    "difficulty": "introductory",
+    "note": "The Met traces how Japanese prints altered European cropping, flattened space, colour, everyday subject matter and asymmetrical composition rather than merely supplying exotic motifs.",
+    "article": {
+      "title": "Japonisme",
+      "url": "https://www.metmuseum.org/toah/hd/jpon/hd_jpon.htm",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare one ukiyo-e print with one European Japoniste work and mark borrowed choices in cropping, viewpoint, contour, pattern, depth and subject matter.",
+      "minutes": 30
+    }
+  },
+  "ART.06": {
+    "difficulty": "introductory",
+    "note": "MoMA presents the Bauhaus as an experimental school joining fine art, craft, industry, architecture and social ideas across its Weimar, Dessau and Berlin phases.",
+    "article": {
+      "title": "Bauhaus",
+      "url": "https://www.moma.org/collection/terms/bauhaus",
+      "source": "The Museum of Modern Art",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Redesign one household object using a Bauhaus-style brief that balances function, manufacture, materials, geometry, affordability and visual clarity.",
+      "minutes": 35
+    }
+  },
+  "ART.07": {
+    "difficulty": "introductory",
+    "note": "MoMA's New Typography exhibition places hierarchy, asymmetry, sans-serif type, photography and information design within the Central European avant-garde and Bauhaus context.",
+    "article": {
+      "title": "The New Typography",
+      "url": "https://www.moma.org/calendar/exhibitions/1013",
+      "source": "The Museum of Modern Art",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Typeset the same short announcement three ways, changing family, weight, size, measure, leading, kerning and hierarchy while keeping the words identical.",
+      "minutes": 35
+    }
+  },
+  "ART.08": {
+    "difficulty": "introductory",
+    "note": "Getty's formal-analysis guide treats composition through line, shape, value, balance, emphasis, movement and the active relationship between positive and negative space.",
+    "article": {
+      "title": "Understanding Formal Analysis",
+      "url": "https://www.getty.edu/education/teachers/building_lessons/formal_analysis.html",
+      "source": "J. Paul Getty Museum Education",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Reduce one image to black positive shapes and white negative shapes, then move one element at a time and record changes in balance, tension, direction and emphasis.",
+      "minutes": 30
+    }
+  },
+  "ART.09": {
+    "difficulty": "intermediate",
+    "note": "The House of European History places Van Meegeren within a wider history of counterfeiting, provenance, expert judgement and scientific authentication rather than celebrating him as a folk hero.",
+    "article": {
+      "title": "Fake for Real",
+      "url": "https://historia.europa.eu/en/exhibitions-events/temporary-exhibitions/fake-real",
+      "source": "House of European History",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Technical Studies",
+      "url": "https://www.getty.edu/conservation-institute/science/technical-studies/",
+      "source": "Getty Conservation Institute",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design an authentication plan using provenance, stylistic comparison, support dating, imaging, pigment and binder analysis, and explain why no single test proves authorship.",
+      "minutes": 35
+    }
+  },
+  "ART.10": {
+    "difficulty": "intermediate",
+    "note": "The National Gallery explains preventive care, examination, scientific analysis, cleaning and restoration as documented, approved interventions constrained by material evidence and reversibility concerns.",
+    "article": {
+      "title": "Caring for the Paintings",
+      "url": "https://www.nationalgallery.org.uk/paintings/caring-for-the-paintings/",
+      "source": "The National Gallery, London",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a treatment proposal distinguishing original material, ageing, dirt, varnish, old restoration and loss, then justify what should be preserved, removed, stabilised or visually reintegrated.",
+      "minutes": 35
+    }
+  },
+  "ART.11": {
+    "difficulty": "introductory",
+    "note": "The National Gallery of Art connects Impressionism's outdoor practice to portable tube paints and rail travel while also emphasizing modern life, light, brushwork and exhibition culture.",
+    "article": {
+      "title": "What Is Impressionism? 4 Things to Know",
+      "url": "https://www.nga.gov/stories/articles/what-impressionism-4-things-know",
+      "source": "National Gallery of Art",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Paint or photograph the same outdoor scene at three times of day and identify how portability, speed, changing light and modern pigments alter the working method.",
+      "minutes": 45
+    }
+  },
+  "ART.12": {
+    "difficulty": "introductory",
+    "note": "MoMA's account of Duchamp's readymades shows that modern art did not simply abandon realism after photography; artists challenged medium, authorship, skill, beauty and the institutional definition of art.",
+    "article": {
+      "title": "Marcel Duchamp and the Readymade",
+      "url": "https://www.moma.org/collection/terms/dada/marcel-duchamp-and-the-readymade",
+      "source": "The Museum of Modern Art",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose an ordinary object and argue for or against its presentation as art using selection, context, intention, craft, originality, audience and institutional framing.",
+      "minutes": 25
+    }
+  },
+  "MUSC.01": {
+    "difficulty": "intermediate",
+    "note": "The tuning overview explains why fixed-pitch instruments need temperament, how equal divisions make every key usable, and what interval purity is sacrificed.",
+    "article": {
+      "title": "Tuning Systems",
+      "url": "https://opencurriculum.org/5570/tuning-systems/",
+      "source": "OpenCurriculum",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Calculate a pure 3:2 fifth and a twelve-tone-equal-tempered fifth from the same starting frequency, then measure the discrepancy in cents across a circle of fifths.",
+      "minutes": 30
+    }
+  },
+  "MUSC.02": {
+    "difficulty": "introductory",
+    "note": "UNSW's music-acoustics material connects periodic vibration, fundamentals, integer-multiple partials, resonance and instrument timbre using audible examples.",
+    "article": {
+      "title": "Music Acoustics",
+      "url": "https://www.phys.unsw.edu.au/music/",
+      "source": "UNSW Sydney School of Physics",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Synthesize one fundamental plus its first eight harmonics, change their amplitudes, and describe how the perceived timbre changes while pitch stays constant.",
+      "minutes": 35
+    }
+  },
+  "MUSC.03": {
+    "difficulty": "intermediate",
+    "note": "The cross-cultural study finds both shared and culture-specific emotional cues, showing that the Western major-happy/minor-sad association is real for many listeners but not a universal acoustic law.",
+    "article": {
+      "title": "Harmonic Organisation Conveys Both Universal and Culture-Specific Cues for Emotional Expression in Music",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33439887/",
+      "source": "Eline Smit et al. — PubMed",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create matched major and minor versions of one melody, vary tempo and timbre independently, and ask listeners which feature most changes perceived emotion.",
+      "minutes": 35
+    }
+  },
+  "MUSC.04": {
+    "difficulty": "intermediate",
+    "note": "Open Music Theory develops species counterpoint as simultaneous independent melodies and then connects those constraints to imitation and fugal writing.",
+    "article": {
+      "title": "Counterpoint and Galant Schemas",
+      "url": "https://viva.pressbooks.pub/openmusictheory/part/counterpoint/",
+      "source": "Open Music Theory",
+      "type": "book",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write eight bars of first-species two-voice counterpoint, checking melodic independence, consonance, contrary motion, voice crossing and treatment of perfect intervals.",
+      "minutes": 45
+    }
+  },
+  "MUSC.05": {
+    "difficulty": "intermediate",
+    "note": "The digital-audio course explains timbre, spectra, masking and reconstruction, providing the foundation for missing fundamentals and other psychoacoustic effects.",
+    "article": {
+      "title": "Digital Audio",
+      "url": "https://music.arts.uci.edu/dobrian/digitalaudio.htm",
+      "source": "University of California, Irvine — Christopher Dobrian",
+      "type": "course",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Remove the fundamental from a harmonic complex, compare perceived pitch with a spectrogram, then create a repeating Shepard-tone sequence and explain the octave ambiguity.",
+      "minutes": 35
+    }
+  },
+  "MUSC.06": {
+    "difficulty": "introductory",
+    "note": "UCI's Max cookbook gives a concrete account of attack, decay, sustain and release as a control signal used to shape amplitude and other synthesis parameters.",
+    "article": {
+      "title": "ADSR Amplitude Envelope",
+      "url": "https://music.arts.uci.edu/dobrian/maxcookbook/adsr-amplitude-envelope",
+      "source": "University of California, Irvine — Max Cookbook",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build one oscillator into a filter and ADSR envelope, then make plucked, bowed, brass-like and pad-like presets by changing only waveform, cutoff and envelope timing.",
+      "minutes": 40
+    }
+  },
+  "MUSC.07": {
+    "difficulty": "introductory",
+    "note": "The Library of Congress recording-registry essay documents Gregory Coleman's six-second break and its extraordinary afterlife across sampling, hip-hop, jungle and electronic music.",
+    "article": {
+      "title": "Amen, Brother — The Winstons",
+      "url": "https://www.loc.gov/programs/national-recording-preservation-board/recording-registry/descriptions-and-essays/",
+      "source": "Library of Congress National Recording Registry",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Slice one drum break into hits, rearrange it at three tempos, and document how chopping, pitch, time-stretching and layering turn the same recording into different rhythmic vocabularies.",
+      "minutes": 40
+    }
+  },
+  "MUSC.08": {
+    "difficulty": "introductory",
+    "note": "Roland's history explains the 808's analog voice circuits, sequencer, commercial failure, discontinuation and later adoption across hip-hop, techno and pop.",
+    "article": {
+      "title": "The TR-808 Story",
+      "url": "https://www.roland.com/us/promos/roland_tr-808/",
+      "source": "Roland",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Program a sixteen-step pattern using kick, snare, clap and hi-hat, then alter decay, tuning, accents and swing to hear why the machine behaves like an instrument rather than a static sample bank.",
+      "minutes": 35
+    }
+  },
+  "MUSC.09": {
+    "difficulty": "introductory",
+    "note": "Antares' official history connects Andy Hildebrand's geophysical signal-processing work to real-time pitch detection, correction and the deliberately audible zero-retune-speed effect.",
+    "article": {
+      "title": "About AutoTune: Voice Technology and History",
+      "url": "https://antarestech.com/about",
+      "source": "Antares Audio Technologies",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Process the same vocal with slow, medium and zero retune speed, then compare pitch accuracy, transitions, vibrato, naturalness and the stylised hard-tuned effect.",
+      "minutes": 30
+    }
+  },
+  "MUSC.10": {
+    "difficulty": "intermediate",
+    "note": "The University of Iowa demonstration frames hall design through reverberation, absorption, reflections, clarity and the trade-off between warmth and intelligibility.",
+    "article": {
+      "title": "Concert Hall Acoustics",
+      "url": "https://instructional-resources.physics.uiowa.edu/3c4010-concert-hall-acoustics",
+      "source": "University of Iowa Department of Physics and Astronomy",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Estimate reverberation time for two rooms using volume and absorption, then predict effects on intimacy, clarity, bass warmth, speech and orchestral blend.",
+      "minutes": 30
+    }
+  },
+  "MUSC.11": {
+    "difficulty": "intermediate",
+    "note": "Open Music Theory treats meter as interacting pulse layers, providing the foundation for hearing and notating cross-rhythm and polyrhythmic structures.",
+    "article": {
+      "title": "Meter and Time Signatures",
+      "url": "https://openmusictheory.github.io/meter.html",
+      "source": "Open Music Theory",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Clap a 3:2 and then a 4:3 polyrhythm, place both rhythms on a shared subdivision grid, and identify the points where attacks coincide.",
+      "minutes": 25
+    }
+  },
+  "MUSC.12": {
+    "difficulty": "intermediate",
+    "note": "EBU R 128 explains the industry shift from peak normalization toward measured programme loudness, true-peak limits and loudness range, which reduces the reward for mastering everything louder.",
+    "article": {
+      "title": "Loudness Normalisation and Permitted Maximum Level of Audio Signals",
+      "url": "https://tech.ebu.ch/publications/r128",
+      "source": "European Broadcasting Union",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create two masters with different compression and limiting but loudness-normalize them to the same LUFS value, then compare punch, fatigue, transients and loudness range.",
+      "minutes": 35
+    }
+  },
+  "SCRN.01": {
+    "difficulty": "introductory",
+    "note": "UC Press's description of Kuleshov's own writings identifies juxtaposition as the source of meanings not contained in either shot alone.",
+    "article": {
+      "title": "Kuleshov on Film",
+      "url": "https://www.ucpress.edu/book/9780520302280/kuleshov-on-film",
+      "source": "Lev Kuleshov — University of California Press",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Edit the same neutral face against food, a coffin and a child at play, then ask viewers what emotion or intention they inferred from each sequence.",
+      "minutes": 35
+    }
+  },
+  "SCRN.02": {
+    "difficulty": "intermediate",
+    "note": "The critical article examines Campbell's model as an influential storytelling tool while challenging its dominance, cultural selectivity and claim to universality.",
+    "article": {
+      "title": "One Myth to Rule Them All and in the Darkness Bind Them: A Critical Examination of Joseph Campbell's The Hero's Journey",
+      "url": "https://pure.solent.ac.uk/en/publications/one-myth-to-rule-them-all-and-in-the-darkness-bind-them-a-critica/",
+      "source": "Southampton Solent University research repository",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map one film onto the Hero's Journey, mark stages that must be stretched or omitted, then outline a different story whose structure resists the template.",
+      "minutes": 30
+    }
+  },
+  "SCRN.03": {
+    "difficulty": "introductory",
+    "note": "BFI's discussion of filmmakers who break classical grammar makes the normal continuity system visible: screen direction, eyelines, matching action and the 180-degree axis.",
+    "article": {
+      "title": "4 Hard-and-Fast Rules of Filmmaking… and How The Passion of Joan of Arc Breaks Them",
+      "url": "https://www.bfi.org.uk/features/passion-joan-arc-carl-dreyer-style",
+      "source": "British Film Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Shoot a short two-person exchange twice: once with consistent axis, eyelines and match-on-action, and once with deliberate violations; compare spatial comprehension.",
+      "minutes": 45
+    }
+  },
+  "SCRN.04": {
+    "difficulty": "intermediate",
+    "note": "The ASC manual's scope shows cinematography as an integration of lenses, exposure, lighting, colour science, sensors, composition and production workflow.",
+    "article": {
+      "title": "American Cinematographer Manual, 11th Edition",
+      "url": "https://store.ascmag.com/products/ac-manual-11th-ed-paperback",
+      "source": "American Society of Cinematographers",
+      "type": "book",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Shoot one scene with two focal lengths and two lighting ratios while preserving exposure, then compare perspective, depth, facial rendering, contrast and emotional emphasis.",
+      "minutes": 50
+    }
+  },
+  "SCRN.05": {
+    "difficulty": "introductory",
+    "note": "The Academy's sound-and-music guide explains production sound, dialogue replacement, sound effects and Foley through practical classroom activities.",
+    "article": {
+      "title": "Sound and Music Activities Guide",
+      "url": "https://www.oscars.org/sites/oscars/files/complete_sound_and_music_activities_guide.pdf",
+      "source": "Academy of Motion Picture Arts and Sciences",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Mute a one-minute scene and rebuild footsteps, cloth, props, ambience and designed effects from recorded household objects, synchronising each sound to picture.",
+      "minutes": 60
+    }
+  },
+  "SCRN.06": {
+    "difficulty": "intermediate",
+    "note": "Blackmagic's official training separates technical correction from creative grading and teaches scopes, shot matching, primary balance, secondary isolation and look development.",
+    "article": {
+      "title": "DaVinci Resolve Training",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/training",
+      "source": "Blackmagic Design",
+      "type": "course",
+      "minutes": 90,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Balance three mismatched shots with scopes before creating a look, then make warm-cool and low-high contrast variants while preserving skin and neutral references.",
+      "minutes": 60
+    }
+  },
+  "SCRN.07": {
+    "difficulty": "intermediate",
+    "note": "The Academy's Jurassic Park programme documents the landmark blend of animatronics, stop-motion knowledge, practical photography and CGI rather than framing effects as a simple either-or choice.",
+    "article": {
+      "title": "Jurassic Park",
+      "url": "https://www.oscars.org/events/jurassic-park",
+      "source": "Academy of Motion Picture Arts and Sciences",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Break one creature shot into practical, digital and compositing layers and explain how shared lighting, camera motion, contact, shadows, texture and scale sell the integration.",
+      "minutes": 30
+    }
+  },
+  "SCRN.08": {
+    "difficulty": "introductory",
+    "note": "McCloud's own presentation introduces comics as a visual language where sequence, simplification, panel choice and reader inference create time and action between images.",
+    "article": {
+      "title": "Scott McCloud on Comics",
+      "url": "https://www.ted.com/speakers/scott_mccloud",
+      "source": "TED — Scott McCloud",
+      "type": "video",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Tell the same action in three six-panel pages using different panel transitions and gutter sizes, then compare how much motion and time the reader must infer.",
+      "minutes": 45
+    }
+  },
+  "SCRN.09": {
+    "difficulty": "introductory",
+    "note": "The Open University's film-music resource treats music as structurally related to image, character, mood and narrative, providing a foundation for analysing recurring themes and leitmotifs.",
+    "article": {
+      "title": "Using Film Music in the Classroom",
+      "url": "https://www.open.edu/openlearn/education-development/using-film-music-the-classroom/content-section-0",
+      "source": "The Open University — OpenLearn",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compose a short leitmotif for one character and transform its tempo, harmony, orchestration and contour for safety, threat, loss and return.",
+      "minutes": 45
+    }
+  },
+  "SCRN.10": {
+    "difficulty": "introductory",
+    "note": "The storytelling principle is treated as setup and payoff rather than a literal requirement that every object must become plot machinery.",
+    "article": {
+      "title": "Chekhov’s Gun — Everything You Need to Know",
+      "url": "https://www.nfi.edu/chekhovs-gun/",
+      "source": "Nashville Film Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Audit a short story scene by scene, marking setup, reminder, escalation and payoff; remove details that neither deepen character, atmosphere nor causality.",
+      "minutes": 30
+    }
+  },
+  "SCRN.11": {
+    "difficulty": "intermediate",
+    "note": "The Library of Congress traces the Production Code from industry self-regulation through stricter enforcement and eventual replacement by ratings, making its creative pressure historically concrete.",
+    "article": {
+      "title": "When ‘Pre-’ Met ‘Code’ — Eighty Years Ago Today",
+      "url": "https://blogs.loc.gov/now-see-hear/2014/07/when-pre-met-code-eighty-years-ago-today/",
+      "source": "Library of Congress",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one prohibited subject and write two versions of a scene: explicit and Code-era implied, using framing, dialogue, reaction, ellipsis, metaphor and off-screen space.",
+      "minutes": 40
+    }
+  },
+  "SCRN.12": {
+    "difficulty": "introductory",
+    "note": "BFI's cinematography tour explains how Academy, widescreen and Scope formats arose from technical and commercial systems and then became compositional choices.",
+    "article": {
+      "title": "Cinematography Tour — Aspect Ratio",
+      "url": "https://www.screenonline.org.uk/tours/cinematography/tour5.html",
+      "source": "BFI Screenonline",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Frame the same scene in 1.33:1, 1.85:1 and 2.39:1 without cropping afterward, then compare faces, groups, environment, movement and negative space.",
+      "minutes": 35
+    }
+  },
+  "MAKE.01": {
+    "difficulty": "intermediate",
+    "note": "The ACS review explains the Maillard reaction as a network beginning with reducing sugars and amino groups and producing aromas, colours and texture changes that depend strongly on heat, water activity and pH.",
+    "article": {
+      "title": "Control of Maillard Reactions in Foods: Strategies and Chemical Mechanisms",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.jafc.7b00882",
+      "source": "Journal of Agricultural and Food Chemistry — ACS",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Brown identical onion or bread samples under different moisture, temperature and pH conditions, then compare colour, aroma, texture and time to browning.",
+      "minutes": 45
+    }
+  },
+  "MAKE.02": {
+    "difficulty": "introductory",
+    "note": "University of Minnesota Extension distinguishes lactic-acid, yeast and other food fermentations while emphasizing salt, acidity, oxygen control, temperature and safe handling.",
+    "article": {
+      "title": "Preserving Food at Home: Fermentation",
+      "url": "https://extension.umn.edu/preserve-your-own-food/fermentation",
+      "source": "University of Minnesota Extension",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan a vegetable fermentation with ingredient mass, salt percentage, temperature, oxygen exclusion, pH checks, spoilage signs and a discard rule.",
+      "minutes": 30
+    }
+  },
+  "MAKE.03": {
+    "difficulty": "intermediate",
+    "note": "The ACS material explains chocolate manufacture through cocoa-butter crystallisation, heating, cooling and controlled formation of the stable crystal structure responsible for gloss and snap.",
+    "article": {
+      "title": "The Chemistry of Romance, Flavor, and Drink: Roses, Chocolate, and Wine",
+      "url": "https://www.acs.org/content/dam/acsorg/acs-webinars/2026/labnotes/2026-02-06-labnotes-the-chemistry-of-romance-flavor-and-drink.pdf",
+      "source": "American Chemical Society",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Temper one batch correctly and let another cool without seeding or temperature control, then compare gloss, snap, contraction, texture and fat bloom over several days.",
+      "minutes": 45
+    }
+  },
+  "MAKE.04": {
+    "difficulty": "intermediate",
+    "note": "The Specialty Coffee Association connects brew ratio, total dissolved solids and extraction yield, correcting the oversimple rule that sour always means under-extracted and bitter always means over-extracted.",
+    "article": {
+      "title": "Towards a New Brewing Chart",
+      "url": "https://sca.coffee/sca-news/25/issue-13/towards-a-new-brewing-chart-xpj8t",
+      "source": "Specialty Coffee Association",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Brew the same coffee at three grind sizes while holding dose and water constant, record brew time and taste, and separate strength from extraction balance.",
+      "minutes": 40
+    }
+  },
+  "MAKE.05": {
+    "difficulty": "intermediate",
+    "note": "The research explains how gliadin-rich and glutenin-rich protein mixtures produce different viscous, elastic and strain-hardening behaviour underlying dough extensibility and strength.",
+    "article": {
+      "title": "Flow of Gluten with Tunable Protein Composition: From Stress Undershoot to Stress Overshoot and Strain Hardening",
+      "url": "https://arxiv.org/abs/2207.13542",
+      "source": "Ameur Louhichi et al. — arXiv",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Mix and wash a small dough to isolate gluten, then compare development after short mixing, intensive mixing and resting using stretch, windowpane and gas-retention tests.",
+      "minutes": 45
+    }
+  },
+  "MAKE.06": {
+    "difficulty": "introductory",
+    "note": "Penn State's guide reduces cheesemaking to its controlling decisions: milk treatment, starter culture, acidification, rennet coagulation, curd cutting, cooking, draining, salting and ageing.",
+    "article": {
+      "title": "Introduction to Making Cheese",
+      "url": "https://extension.psu.edu/introduction-to-making-cheese",
+      "source": "Penn State Extension",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a decision tree showing how acid versus rennet coagulation, curd size, cooking, pressing, salt, moisture, rind organisms and ageing produce different cheese families.",
+      "minutes": 35
+    }
+  },
+  "MAKE.07": {
+    "difficulty": "introductory",
+    "note": "The Scotch Whisky Association traces malting, mashing, fermentation, distillation and oak maturation and distinguishes legal requirements from marketing mythology.",
+    "article": {
+      "title": "How Scotch Whisky Is Made",
+      "url": "https://www.scotch-whisky.org.uk/discover-scotch/how-its-made/",
+      "source": "Scotch Whisky Association",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace starch to bottled whisky and mark where enzymes, yeast, still shape, cut points, oak extraction, oxidation, evaporation and blending alter the final spirit.",
+      "minutes": 30
+    }
+  },
+  "MAKE.08": {
+    "difficulty": "intermediate",
+    "note": "The Met distinguishes pattern welding—forge-welded bars arranged and twisted for structure and pattern—from crucible or watered steels often grouped loosely under the Damascus label.",
+    "article": {
+      "title": "Techniques of Decoration on Arms and Armor",
+      "url": "https://www.metmuseum.org/essays/techniques-of-decoration-on-arms-and-armor",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Diagram a pattern-welded billet through stacking, forge welding, drawing, twisting, cutting and restacking, then contrast it with historical crucible steel.",
+      "minutes": 30
+    }
+  },
+  "MAKE.09": {
+    "difficulty": "introductory",
+    "note": "The American Ceramic Society connects glassblowing craft to viscosity, temperature control, thermal expansion, annealing and the non-crystalline structure of glass.",
+    "article": {
+      "title": "Scientific Glassblowing—Part Science, Part Art, All Awesome",
+      "url": "https://ceramics.org/ceramic-tech-today/scientific-glassblowing-part-science-part-art-all-awesome/",
+      "source": "The American Ceramic Society",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plot a qualitative glass-working temperature curve and mark gathering, blowing, shaping, strain point, annealing and the risks of uneven cooling.",
+      "minutes": 25
+    }
+  },
+  "MAKE.10": {
+    "difficulty": "intermediate",
+    "note": "The American Ceramic Society introduces ceramics as inorganic non-metallic materials and provides the materials-science foundation for clay transformation, sintering and glassy glaze layers.",
+    "article": {
+      "title": "What Are Ceramics?",
+      "url": "https://ceramics.org/about/what-are-ceramics/",
+      "source": "The American Ceramic Society",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a kiln schedule and materials map for one glazed clay body, identifying water loss, burnout, quartz change, sintering, vitrification, glaze melting and cooling defects.",
+      "minutes": 35
+    }
+  },
+  "MAKE.11": {
+    "difficulty": "introductory",
+    "note": "Japan's only museum devoted to carpentry tools presents timber selection, marking, hand tools, post-and-beam framing, joinery and the repairable traditions of temple and tea-house construction.",
+    "article": {
+      "title": "Takenaka Carpentry Tools Museum",
+      "url": "https://www.dougukan.jp/?lang=en",
+      "source": "Takenaka Carpentry Tools Museum",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model a mortise-and-tenon or scarf joint from card or soft wood and identify the surfaces resisting tension, compression, shear, rotation and withdrawal.",
+      "minutes": 45
+    }
+  },
+  "MAKE.12": {
+    "difficulty": "intermediate",
+    "note": "The Met explains natural-dye practice through fibres, mordants and the unusual reduction-oxidation chemistry that makes insoluble indigo enter cloth and turn blue in air.",
+    "article": {
+      "title": "The Materials and Techniques of American Quilts and Coverlets",
+      "url": "https://www.metmuseum.org/essays/the-materials-and-techniques-of-american-quilts-and-coverlets",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the indigo vat cycle from insoluble pigment through chemical reduction, dissolved leuco-indigo, fibre uptake, air oxidation and repeated dipping for depth.",
+      "minutes": 30
+    }
+  },
+  "SPRT.01": {
+    "difficulty": "introductory",
+    "note": "StatsBomb explains expected goals as a probabilistic model trained on historical shots and makes clear that values vary because models use different features and data quality.",
+    "article": {
+      "title": "What is xG? How is it calculated?",
+      "url": "https://statsbomb.com/soccer-metrics/expected-goals-xg-explained/",
+      "source": "Hudl StatsBomb",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a simple shot table with distance, angle, body part, assist type and outcome, then estimate which variables should raise or lower scoring probability and why.",
+      "minutes": 30
+    }
+  },
+  "SPRT.02": {
+    "difficulty": "introductory",
+    "note": "SABR's research guide defines sabermetrics as the search for objective knowledge about baseball and shows how questions, data quality and context matter beyond the Moneyball story.",
+    "article": {
+      "title": "A Guide to Sabermetric Research",
+      "url": "https://sabr.org/sabermetrics",
+      "source": "Society for American Baseball Research",
+      "type": "course",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one traditional baseball statistic and design a context-adjusted alternative, stating the decision it should improve and the biases it still cannot remove.",
+      "minutes": 35
+    }
+  },
+  "SPRT.03": {
+    "difficulty": "introductory",
+    "note": "British Cycling's retrospective documents Brailsford's one-percent framing while placing it among coaching, talent, technology, sport science and organizational changes rather than attributing success to tiny tweaks alone.",
+    "article": {
+      "title": "Sir Dave Brailsford at British Cycling — A Career Retrospective",
+      "url": "https://www.britishcycling.org.uk/gbcyclingteam/article/gbr20140411-British-Cycling---The-Brailsford-years-0",
+      "source": "British Cycling",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Break one performance goal into ten contributing systems, estimate the likely effect and measurement cost of improving each, and reject changes whose claimed gains cannot be tested.",
+      "minutes": 30
+    }
+  },
+  "SPRT.04": {
+    "difficulty": "intermediate",
+    "note": "The consensus statement defines internal and external training load, explains why monitoring is useful, and emphasizes individual context instead of universal workload thresholds.",
+    "article": {
+      "title": "Monitoring Athlete Training Loads: Consensus Statement",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28463642/",
+      "source": "International Journal of Sports Physiology and Performance — PubMed",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan a four-week training block with objective external load, subjective internal load, recovery markers, progression, deloading and rules for changing the plan when responses differ.",
+      "minutes": 40
+    }
+  },
+  "SPRT.05": {
+    "difficulty": "intermediate",
+    "note": "Joyner and Coyle frame elite endurance through the interaction of maximal oxygen uptake, lactate threshold and movement economy rather than treating any one number as destiny.",
+    "article": {
+      "title": "Endurance Exercise Performance: The Physiology of Champions",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17901124/",
+      "source": "M. J. Joyner and E. F. Coyle — PubMed",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare two hypothetical runners with different VO2 max, fractional threshold and running economy, then explain why the athlete with the larger VO2 max need not be faster.",
+      "minutes": 30
+    }
+  },
+  "SPRT.06": {
+    "difficulty": "intermediate",
+    "note": "The official Court judgment records how transfer fees after contract expiry and nationality quotas conflicted with EU freedom-of-movement law for workers.",
+    "article": {
+      "title": "Judgment of the Court of 15 December 1995 — Bosman, Case C-415/93",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0415",
+      "source": "Court of Justice of the European Union — EUR-Lex",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace the pre-Bosman and post-Bosman career path of an out-of-contract EU player, separating employment mobility, transfer compensation, squad quotas and later market consequences.",
+      "minutes": 30
+    }
+  },
+  "SPRT.07": {
+    "difficulty": "intermediate",
+    "note": "FIFA's Training Centre analyses contemporary principles such as blocks, third-player combinations and counter-pressing while showing tactics as coordinated behaviours, not just formation diagrams.",
+    "article": {
+      "title": "Core Principles of Play",
+      "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/landing-page-core-principles.php",
+      "source": "FIFA Training Centre",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Analyse one match in possession, transition and out of possession, recording shape, pressing triggers, rest defence, overloads, rotations and adaptations to the opponent.",
+      "minutes": 60
+    }
+  },
+  "SPRT.08": {
+    "difficulty": "intermediate",
+    "note": "The paper exposes the probabilistic assumptions beneath Elo, including expected scores, update sensitivity and the special difficulty of modelling draws and team sports.",
+    "article": {
+      "title": "Understanding and Pushing the Limits of the Elo Rating Algorithm",
+      "url": "https://arxiv.org/abs/1910.06081",
+      "source": "Leszek Szczecinski and Aymen Djebbi — arXiv",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Implement Elo updates for four players, vary the K-factor and expected-score scale, and show how upset results, inactivity, draws and new entrants affect ratings.",
+      "minutes": 45
+    }
+  },
+  "SPRT.09": {
+    "difficulty": "intermediate",
+    "note": "The German ghost-game study uses COVID-era empty stadiums as a natural experiment and finds that crowd effects vary by league rather than explaining all of home advantage.",
+    "article": {
+      "title": "Does Crowd Support Drive the Home Advantage in Professional Football? Evidence from German Ghost Games during the COVID-19 Pandemic",
+      "url": "https://doi.org/10.1177/15270025211026552",
+      "source": "Kai Fischer and Justus Haucap — Journal of Sports Economics",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Design a home-advantage model with travel, familiarity, crowd, referee decisions, team strength and schedule, then explain why before-after empty-stadium comparisons can still be confounded.",
+      "minutes": 35
+    }
+  },
+  "SPRT.10": {
+    "difficulty": "introductory",
+    "note": "The university module introduces linear and angular kinematics, kinetics, force plates and motion analysis as tools for explaining movement rather than merely judging how technique looks.",
+    "article": {
+      "title": "Introduction to Sport and Exercise Biomechanics",
+      "url": "https://www.kent.ac.uk/courses/modules/module/SPOR4013",
+      "source": "University of Kent",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Record a jump or throw in slow motion, estimate joint angles and centre-of-mass motion, and draw the external forces and moments that produce the movement.",
+      "minutes": 45
+    }
+  },
+  "SPRT.11": {
+    "difficulty": "advanced",
+    "note": "WADA's current operating guidelines explain longitudinal biological monitoring, adaptive limits, expert review, sample requirements and how the passport complements direct substance detection.",
+    "article": {
+      "title": "Athlete Biological Passport Operating Guidelines",
+      "url": "https://www.wada-ama.org/sites/default/files/resources/files/wada-abp-operating-guidelines-v5.0-en.pdf",
+      "source": "World Anti-Doping Agency",
+      "type": "reference",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a fictional longitudinal blood profile, add plausible altitude, illness and doping scenarios, and describe why expert review and chain-of-custody evidence are needed before sanction.",
+      "minutes": 40
+    }
+  },
+  "SPRT.12": {
+    "difficulty": "advanced",
+    "note": "The systematic review found widespread high risk of bias, weak reporting, overfitting and little external validation, so current models should not be treated as dependable individual injury forecasts.",
+    "article": {
+      "title": "Just How Confident Can We Be in Predicting Sports Injuries? A Systematic Review of Existing Musculoskeletal Injury Prediction Models in Sport",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35689749/",
+      "source": "Garrett S. Bullock et al. — Sports Medicine / PubMed",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Audit an injury model for leakage, class imbalance, calibration, missing data, overfitting, external validation and decision usefulness, then distinguish prediction from preventable cause.",
+      "minutes": 40
+    }
+  },
+  "HIST.01": {
+    "difficulty": "introductory",
+    "note": "Australian Geographic places the 1932 military cull within soldier-settlement farming, drought, crop damage and later wildlife-management policy, correcting the meme that Australia formally declared a conventional war.",
+    "article": {
+      "title": "Looking Back: Australia’s Emu Wars",
+      "url": "https://www.australiangeographic.com.au/topics/wildlife/2016/10/australias-emu-wars/",
+      "source": "Australian Geographic",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Rewrite the Emu War as a policy case study with stakeholders, ecological causes, military objectives, measured outcomes, media framing and the later fence-and-bounty alternatives.",
+      "minutes": 30
+    }
+  },
+  "HIST.02": {
+    "difficulty": "introductory",
+    "note": "Smithsonian's account follows pepper and other Asian spices through Venice, Portuguese ocean routes and Dutch monopoly power while rejecting the myth that spices mainly disguised rotten meat.",
+    "article": {
+      "title": "The Spice That Built Venice",
+      "url": "https://www.smithsonianmag.com/travel/spice-trade-pepper-venice-180956856/",
+      "source": "Smithsonian Magazine — Jack Turner",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace one spice from growing region to European table across producers, regional traders, ports, empires, monopolies and consumers, marking where value and coercive power accumulated.",
+      "minutes": 35
+    }
+  },
+  "HIST.03": {
+    "difficulty": "introductory",
+    "note": "The Library of Congress guide separates documented Gutenberg history from legend and explicitly notes that printing began in East Asia centuries before European movable-metal-type printing.",
+    "article": {
+      "title": "The Gutenberg Bible at the Library of Congress: Introduction",
+      "url": "https://guides.loc.gov/gutenberg",
+      "source": "Library of Congress",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare manuscript copying, woodblock printing and movable type by setup cost, marginal copy cost, error correction, labour, speed, scale, censorship and access.",
+      "minutes": 30
+    }
+  },
+  "HIST.04": {
+    "difficulty": "intermediate",
+    "note": "The debunk focuses on the hypothesis's calendar mistake and the independent chronologies supplied by tree rings, radiocarbon dating, astronomical observations and non-European records.",
+    "article": {
+      "title": "Phantom Time Hypothesis — the Supposedly ‘Missing’ Fortnight in 1752",
+      "url": "https://www.skeptic.org.uk/2025/11/phantom-time-hypothesis-the-supposedly-missing-fortnight-in-1752/",
+      "source": "The Skeptic",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build an independent-evidence matrix for the disputed centuries using European documents, Islamic and Chinese chronology, eclipses, comets, dendrochronology, radiocarbon and archaeology.",
+      "minutes": 35
+    }
+  },
+  "HIST.05": {
+    "difficulty": "intermediate",
+    "note": "Eric Cline's overview rejects a single-cause invasion story and presents the collapse as a connected-system failure involving warfare, migration, political unrest, disrupted trade, earthquakes and climate stress.",
+    "article": {
+      "title": "Interview: The Mysterious Bronze Age Collapse with Eric Cline",
+      "url": "https://www.worldhistory.org/article/1446/interview-the-mysterious-bronze-age-collapse-with/",
+      "source": "World History Encyclopedia — Eric H. Cline",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the Late Bronze Age eastern Mediterranean as a network of palaces, trade, food, metals and security, then model how several smaller shocks could cascade through it.",
+      "minutes": 35
+    }
+  },
+  "HIST.06": {
+    "difficulty": "intermediate",
+    "note": "The National Archaeological Museum's dedicated project presents the fragments, inscriptions, imaging research and reconstructed astronomical functions without calling the device a modern digital computer.",
+    "article": {
+      "title": "The Mysteries of the Mechanism of Antikythera",
+      "url": "https://antikythera-mechanism.namuseum.gr/en/",
+      "source": "National Archaeological Museum, Athens",
+      "type": "reference",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one dial and reconstruct the required input, gear ratio, output cycle and astronomical purpose, distinguishing evidence on fragments from modern reconstruction.",
+      "minutes": 40
+    }
+  },
+  "HIST.07": {
+    "difficulty": "intermediate",
+    "note": "The Open University compares the sparse ancient and much later accounts and shows why Caesar, the Serapeum and the Arab-conquest story cannot be merged into one cinematic destruction event.",
+    "article": {
+      "title": "The Library of Alexandria — The Destruction of the Library",
+      "url": "https://www.open.edu/openlearn/mod/oucontent/view.php?id=19050&section=3&tip=linktip",
+      "source": "The Open University — OpenLearn",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a source timeline for Caesar's fire, later Roman decline, the Serapeum destruction and the Arab-conquest legend, recording source dates and what each actually claims.",
+      "minutes": 35
+    }
+  },
+  "HIST.08": {
+    "difficulty": "intermediate",
+    "note": "The museum history integrates fission science, dispersed industrial sites, military organization, secrecy, uranium and plutonium production, bomb design and the continuing ethical and environmental legacy.",
+    "article": {
+      "title": "The Manhattan Project",
+      "url": "https://ahf.nuclearmuseum.org/ahf/history/manhattan-project/",
+      "source": "National Museum of Nuclear Science & History / Atomic Heritage Foundation",
+      "type": "article",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map Los Alamos, Oak Ridge, Hanford, Chicago and military command by scientific task, industrial bottleneck, workforce, secrecy requirement, hazard and ethical decision.",
+      "minutes": 40
+    }
+  },
+  "HIST.09": {
+    "difficulty": "intermediate",
+    "note": "The historical article reconstructs how contemporaries interpreted the Strasbourg outbreak through disease, divine punishment and social conditions; mass psychogenic illness is a serious proposal, not a proved diagnosis.",
+    "article": {
+      "title": "Divine Punishment or Disease? Medieval and Early Modern Approaches to the 1518 Strasbourg Dancing Plague",
+      "url": "https://danceandhistory.org/en/resources/bibliography/miller-lynneth-j-divine-punishment-or-disease-medieval-and-early-modern-approaches-to-the-1518-strasbourg-dancing-plague",
+      "source": "Lynneth J. Miller — Dance and History bibliography",
+      "type": "paper",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare ergot poisoning, deliberate ritual, neurological disease and mass psychogenic illness by expected symptoms, spread, contemporary evidence and weaknesses.",
+      "minutes": 30
+    }
+  },
+  "HIST.10": {
+    "difficulty": "introductory",
+    "note": "The Nuclear Museum traces radium-dial production, corporate denial, bone damage, litigation and the workers' influence on radiation protection and occupational safety.",
+    "article": {
+      "title": "The Radium Girls",
+      "url": "https://ahf.nuclearmuseum.org/ahf/history/radium-girls/",
+      "source": "National Museum of Nuclear Science & History / Atomic Heritage Foundation",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a failure chain from brush practice through internal exposure, delayed symptoms, company knowledge, medical evidence, legal barriers, compensation and later safety standards.",
+      "minutes": 30
+    }
+  },
+  "HIST.11": {
+    "difficulty": "introductory",
+    "note": "Boston's official centenary account uses city-archive photographs and emphasizes the untested tank, victims, litigation and resulting movement toward professional engineering oversight.",
+    "article": {
+      "title": "100 Years Ago Today: Molasses Crashes Through Boston’s North End",
+      "url": "https://www.boston.gov/ar/news/100-years-ago-today-molasses-crashes-through-bostons-north-end",
+      "source": "City of Boston",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Perform a modern hazard review of the tank covering design pressure, material, foundation, temperature, filling rate, inspection, warning signs, emergency planning and regulatory approval.",
+      "minutes": 35
+    }
+  },
+  "HIST.12": {
+    "difficulty": "intermediate",
+    "note": "The Open Encyclopedia of Anthropology explains that 'cargo cult' bundled diverse Melanesian religious and political movements into a colonial academic category, often obscuring local critiques of unequal exchange and power.",
+    "article": {
+      "title": "Cargo Cults",
+      "url": "https://www.anthroencyclopedia.com/entry/cargo-cults",
+      "source": "Open Encyclopedia of Anthropology — Lamont Lindstrom",
+      "type": "reference",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one named Melanesian movement and describe its colonial setting, theology, leadership, political demands and local meaning before judging whether the label cargo cult clarifies or distorts it.",
+      "minutes": 35
+    }
+  },
+  "RSCH.01": {
+    "difficulty": "intermediate",
+    "note": "The Open Science Collaboration's large replication project is the landmark empirical starting point, while its interpretation should be read with attention to effect sizes and methodological debate.",
+    "article": {
+      "title": "Estimating the Reproducibility of Psychological Science",
+      "url": "https://doi.org/10.1126/science.aac4716",
+      "source": "Open Science Collaboration — Science",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose three different definitions of replication success and explain how the same replication project can yield different headline percentages.",
+      "minutes": 30
+    }
+  },
+  "RSCH.02": {
+    "difficulty": "intermediate",
+    "note": "Simmons, Nelson, and Simonsohn demonstrate how undisclosed analytic flexibility can manufacture statistically significant results without fabricating data.",
+    "article": {
+      "title": "False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant",
+      "url": "https://doi.org/10.1177/0956797611417632",
+      "source": "Joseph P. Simmons, Leif D. Nelson, and Uri Simonsohn — Psychological Science",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "List ten researcher degrees of freedom in a hypothetical study and mark which decisions should be preregistered before seeing the data.",
+      "minutes": 25
+    }
+  },
+  "RSCH.03": {
+    "difficulty": "introductory",
+    "note": "Sense about Science opens the peer-review black box, explaining editorial screening, reviewer roles, limitations, alternatives, and post-publication review.",
+    "article": {
+      "title": "Peer Review: The Nuts and Bolts",
+      "url": "https://senseaboutscience.org/activities/peer-review-the-nuts-and-bolts-2/",
+      "source": "Sense about Science",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a mock peer review with separate sections for summary, major concerns, minor concerns, reproducibility, and recommendation.",
+      "minutes": 35
+    }
+  },
+  "RSCH.04": {
+    "difficulty": "introductory",
+    "note": "Keshav's author-hosted page links the original three-pass reading method and updated supporting resources.",
+    "article": {
+      "title": "How to Read a Paper",
+      "url": "https://svr-sk818-web.cl.cam.ac.uk/keshav/publications/htrap.html",
+      "source": "S. Keshav",
+      "type": "paper",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Apply the first two passes to one paper and produce the five-C summary: category, context, correctness, contributions, and clarity.",
+      "minutes": 45
+    }
+  },
+  "RSCH.05": {
+    "difficulty": "intermediate",
+    "note": "The updated CONSORT explanation provides the scientific rationale behind transparent randomized-trial design and reporting, including randomization, allocation, blinding, outcomes, and analysis.",
+    "article": {
+      "title": "CONSORT 2025 Explanation and Elaboration: Updated Guideline for Reporting Randomised Trials",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11995452/",
+      "source": "CONSORT Group — BMJ / PubMed Central",
+      "type": "paper",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take a published randomized trial and audit its abstract, randomization, allocation concealment, attrition, outcomes, and analysis against CONSORT items.",
+      "minutes": 45
+    }
+  },
+  "RSCH.06": {
+    "difficulty": "advanced",
+    "note": "Hernán and Robins provide a free, rigorous book that frames causal questions through counterfactuals, exchangeability, DAGs, confounding, selection, and longitudinal treatment.",
+    "article": {
+      "title": "Causal Inference: What If",
+      "url": "https://miguelhernan.org/whatifbook",
+      "source": "Miguel A. Hernán and James M. Robins",
+      "type": "book",
+      "minutes": 90,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw a DAG containing an exposure, outcome, confounder, mediator, and collider, then justify which variables should and should not be adjusted for.",
+      "minutes": 40
+    }
+  },
+  "RSCH.07": {
+    "difficulty": "intermediate",
+    "note": "Cochrane's handbook chapter gives precise definitions and empirical evidence for publication, time-lag, selective-reporting, citation, language, and location biases.",
+    "article": {
+      "title": "Considering Bias and Conflicts of Interest Among the Included Studies",
+      "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-07",
+      "source": "Cochrane Handbook for Systematic Reviews of Interventions",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a funnel-plot thought experiment showing how selectively missing small null studies can shift a pooled estimate.",
+      "minutes": 25
+    }
+  },
+  "RSCH.08": {
+    "difficulty": "intermediate",
+    "note": "Cochrane's meta-analysis chapter explains effect measures, weighting, heterogeneity, fixed and random effects, and why inappropriate pooling can mislead.",
+    "article": {
+      "title": "Analysing Data and Undertaking Meta-Analyses",
+      "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10",
+      "source": "Cochrane Handbook for Systematic Reviews of Interventions",
+      "type": "reference",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Combine three fictional study estimates using inverse-variance weights, then explain how heterogeneity changes the interpretation of the pooled result.",
+      "minutes": 35
+    }
+  },
+  "RSCH.09": {
+    "difficulty": "introductory",
+    "note": "OSF's current guide defines preregistration and gives concrete practices for specifying hypotheses, exclusions, variables, models, outcomes, and contingencies in advance.",
+    "article": {
+      "title": "Welcome to Registrations & Preregistrations!",
+      "url": "https://help.osf.io/article/330-welcome-to-registrations",
+      "source": "Open Science Framework Support",
+      "type": "reference",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draft a short preregistration for a simple experiment, including hypothesis, sample, exclusions, variables, primary outcome, analysis, and deviation policy.",
+      "minutes": 40
+    }
+  },
+  "RSCH.10": {
+    "difficulty": "intermediate",
+    "note": "Button and colleagues explain how low power reduces true-effect detection, inflates observed effect sizes among significant findings, and weakens reproducibility.",
+    "article": {
+      "title": "Power Failure: Why Small Sample Size Undermines the Reliability of Neuroscience",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23571845/",
+      "source": "Katherine S. Button et al. — Nature Reviews Neuroscience / PubMed",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Calculate power across several sample sizes for one expected effect, then compare false-negative risk and the precision of the estimated effect.",
+      "minutes": 35
+    }
+  },
+  "RSCH.11": {
+    "difficulty": "introductory",
+    "note": "Mangel and Samaniego's historical analysis is the scholarly source behind the aircraft-survivability example and explains the selection problem in data from returning aircraft.",
+    "article": {
+      "title": "Abraham Wald’s Work on Aircraft Survivability",
+      "url": "https://doi.org/10.1080/01621459.1984.10478038",
+      "source": "Marc Mangel and Francisco J. Samaniego — Journal of the American Statistical Association",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Invent a dataset containing only successful cases, identify what observations are missing by design, and show how analyzing survivors alone reverses the decision.",
+      "minutes": 25
+    }
+  },
+  "RSCH.12": {
+    "difficulty": "intermediate",
+    "note": "Cuellar's modern treatment explains the prosecutor's fallacy through likelihood ratios and the separation between probability of evidence given a hypothesis and probability of the hypothesis given evidence.",
+    "article": {
+      "title": "The Prosecutor’s Fallacy and Expert Testimony: A Modern Take Using Likelihood Ratios",
+      "url": "https://arxiv.org/abs/2502.03217",
+      "source": "Maria Cuellar — arXiv",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a base-rate example in which evidence is rare among innocent people but innocence remains plausible, then compute both conditional probabilities explicitly.",
+      "minutes": 30
+    }
+  },
+  "ECON.01": {
+    "difficulty": "introductory",
+    "note": "Open Yale Courses develops game theory through players, strategies, payoffs, information, timing, dominance, equilibrium, repeated interaction and applications rather than presenting it as a collection of puzzles.",
+    "article": {
+      "title": "Game Theory",
+      "url": "https://oyc.yale.edu/economics/econ-159",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model one strategic situation by listing players, available actions, payoffs, information, order of moves and whether commitments are credible.",
+      "minutes": 30
+    }
+  },
+  "ECON.02": {
+    "difficulty": "introductory",
+    "note": "Yale's opening lecture derives the Prisoner's Dilemma from its payoff structure and uses it to distinguish individually dominant choices from collectively better outcomes.",
+    "article": {
+      "title": "Lecture 1 — Introduction: Five First Lessons",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-1",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Lecture 21 — Repeated Games: Cooperation versus the End Game",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-21",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a Prisoner's Dilemma payoff matrix, identify dominant strategies and equilibrium, then change repetition, patience and punishment to make cooperation sustainable.",
+      "minutes": 35
+    }
+  },
+  "ECON.03": {
+    "difficulty": "intermediate",
+    "note": "Yale's lecture introduces best responses and Nash equilibrium while emphasizing that equilibrium means no profitable unilateral deviation, not fairness, efficiency or happiness.",
+    "article": {
+      "title": "Lecture 5 — Nash Equilibrium: Bad Fashion and Bank Runs",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-5",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Find every pure-strategy Nash equilibrium in three small payoff matrices and identify which equilibria are Pareto-efficient, risky or coordination-dependent.",
+      "minutes": 35
+    }
+  },
+  "ECON.04": {
+    "difficulty": "introductory",
+    "note": "The Nobel overview explains Schelling's work on tacit coordination, focal points, credible commitments, conflict and segregation without reducing it to a party-game trick.",
+    "article": {
+      "title": "Conflict and Cooperation through the Lens of Game Theory",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2005/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Give several people the same no-communication meeting problem, compare their chosen focal points, and explain which shared conventions made one answer salient.",
+      "minutes": 25
+    }
+  },
+  "ECON.05": {
+    "difficulty": "intermediate",
+    "note": "The Nobel overview contrasts simple privatization-or-state-control prescriptions with Ostrom's evidence that communities can build durable institutions for shared resources under identifiable conditions.",
+    "article": {
+      "title": "Economic Governance: The Organization of Cooperation",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design governance rules for one shared resource covering boundaries, monitoring, graduated sanctions, conflict resolution, local participation and adaptation over time.",
+      "minutes": 35
+    }
+  },
+  "ECON.06": {
+    "difficulty": "intermediate",
+    "note": "Yale's lecture treats moral hazard as hidden action after a contract and separates it from adverse selection, incentives, monitoring and risk sharing.",
+    "article": {
+      "title": "Lecture 13 — Moral Hazard and Incentives",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-13",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design an insurance or employment contract that balances risk protection with incentives, then identify behaviours the principal cannot directly observe.",
+      "minutes": 35
+    }
+  },
+  "ECON.07": {
+    "difficulty": "introductory",
+    "note": "The IMF explanation derives gains from trade through opportunity cost and specialization, including the counterintuitive case where one country is absolutely more productive in every activity.",
+    "article": {
+      "title": "Comparative Advantage",
+      "url": "https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/trade",
+      "source": "International Monetary Fund — Finance & Development",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Give two producers different productivities in two goods, calculate opportunity costs, choose specialization and show a trade price that benefits both.",
+      "minutes": 30
+    }
+  },
+  "ECON.08": {
+    "difficulty": "intermediate",
+    "note": "The 2020 Nobel overview connects auction formats, private and common values, the winner's curse, bidding strategies and the design of real spectrum auctions.",
+    "article": {
+      "title": "The Quest for the Perfect Auction",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2020/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Run first-price and second-price sealed-bid auctions with private values, compare truthful and shaded bidding, then add uncertain common value to create a winner's-curse risk.",
+      "minutes": 40
+    }
+  },
+  "ECON.09": {
+    "difficulty": "introductory",
+    "note": "The Bank of England explains that commercial-bank lending creates matching deposits, while repayment destroys bank money and central-bank reserves play a different settlement role.",
+    "article": {
+      "title": "Money Creation in the Modern Economy",
+      "url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "source": "Bank of England Quarterly Bulletin",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write simplified bank and borrower balance sheets before a loan, immediately after lending, after spending and after principal repayment, tracking deposits, loans and reserves.",
+      "minutes": 35
+    }
+  },
+  "ECON.10": {
+    "difficulty": "intermediate",
+    "note": "The Stanford study examines technology adoption when a product becomes more valuable as compatible users grow, separating installed-base effects from product quality and marketing.",
+    "article": {
+      "title": "Adoption of Technologies with Network Effects: An Empirical Examination of the Adoption of Automated Teller Machines",
+      "url": "https://www.gsb.stanford.edu/faculty-research/publications/adoption-technologies-network-effects-empirical-examination-adoption",
+      "source": "Garth Saloner and Andrea Shepard — Stanford Graduate School of Business",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Model adoption of a platform whose value rises with users, then test how interoperability, multi-homing, switching cost, subsidies and congestion alter winner-take-most dynamics.",
+      "minutes": 35
+    }
+  },
+  "ECON.11": {
+    "difficulty": "intermediate",
+    "note": "The Nobel overview presents Spence's signalling model, where education or another observable action can convey hidden productivity only when its costs differ across types.",
+    "article": {
+      "title": "Markets with Asymmetric Information",
+      "url": "https://www.nobelprize.org/nobel_prizes/economic-sciences/laureates/2001/popular.html",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Construct a separating signal by assigning different signal costs to high- and low-quality types, then show when pooling or imitation destroys credibility.",
+      "minutes": 30
+    }
+  },
+  "ECON.12": {
+    "difficulty": "advanced",
+    "note": "The Nobel explanation presents mechanism design as reverse game theory: define desired outcomes, information constraints and incentives, then design rules that make truthful or socially useful behaviour rational.",
+    "article": {
+      "title": "Mechanism Design Theory",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2007/9276-mechanism-design-theory/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design rules for allocating one scarce resource when participants privately know their values, then test incentive compatibility, efficiency, budget balance and participation.",
+      "minutes": 40
     }
   }
 }
