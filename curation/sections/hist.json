@@ -1,1 +1,206 @@
-{}
+{
+  "HIST.01": {
+    "difficulty": "introductory",
+    "note": "Australian Geographic places the 1932 military cull within soldier-settlement farming, drought, crop damage and later wildlife-management policy, correcting the meme that Australia formally declared a conventional war.",
+    "article": {
+      "title": "Looking Back: Australia’s Emu Wars",
+      "url": "https://www.australiangeographic.com.au/topics/wildlife/2016/10/australias-emu-wars/",
+      "source": "Australian Geographic",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Rewrite the Emu War as a policy case study with stakeholders, ecological causes, military objectives, measured outcomes, media framing and the later fence-and-bounty alternatives.",
+      "minutes": 30
+    }
+  },
+  "HIST.02": {
+    "difficulty": "introductory",
+    "note": "Smithsonian's account follows pepper and other Asian spices through Venice, Portuguese ocean routes and Dutch monopoly power while rejecting the myth that spices mainly disguised rotten meat.",
+    "article": {
+      "title": "The Spice That Built Venice",
+      "url": "https://www.smithsonianmag.com/travel/spice-trade-pepper-venice-180956856/",
+      "source": "Smithsonian Magazine — Jack Turner",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace one spice from growing region to European table across producers, regional traders, ports, empires, monopolies and consumers, marking where value and coercive power accumulated.",
+      "minutes": 35
+    }
+  },
+  "HIST.03": {
+    "difficulty": "introductory",
+    "note": "The Library of Congress guide separates documented Gutenberg history from legend and explicitly notes that printing began in East Asia centuries before European movable-metal-type printing.",
+    "article": {
+      "title": "The Gutenberg Bible at the Library of Congress: Introduction",
+      "url": "https://guides.loc.gov/gutenberg",
+      "source": "Library of Congress",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare manuscript copying, woodblock printing and movable type by setup cost, marginal copy cost, error correction, labour, speed, scale, censorship and access.",
+      "minutes": 30
+    }
+  },
+  "HIST.04": {
+    "difficulty": "intermediate",
+    "note": "The debunk focuses on the hypothesis's calendar mistake and the independent chronologies supplied by tree rings, radiocarbon dating, astronomical observations and non-European records.",
+    "article": {
+      "title": "Phantom Time Hypothesis — the Supposedly ‘Missing’ Fortnight in 1752",
+      "url": "https://www.skeptic.org.uk/2025/11/phantom-time-hypothesis-the-supposedly-missing-fortnight-in-1752/",
+      "source": "The Skeptic",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build an independent-evidence matrix for the disputed centuries using European documents, Islamic and Chinese chronology, eclipses, comets, dendrochronology, radiocarbon and archaeology.",
+      "minutes": 35
+    }
+  },
+  "HIST.05": {
+    "difficulty": "intermediate",
+    "note": "Eric Cline's overview rejects a single-cause invasion story and presents the collapse as a connected-system failure involving warfare, migration, political unrest, disrupted trade, earthquakes and climate stress.",
+    "article": {
+      "title": "Interview: The Mysterious Bronze Age Collapse with Eric Cline",
+      "url": "https://www.worldhistory.org/article/1446/interview-the-mysterious-bronze-age-collapse-with/",
+      "source": "World History Encyclopedia — Eric H. Cline",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the Late Bronze Age eastern Mediterranean as a network of palaces, trade, food, metals and security, then model how several smaller shocks could cascade through it.",
+      "minutes": 35
+    }
+  },
+  "HIST.06": {
+    "difficulty": "intermediate",
+    "note": "The National Archaeological Museum's dedicated project presents the fragments, inscriptions, imaging research and reconstructed astronomical functions without calling the device a modern digital computer.",
+    "article": {
+      "title": "The Mysteries of the Mechanism of Antikythera",
+      "url": "https://antikythera-mechanism.namuseum.gr/en/",
+      "source": "National Archaeological Museum, Athens",
+      "type": "reference",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one dial and reconstruct the required input, gear ratio, output cycle and astronomical purpose, distinguishing evidence on fragments from modern reconstruction.",
+      "minutes": 40
+    }
+  },
+  "HIST.07": {
+    "difficulty": "intermediate",
+    "note": "The Open University compares the sparse ancient and much later accounts and shows why Caesar, the Serapeum and the Arab-conquest story cannot be merged into one cinematic destruction event.",
+    "article": {
+      "title": "The Library of Alexandria — The Destruction of the Library",
+      "url": "https://www.open.edu/openlearn/mod/oucontent/view.php?id=19050&section=3&tip=linktip",
+      "source": "The Open University — OpenLearn",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a source timeline for Caesar's fire, later Roman decline, the Serapeum destruction and the Arab-conquest legend, recording source dates and what each actually claims.",
+      "minutes": 35
+    }
+  },
+  "HIST.08": {
+    "difficulty": "intermediate",
+    "note": "The museum history integrates fission science, dispersed industrial sites, military organization, secrecy, uranium and plutonium production, bomb design and the continuing ethical and environmental legacy.",
+    "article": {
+      "title": "The Manhattan Project",
+      "url": "https://ahf.nuclearmuseum.org/ahf/history/manhattan-project/",
+      "source": "National Museum of Nuclear Science & History / Atomic Heritage Foundation",
+      "type": "article",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map Los Alamos, Oak Ridge, Hanford, Chicago and military command by scientific task, industrial bottleneck, workforce, secrecy requirement, hazard and ethical decision.",
+      "minutes": 40
+    }
+  },
+  "HIST.09": {
+    "difficulty": "intermediate",
+    "note": "The historical article reconstructs how contemporaries interpreted the Strasbourg outbreak through disease, divine punishment and social conditions; mass psychogenic illness is a serious proposal, not a proved diagnosis.",
+    "article": {
+      "title": "Divine Punishment or Disease? Medieval and Early Modern Approaches to the 1518 Strasbourg Dancing Plague",
+      "url": "https://danceandhistory.org/en/resources/bibliography/miller-lynneth-j-divine-punishment-or-disease-medieval-and-early-modern-approaches-to-the-1518-strasbourg-dancing-plague",
+      "source": "Lynneth J. Miller — Dance and History bibliography",
+      "type": "paper",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare ergot poisoning, deliberate ritual, neurological disease and mass psychogenic illness by expected symptoms, spread, contemporary evidence and weaknesses.",
+      "minutes": 30
+    }
+  },
+  "HIST.10": {
+    "difficulty": "introductory",
+    "note": "The Nuclear Museum traces radium-dial production, corporate denial, bone damage, litigation and the workers' influence on radiation protection and occupational safety.",
+    "article": {
+      "title": "The Radium Girls",
+      "url": "https://ahf.nuclearmuseum.org/ahf/history/radium-girls/",
+      "source": "National Museum of Nuclear Science & History / Atomic Heritage Foundation",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a failure chain from brush practice through internal exposure, delayed symptoms, company knowledge, medical evidence, legal barriers, compensation and later safety standards.",
+      "minutes": 30
+    }
+  },
+  "HIST.11": {
+    "difficulty": "introductory",
+    "note": "Boston's official centenary account uses city-archive photographs and emphasizes the untested tank, victims, litigation and resulting movement toward professional engineering oversight.",
+    "article": {
+      "title": "100 Years Ago Today: Molasses Crashes Through Boston’s North End",
+      "url": "https://www.boston.gov/ar/news/100-years-ago-today-molasses-crashes-through-bostons-north-end",
+      "source": "City of Boston",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Perform a modern hazard review of the tank covering design pressure, material, foundation, temperature, filling rate, inspection, warning signs, emergency planning and regulatory approval.",
+      "minutes": 35
+    }
+  },
+  "HIST.12": {
+    "difficulty": "intermediate",
+    "note": "The Open Encyclopedia of Anthropology explains that 'cargo cult' bundled diverse Melanesian religious and political movements into a colonial academic category, often obscuring local critiques of unequal exchange and power.",
+    "article": {
+      "title": "Cargo Cults",
+      "url": "https://www.anthroencyclopedia.com/entry/cargo-cults",
+      "source": "Open Encyclopedia of Anthropology — Lamont Lindstrom",
+      "type": "reference",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one named Melanesian movement and describe its colonial setting, theology, leadership, political demands and local meaning before judging whether the label cargo cult clarifies or distorts it.",
+      "minutes": 35
+    }
+  }
+}
