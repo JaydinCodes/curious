@@ -1,1 +1,215 @@
-{}
+{
+  "LING.01": {
+    "difficulty": "introductory",
+    "note": "The Annual Review separates deliberately constructed languages from naturally changing languages, while showing that both exhibit systematic phonology, grammar, vocabulary and social use.",
+    "article": {
+      "title": "Constructed Languages",
+      "url": "https://www.annualreviews.org/doi/10.1146/annurev-linguistics-030421-064707",
+      "source": "Annual Review of Linguistics",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Create a tiny language with a sound inventory, word-order rule, plural rule and ten-word vocabulary, then describe how ordinary use could make those rules drift over generations.",
+      "minutes": 40
+    }
+  },
+  "LING.02": {
+    "difficulty": "intermediate",
+    "note": "Leiden University's course demonstrates the comparative method through regular sound correspondences, reconstruction and the Indo-European family rather than treating Proto-Indo-European as a recorded language.",
+    "article": {
+      "title": "Introduction to Comparative Indo-European Linguistics",
+      "url": "https://www.coursera.org/learn/comparative-indo-european-linguistics",
+      "source": "Leiden University — Coursera",
+      "type": "course",
+      "minutes": 90,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare a small set of cognates across three Indo-European languages, mark regular sound correspondences and propose one reconstructed ancestral form.",
+      "minutes": 35
+    }
+  },
+  "LING.03": {
+    "difficulty": "intermediate",
+    "note": "The Ask-a-Linguist overview distinguishes linguistic determinism from weaker linguistic-relativity claims and reflects the field's rejection of the strong popular version.",
+    "article": {
+      "title": "The Sapir-Whorf Hypothesis",
+      "url": "https://old.linguistlist.org/ask-ling/sapir.cfm",
+      "source": "The LINGUIST List — Ask a Linguist",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one claimed language-thought effect and separate vocabulary availability, attention, memory, categorisation, cultural practice and the stronger claim that thought is impossible without a word.",
+      "minutes": 25
+    }
+  },
+  "LING.04": {
+    "difficulty": "introductory",
+    "note": "The Unicode Standard surveys alphabetic, abjad, syllabic, abugida and logographic systems through the practical problem of representing their characters digitally.",
+    "article": {
+      "title": "Writing Systems and Punctuation",
+      "url": "https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-6/",
+      "source": "The Unicode Standard, Version 16.0",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Classify twelve scripts as alphabet, abjad, abugida, syllabary, logography or mixed system, and state what linguistic unit each basic sign represents.",
+      "minutes": 30
+    }
+  },
+  "LING.05": {
+    "difficulty": "advanced",
+    "note": "Stanford's entry presents the evidence and arguments around innate language capacity while distinguishing broad biological preparedness from specific Universal Grammar proposals.",
+    "article": {
+      "title": "Innateness and Language",
+      "url": "https://plato.stanford.edu/entries/innateness-language/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build the strongest poverty-of-the-stimulus argument you can, then list alternative explanations based on statistical learning, cognition, interaction and cultural evolution.",
+      "minutes": 35
+    }
+  },
+  "LING.06": {
+    "difficulty": "intermediate",
+    "note": "The Annual Review explains current debates about pidgin and creole formation, contact ecologies and the problems with treating all creoles as one exceptional language type.",
+    "article": {
+      "title": "Pidgins and Creoles: Debates and Issues",
+      "url": "https://www.annualreviews.org/doi/10.1146/annurev-anthro-121319-071304",
+      "source": "Annual Review of Anthropology",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Compare a pidgin and a creole by social history, native-speaker status, vocabulary sources, grammar and community identity without assuming a universal one-generation pathway.",
+      "minutes": 30
+    }
+  },
+  "LING.07": {
+    "difficulty": "introductory",
+    "note": "UNESCO frames language revitalisation as community-led work involving education, intergenerational transmission, documentation, technology, public services and language rights.",
+    "article": {
+      "title": "International Decade of Indigenous Languages 2022–2032",
+      "url": "https://www.unesco.org/en/decades/indigenous-languages",
+      "source": "UNESCO",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design a ten-year revitalisation plan covering fluent elders, children, teacher training, orthography, media, public domains, digital tools and community ownership.",
+      "minutes": 35
+    }
+  },
+  "LING.08": {
+    "difficulty": "introductory",
+    "note": "The British Museum explains the decree's three scripts and how comparison, earlier work and Champollion's insight made Egyptian hieroglyphs readable again.",
+    "article": {
+      "title": "Everything You Ever Wanted to Know About the Rosetta Stone",
+      "url": "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone",
+      "source": "The British Museum",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Egyptian Hieroglyphs: The Decipherment Timeline",
+      "url": "https://www.britishmuseum.org/exhibitions/hieroglyphs-unlocking-ancient-egypt/egyptian-hieroglyphs-decipherment-timeline",
+      "source": "The British Museum",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Explain why a trilingual inscription helps decipherment, then distinguish identifying proper names from proving the phonetic and grammatical values of an entire script.",
+      "minutes": 25
+    }
+  },
+  "LING.09": {
+    "difficulty": "introductory",
+    "note": "The open linguistics textbook classifies widening, narrowing, amelioration, pejoration, metaphor and metonymy as recurring pathways of semantic change.",
+    "article": {
+      "title": "Semantic Change",
+      "url": "https://ecampusontario.pressbooks.pub/essentialsoflinguistics2/chapter/14-6-semantic-change/",
+      "source": "Essentials of Linguistics, 2nd edition",
+      "type": "book",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Research five words whose meanings changed and classify each change as widening, narrowing, amelioration, pejoration, metaphor, metonymy or another documented pathway.",
+      "minutes": 30
+    }
+  },
+  "LING.10": {
+    "difficulty": "introductory",
+    "note": "The International Phonetic Association's official chart maps consonants, vowels, suprasegmentals and diacritics to articulatory categories and standard symbols.",
+    "article": {
+      "title": "Full IPA Chart",
+      "url": "https://www.internationalphoneticassociation.org/IPAcharts/IPA_charts_E/IPA_charts_E.html",
+      "source": "International Phonetic Association",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Transcribe ten words from your own accent, labelling each consonant by place, manner and voicing and each vowel by height, backness and rounding.",
+      "minutes": 35
+    }
+  },
+  "LING.11": {
+    "difficulty": "introductory",
+    "note": "The paper begins from the linguistic fact that signed languages are natural human languages with their own phonology, morphology, syntax and communities, not encoded spoken language.",
+    "article": {
+      "title": "Including Signed Languages in Natural Language Processing",
+      "url": "https://arxiv.org/abs/2105.05222",
+      "source": "Julie A. Hochgesang et al. — arXiv",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare one signed and one spoken language across phonological units, word formation, syntax, discourse, regional variation and the role of physical modality.",
+      "minutes": 30
+    }
+  },
+  "LING.12": {
+    "difficulty": "advanced",
+    "note": "Stanford's treatment of translating Chinese philosophy shows how lexical range, grammar, historical concepts and philosophical commitments make translation an interpretive argument rather than word substitution.",
+    "article": {
+      "title": "Translating and Interpreting Chinese Philosophy",
+      "url": "https://plato.stanford.edu/entries/chinese-translate-interpret/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare three translations of one short passage, identify where wording encodes interpretation, and write an annotated translation explaining each unavoidable trade-off.",
+      "minutes": 35
+    }
+  }
+}
