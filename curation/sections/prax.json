@@ -1,1 +1,215 @@
-{}
+{
+  "PRAX.01": {
+    "difficulty": "intermediate",
+    "note": "Stanford's Zen entry discusses mushin as no-mind within a larger philosophical and embodied practice, avoiding the pop-performance caricature.",
+    "article": {
+      "title": "Japanese Zen Buddhist Philosophy",
+      "url": "https://plato.stanford.edu/entries/japanese-zen/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one well-learned physical skill and describe which parts can become automatic, which still require attention, and why mushin is not mere mindlessness.",
+      "minutes": 20
+    }
+  },
+  "PRAX.02": {
+    "difficulty": "intermediate",
+    "note": "The paired Stanford entries distinguish the wider existentialist tradition from Camus's self-described philosophy of the absurd and his criticism of existentialist escape routes.",
+    "article": {
+      "title": "Existentialism",
+      "url": "https://plato.stanford.edu/entries/existentialism/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Albert Camus",
+      "url": "https://plato.stanford.edu/entries/camus/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare Sartrean meaning-making and Camusian revolt in a two-column table, then apply both responses to the same meaningless setback.",
+      "minutes": 25
+    }
+  },
+  "PRAX.03": {
+    "difficulty": "advanced",
+    "note": "Taleb and Douady's paper gives antifragility a mathematical definition through convex response to variability rather than treating it as a vague synonym for resilience.",
+    "article": {
+      "title": "Mathematical Definition, Mapping, and Detection of (Anti)Fragility",
+      "url": "https://arxiv.org/abs/1208.1189",
+      "source": "Nassim Nicholas Taleb and Raphaël Douady — arXiv",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw one concave and one convex response curve and explain why added variability harms the first system but can benefit the second.",
+      "minutes": 25
+    }
+  },
+  "PRAX.04": {
+    "difficulty": "introductory",
+    "note": "Cornell's official guide provides a concrete, evidence-oriented note workflow with capture, cue, summary, recitation, reflection, and review.",
+    "article": {
+      "title": "The Cornell Note Taking System",
+      "url": "https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/",
+      "source": "Cornell University Learning Strategies Center",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one page of Cornell notes from a lecture or article, add retrieval questions in the cue column, and write a five-sentence summary without looking back.",
+      "minutes": 30
+    }
+  },
+  "PRAX.05": {
+    "difficulty": "intermediate",
+    "note": "Stanford presents Stoic logic, physics, and ethics as one system, correcting the modern reduction of Stoicism to emotional suppression.",
+    "article": {
+      "title": "Stoicism",
+      "url": "https://plato.stanford.edu/entries/stoicism/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "For one current problem, separate what is up to you from what is not, then write one action guided by virtue rather than by outcome control.",
+      "minutes": 20
+    }
+  },
+  "PRAX.06": {
+    "difficulty": "introductory",
+    "note": "The original passage in Chesterton's The Thing is used instead of later paraphrases, preserving his argument about understanding an institution before reforming it.",
+    "article": {
+      "title": "The Thing — The Drift from Domesticity",
+      "url": "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FContemporary-EN%2FXCT.165.html",
+      "source": "G. K. Chesterton — Catholic Library",
+      "type": "book",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one annoying rule or legacy feature, investigate the failure it originally prevented, and propose a replacement that preserves that function.",
+      "minutes": 25
+    }
+  },
+  "PRAX.07": {
+    "difficulty": "intermediate",
+    "note": "Stanford's current identity-over-time entry uses Theseus' ship to introduce competing accounts of persistence, constitution, replacement, and reassembly.",
+    "article": {
+      "title": "Identity Over Time",
+      "url": "https://plato.stanford.edu/entries/identity-time/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Apply the Ship of Theseus puzzle to a software system whose modules are gradually rewritten, then define three different criteria for calling it the same system.",
+      "minutes": 25
+    }
+  },
+  "PRAX.08": {
+    "difficulty": "intermediate",
+    "note": "Stanford's simplicity entry separates evidential, pragmatic, syntactic, and ontological simplicity and explains why Occam's Razor is not simply 'pick the easiest story.'",
+    "article": {
+      "title": "Simplicity",
+      "url": "https://plato.stanford.edu/entries/simplicity/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare two explanations by counting assumptions, parameters, predictive consequences, and ad hoc exceptions rather than judging which sounds simpler.",
+      "minutes": 25
+    }
+  },
+  "PRAX.09": {
+    "difficulty": "intermediate",
+    "note": "Yale's lecture introduces the classic trolley cases within a broader course on moral psychology, consequentialism, intention, and doing versus allowing harm.",
+    "article": {
+      "title": "Lecture 14 — The Trolley Problem",
+      "url": "https://oyc.yale.edu/philosophy/phil-181/lecture-14",
+      "source": "Open Yale Courses",
+      "type": "course",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare switch, footbridge, and loop variants, stating what changes in intention, physical means, personal force, and expected consequences.",
+      "minutes": 30
+    }
+  },
+  "PRAX.10": {
+    "difficulty": "intermediate",
+    "note": "Stanford's Daoism entry situates wu wei within early Chinese debates about action, guidance, spontaneity, and non-coercive rule.",
+    "article": {
+      "title": "Daoism",
+      "url": "https://plato.stanford.edu/entries/daoism/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Identify one task where extra force creates resistance, then redesign the process around timing, environment, and response rather than direct control.",
+      "minutes": 20
+    }
+  },
+  "PRAX.11": {
+    "difficulty": "intermediate",
+    "note": "Ericsson and Harwell clarify the original definition of deliberate practice and distinguish structured improvement from accumulated hours or casual repetition.",
+    "article": {
+      "title": "Deliberate Practice and Proposed Limits on the Effects of Practice on the Acquisition of Expert Performance",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/",
+      "source": "K. Anders Ericsson and Kyle W. Harwell — Frontiers in Psychology",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Turn one broad skill into a 30-minute practice block with a narrow target, measurable error, immediate feedback, repetition, and reflection.",
+      "minutes": 30
+    }
+  },
+  "PRAX.12": {
+    "difficulty": "intermediate",
+    "note": "The resource covers the classical via negativa—speaking by negation about what exceeds concepts—while the exercise carefully adapts subtraction as a practical heuristic.",
+    "article": {
+      "title": "Philosophy of Religion",
+      "url": "https://plato.stanford.edu/entries/philosophy-religion/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one overloaded routine or system and remove one element at a time, recording which removals preserve the goal and which destroy a necessary function.",
+      "minutes": 25
+    }
+  }
+}
