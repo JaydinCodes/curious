@@ -5,18 +5,19 @@ import {
 import {
   formatLabel,
   formatMinutes,
+  getResourceType,
   getTotalMinutes,
 } from './curation-model.js';
 import { getCuration } from './curation-data.js';
 import { filterTopics } from './learning-state.js';
 import { store } from './storage.js';
+import { topicHref } from './topic-url.js';
+import { trackAnalytics } from './analytics.js';
 
 const watchHref = query =>
   'https://www.youtube.com/results?search_query=' + encodeURIComponent(query);
 const readHref = query =>
   'https://en.wikipedia.org/w/index.php?search=' + encodeURIComponent(query);
-const topicHref = (code, start = false) =>
-  `./topic.html?code=${encodeURIComponent(code)}${start ? '&start=1' : ''}`;
 
 let done = store.load();
 
@@ -63,12 +64,12 @@ sections.forEach(section => {
     card.innerHTML = `
       <span class="card-dot"></span>
       <div class="card-code">${topic.code}</div>
-      <h3 class="card-title"><a class="card-title-link" href="${topicHref(topic.code)}">${topic.t}</a></h3>
+      <h3 class="card-title"><a class="card-title-link" href="${topicHref(topic)}">${topic.t}</a></h3>
       <p class="card-hook">${topic.h}</p>
       <div class="card-links">
-        <a class="chip chip-watch" href="${watchHref(topic.w)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Watch &#9656;</a>
-        <a class="chip chip-read" href="${readHref(topic.r)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Read &#9656;</a>
-        <a class="chip chip-details" href="${topicHref(topic.code)}">Details &#9656;</a>
+        <a class="chip chip-watch" data-resource-slot="video" data-resource-type="video" href="${watchHref(topic.w)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Watch &#9656;</a>
+        <a class="chip chip-read" data-resource-slot="article" data-resource-type="reference" href="${readHref(topic.r)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Read &#9656;</a>
+        <a class="chip chip-details" href="${topicHref(topic)}">Details &#9656;</a>
         <button class="mark" type="button" aria-pressed="${String(!!done[topic.code])}" aria-label="Mark ${topic.t} as done">&#10003;</button>
       </div>`;
 
@@ -145,8 +146,9 @@ main.addEventListener('click', event => {
   if (!button) return;
 
   const code = button.closest('.card').dataset.code;
+  const wasDone = Boolean(done[code]);
 
-  if (done[code]) delete done[code];
+  if (wasDone) delete done[code];
   else done[code] = 1;
 
   document
@@ -161,7 +163,25 @@ main.addEventListener('click', event => {
   store.save(done);
   updateProgress();
   applyFilters();
+
+  if (!wasDone) {
+    trackAnalytics('complete', { topicCode: code });
+  }
+
   window.CC?.onMark(code, !!done[code]);
+});
+
+main.addEventListener('click', event => {
+  const resource = event.target.closest('a[data-resource-slot]');
+  const card = resource?.closest('.card');
+
+  if (!resource || !card) return;
+
+  trackAnalytics('resource_click', {
+    topicCode: card.dataset.code,
+    slot: resource.dataset.resourceSlot,
+    type: resource.dataset.resourceType,
+  });
 });
 
 document.getElementById('resetBtn').addEventListener('click', () => {
@@ -183,6 +203,8 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 const search = document.getElementById('search');
 const noResults = document.getElementById('noResults');
 let view = 'all';
+let visibleTopicCount = topics.length;
+let searchAnalyticsTimer = 0;
 
 function applyFilters() {
   const query = search.value.trim().toLowerCase();
@@ -211,10 +233,25 @@ function applyFilters() {
     total += shown;
   });
 
+  visibleTopicCount = total;
   noResults.classList.toggle('show', total === 0);
+  return total;
 }
 
-search.addEventListener('input', applyFilters);
+search.addEventListener('input', () => {
+  applyFilters();
+  clearTimeout(searchAnalyticsTimer);
+
+  const queryLength = search.value.trim().length;
+  if (queryLength === 0) return;
+
+  searchAnalyticsTimer = window.setTimeout(() => {
+    trackAnalytics('search', {
+      queryLength,
+      results: visibleTopicCount,
+    });
+  }, 700);
+});
 
 document.querySelectorAll('.seg button').forEach(button => {
   button.addEventListener('click', () => {
@@ -242,8 +279,18 @@ const slipDeeper = document.getElementById('slipDeeper');
 const slipStart = document.getElementById('slipStart');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function slipChip(anchor, resource, fallbackHref) {
+function slipChip(
+  anchor,
+  resource,
+  fallbackHref,
+  slot,
+  fallbackType,
+) {
   anchor.hidden = false;
+  anchor.dataset.resourceSlot = slot;
+  anchor.dataset.resourceType = resource
+    ? getResourceType(slot, resource)
+    : fallbackType;
 
   if (resource?.url) {
     anchor.href = resource.url;
@@ -272,18 +319,35 @@ function renderSlip(topic) {
     .filter(Boolean)
     .join(' · ');
 
-  slipChip(slipWatch, entry?.video, watchHref(topic.w));
-  slipChip(slipRead, entry?.article, readHref(topic.r));
+  slipChip(
+    slipWatch,
+    entry?.video,
+    watchHref(topic.w),
+    'video',
+    'video',
+  );
+  slipChip(
+    slipRead,
+    entry?.article,
+    readHref(topic.r),
+    'article',
+    'reference',
+  );
 
   if (entry?.deeper?.url) {
     slipDeeper.href = entry.deeper.url;
     slipDeeper.title = entry.deeper.title || '';
+    slipDeeper.dataset.resourceSlot = 'deeper';
+    slipDeeper.dataset.resourceType = getResourceType(
+      'deeper',
+      entry.deeper,
+    );
     slipDeeper.hidden = false;
   } else {
     slipDeeper.hidden = true;
   }
 
-  slipStart.href = topicHref(topic.code, true);
+  slipStart.href = topicHref(topic, { start: true });
   slipStart.hidden = false;
   slip.classList.add('show');
 }
@@ -308,6 +372,15 @@ function currentDrawFilters() {
 }
 
 let last = null;
+
+function trackDraw(topic, filters) {
+  trackAnalytics('draw', {
+    topicCode: topic.code,
+    section: filters.section,
+    difficulty: filters.difficulty,
+    status: filters.status,
+  });
+}
 
 function draw() {
   const filters = currentDrawFilters();
@@ -346,6 +419,7 @@ function draw() {
   }
 
   last = pick;
+  trackDraw(pick, filters);
 
   if (reduceMotion) {
     renderSlip(pick);
@@ -375,6 +449,18 @@ function revealSlip() {
 }
 
 drawButton.addEventListener('click', draw);
+
+[slipWatch, slipRead, slipDeeper].forEach(link => {
+  link.addEventListener('click', () => {
+    if (!last || link.hidden) return;
+
+    trackAnalytics('resource_click', {
+      topicCode: last.code,
+      slot: link.dataset.resourceSlot,
+      type: link.dataset.resourceType,
+    });
+  });
+});
 
 const toTop = document.getElementById('toTop');
 window.addEventListener('scroll', () => {
