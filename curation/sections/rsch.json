@@ -1,1 +1,206 @@
-{}
+{
+  "RSCH.01": {
+    "difficulty": "intermediate",
+    "note": "The Open Science Collaboration's large replication project is the landmark empirical starting point, while its interpretation should be read with attention to effect sizes and methodological debate.",
+    "article": {
+      "title": "Estimating the Reproducibility of Psychological Science",
+      "url": "https://doi.org/10.1126/science.aac4716",
+      "source": "Open Science Collaboration — Science",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose three different definitions of replication success and explain how the same replication project can yield different headline percentages.",
+      "minutes": 30
+    }
+  },
+  "RSCH.02": {
+    "difficulty": "intermediate",
+    "note": "Simmons, Nelson, and Simonsohn demonstrate how undisclosed analytic flexibility can manufacture statistically significant results without fabricating data.",
+    "article": {
+      "title": "False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant",
+      "url": "https://doi.org/10.1177/0956797611417632",
+      "source": "Joseph P. Simmons, Leif D. Nelson, and Uri Simonsohn — Psychological Science",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "List ten researcher degrees of freedom in a hypothetical study and mark which decisions should be preregistered before seeing the data.",
+      "minutes": 25
+    }
+  },
+  "RSCH.03": {
+    "difficulty": "introductory",
+    "note": "Sense about Science opens the peer-review black box, explaining editorial screening, reviewer roles, limitations, alternatives, and post-publication review.",
+    "article": {
+      "title": "Peer Review: The Nuts and Bolts",
+      "url": "https://senseaboutscience.org/activities/peer-review-the-nuts-and-bolts-2/",
+      "source": "Sense about Science",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a mock peer review with separate sections for summary, major concerns, minor concerns, reproducibility, and recommendation.",
+      "minutes": 35
+    }
+  },
+  "RSCH.04": {
+    "difficulty": "introductory",
+    "note": "Keshav's author-hosted page links the original three-pass reading method and updated supporting resources.",
+    "article": {
+      "title": "How to Read a Paper",
+      "url": "https://svr-sk818-web.cl.cam.ac.uk/keshav/publications/htrap.html",
+      "source": "S. Keshav",
+      "type": "paper",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Apply the first two passes to one paper and produce the five-C summary: category, context, correctness, contributions, and clarity.",
+      "minutes": 45
+    }
+  },
+  "RSCH.05": {
+    "difficulty": "intermediate",
+    "note": "The updated CONSORT explanation provides the scientific rationale behind transparent randomized-trial design and reporting, including randomization, allocation, blinding, outcomes, and analysis.",
+    "article": {
+      "title": "CONSORT 2025 Explanation and Elaboration: Updated Guideline for Reporting Randomised Trials",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11995452/",
+      "source": "CONSORT Group — BMJ / PubMed Central",
+      "type": "paper",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take a published randomized trial and audit its abstract, randomization, allocation concealment, attrition, outcomes, and analysis against CONSORT items.",
+      "minutes": 45
+    }
+  },
+  "RSCH.06": {
+    "difficulty": "advanced",
+    "note": "Hernán and Robins provide a free, rigorous book that frames causal questions through counterfactuals, exchangeability, DAGs, confounding, selection, and longitudinal treatment.",
+    "article": {
+      "title": "Causal Inference: What If",
+      "url": "https://miguelhernan.org/whatifbook",
+      "source": "Miguel A. Hernán and James M. Robins",
+      "type": "book",
+      "minutes": 90,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw a DAG containing an exposure, outcome, confounder, mediator, and collider, then justify which variables should and should not be adjusted for.",
+      "minutes": 40
+    }
+  },
+  "RSCH.07": {
+    "difficulty": "intermediate",
+    "note": "Cochrane's handbook chapter gives precise definitions and empirical evidence for publication, time-lag, selective-reporting, citation, language, and location biases.",
+    "article": {
+      "title": "Considering Bias and Conflicts of Interest Among the Included Studies",
+      "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-07",
+      "source": "Cochrane Handbook for Systematic Reviews of Interventions",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a funnel-plot thought experiment showing how selectively missing small null studies can shift a pooled estimate.",
+      "minutes": 25
+    }
+  },
+  "RSCH.08": {
+    "difficulty": "intermediate",
+    "note": "Cochrane's meta-analysis chapter explains effect measures, weighting, heterogeneity, fixed and random effects, and why inappropriate pooling can mislead.",
+    "article": {
+      "title": "Analysing Data and Undertaking Meta-Analyses",
+      "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10",
+      "source": "Cochrane Handbook for Systematic Reviews of Interventions",
+      "type": "reference",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Combine three fictional study estimates using inverse-variance weights, then explain how heterogeneity changes the interpretation of the pooled result.",
+      "minutes": 35
+    }
+  },
+  "RSCH.09": {
+    "difficulty": "introductory",
+    "note": "OSF's current guide defines preregistration and gives concrete practices for specifying hypotheses, exclusions, variables, models, outcomes, and contingencies in advance.",
+    "article": {
+      "title": "Welcome to Registrations & Preregistrations!",
+      "url": "https://help.osf.io/article/330-welcome-to-registrations",
+      "source": "Open Science Framework Support",
+      "type": "reference",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draft a short preregistration for a simple experiment, including hypothesis, sample, exclusions, variables, primary outcome, analysis, and deviation policy.",
+      "minutes": 40
+    }
+  },
+  "RSCH.10": {
+    "difficulty": "intermediate",
+    "note": "Button and colleagues explain how low power reduces true-effect detection, inflates observed effect sizes among significant findings, and weakens reproducibility.",
+    "article": {
+      "title": "Power Failure: Why Small Sample Size Undermines the Reliability of Neuroscience",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23571845/",
+      "source": "Katherine S. Button et al. — Nature Reviews Neuroscience / PubMed",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Calculate power across several sample sizes for one expected effect, then compare false-negative risk and the precision of the estimated effect.",
+      "minutes": 35
+    }
+  },
+  "RSCH.11": {
+    "difficulty": "introductory",
+    "note": "Mangel and Samaniego's historical analysis is the scholarly source behind the aircraft-survivability example and explains the selection problem in data from returning aircraft.",
+    "article": {
+      "title": "Abraham Wald’s Work on Aircraft Survivability",
+      "url": "https://doi.org/10.1080/01621459.1984.10478038",
+      "source": "Marc Mangel and Francisco J. Samaniego — Journal of the American Statistical Association",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Invent a dataset containing only successful cases, identify what observations are missing by design, and show how analyzing survivors alone reverses the decision.",
+      "minutes": 25
+    }
+  },
+  "RSCH.12": {
+    "difficulty": "intermediate",
+    "note": "Cuellar's modern treatment explains the prosecutor's fallacy through likelihood ratios and the separation between probability of evidence given a hypothesis and probability of the hypothesis given evidence.",
+    "article": {
+      "title": "The Prosecutor’s Fallacy and Expert Testimony: A Modern Take Using Likelihood Ratios",
+      "url": "https://arxiv.org/abs/2502.03217",
+      "source": "Maria Cuellar — arXiv",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a base-rate example in which evidence is rare among innocent people but innocence remains plausible, then compute both conditional probabilities explicitly.",
+      "minutes": 30
+    }
+  }
+}
