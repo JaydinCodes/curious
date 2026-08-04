@@ -2,6 +2,7 @@ import {
   sections,
   topics,
 } from './data/catalog.js';
+import { collections } from './data/collections.js';
 import {
   formatLabel,
   formatMinutes,
@@ -14,9 +15,18 @@ import { getTopicStatus } from './learning-state.js';
 import { store } from './storage.js';
 import { trackAnalytics } from './analytics.js';
 import {
+  collectionHref,
   resolveTopicFromLocation,
+  topicHref,
   topicPath,
 } from './topic-url.js';
+import {
+  buildStudyPrompts,
+  getCollectionMembership,
+  getLearningStats,
+  getRelatedTopics,
+  getTopicPosition,
+} from './topic-depth.js';
 
 const params = new URLSearchParams(window.location.search);
 const topic = resolveTopicFromLocation(topics, window.location);
@@ -45,10 +55,14 @@ if (!topic || !section) {
   const sectionElement = document.getElementById('topicSection');
   const hook = document.getElementById('topicHook');
   const meta = document.getElementById('topicMeta');
+  const overview = document.getElementById('topicOverview');
+  const collectionElement = document.getElementById('topicCollections');
   const resourcesElement = document.getElementById('topicResources');
   const exerciseSection = document.getElementById('exerciseSection');
   const exercisePrompt = document.getElementById('exercisePrompt');
   const exerciseTime = document.getElementById('exerciseTime');
+  const promptsElement = document.getElementById('studyPrompts');
+  const relatedElement = document.getElementById('relatedTopics');
   const notesElement = document.getElementById('topicNotes');
   const noteStatus = document.getElementById('noteStatus');
   const statusElement = document.getElementById('topicStatus');
@@ -123,6 +137,67 @@ if (!topic || !section) {
     ? resources
     : fallbackResources();
 
+  const position = getTopicPosition(topic, topics);
+  const stats = getLearningStats(entry);
+
+  function addOverviewCard(label, value, description) {
+    const card = document.createElement('article');
+    card.className = 'topic-overview-card';
+
+    const labelElement = document.createElement('span');
+    labelElement.textContent = label;
+
+    const valueElement = document.createElement('strong');
+    valueElement.textContent = value;
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = description;
+
+    card.append(labelElement, valueElement, descriptionElement);
+    overview.appendChild(card);
+  }
+
+  addOverviewCard(
+    'Drawer position',
+    `${position.index} of ${position.total}`,
+    `This topic sits inside the ${section.name} drawer.`,
+  );
+
+  addOverviewCard(
+    'Learning path',
+    `${stats.resourceCount || learningResources.length} resource${
+      (stats.resourceCount || learningResources.length) === 1 ? '' : 's'
+    }`,
+    stats.totalMinutes > 0
+      ? `${formatMinutes(stats.totalMinutes)} including the optional exercise.`
+      : 'Use the resources and reflection prompts at your own pace.',
+  );
+
+  addOverviewCard(
+    'Practice',
+    stats.hasExercise ? 'Exercise included' : 'Reflection-led',
+    stats.hasExercise
+      ? `${formatMinutes(stats.exerciseMinutes)} of practical application.`
+      : 'Use the study prompts to create your own example and criticism.',
+  );
+
+  const memberships = getCollectionMembership(topic.code, collections);
+  if (memberships.length > 0) {
+    const label = document.createElement('span');
+    label.className = 'collection-membership-label';
+    label.textContent = 'Included in curated paths';
+    collectionElement.appendChild(label);
+
+    for (const collection of memberships) {
+      const link = document.createElement('a');
+      link.href = collectionHref(collection);
+      link.textContent = collection.title;
+      collectionElement.appendChild(link);
+    }
+
+    collectionElement.hidden = false;
+  }
+
   learningResources.forEach(({ slot, resource }, index) => {
     const resourceType = getResourceType(slot, resource);
     const link = document.createElement('a');
@@ -176,6 +251,42 @@ if (!topic || !section) {
     exercisePrompt.textContent = entry.exercise.prompt;
     exerciseTime.textContent = formatMinutes(entry.exercise.minutes);
     exerciseSection.hidden = false;
+  }
+
+  for (const [index, prompt] of buildStudyPrompts(topic).entries()) {
+    const card = document.createElement('article');
+    card.className = 'study-prompt';
+
+    const number = document.createElement('span');
+    number.textContent = String(index + 1).padStart(2, '0');
+
+    const promptTitle = document.createElement('strong');
+    promptTitle.textContent = prompt.title;
+
+    const promptCopy = document.createElement('p');
+    promptCopy.textContent = prompt.prompt;
+
+    card.append(number, promptTitle, promptCopy);
+    promptsElement.appendChild(card);
+  }
+
+  for (const related of getRelatedTopics(topic, topics, 4)) {
+    const link = document.createElement('a');
+    link.className = 'related-topic';
+    link.href = topicHref(related);
+
+    const relatedCode = document.createElement('span');
+    relatedCode.className = 'related-code';
+    relatedCode.textContent = related.code;
+
+    const relatedTitle = document.createElement('strong');
+    relatedTitle.textContent = related.t;
+
+    const relatedHook = document.createElement('p');
+    relatedHook.textContent = related.h;
+
+    link.append(relatedCode, relatedTitle, relatedHook);
+    relatedElement.appendChild(link);
   }
 
   function markStarted() {
