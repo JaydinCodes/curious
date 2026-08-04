@@ -1,0 +1,9 @@
+{
+  "about": "Curated, human-verified resources per topic code. Keyed by code (e.g. MIND.01). Loaded at runtime by index.html and merged over the search fallback; any code without an entry keeps its Watch/Read search links. See CURATING.md for the schema and quality rubric, and run `npm run verify-links` after every change.",
+  "schemaVersion": 2,
+  "curatedSections": [
+    "MIND",
+    "COMP"
+  ],
+  "knownVerifierWarnings": "britannica.com, newsinhealth.nih.gov, and aeon.co bot-wall or rate-limit automated checkers, so verify-links.js reports them as WARN. All three were confirmed to return HTTP 200 in a real browser on 2026-07-16 — WARN here means 'checker was blocked', not 'link is dead'."
+}

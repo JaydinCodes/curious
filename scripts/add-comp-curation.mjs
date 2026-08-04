@@ -1,0 +1,363 @@
+import { readFile, writeFile } from 'node:fs/promises';
+
+const file = new URL(
+  '../curated-links.json',
+  import.meta.url,
+);
+
+const force = process.argv.includes('--force');
+
+const data = JSON.parse(
+  await readFile(file, 'utf8'),
+);
+
+if (data?._meta?.schemaVersion !== 2) {
+  throw new Error(
+    'curated-links.json must use schemaVersion 2.',
+  );
+}
+
+const verifiedAt = '2026-08-04';
+
+const compEntries = {
+  'COMP.01': {
+    difficulty: 'introductory',
+    note:
+      'Cloudflare provides a concise end-to-end overview of packets, protocols, routing, TCP, TLS, DNS, and HTTP without hiding the distributed nature of the Internet.',
+    article: {
+      title: 'How does the Internet work?',
+      url:
+        'https://www.cloudflare.com/learning/network-layer/how-does-the-internet-work/',
+      source: 'Cloudflare Learning Center',
+      type: 'article',
+      minutes: 12,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Open the browser Network panel, reload a website, and identify the DNS lookup, connection, request, response, and transferred resources.',
+      minutes: 15,
+    },
+  },
+
+  'COMP.02': {
+    difficulty: 'introductory',
+    note:
+      'This resource covers recursive resolvers, authoritative nameservers, the lookup hierarchy, caching, and the distinction between domain names and IP addresses.',
+    article: {
+      title: 'What is DNS? | How DNS works',
+      url:
+        'https://www.cloudflare.com/learning/dns/what-is-dns/',
+      source: 'Cloudflare Learning Center',
+      type: 'article',
+      minutes: 10,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Run dig or nslookup against one domain. Record its A or AAAA record, TTL, authoritative nameserver, and any CNAME chain.',
+      minutes: 15,
+    },
+  },
+
+  'COMP.03': {
+    difficulty: 'intermediate',
+    note:
+      'Cloudflare explains BGP through autonomous systems, route advertisements, path selection, trust assumptions, and common security weaknesses.',
+    article: {
+      title: 'What is BGP? | BGP routing explained',
+      url:
+        'https://www.cloudflare.com/learning/security/glossary/what-is-bgp/',
+      source: 'Cloudflare Learning Center',
+      type: 'article',
+      minutes: 12,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Draw five autonomous systems with two possible routes between a client and server. Mark which route BGP would advertise and how a false shorter route could hijack traffic.',
+      minutes: 15,
+    },
+  },
+
+  'COMP.04': {
+    difficulty: 'introductory',
+    note:
+      'The article clearly separates public-key encryption, private keys, authentication, key exchange, and the symmetric session keys later used by TLS.',
+    article: {
+      title:
+        'How does public key cryptography work?',
+      url:
+        'https://www.cloudflare.com/learning/ssl/how-does-public-key-encryption-work/',
+      source: 'Cloudflare Learning Center',
+      type: 'article',
+      minutes: 10,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Write a four-step message exchange showing which key Alice and Bob use for encryption, decryption, signing, and signature verification.',
+      minutes: 15,
+    },
+  },
+
+  'COMP.05': {
+    difficulty: 'intermediate',
+    note:
+      'Crafting Interpreters teaches scanning, parsing, syntax trees, evaluation, bytecode, virtual machines, and garbage collection by implementing two complete interpreters.',
+    article: {
+      title: 'Crafting Interpreters',
+      url: 'https://craftinginterpreters.com/',
+      source: 'Robert Nystrom',
+      type: 'book',
+      minutes: 90,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Implement a tokenizer for numbers, identifiers, parentheses, and the four arithmetic operators. Print the resulting token stream.',
+      minutes: 45,
+    },
+  },
+
+  'COMP.06': {
+    difficulty: 'intermediate',
+    note:
+      'The OSTEP scheduling chapter develops FIFO, SJF, STCF, round-robin, response time, turnaround time, preemption, context-switch cost, and I/O overlap.',
+    article: {
+      title: 'Scheduling: Introduction',
+      url:
+        'https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf',
+      source:
+        'Operating Systems: Three Easy Pieces — Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau',
+      type: 'book',
+      minutes: 35,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Given three jobs with different arrival and execution times, calculate average turnaround and response time under FIFO, SJF, STCF, and round-robin.',
+      minutes: 25,
+    },
+  },
+
+  'COMP.07': {
+    difficulty: 'intermediate',
+    note:
+      'PostgreSQL documentation precisely defines dirty reads, nonrepeatable reads, phantom reads, serialization anomalies, and the guarantees of each implemented isolation level.',
+    article: {
+      title: '13.2. Transaction Isolation',
+      url:
+        'https://www.postgresql.org/docs/current/transaction-iso.html',
+      source: 'PostgreSQL Documentation',
+      type: 'reference',
+      minutes: 25,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Open two database sessions and reproduce a nonrepeatable read or serialization failure. Repeat the test under a stronger isolation level.',
+      minutes: 30,
+    },
+  },
+
+  'COMP.08': {
+    difficulty: 'advanced',
+    note:
+      'The Raft project provides the accessible model and visualization; the original USENIX paper provides the formal algorithm, safety argument, elections, and replicated-log design.',
+    article: {
+      title: 'Raft Consensus Algorithm',
+      url: 'https://raft.github.io/',
+      source: 'The Raft Project',
+      type: 'reference',
+      minutes: 25,
+      verifiedAt,
+      paywalled: false,
+    },
+    deeper: {
+      title:
+        'In Search of an Understandable Consensus Algorithm',
+      url:
+        'https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro',
+      source:
+        'Diego Ongaro and John Ousterhout — USENIX ATC 2014',
+      type: 'paper',
+      minutes: 50,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Simulate a five-node Raft cluster. Trigger a leader failure, elect a replacement, and explain why a majority is required to commit a log entry.',
+      minutes: 25,
+    },
+  },
+
+  'COMP.09': {
+    difficulty: 'intermediate',
+    note:
+      'Sipser introduces diagonalization and reducibility before showing that the Turing-machine halting problem is undecidable.',
+    article: {
+      title: 'Lecture 8: Undecidability',
+      url:
+        'https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-8-undecidability/',
+      source:
+        'MIT OpenCourseWare — Prof. Michael Sipser',
+      type: 'course',
+      minutes: 80,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Write the assumed HALTS(program, input) function, then construct the self-referential program that produces a contradiction when called with itself.',
+      minutes: 20,
+    },
+  },
+
+  'COMP.10': {
+    difficulty: 'intermediate',
+    note:
+      'Jay Alammar supplies the visual intuition for embeddings, query-key-value projections, self-attention, multiple heads, positional encoding, and decoding. The NeurIPS paper is the primary source.',
+    article: {
+      title: 'The Illustrated Transformer',
+      url:
+        'https://jalammar.github.io/illustrated-transformer/',
+      source: 'Jay Alammar',
+      type: 'article',
+      minutes: 35,
+      verifiedAt,
+      paywalled: false,
+    },
+    deeper: {
+      title: 'Attention Is All You Need',
+      url:
+        'https://papers.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html',
+      source:
+        'Vaswani et al. — NeurIPS 2017',
+      type: 'paper',
+      minutes: 45,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Using three small vectors, calculate one scaled dot-product attention output by hand: QKᵀ, scaling, softmax, and multiplication by V.',
+      minutes: 25,
+    },
+  },
+
+  'COMP.11': {
+    difficulty: 'intermediate',
+    note:
+      'Princeton connects prefix-free codes, Huffman coding, LZW, entropy, practical compression, and the counting proof that no lossless compressor can shrink every input.',
+    article: {
+      title: 'Data Compression',
+      url:
+        'https://algs4.cs.princeton.edu/55compression/',
+      source:
+        'Algorithms, 4th Edition — Robert Sedgewick and Kevin Wayne, Princeton University',
+      type: 'course',
+      minutes: 30,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Build a Huffman tree for a short sentence, assign each symbol a prefix-free code, and compare the encoded bit length with fixed-width encoding.',
+      minutes: 30,
+    },
+  },
+
+  'COMP.12': {
+    difficulty: 'intermediate',
+    note:
+      'CMU’s systems course explains locality, cache blocks, the hierarchy from registers to storage, and why access patterns often dominate real program performance.',
+    article: {
+      title: 'Lecture 11: Memory Hierarchy',
+      url:
+        'https://www.cs.cmu.edu/afs/cs/academic/class/15213-m11/www/lectures/11-memory-hierarchy.html',
+      source:
+        'Carnegie Mellon University — 15-213 Introduction to Computer Systems',
+      type: 'course',
+      minutes: 35,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'Benchmark summing a large matrix row-by-row and column-by-column. Compare the timings and explain the result using spatial locality and cache lines.',
+      minutes: 30,
+    },
+  },
+
+  'COMP.13': {
+    difficulty: 'intermediate',
+    note:
+      'Goldberg’s classic tutorial explains representation, rounding error, guard digits, gradual underflow, IEEE 754, and the system-level consequences of finite precision.',
+    article: {
+      title:
+        'What Every Computer Scientist Should Know About Floating-Point Arithmetic',
+      url:
+        'https://docs.oracle.com/cd/E19060-01/stud8.compiler/817-0932/ncg_goldberg.html',
+      source:
+        'David Goldberg — Oracle reprint of ACM Computing Surveys',
+      type: 'paper',
+      minutes: 60,
+      verifiedAt,
+      paywalled: false,
+    },
+    exercise: {
+      prompt:
+        'In your main programming language, test 0.1 + 0.2, repeated addition, equality near zero, NaN, positive infinity, and negative zero. Explain each result.',
+      minutes: 25,
+    },
+  },
+};
+
+const existingCodes = Object.keys(compEntries).filter(
+  code => data[code],
+);
+
+if (existingCodes.length > 0 && !force) {
+  throw new Error(
+    [
+      'Computing entries already exist:',
+      existingCodes.join(', '),
+      'Run with --force to replace them.',
+    ].join(' '),
+  );
+}
+
+data._meta.curatedSections = [
+  ...new Set([
+    ...(data._meta.curatedSections ?? []),
+    'COMP',
+  ]),
+];
+
+Object.assign(data, compEntries);
+
+await writeFile(
+  file,
+  `${JSON.stringify(data, null, 2)}\n`,
+  'utf8',
+);
+
+console.log(
+  `Added ${Object.keys(compEntries).length} Computing entries.`,
+);
+console.log(
+  `Total curated topic entries: ${
+    Object.keys(data).filter(
+      key => !key.startsWith('_'),
+    ).length
+  }`,
+);
