@@ -51,6 +51,16 @@ function updateFilterSummary() {
   control.addEventListener('change', updateFilterSummary);
 });
 
+document.getElementById('main').addEventListener('click', event => {
+  if (event.target.closest('.mark')) {
+    queueMicrotask(updateFilterSummary);
+  }
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  queueMicrotask(updateFilterSummary);
+});
+
 function downloadJson(filename, value) {
   const blob = new Blob(
     [`${JSON.stringify(value, null, 2)}\n`],
