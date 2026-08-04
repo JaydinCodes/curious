@@ -6,10 +6,11 @@
   <meta name="theme-color" content="#12211C">
   <meta name="color-scheme" content="dark">
   <title>Topic · The Curiosity Catalog</title>
-  <meta name="description" content="A Curiosity Catalog topic learning path with curated resources, an exercise, notes, and progress.">
+  <meta name="description" content="A Curiosity Catalog topic learning path with curated resources, study prompts, an exercise, reflections, related topics and progress.">
   <!-- SOCIAL_META -->
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/topic.css">
+  <link rel="stylesheet" href="/depth.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,9 +44,21 @@
         <p class="topic-status share-status" id="shareTopicStatus" aria-live="polite"></p>
       </header>
 
-      <section class="learning-section" aria-labelledby="resourcesHeading">
+      <section class="learning-section" aria-labelledby="overviewHeading">
         <div class="learning-heading">
           <span>01</span>
+          <div>
+            <h2 id="overviewHeading">Orient</h2>
+            <p>See where the topic sits, how much work is involved, and whether it belongs to a curated path.</p>
+          </div>
+        </div>
+        <div class="topic-overview-grid" id="topicOverview"></div>
+        <div class="collection-memberships" id="topicCollections" hidden></div>
+      </section>
+
+      <section class="learning-section" aria-labelledby="resourcesHeading">
+        <div class="learning-heading">
+          <span>02</span>
           <div>
             <h2 id="resourcesHeading">Learn</h2>
             <p>Work through the curated resources in order. Opening one records this topic as in progress.</p>
@@ -56,7 +69,7 @@
 
       <section class="learning-section" id="exerciseSection" aria-labelledby="exerciseHeading" hidden>
         <div class="learning-heading">
-          <span>02</span>
+          <span>03</span>
           <div>
             <h2 id="exerciseHeading">Apply</h2>
             <p>Use the idea instead of only recognising it.</p>
@@ -68,9 +81,20 @@
         </div>
       </section>
 
+      <section class="learning-section" aria-labelledby="studyPromptsHeading">
+        <div class="learning-heading">
+          <span>04</span>
+          <div>
+            <h2 id="studyPromptsHeading">Think deeper</h2>
+            <p>Use these prompts with any topic to move from recognition to understanding.</p>
+          </div>
+        </div>
+        <div class="study-prompts" id="studyPrompts"></div>
+      </section>
+
       <section class="learning-section" aria-labelledby="reflectionHeading">
         <div class="learning-heading">
-          <span>03</span>
+          <span>05</span>
           <div>
             <h2 id="reflectionHeading">Reflect</h2>
             <p>Keep a private note in this browser. Notes are included when you export progress.</p>
@@ -83,13 +107,24 @@
 
       <section class="learning-section finish-section" aria-labelledby="finishHeading">
         <div class="learning-heading">
-          <span>04</span>
+          <span>06</span>
           <div>
             <h2 id="finishHeading">Finish</h2>
             <p>Mark the topic complete when you can explain the core idea in your own words.</p>
           </div>
         </div>
         <button class="topic-primary" id="finishTopic" type="button">Mark complete</button>
+      </section>
+
+      <section class="learning-section" aria-labelledby="relatedHeading">
+        <div class="learning-heading">
+          <span>07</span>
+          <div>
+            <h2 id="relatedHeading">Continue exploring</h2>
+            <p>Stay in the same drawer and follow the nearest connected catalogue entries.</p>
+          </div>
+        </div>
+        <div class="related-topics" id="relatedTopics"></div>
       </section>
     </article>
 
