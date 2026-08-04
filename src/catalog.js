@@ -13,6 +13,7 @@ import { filterTopics } from './learning-state.js';
 import { store } from './storage.js';
 import { topicHref } from './topic-url.js';
 import { trackAnalytics } from './analytics.js';
+import { shouldShowShelf } from './browse-state.js';
 
 const watchHref = query =>
   'https://www.youtube.com/results?search_query=' + encodeURIComponent(query);
@@ -67,9 +68,8 @@ sections.forEach(section => {
       <h3 class="card-title"><a class="card-title-link" href="${topicHref(topic)}">${topic.t}</a></h3>
       <p class="card-hook">${topic.h}</p>
       <div class="card-links">
-        <a class="chip chip-watch" data-resource-slot="video" data-resource-type="video" href="${watchHref(topic.w)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Watch &#9656;</a>
-        <a class="chip chip-read" data-resource-slot="article" data-resource-type="reference" href="${readHref(topic.r)}" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Read &#9656;</a>
-        <a class="chip chip-details" href="${topicHref(topic)}">Details &#9656;</a>
+        <a class="chip chip-start" href="${topicHref(topic, { start: true })}">Start learning &#9656;</a>
+        <a class="chip chip-details" href="${topicHref(topic)}">Overview &#9656;</a>
         <button class="mark" type="button" aria-pressed="${String(!!done[topic.code])}" aria-label="Mark ${topic.t} as done">&#10003;</button>
       </div>`;
 
@@ -111,6 +111,8 @@ function centerInNav(link) {
 }
 
 const sectionObserver = new IntersectionObserver(entries => {
+  if (document.body.dataset.browseMode !== 'all') return;
+
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
@@ -171,19 +173,6 @@ main.addEventListener('click', event => {
   window.CC?.onMark(code, !!done[code]);
 });
 
-main.addEventListener('click', event => {
-  const resource = event.target.closest('a[data-resource-slot]');
-  const card = resource?.closest('.card');
-
-  if (!resource || !card) return;
-
-  trackAnalytics('resource_click', {
-    topicCode: card.dataset.code,
-    slot: resource.dataset.resourceSlot,
-    type: resource.dataset.resourceType,
-  });
-});
-
 document.getElementById('resetBtn').addEventListener('click', () => {
   done = {};
   store.save(done);
@@ -208,6 +197,9 @@ let searchAnalyticsTimer = 0;
 
 function applyFilters() {
   const query = search.value.trim().toLowerCase();
+  const browseMode = document.body.dataset.browseMode || 'focus';
+  const activeSection =
+    document.body.dataset.browseSection || sections[0]?.k || '';
   let total = 0;
 
   document.querySelectorAll('.shelf').forEach(shelf => {
@@ -229,8 +221,19 @@ function applyFilters() {
       }
     });
 
-    shelf.classList.toggle('hidden', shown === 0);
-    total += shown;
+    const showShelf = shouldShowShelf({
+      shelfId: shelf.id,
+      mode: browseMode,
+      activeSection,
+      query,
+      matches: shown,
+    });
+
+    shelf.classList.toggle('hidden', !showShelf);
+
+    if (showShelf && shelf.id !== 'pinned') {
+      total += shown;
+    }
   });
 
   visibleTopicCount = total;
@@ -490,6 +493,8 @@ document.addEventListener('keydown', event => {
     draw();
   }
 });
+
+applyFilters();
 
 export {
   sections,
