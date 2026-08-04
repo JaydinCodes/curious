@@ -1,1 +1,206 @@
-{}
+{
+  "VITA.01": {
+    "difficulty": "introductory",
+    "note": "NHGRI explains epigenomic marks, gene regulation, development, environmental response, and the limited senses in which marks can persist through cell division or generations.",
+    "article": {
+      "title": "Epigenomics Fact Sheet",
+      "url": "https://www.genome.gov/about-genomics/fact-sheets/Epigenomics-Fact-Sheet",
+      "source": "National Human Genome Research Institute",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw how DNA methylation and histone modification can alter gene expression without changing nucleotide sequence, then distinguish mitotic from transgenerational inheritance.",
+      "minutes": 25
+    }
+  },
+  "VITA.02": {
+    "difficulty": "introductory",
+    "note": "NHGRI's genome-editing overview explains targeted cutting and repair, why CRISPR changed the field, and the difference between research use and clinical application.",
+    "article": {
+      "title": "What is genome editing?",
+      "url": "https://www.genome.gov/about-genomics/policy-issues/what-is-Genome-Editing",
+      "source": "National Human Genome Research Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Sketch a CRISPR-Cas9 edit from guide-RNA targeting through DNA cutting and repair, comparing knockout by end joining with precise editing by a repair template.",
+      "minutes": 25
+    }
+  },
+  "VITA.03": {
+    "difficulty": "intermediate",
+    "note": "This review balances established roles in metabolism and immunity with unresolved definitions of a healthy microbiome and uncertainty about whether many associations are causes or consequences.",
+    "article": {
+      "title": "Establishing What Constitutes a Healthy Human Gut Microbiome: State of the Science, Regulatory Considerations, and Future Directions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6825832/",
+      "source": "National Academies workshop authors — PubMed Central",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one microbiome-health headline and classify its evidence as association, mechanism, animal experiment, or human causal trial, noting plausible confounders.",
+      "minutes": 30
+    }
+  },
+  "VITA.04": {
+    "difficulty": "introductory",
+    "note": "OpenStax presents the evidence that mitochondria and plastids descend from engulfed bacteria, including membranes, DNA, ribosomes, and gene transfer.",
+    "article": {
+      "title": "Eukaryotic Origins",
+      "url": "https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins",
+      "source": "OpenStax Biology 2e",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create an evidence table for endosymbiosis covering double membranes, circular DNA, ribosomes, binary fission, phylogeny, and transferred nuclear genes.",
+      "minutes": 25
+    }
+  },
+  "VITA.05": {
+    "difficulty": "intermediate",
+    "note": "DeepMind's official AlphaFold overview explains sequence-to-structure prediction and its scientific impact while leaving experimental validation and protein dynamics visible as separate problems.",
+    "article": {
+      "title": "AlphaFold",
+      "url": "https://deepmind.google/science/alphafold/",
+      "source": "Google DeepMind",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Look up one protein in AlphaFold DB and identify high- and low-confidence regions, then list questions a static prediction cannot answer about function or dynamics.",
+      "minutes": 30
+    }
+  },
+  "VITA.06": {
+    "difficulty": "introductory",
+    "note": "CDC explains antigens, adaptive immune memory, vaccine platforms, and why temporary immune symptoms differ from the disease being prevented.",
+    "article": {
+      "title": "Explaining How Vaccines Work",
+      "url": "https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html",
+      "source": "Centers for Disease Control and Prevention",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace antigen presentation, helper T-cell signalling, B-cell activation, antibodies, and memory cells after vaccination, then compare first and later exposure.",
+      "minutes": 25
+    }
+  },
+  "VITA.07": {
+    "difficulty": "introductory",
+    "note": "OpenStax distinguishes convergent from divergent evolution and shows how similar selection pressures can independently produce analogous traits.",
+    "article": {
+      "title": "Understanding Evolution",
+      "url": "https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution",
+      "source": "OpenStax Biology 2e",
+      "type": "book",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare wings in bats, birds, and insects, distinguishing shared function, developmental origin, homology, analogy, and the selection pressure involved.",
+      "minutes": 25
+    }
+  },
+  "VITA.08": {
+    "difficulty": "introductory",
+    "note": "OpenStax connects chloroplast structure, pigments, light reactions, carbon fixation, and energy storage in a standard biology treatment.",
+    "article": {
+      "title": "Overview of Photosynthesis",
+      "url": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis",
+      "source": "OpenStax Biology 2e",
+      "type": "book",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the light reactions and Calvin cycle, labelling where photons, water, oxygen, ATP, NADPH, carbon dioxide, and carbohydrate enter or leave.",
+      "minutes": 30
+    }
+  },
+  "VITA.09": {
+    "difficulty": "introductory",
+    "note": "WHO's current fact sheet explains natural selection for resistance, misuse and overuse, transmission across humans, animals and environments, and the public-health consequences.",
+    "article": {
+      "title": "Antimicrobial resistance",
+      "url": "https://www.who.int/news-room/fact-sheets/antimicrobial-resistance",
+      "source": "World Health Organization",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model a bacterial population before and after antibiotic exposure and explain selection, mutation, horizontal transfer, incomplete treatment, and transmission without saying bacteria choose to adapt.",
+      "minutes": 25
+    }
+  },
+  "VITA.10": {
+    "difficulty": "introductory",
+    "note": "NIGMS explains molecular clocks, the suprachiasmatic nucleus, peripheral clocks, environmental cues, and the consequences of chronic misalignment.",
+    "article": {
+      "title": "Circadian Rhythms",
+      "url": "https://www.nigms.nih.gov/education/fact-sheets/Pages/circadian-rhythms",
+      "source": "National Institute of General Medical Sciences",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Track light exposure, meals, exercise, sleepiness, and sleep timing for three days, then identify cues that may advance, delay, or desynchronise your clocks.",
+      "minutes": 30
+    }
+  },
+  "VITA.11": {
+    "difficulty": "intermediate",
+    "note": "NIA explains telomeres as chromosome-end protection and places shortening among several interacting ageing processes rather than presenting it as a single master clock.",
+    "article": {
+      "title": "Section for Telomere Maintenance",
+      "url": "https://www.nia.nih.gov/research/labs/lgg/section-telomere-maintenance",
+      "source": "National Institute on Aging",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the trade-off between unlimited cell division and tumour suppression, including telomere shortening, telomerase, senescence, apoptosis, stem cells, and cancer.",
+      "minutes": 25
+    }
+  },
+  "VITA.12": {
+    "difficulty": "intermediate",
+    "note": "OpenStax gives a quantitative account of resting potential, threshold, voltage-gated sodium and potassium channels, refractory periods, and propagation.",
+    "article": {
+      "title": "The Action Potential",
+      "url": "https://openstax.org/books/anatomy-and-physiology/pages/12-4-the-action-potential",
+      "source": "OpenStax Anatomy and Physiology",
+      "type": "book",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plot membrane voltage over time and label rest, threshold, depolarisation, repolarisation, hyperpolarisation, sodium-channel state, potassium-channel state, and refractory periods.",
+      "minutes": 30
+    }
+  }
+}
