@@ -1,1 +1,206 @@
-{}
+{
+  "COSM.01": {
+    "difficulty": "intermediate",
+    "note": "Stanford's philosophy-of-time entry maps the main disputes about passage, persistence, past and future reality, and time's relation to physics.",
+    "article": {
+      "title": "Time",
+      "url": "https://plato.stanford.edu/entries/time/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare presentism, eternalism, and the growing-block view in a table, including what each says exists now.",
+      "minutes": 25
+    }
+  },
+  "COSM.02": {
+    "difficulty": "advanced",
+    "note": "The Stanford entry separates thermodynamic irreversibility, statistical mechanics, boundary conditions, and the arrow of time instead of reducing entropy to vague disorder.",
+    "article": {
+      "title": "Thermodynamic Asymmetry in Time",
+      "url": "https://plato.stanford.edu/entries/time-thermo/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Describe one reversible microscopic process and one irreversible macroscopic process, then identify the statistical assumption connecting them.",
+      "minutes": 25
+    }
+  },
+  "COSM.03": {
+    "difficulty": "introductory",
+    "note": "The SETI Institute presents the paradox, its assumptions, the Drake-equation context, and major families of proposed resolutions.",
+    "article": {
+      "title": "The Fermi Paradox",
+      "url": "https://www.seti.org/research/seti-101/fermi-paradox/",
+      "source": "SETI Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "List five possible filters or explanations for the silence, then rank them by how much evidence would be needed to distinguish them.",
+      "minutes": 20
+    }
+  },
+  "COSM.04": {
+    "difficulty": "intermediate",
+    "note": "Einstein Online's Elementary Einstein collection provides connected introductions to special relativity, spacetime, gravity, and general relativity.",
+    "article": {
+      "title": "Elementary Einstein",
+      "url": "https://www.einstein-online.info/en/category/elementary/",
+      "source": "Einstein Online — Max Planck Institute for Gravitational Physics",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Calculate the Lorentz factor at several fractions of light speed and explain why Newtonian time is a good approximation at everyday speeds.",
+      "minutes": 30
+    }
+  },
+  "COSM.05": {
+    "difficulty": "intermediate",
+    "note": "The Nobel Prize's 2022 popular information explains entanglement, Bell inequalities, and the experiments that ruled out broad classes of local hidden-variable models.",
+    "article": {
+      "title": "The Nobel Prize in Physics 2022 — Popular Information",
+      "url": "https://www.nobelprize.org/prizes/physics/2022/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a plain-language explanation of correlation, entanglement, and Bell inequality violation without using faster-than-light messaging as an explanation.",
+      "minutes": 25
+    }
+  },
+  "COSM.06": {
+    "difficulty": "introductory",
+    "note": "OpenStax develops double-slit interference quantitatively and shows how path difference produces bright and dark fringes.",
+    "article": {
+      "title": "Young’s Double-Slit Interference",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/3-1-youngs-double-slit-interference",
+      "source": "OpenStax University Physics",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use the double-slit fringe-spacing formula to predict how the pattern changes when wavelength, slit spacing, or screen distance is doubled.",
+      "minutes": 20
+    }
+  },
+  "COSM.07": {
+    "difficulty": "introductory",
+    "note": "NASA's universe overview distinguishes ordinary matter, dark matter, and dark energy and summarizes the observations used to infer each component.",
+    "article": {
+      "title": "Building Blocks",
+      "url": "https://science.nasa.gov/universe/overview/building-blocks/",
+      "source": "NASA Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create an evidence table for dark matter and dark energy, separating what is directly observed from what is inferred.",
+      "minutes": 25
+    }
+  },
+  "COSM.08": {
+    "difficulty": "introductory",
+    "note": "CERN's official overview explains the Standard Model's matter particles, force carriers, Higgs field, successes, and known omissions.",
+    "article": {
+      "title": "The Standard Model",
+      "url": "https://home.cern/science/physics/standard-model",
+      "source": "CERN",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Recreate the Standard Model table from memory, grouping quarks, leptons, and bosons and adding charge and force interaction notes.",
+      "minutes": 30
+    }
+  },
+  "COSM.09": {
+    "difficulty": "advanced",
+    "note": "David Wallace's review explains precisely why combining black-hole evaporation with ordinary quantum mechanics appears to destroy information.",
+    "article": {
+      "title": "Why Black Hole Information Loss is Paradoxical",
+      "url": "https://arxiv.org/abs/1710.03783",
+      "source": "David Wallace — arXiv",
+      "type": "paper",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write the paradox as a sequence of assumptions and identify which assumption each major proposed resolution must reject or modify.",
+      "minutes": 30
+    }
+  },
+  "COSM.10": {
+    "difficulty": "introductory",
+    "note": "NASA's WMAP overview explains the microwave background as relic radiation and connects its measured fluctuations to the age, geometry, and composition of the universe.",
+    "article": {
+      "title": "WMAP Overview",
+      "url": "https://science.nasa.gov/mission/wmap/wmap-overview/",
+      "source": "NASA Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Explain why the cosmic microwave background is not light from the Big Bang instant itself and what the anisotropy map measures.",
+      "minutes": 20
+    }
+  },
+  "COSM.11": {
+    "difficulty": "intermediate",
+    "note": "NASA's discussion of dark energy and cosmic expansion provides the observational basis for considering long-term expansion-dominated futures, including increasingly cold and dilute outcomes.",
+    "article": {
+      "title": "Dark Energy Changes the Universe",
+      "url": "https://science.nasa.gov/missions/hubble/dark-energy-changes-the-universe/",
+      "source": "NASA Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare heat death, Big Crunch, and Big Rip scenarios by stating the required expansion behavior and the final availability of usable energy.",
+      "minutes": 25
+    }
+  },
+  "COSM.12": {
+    "difficulty": "introductory",
+    "note": "The Santa Fe Institute introduces complex-systems science through nonlinearity, collective dynamics, hierarchy, randomness, and emergence.",
+    "article": {
+      "title": "What is Complex Systems Science?",
+      "url": "https://www.santafe.edu/what-is-complex-systems-science",
+      "source": "Santa Fe Institute",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose an emergent system and identify its agents, local rules, feedback loops, macro-pattern, and why the macro-pattern is not written into any one rule.",
+      "minutes": 25
+    }
+  }
+}
