@@ -12,10 +12,14 @@ import {
 import { loadCurationData } from './curation-data.js';
 import { getTopicStatus } from './learning-state.js';
 import { store } from './storage.js';
+import { trackAnalytics } from './analytics.js';
+import {
+  resolveTopicFromLocation,
+  topicPath,
+} from './topic-url.js';
 
 const params = new URLSearchParams(window.location.search);
-const code = (params.get('code') || '').trim().toUpperCase();
-const topic = topics.find(item => item.code === code) || null;
+const topic = resolveTopicFromLocation(topics, window.location);
 const section = topic
   ? sections.find(item => item.k === topic.c) || null
   : null;
@@ -51,10 +55,25 @@ if (!topic || !section) {
   const startButton = document.getElementById('startLearning');
   const completeButton = document.getElementById('completeTopic');
   const finishButton = document.getElementById('finishTopic');
+  const shareButton = document.getElementById('shareTopic');
+  const shareStatus = document.getElementById('shareTopicStatus');
+
+  const canonicalUrl = new URL(
+    topicPath(topic),
+    window.location.origin,
+  ).href;
 
   document.title = `${topic.t} · The Curiosity Catalog`;
   sheet.style.setProperty('--cat', `var(--${section.k})`);
   document.body.style.setProperty('--cat', `var(--${section.k})`);
+
+  let canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (!canonicalLink) {
+    canonicalLink = document.createElement('link');
+    canonicalLink.rel = 'canonical';
+    document.head.appendChild(canonicalLink);
+  }
+  canonicalLink.href = canonicalUrl;
 
   codeElement.textContent = topic.code;
   navCode.textContent = topic.code;
@@ -105,11 +124,14 @@ if (!topic || !section) {
     : fallbackResources();
 
   learningResources.forEach(({ slot, resource }, index) => {
+    const resourceType = getResourceType(slot, resource);
     const link = document.createElement('a');
     link.className = 'learning-resource';
     link.href = resource.url;
     link.target = '_blank';
     link.rel = 'noopener';
+    link.dataset.resourceSlot = slot;
+    link.dataset.resourceType = resourceType;
 
     const step = document.createElement('span');
     step.className = 'resource-step';
@@ -122,7 +144,7 @@ if (!topic || !section) {
     const resourceMeta = document.createElement('small');
     resourceMeta.textContent = [
       resource.source,
-      formatLabel(getResourceType(slot, resource)),
+      formatLabel(resourceType),
       formatMinutes(resource.minutes),
       resource.paywalled ? 'Paywalled' : '',
     ]
@@ -140,6 +162,11 @@ if (!topic || !section) {
       markStarted();
       touched[topic.code] = Date.now();
       store.set('touched', touched);
+      trackAnalytics('resource_click', {
+        topicCode: topic.code,
+        slot,
+        type: resourceType,
+      });
     });
 
     resourcesElement.appendChild(link);
@@ -161,6 +188,8 @@ if (!topic || !section) {
   }
 
   function setCompleted(value) {
+    const wasDone = Boolean(done[topic.code]);
+
     if (value) {
       markStarted();
       done[topic.code] = 1;
@@ -169,6 +198,11 @@ if (!topic || !section) {
     }
 
     store.save(done);
+
+    if (value && !wasDone) {
+      trackAnalytics('complete', { topicCode: topic.code });
+    }
+
     updateStatus();
   }
 
@@ -213,24 +247,53 @@ if (!topic || !section) {
   completeButton.addEventListener('click', toggleCompleted);
   finishButton.addEventListener('click', toggleCompleted);
 
+  shareButton.addEventListener('click', async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: topic.t,
+          text: topic.h,
+          url: canonicalUrl,
+        });
+        shareStatus.textContent = 'Shared.';
+      } else {
+        await navigator.clipboard.writeText(canonicalUrl);
+        shareStatus.textContent = 'Link copied.';
+      }
+    } catch (error) {
+      if (error?.name !== 'AbortError') {
+        shareStatus.textContent = 'Copy the URL from your address bar.';
+      }
+    }
+  });
+
   let saveTimer = 0;
+
+  function saveNotes() {
+    clearTimeout(saveTimer);
+    const value = notesElement.value.slice(0, 20_000);
+
+    if (value.trim()) notes[topic.code] = value;
+    else delete notes[topic.code];
+
+    store.set('notes', notes);
+
+    if (value.trim()) markStarted();
+
+    noteStatus.textContent = store.isPersistent()
+      ? 'Saved in this browser.'
+      : 'Saved for this session only; browser storage is unavailable.';
+  }
 
   notesElement.addEventListener('input', () => {
     noteStatus.textContent = 'Saving…';
     clearTimeout(saveTimer);
+    saveTimer = window.setTimeout(saveNotes, 400);
+  });
 
-    saveTimer = window.setTimeout(() => {
-      const value = notesElement.value.slice(0, 20_000);
-
-      if (value.trim()) notes[topic.code] = value;
-      else delete notes[topic.code];
-
-      store.set('notes', notes);
-      markStarted();
-      noteStatus.textContent = store.isPersistent()
-        ? 'Saved in this browser.'
-        : 'Saved for this session only; browser storage is unavailable.';
-    }, 400);
+  notesElement.addEventListener('blur', saveNotes);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') saveNotes();
   });
 
   updateStatus();
