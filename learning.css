@@ -1,0 +1,123 @@
+.card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-title-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.chip-details,
+.chip-start {
+  background: transparent;
+  color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip-details:hover,
+  .chip-start:hover {
+    background: var(--cat, var(--brass));
+    border-color: var(--cat, var(--brass));
+    color: var(--ink);
+  }
+}
+
+.draw-filters {
+  max-width: 700px;
+  margin-top: 14px;
+  border: 1px solid rgba(184, 135, 61, 0.4);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.draw-filters summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 44px;
+  padding: 12px 14px;
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.draw-filters summary:hover {
+  color: var(--brass-bright);
+}
+
+.draw-filters summary span {
+  color: var(--teal);
+  text-align: right;
+}
+
+.draw-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 14px 14px;
+}
+
+.draw-filter-grid label {
+  display: grid;
+  gap: 6px;
+  color: var(--text-soft);
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.draw-filter-grid select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(184, 135, 61, 0.5);
+  border-radius: 0;
+  background: var(--bg-deep);
+  color: var(--text);
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 0.72rem;
+  text-transform: none;
+}
+
+.progress-transfer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: baseline;
+  margin-top: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.progress-transfer > span {
+  flex: 1 1 100%;
+  min-height: 1em;
+  color: var(--text-soft);
+  font-size: 0.63rem;
+}
+
+.slip-meta {
+  min-height: 1.1em;
+  margin: -6px 0 14px;
+  color: var(--ink-soft);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 620px) {
+  .draw-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .draw-filters summary {
+    align-items: flex-start;
+  }
+
+  .progress-transfer .btn-reset {
+    min-height: 36px;
+  }
+}

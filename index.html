@@ -8,20 +8,20 @@
 <title>The Curiosity Catalog</title>
 <meta name="description" content="A filed catalog of things worth learning: mind, maths, physics, engineering, infrastructure, computing, language, theology, art, music, film, craft, sport, history, research method, and strategy.">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="learning.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
-<a class="skip-link" href="#main"> Skip to catalog</a>
+<a class="skip-link" href="#main">Skip to catalog</a>
 <nav class="drawer-nav" id="nav" aria-label="Section jump links"></nav>
 
 <header class="hero">
   <span class="stamp">CATALOGUED &middot; JUL 2026</span>
   <h1>The Curiosity Catalog</h1>
-  <p class="lede">Every rabbit hole worth falling into, filed by drawer. Pick one, watch something short, then read something longer, then mark it off.</p>
+  <p class="lede">Every rabbit hole worth falling into, filed by drawer. Pick one, follow its learning path, reflect, then mark it off.</p>
   <p class="meta" id="metaLine">&nbsp;</p>
 
   <div class="controls">
@@ -34,22 +34,62 @@
     <button class="btn-draw" id="drawBtn" type="button">Draw a Card</button>
   </div>
 
+  <details class="draw-filters" id="drawFilters">
+    <summary>Random draw filters <span id="drawFilterSummary">217 topics available</span></summary>
+    <div class="draw-filter-grid">
+      <label>
+        <span>Section</span>
+        <select id="drawSection">
+          <option value="all">All sections</option>
+        </select>
+      </label>
+      <label>
+        <span>Difficulty</span>
+        <select id="drawDifficulty">
+          <option value="all">All difficulties</option>
+          <option value="introductory">Introductory</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </label>
+      <label>
+        <span>Completion</span>
+        <select id="drawStatus">
+          <option value="all">Any status</option>
+          <option value="not-started">Not started</option>
+          <option value="in-progress">In progress</option>
+          <option value="todo" selected>Not completed</option>
+          <option value="done">Completed</option>
+        </select>
+      </label>
+    </div>
+  </details>
+
   <div class="progress-wrap">
     <div class="progress-line">
       <span id="progressText">0 of 0 marked off</span>
       <button class="btn-reset" id="resetBtn" type="button">Clear all marks</button>
     </div>
     <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+    <div class="progress-transfer">
+      <button class="btn-reset" id="exportProgress" type="button">Export progress</button>
+      <button class="btn-reset" id="importProgress" type="button">Import progress</button>
+      <input id="importProgressFile" type="file" accept="application/json,.json" hidden>
+      <span id="transferStatus" aria-live="polite"></span>
+    </div>
   </div>
 
   <div class="draw-slip" id="drawSlip" aria-live="polite">
     <div class="slip-code" id="slipCode">&nbsp;</div>
     <div class="slip-title" id="slipTitle">&nbsp;</div>
     <div class="slip-hook" id="slipHook">&nbsp;</div>
+    <div class="slip-meta" id="slipMeta"></div>
     <div class="slip-links">
       <a class="chip chip-watch" id="slipWatch" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Watch &#9656;</a>
       <a class="chip chip-read" id="slipRead" target="_blank" rel="noopener"><span class="chip-mark" aria-hidden="true"></span>Read &#9656;</a>
       <a class="chip chip-deeper" id="slipDeeper" target="_blank" rel="noopener" hidden><span class="chip-mark" aria-hidden="true"></span>Deeper &#9656;</a>
+      <a class="chip chip-start" id="slipStart">Start learning &#9656;</a>
     </div>
   </div>
 </header>
@@ -60,20 +100,10 @@
 <button class="to-top" id="toTop" type="button">&#8593; TOP</button>
 
 <footer>
-  <p>Watch opens a YouTube search. Read opens Wikipedia, which is the doorway and not the destination: follow its reference list out.</p>
-  <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks are saved in this browser; sync (under the progress bar) carries them between devices.</p>
+  <p>Curated cards show exact resources, difficulty, estimated time, an exercise, and a dedicated learning page. Search fallbacks remain available when curation cannot load.</p>
+  <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks, starts and reflections are saved in this browser.</p>
 </footer>
 
-
-
-
-
-
-
-<script src="./index.js"></script>
-<script src="./progress-plus.js"></script>
-<script src="./curation.js"></script>
-
-  <script type="module" src="./src/app.js"></script>
+<script type="module" src="./src/app.js"></script>
 </body>
 </html>
