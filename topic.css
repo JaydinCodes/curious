@@ -1,6 +1,6 @@
 .topic-body {
   min-height: 100vh;
-  background: var(--bg);
+  background: var(--bg-deep);
 }
 
 .topic-nav {
