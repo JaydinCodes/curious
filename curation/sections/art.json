@@ -1,1 +1,224 @@
-{}
+{
+  "ART.01": {
+    "difficulty": "introductory",
+    "note": "Smarthistory reconstructs Brunelleschi's demonstration and Alberti's later codification, showing linear perspective as a geometric viewing system rather than a general measure of realism.",
+    "article": {
+      "title": "Linear Perspective: Brunelleschi’s Experiment",
+      "url": "https://smarthistory.org/linear-perspective-brunelleschis-experiment/",
+      "source": "Smarthistory",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Construct a one-point-perspective room with horizon line, station point, vanishing point, orthogonals and repeated floor tiles that diminish consistently.",
+      "minutes": 35
+    }
+  },
+  "ART.02": {
+    "difficulty": "intermediate",
+    "note": "The Met connects nineteenth-century colour science to Neo-Impressionist experiments in simultaneous contrast, optical mixture, divisionism and pointillism.",
+    "article": {
+      "title": "Georges Seurat (1859–1891) and Neo-Impressionism",
+      "url": "https://www.metmuseum.org/toah/hd/seni/hd_seni.htm",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Place identical grey swatches on different coloured grounds, record the apparent changes, and build a small image using optical rather than palette mixing.",
+      "minutes": 35
+    }
+  },
+  "ART.03": {
+    "difficulty": "introductory",
+    "note": "The National Gallery defines chiaroscuro through modelling with light and dark, while Smarthistory separates the more extreme theatrical darkness of tenebrism.",
+    "article": {
+      "title": "Chiaroscuro",
+      "url": "https://www.nationalgallery.org.uk/paintings/glossary/chiaroscuro",
+      "source": "The National Gallery, London",
+      "type": "reference",
+      "minutes": 10,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Tenebrism",
+      "url": "https://smarthistory.org/technique/tenebrism/",
+      "source": "Smarthistory",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Light one object from a single side and make two studies: one using gradual chiaroscuro modelling and another using a tenebrist jump from darkness to illumination.",
+      "minutes": 40
+    }
+  },
+  "ART.04": {
+    "difficulty": "introductory",
+    "note": "The Met's technical study of Thomas Cole shows how microscopy, X-radiography, infrared imaging and pigment analysis reveal both ancient and newly industrialised colours in one artist's practice.",
+    "article": {
+      "title": "Modern Pigments Found in Thomas Cole's Paintings Shed New Light on the Artist's Practice",
+      "url": "https://www.metmuseum.org/articles/thomas-cole-conservation",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a pigment timeline for natural ultramarine, Prussian blue, synthetic ultramarine, chrome yellow and modern organic pigments, including cost, chemistry and conservation risks.",
+      "minutes": 30
+    }
+  },
+  "ART.05": {
+    "difficulty": "introductory",
+    "note": "The Met traces how Japanese prints altered European cropping, flattened space, colour, everyday subject matter and asymmetrical composition rather than merely supplying exotic motifs.",
+    "article": {
+      "title": "Japonisme",
+      "url": "https://www.metmuseum.org/toah/hd/jpon/hd_jpon.htm",
+      "source": "The Metropolitan Museum of Art",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare one ukiyo-e print with one European Japoniste work and mark borrowed choices in cropping, viewpoint, contour, pattern, depth and subject matter.",
+      "minutes": 30
+    }
+  },
+  "ART.06": {
+    "difficulty": "introductory",
+    "note": "MoMA presents the Bauhaus as an experimental school joining fine art, craft, industry, architecture and social ideas across its Weimar, Dessau and Berlin phases.",
+    "article": {
+      "title": "Bauhaus",
+      "url": "https://www.moma.org/collection/terms/bauhaus",
+      "source": "The Museum of Modern Art",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Redesign one household object using a Bauhaus-style brief that balances function, manufacture, materials, geometry, affordability and visual clarity.",
+      "minutes": 35
+    }
+  },
+  "ART.07": {
+    "difficulty": "introductory",
+    "note": "MoMA's New Typography exhibition places hierarchy, asymmetry, sans-serif type, photography and information design within the Central European avant-garde and Bauhaus context.",
+    "article": {
+      "title": "The New Typography",
+      "url": "https://www.moma.org/calendar/exhibitions/1013",
+      "source": "The Museum of Modern Art",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Typeset the same short announcement three ways, changing family, weight, size, measure, leading, kerning and hierarchy while keeping the words identical.",
+      "minutes": 35
+    }
+  },
+  "ART.08": {
+    "difficulty": "introductory",
+    "note": "Getty's formal-analysis guide treats composition through line, shape, value, balance, emphasis, movement and the active relationship between positive and negative space.",
+    "article": {
+      "title": "Understanding Formal Analysis",
+      "url": "https://www.getty.edu/education/teachers/building_lessons/formal_analysis.html",
+      "source": "J. Paul Getty Museum Education",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Reduce one image to black positive shapes and white negative shapes, then move one element at a time and record changes in balance, tension, direction and emphasis.",
+      "minutes": 30
+    }
+  },
+  "ART.09": {
+    "difficulty": "intermediate",
+    "note": "The House of European History places Van Meegeren within a wider history of counterfeiting, provenance, expert judgement and scientific authentication rather than celebrating him as a folk hero.",
+    "article": {
+      "title": "Fake for Real",
+      "url": "https://historia.europa.eu/en/exhibitions-events/temporary-exhibitions/fake-real",
+      "source": "House of European History",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Technical Studies",
+      "url": "https://www.getty.edu/conservation-institute/science/technical-studies/",
+      "source": "Getty Conservation Institute",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design an authentication plan using provenance, stylistic comparison, support dating, imaging, pigment and binder analysis, and explain why no single test proves authorship.",
+      "minutes": 35
+    }
+  },
+  "ART.10": {
+    "difficulty": "intermediate",
+    "note": "The National Gallery explains preventive care, examination, scientific analysis, cleaning and restoration as documented, approved interventions constrained by material evidence and reversibility concerns.",
+    "article": {
+      "title": "Caring for the Paintings",
+      "url": "https://www.nationalgallery.org.uk/paintings/caring-for-the-paintings/",
+      "source": "The National Gallery, London",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a treatment proposal distinguishing original material, ageing, dirt, varnish, old restoration and loss, then justify what should be preserved, removed, stabilised or visually reintegrated.",
+      "minutes": 35
+    }
+  },
+  "ART.11": {
+    "difficulty": "introductory",
+    "note": "The National Gallery of Art connects Impressionism's outdoor practice to portable tube paints and rail travel while also emphasizing modern life, light, brushwork and exhibition culture.",
+    "article": {
+      "title": "What Is Impressionism? 4 Things to Know",
+      "url": "https://www.nga.gov/stories/articles/what-impressionism-4-things-know",
+      "source": "National Gallery of Art",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Paint or photograph the same outdoor scene at three times of day and identify how portability, speed, changing light and modern pigments alter the working method.",
+      "minutes": 45
+    }
+  },
+  "ART.12": {
+    "difficulty": "introductory",
+    "note": "MoMA's account of Duchamp's readymades shows that modern art did not simply abandon realism after photography; artists challenged medium, authorship, skill, beauty and the institutional definition of art.",
+    "article": {
+      "title": "Marcel Duchamp and the Readymade",
+      "url": "https://www.moma.org/collection/terms/dada/marcel-duchamp-and-the-readymade",
+      "source": "The Museum of Modern Art",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose an ordinary object and argue for or against its presentation as art using selection, context, intention, craft, originality, audience and institutional framing.",
+      "minutes": 25
+    }
+  }
+}
