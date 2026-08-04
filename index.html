@@ -9,6 +9,7 @@
 <meta name="description" content="A filed catalog of things worth learning: mind, maths, physics, engineering, infrastructure, computing, language, theology, art, music, film, craft, sport, history, research method, and strategy.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="learning.css">
+<link rel="stylesheet" href="growth.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -92,6 +93,22 @@
       <a class="chip chip-start" id="slipStart">Start learning &#9656;</a>
     </div>
   </div>
+
+  <section class="discovery" aria-label="Daily and curated discovery">
+    <article class="today-card" id="topicOfDay">
+      <p class="today-label">Topic of the day <span class="today-date" id="todayDate"></span></p>
+      <div class="today-code" id="todayCode"></div>
+      <h2 id="todayTitle">Selecting today’s topic…</h2>
+      <p class="today-hook" id="todayHook"></p>
+      <p class="today-meta" id="todayMeta"></p>
+      <a class="today-link" id="todayLink" href="/today">Start today’s topic →</a>
+    </article>
+
+    <aside class="collection-discovery">
+      <h2>Curated starting points</h2>
+      <div class="curated-collections" id="curatedCollections"></div>
+    </aside>
+  </section>
 </header>
 
 <main id="main" tabindex="-1"></main>
@@ -101,6 +118,7 @@
 
 <footer>
   <p>Curated cards show exact resources, difficulty, estimated time, an exercise, and a dedicated learning page. Search fallbacks remain available when curation cannot load.</p>
+  <p>Aggregate analytics counts searches, draws, completions and resource clicks without cookies, identifiers or raw search text. <a class="privacy-link" href="/privacy.html">Privacy and opt-out</a>.</p>
   <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks, starts and reflections are saved in this browser.</p>
 </footer>
 
