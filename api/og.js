@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 import { ImageResponse } from '@vercel/og';
-import React from 'react';
+import * as React from 'react';
 
 import {
   sections,
@@ -189,15 +189,11 @@ export async function GET(request) {
     return new Response('Preview not found', { status: 404 });
   }
 
-  const image = new ImageResponse(buildCard(payload), {
+  return new ImageResponse(buildCard(payload), {
     width: 1200,
     height: 630,
+    headers: {
+      'cache-control': 'public, s-maxage=86400, stale-while-revalidate=604800',
+    },
   });
-
-  image.headers.set(
-    'cache-control',
-    'public, s-maxage=86400, stale-while-revalidate=604800',
-  );
-
-  return image;
 }
