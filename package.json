@@ -2,6 +2,9 @@
   "name": "curiosity-catalog",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test": "node --test",
     "curation:split": "node scripts/split-curation-by-section.mjs",
@@ -9,12 +12,17 @@
     "curation:status": "node scripts/curation-status.mjs",
     "curation:check": "npm run curation:build && node scripts/validate-curation.mjs",
     "curation:strict": "npm run curation:build && node scripts/validate-curation.mjs --strict",
-    "check:client": "node --check src/app.js && node --check src/catalog.js && node --check src/storage.js && node --check src/curation-data.js && node --check src/curation-model.js && node --check src/curation.js && node --check src/learning-state.js && node --check src/learning-experience.js && node --check src/topic-page.js && node --check src/progress-logic.js && node --check src/progress-plus.js && node --check src/data/catalog.js && node --check src/data/sections.js && node --check src/data/topics/index.js",
-    "check": "npm run check:client && npm run curation:check && node --check api/progress.js && node --check verify-links.js && npm test",
+    "analytics:report": "node scripts/analytics-report.mjs",
+    "check:client": "node --check src/app.js && node --check src/catalog.js && node --check src/storage.js && node --check src/curation-data.js && node --check src/curation-model.js && node --check src/curation.js && node --check src/learning-state.js && node --check src/learning-experience.js && node --check src/topic-page.js && node --check src/collection-page.js && node --check src/topic-url.js && node --check src/topic-of-day.js && node --check src/analytics-model.js && node --check src/analytics.js && node --check src/growth.js && node --check src/privacy.js && node --check src/progress-logic.js && node --check src/progress-plus.js && node --check src/server/html.js && node --check src/data/catalog.js && node --check src/data/collections.js && node --check src/data/sections.js && node --check src/data/topics/index.js",
+    "check:api": "node --check api/progress.js && node --check api/analytics.js && node --check api/topic-page.js && node --check api/collection-page.js && node --check api/og.js && node --check api/today.js && node --check api/sitemap.js && node --check api/robots.js",
+    "check": "npm run check:client && npm run check:api && npm run curation:check && node --check verify-links.js && npm test",
     "verify-links": "node verify-links.js",
-    "serve": "npx serve ."
+    "serve": "npx serve .",
+    "dev": "npx vercel dev"
   },
   "dependencies": {
-    "@upstash/redis": "^1.38.0"
+    "@upstash/redis": "^1.38.0",
+    "@vercel/og": "^0.11.1",
+    "react": "^19.2.8"
   }
 }

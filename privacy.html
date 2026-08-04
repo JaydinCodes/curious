@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#12211C">
+  <meta name="color-scheme" content="dark">
+  <title>Privacy · The Curiosity Catalog</title>
+  <meta name="description" content="How The Curiosity Catalog stores progress and collects anonymous aggregate usage counts.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/topic.css">
+</head>
+<body class="topic-body">
+  <nav class="topic-nav" aria-label="Privacy navigation">
+    <a href="/">← Back to catalogue</a>
+    <span>PRIVACY</span>
+  </nav>
+
+  <main class="topic-main" tabindex="-1">
+    <article class="topic-sheet">
+      <header class="topic-hero">
+        <div class="topic-code">PLAIN-LANGUAGE POLICY</div>
+        <h1>Privacy</h1>
+        <p class="topic-hook">The catalogue keeps personal learning data in your browser and records only anonymous aggregate product events.</p>
+      </header>
+
+      <section class="learning-section">
+        <div class="learning-heading">
+          <span>01</span>
+          <div>
+            <h2>What stays in your browser</h2>
+            <p>Completed topics, started topics, notes, pins and streaks are stored locally. Notes are never sent by analytics. Manual export files contain your learning data because you asked the browser to create them.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="learning-section">
+        <div class="learning-heading">
+          <span>02</span>
+          <div>
+            <h2>What aggregate analytics records</h2>
+            <p>Counts of searches, random draws, completed topic codes and resource clicks. Search text is never transmitted; only broad query-length and result-count buckets are sent. Resource URLs, notes, sync codes, names, email addresses and user identifiers are not collected.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="learning-section">
+        <div class="learning-heading">
+          <span>03</span>
+          <div>
+            <h2>No behavioural profile</h2>
+            <p>The analytics endpoint does not set cookies and does not store IP addresses, user agents, advertising identifiers or cross-site identifiers. Global Privacy Control and Do Not Track disable analytics automatically.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="learning-section">
+        <div class="learning-heading">
+          <span>04</span>
+          <div>
+            <h2>Your analytics choice</h2>
+            <p>You can disable or re-enable aggregate analytics for this browser below. Core catalogue features continue to work either way.</p>
+          </div>
+        </div>
+        <button class="topic-primary" id="analyticsChoice" type="button">Loading preference…</button>
+        <p class="topic-status" id="analyticsChoiceStatus" aria-live="polite"></p>
+      </section>
+    </article>
+  </main>
+
+  <script type="module" src="/src/privacy.js"></script>
+</body>
+</html>
