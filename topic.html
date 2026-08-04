@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#12211C">
+  <meta name="color-scheme" content="dark">
+  <title>Topic · The Curiosity Catalog</title>
+  <meta name="description" content="A Curiosity Catalog topic learning path with curated resources, an exercise, notes, and progress.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="topic.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="topic-body">
+  <a class="skip-link" href="#topicMain">Skip to topic</a>
+
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <a href="./index.html">← Back to catalogue</a>
+    <span id="topicNavCode"></span>
+  </nav>
+
+  <main class="topic-main" id="topicMain" tabindex="-1">
+    <div class="topic-loading" id="topicLoading">Opening drawer…</div>
+
+    <article class="topic-sheet" id="topicSheet" hidden>
+      <header class="topic-hero">
+        <div class="topic-code" id="topicCode"></div>
+        <p class="topic-section" id="topicSection"></p>
+        <h1 id="topicTitle"></h1>
+        <p class="topic-hook" id="topicHook"></p>
+
+        <div class="topic-meta" id="topicMeta"></div>
+
+        <div class="topic-actions">
+          <button class="topic-primary" id="startLearning" type="button">Start learning</button>
+          <button class="topic-secondary" id="completeTopic" type="button">Mark complete</button>
+        </div>
+        <p class="topic-status" id="topicStatus" aria-live="polite"></p>
+      </header>
+
+      <section class="learning-section" aria-labelledby="resourcesHeading">
+        <div class="learning-heading">
+          <span>01</span>
+          <div>
+            <h2 id="resourcesHeading">Learn</h2>
+            <p>Work through the curated resources in order. Opening one records this topic as in progress.</p>
+          </div>
+        </div>
+        <div class="learning-resources" id="topicResources"></div>
+      </section>
+
+      <section class="learning-section" id="exerciseSection" aria-labelledby="exerciseHeading" hidden>
+        <div class="learning-heading">
+          <span>02</span>
+          <div>
+            <h2 id="exerciseHeading">Apply</h2>
+            <p>Use the idea instead of only recognising it.</p>
+          </div>
+        </div>
+        <div class="topic-exercise">
+          <p id="exercisePrompt"></p>
+          <span id="exerciseTime"></span>
+        </div>
+      </section>
+
+      <section class="learning-section" aria-labelledby="reflectionHeading">
+        <div class="learning-heading">
+          <span>03</span>
+          <div>
+            <h2 id="reflectionHeading">Reflect</h2>
+            <p>Keep a private note in this browser. Notes are included when you export progress.</p>
+          </div>
+        </div>
+        <label class="reflection-label" for="topicNotes">What changed in your understanding?</label>
+        <textarea id="topicNotes" maxlength="20000" rows="8" placeholder="Write a summary, question, objection, example, or connection…"></textarea>
+        <p class="note-status" id="noteStatus" aria-live="polite"></p>
+      </section>
+
+      <section class="learning-section finish-section" aria-labelledby="finishHeading">
+        <div class="learning-heading">
+          <span>04</span>
+          <div>
+            <h2 id="finishHeading">Finish</h2>
+            <p>Mark the topic complete when you can explain the core idea in your own words.</p>
+          </div>
+        </div>
+        <button class="topic-primary" id="finishTopic" type="button">Mark complete</button>
+      </section>
+    </article>
+
+    <section class="topic-error" id="topicError" hidden>
+      <h1>Topic not found</h1>
+      <p>The code in this link does not match a catalogue entry.</p>
+      <a href="./index.html">Return to the catalogue</a>
+    </section>
+  </main>
+
+  <script type="module" src="./src/topic-page.js"></script>
+</body>
+</html>
