@@ -1,1 +1,215 @@
-{}
+{
+  "ECON.01": {
+    "difficulty": "introductory",
+    "note": "Open Yale Courses develops game theory through players, strategies, payoffs, information, timing, dominance, equilibrium, repeated interaction and applications rather than presenting it as a collection of puzzles.",
+    "article": {
+      "title": "Game Theory",
+      "url": "https://oyc.yale.edu/economics/econ-159",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model one strategic situation by listing players, available actions, payoffs, information, order of moves and whether commitments are credible.",
+      "minutes": 30
+    }
+  },
+  "ECON.02": {
+    "difficulty": "introductory",
+    "note": "Yale's opening lecture derives the Prisoner's Dilemma from its payoff structure and uses it to distinguish individually dominant choices from collectively better outcomes.",
+    "article": {
+      "title": "Lecture 1 — Introduction: Five First Lessons",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-1",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Lecture 21 — Repeated Games: Cooperation versus the End Game",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-21",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write a Prisoner's Dilemma payoff matrix, identify dominant strategies and equilibrium, then change repetition, patience and punishment to make cooperation sustainable.",
+      "minutes": 35
+    }
+  },
+  "ECON.03": {
+    "difficulty": "intermediate",
+    "note": "Yale's lecture introduces best responses and Nash equilibrium while emphasizing that equilibrium means no profitable unilateral deviation, not fairness, efficiency or happiness.",
+    "article": {
+      "title": "Lecture 5 — Nash Equilibrium: Bad Fashion and Bank Runs",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-5",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Find every pure-strategy Nash equilibrium in three small payoff matrices and identify which equilibria are Pareto-efficient, risky or coordination-dependent.",
+      "minutes": 35
+    }
+  },
+  "ECON.04": {
+    "difficulty": "introductory",
+    "note": "The Nobel overview explains Schelling's work on tacit coordination, focal points, credible commitments, conflict and segregation without reducing it to a party-game trick.",
+    "article": {
+      "title": "Conflict and Cooperation through the Lens of Game Theory",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2005/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Give several people the same no-communication meeting problem, compare their chosen focal points, and explain which shared conventions made one answer salient.",
+      "minutes": 25
+    }
+  },
+  "ECON.05": {
+    "difficulty": "intermediate",
+    "note": "The Nobel overview contrasts simple privatization-or-state-control prescriptions with Ostrom's evidence that communities can build durable institutions for shared resources under identifiable conditions.",
+    "article": {
+      "title": "Economic Governance: The Organization of Cooperation",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design governance rules for one shared resource covering boundaries, monitoring, graduated sanctions, conflict resolution, local participation and adaptation over time.",
+      "minutes": 35
+    }
+  },
+  "ECON.06": {
+    "difficulty": "intermediate",
+    "note": "Yale's lecture treats moral hazard as hidden action after a contract and separates it from adverse selection, incentives, monitoring and risk sharing.",
+    "article": {
+      "title": "Lecture 13 — Moral Hazard and Incentives",
+      "url": "https://oyc.yale.edu/economics/econ-159/lecture-13",
+      "source": "Open Yale Courses — Ben Polak",
+      "type": "course",
+      "minutes": 75,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design an insurance or employment contract that balances risk protection with incentives, then identify behaviours the principal cannot directly observe.",
+      "minutes": 35
+    }
+  },
+  "ECON.07": {
+    "difficulty": "introductory",
+    "note": "The IMF explanation derives gains from trade through opportunity cost and specialization, including the counterintuitive case where one country is absolutely more productive in every activity.",
+    "article": {
+      "title": "Comparative Advantage",
+      "url": "https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/trade",
+      "source": "International Monetary Fund — Finance & Development",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Give two producers different productivities in two goods, calculate opportunity costs, choose specialization and show a trade price that benefits both.",
+      "minutes": 30
+    }
+  },
+  "ECON.08": {
+    "difficulty": "intermediate",
+    "note": "The 2020 Nobel overview connects auction formats, private and common values, the winner's curse, bidding strategies and the design of real spectrum auctions.",
+    "article": {
+      "title": "The Quest for the Perfect Auction",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2020/popular-information/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Run first-price and second-price sealed-bid auctions with private values, compare truthful and shaded bidding, then add uncertain common value to create a winner's-curse risk.",
+      "minutes": 40
+    }
+  },
+  "ECON.09": {
+    "difficulty": "introductory",
+    "note": "The Bank of England explains that commercial-bank lending creates matching deposits, while repayment destroys bank money and central-bank reserves play a different settlement role.",
+    "article": {
+      "title": "Money Creation in the Modern Economy",
+      "url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "source": "Bank of England Quarterly Bulletin",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write simplified bank and borrower balance sheets before a loan, immediately after lending, after spending and after principal repayment, tracking deposits, loans and reserves.",
+      "minutes": 35
+    }
+  },
+  "ECON.10": {
+    "difficulty": "intermediate",
+    "note": "The Stanford study examines technology adoption when a product becomes more valuable as compatible users grow, separating installed-base effects from product quality and marketing.",
+    "article": {
+      "title": "Adoption of Technologies with Network Effects: An Empirical Examination of the Adoption of Automated Teller Machines",
+      "url": "https://www.gsb.stanford.edu/faculty-research/publications/adoption-technologies-network-effects-empirical-examination-adoption",
+      "source": "Garth Saloner and Andrea Shepard — Stanford Graduate School of Business",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Model adoption of a platform whose value rises with users, then test how interoperability, multi-homing, switching cost, subsidies and congestion alter winner-take-most dynamics.",
+      "minutes": 35
+    }
+  },
+  "ECON.11": {
+    "difficulty": "intermediate",
+    "note": "The Nobel overview presents Spence's signalling model, where education or another observable action can convey hidden productivity only when its costs differ across types.",
+    "article": {
+      "title": "Markets with Asymmetric Information",
+      "url": "https://www.nobelprize.org/nobel_prizes/economic-sciences/laureates/2001/popular.html",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Construct a separating signal by assigning different signal costs to high- and low-quality types, then show when pooling or imitation destroys credibility.",
+      "minutes": 30
+    }
+  },
+  "ECON.12": {
+    "difficulty": "advanced",
+    "note": "The Nobel explanation presents mechanism design as reverse game theory: define desired outcomes, information constraints and incentives, then design rules that make truthful or socially useful behaviour rational.",
+    "article": {
+      "title": "Mechanism Design Theory",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2007/9276-mechanism-design-theory/",
+      "source": "The Nobel Prize",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design rules for allocating one scarce resource when participants privately know their values, then test incentive compatibility, efficiency, budget balance and participation.",
+      "minutes": 40
+    }
+  }
+}
