@@ -1,1 +1,251 @@
-{}
+{
+  "INFR.01": {
+    "difficulty": "introductory",
+    "note": "TeleGeography's continuously maintained FAQ explains fibre construction, routing, ownership, capacity, landing, repair, faults and why satellites carry only a small share of international traffic.",
+    "article": {
+      "title": "Submarine Cable Frequently Asked Questions",
+      "url": "https://www2.telegeography.com/submarine-cable-faqs-frequently-asked-questions",
+      "source": "TeleGeography",
+      "type": "reference",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use the submarine cable map to trace two independent routes between South Africa and Europe, then identify shared landing or geographic failure points.",
+      "minutes": 30
+    }
+  },
+  "INFR.02": {
+    "difficulty": "intermediate",
+    "note": "DOE explains generation, transmission, substations and distribution, then shows why system operators must continuously balance real power to protect frequency and reliability.",
+    "article": {
+      "title": "Electricity",
+      "url": "https://www.energy.gov/topics/electricity",
+      "source": "U.S. Department of Energy",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Keeping the Lights On: Essential Reliability Services",
+      "url": "https://www.energy.gov/cmei/articles/keeping-lights-essential-reliability-services",
+      "source": "U.S. Department of Energy",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Simulate a generator trip on a supply-demand graph and sequence inertia, primary frequency response, automatic control, dispatch and load shedding.",
+      "minutes": 30
+    }
+  },
+  "INFR.03": {
+    "difficulty": "introductory",
+    "note": "The Smithsonian account connects Malcolm McLean's experiment, intermodal transfer, port transformation, labour disruption and standard boxes as one system innovation.",
+    "article": {
+      "title": "Transforming the Waterfront",
+      "url": "https://americanhistory.si.edu/explore/exhibitions/america-on-the-move/online/transforming-waterfront",
+      "source": "Smithsonian National Museum of American History",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "How Container Shipping Works",
+      "url": "https://www.worldshipping.org/how-container-shipping-works",
+      "source": "World Shipping Council",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map one container from factory to customer, including stuffing, trucking, terminal gate, crane, vessel, customs, rail or road transfer, empty return and documentation.",
+      "minutes": 30
+    }
+  },
+  "INFR.04": {
+    "difficulty": "introductory",
+    "note": "CDC explains the conventional drinking-water train; EPA's municipal wastewater primer adds preliminary, primary, biological secondary and advanced treatment before discharge or reuse.",
+    "article": {
+      "title": "How Water Treatment Works",
+      "url": "https://www.cdc.gov/drinking-water/about/how-water-treatment-works.html",
+      "source": "Centers for Disease Control and Prevention",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Primer for Municipal Wastewater Treatment Systems",
+      "url": "https://www.epa.gov/sites/default/files/2015-09/documents/primer.pdf",
+      "source": "U.S. Environmental Protection Agency",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the complete urban water loop from source through drinking treatment, distribution, household use, sewer collection, wastewater treatment, receiving water and possible reuse.",
+      "minutes": 35
+    }
+  },
+  "INFR.05": {
+    "difficulty": "intermediate",
+    "note": "ICAO frames air traffic management as a total system combining airspace organization, communication, navigation, surveillance, separation assurance, collision avoidance and traffic-flow optimization.",
+    "article": {
+      "title": "Air Traffic Management (ATM)",
+      "url": "https://www.icao.int/air-traffic-management-atm",
+      "source": "International Civil Aviation Organization",
+      "type": "reference",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan two crossing flights through controlled airspace and show how clearances, altitude, route, surveillance, handoffs, flow control and separation minima prevent conflict.",
+      "minutes": 30
+    }
+  },
+  "INFR.06": {
+    "difficulty": "intermediate",
+    "note": "Nobel's account links Haber's catalytic ammonia synthesis to Bosch's engineering of a safe, durable high-pressure industrial process and large-scale fertilizer production.",
+    "article": {
+      "title": "Nitrogen becomes artificial fertilizer",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2007/8923-nitrogen-becomes-artificial-fertilizer/",
+      "source": "NobelPrize.org",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Carl Bosch — Facts",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1931/bosch/facts/",
+      "source": "NobelPrize.org",
+      "type": "reference",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Apply Le Châtelier's principle to nitrogen plus hydrogen forming ammonia and explain the engineering trade-offs among pressure, temperature, catalyst, conversion, recycle and energy use.",
+      "minutes": 30
+    }
+  },
+  "INFR.07": {
+    "difficulty": "introductory",
+    "note": "The American Cement Association separates cement from concrete and explains hydration, aggregate binding, placement, curing, strength development and durability.",
+    "article": {
+      "title": "Applications of Cement",
+      "url": "https://www.cement.org/cement-concrete/applications-of-cement/",
+      "source": "American Cement Association",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "How Cement Is Made",
+      "url": "https://www.cement.org/cement-concrete/how-cement-is-made/",
+      "source": "American Cement Association",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare four mixes by water-cement ratio, aggregate, curing and reinforcement, predicting workability, porosity, compressive strength, cracking and embodied emissions.",
+      "minutes": 30
+    }
+  },
+  "INFR.08": {
+    "difficulty": "introductory",
+    "note": "WHO treats the cold chain as an end-to-end quality system involving forecasting, packaging, storage, transport, monitoring, stock control, equipment and contingency planning.",
+    "article": {
+      "title": "Supply chain and logistics",
+      "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/essential-programme-on-immunization/supply-chain",
+      "source": "World Health Organization",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Design a cold-chain route to a remote clinic, including temperature range, packaging, data loggers, storage capacity, transport delays, power failure and product quarantine rules.",
+      "minutes": 35
+    }
+  },
+  "INFR.09": {
+    "difficulty": "introductory",
+    "note": "The U.S. Treasury's acquiring-service explanation clearly separates the real-time authorization message from later clearing, net obligations and interbank settlement.",
+    "article": {
+      "title": "How CAS Works",
+      "url": "https://fiscal.treasury.gov/payments-to-government/card-acquiring-service-cas/how-cas-works",
+      "source": "U.S. Department of the Treasury — Bureau of the Fiscal Service",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace a card purchase through cardholder, merchant, gateway or processor, acquirer, network and issuer during authorization, capture, clearing, settlement and chargeback.",
+      "minutes": 30
+    }
+  },
+  "INFR.10": {
+    "difficulty": "introductory",
+    "note": "ISO explains standards as expert consensus that creates repeatable specifications, interoperability, safety, quality and access to markets rather than rules chosen by a single vendor.",
+    "article": {
+      "title": "Standards",
+      "url": "https://www.iso.org/cms/live/live/en/sites/isoorg/home/standards.html",
+      "source": "International Organization for Standardization",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one everyday interface and list the dimensions, protocols, tests, terminology and governance that must be standardized for products from different firms to interoperate.",
+      "minutes": 25
+    }
+  },
+  "INFR.11": {
+    "difficulty": "intermediate",
+    "note": "NIST describes the semiconductor supply chain as globally distributed, highly specialized and dependent on thousands of suppliers, with important geographic concentrations in tools and materials.",
+    "article": {
+      "title": "Vision for Success: Facilities for Semiconductor Materials and Manufacturing Equipment",
+      "url": "https://www.nist.gov/chips/vision-success-facilities-semiconductor-materials-and-manufacturing-equipment",
+      "source": "National Institute of Standards and Technology",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map the supply chain for one advanced chip across design software, architecture IP, wafers, chemicals, lithography, fabrication, packaging, testing and final assembly, marking single points of concentration.",
+      "minutes": 35
+    }
+  },
+  "INFR.12": {
+    "difficulty": "intermediate",
+    "note": "The NTP Project explains the hierarchy of reference clocks and servers, timestamp exchange, network-delay estimation, clock discipline, UTC and leap-second complications.",
+    "article": {
+      "title": "The NTP FAQ and HOWTO",
+      "url": "https://www.ntp.org/ntpfaq/",
+      "source": "Network Time Protocol Project",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Record four NTP timestamps, calculate round-trip delay and clock offset, then explain asymmetry, drift, stratum, leap seconds and why monotonic time differs from wall-clock time.",
+      "minutes": 35
+    }
+  }
+}
