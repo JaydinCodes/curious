@@ -213,6 +213,79 @@
   .card-hook{ font-size:.86rem; color:var(--ink-soft); margin:0 0 15px; flex:1; }
   .card-links{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
+  .resource-panel {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 14px;
+  padding: 10px 0;
+  border-top: 1px solid var(--card-line);
+  border-bottom: 1px solid var(--card-line);
+}
+
+.resource-summary {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.resource-entry {
+  display: grid;
+  gap: 2px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.resource-entry:hover .resource-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.resource-title {
+  font-family: 'Fraunces', serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.resource-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.61rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.resource-exercise {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 7px;
+  align-items: start;
+  margin-top: 3px;
+  padding: 8px;
+  background: rgba(33, 28, 18, 0.06);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.exercise-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--cat, var(--brass));
+}
+
+.exercise-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+
   .chip{
     display:inline-flex; align-items:center;
     font-family:'IBM Plex Mono',monospace; font-size:.69rem; letter-spacing:.04em;
@@ -322,6 +395,22 @@
     .card-links{ gap:8px; }
     .chip{ flex:1 1 auto; justify-content:center; min-height:42px; font-size:.72rem; }
     .mark{ flex:0 0 auto; width:42px; height:42px; }
+
+    .resource-title {
+    font-size: 0.9rem;
+  }
+
+  .resource-meta {
+    font-size: 0.64rem;
+  }
+
+  .resource-exercise {
+    grid-template-columns: auto 1fr;
+  }
+
+  .exercise-time {
+    grid-column: 2;
+  }
 
     .kbd-line{ display:none; }
     .to-top{ right:12px; }

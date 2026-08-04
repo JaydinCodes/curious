@@ -1,7 +1,7 @@
 {
   "_meta": {
     "about": "Curated, human-verified resources per topic code. Keyed by code (e.g. MIND.01). Loaded at runtime by index.html and merged over the search fallback; any code without an entry keeps its Watch/Read search links. See CURATING.md for the schema and quality rubric, and run `npm run verify-links` after every change.",
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "curatedSections": ["MIND"],
     "knownVerifierWarnings": "britannica.com, newsinhealth.nih.gov, and aeon.co bot-wall or rate-limit automated checkers, so verify-links.js reports them as WARN. All three were confirmed to return HTTP 200 in a real browser on 2026-07-16 — WARN here means 'checker was blocked', not 'link is dead'."
   },
@@ -190,5 +190,40 @@
       "verifiedAt": "2026-07-16",
       "paywalled": false
     }
+  },
+
+  "COMP.01": {
+    "difficulty": "introductory",
+    "note": "Why these resources were selected.",
+    "video": {
+      "title": "Exact video title",
+      "url": "https://www.youtube.com/watch?v=...",
+      "source": "Exact channel or institution",
+      "type": "video",
+      "minutes": 14,
+      "verifiedAt": "2026-08-04"
+    },
+    "article": {
+      "title": "Exact article title",
+      "url": "https://example.com/article",
+      "source": "Publisher or institution",
+      "type": "article",
+      "minutes": 12,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Exact book, paper, or course title",
+      "url": "https://example.com/resource",
+      "source": "Author, publisher, or institution",
+      "type": "course",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04"
+    },
+    "exercise": {
+      "prompt": "Describe a small task that applies the concept.",
+      "minutes": 15
+    }
   }
 }
+
