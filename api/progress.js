@@ -21,35 +21,17 @@
 // stored for display only — it never decides whose marks survive.
 
 import { Redis } from '@upstash/redis';
+import { isCatalogTopicCode } from '../src/data/catalog.js';
 
 const CODE_RE = /^[a-f0-9]{32}$/;
-const TOPIC_RE = /^([A-Z]{2,6})\.(\d{2,3})$/;
+
 const DAY_MS = 86400000;
 const MAX_BODY = 64 * 1024; // a full 217-topic record is ~15 KB; 64 KB is generous
 const MAX_KEYS = 2048;
 const MAX_PINS = 3;
 const RATE_LIMIT = 100; // requests per IP per minute
 
-const TOPIC_LIMITS = Object.freeze({
-  MIND: 12,
-  PRAX: 12,
-  MATH: 12,
-  COSM: 12,
-  VITA: 12,
-  ENGN: 12,
-  INFR: 12,
-  COMP: 13,
-  LING: 12,
-  THEO: 12,
-  ART: 12,
-  MUSC: 12,
-  SCRN: 12,
-  MAKE: 12,
-  SPRT: 12,
-  HIST: 12,
-  RSCH: 12,
-  ECON: 12,
-});
+
 
 let redis = null;
 function client() {
@@ -68,16 +50,8 @@ export function normalizeCode(raw) {
   return CODE_RE.test(code) ? code : null;
 }
 
-export function isTopicCode(raw){
-  if (typeof raw !== 'string') return false;
-
-  const match = raw.match(TOPIC_RE);
-  if (!match) return false
-
-  const limit = TOPIC_LIMITS[match[1]];
-  const number = Number(match[2]);
-
-  return Number.isInteger(limit) && number >= 1 && number <= limit;
+export function isTopicCode(raw) {
+  return isCatalogTopicCode(raw);
 }
 
 // Reduce any client-supplied record to exactly the shape we store. Run on
