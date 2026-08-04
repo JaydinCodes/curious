@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#12211C">
+  <meta name="color-scheme" content="dark">
+  <title>Collection · The Curiosity Catalog</title>
+  <meta name="description" content="A curated learning collection from The Curiosity Catalog.">
+  <!-- SOCIAL_META -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/collection.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="collection-body">
+  <a class="skip-link" href="#collectionMain">Skip to collection</a>
+
+  <nav class="collection-nav" aria-label="Collection navigation">
+    <a href="/">← Back to catalogue</a>
+    <a href="/today">Topic of the day</a>
+  </nav>
+
+  <main class="collection-main" id="collectionMain" tabindex="-1">
+    <div class="collection-loading" id="collectionLoading">Opening collection…</div>
+
+    <article id="collectionPage" hidden>
+      <header class="collection-hero">
+        <p class="collection-eyebrow" id="collectionEyebrow"></p>
+        <h1 id="collectionTitle"></h1>
+        <p class="collection-description" id="collectionDescription"></p>
+        <div class="collection-actions">
+          <button class="collection-share" id="shareCollection" type="button">Share collection</button>
+          <span id="collectionShareStatus" aria-live="polite"></span>
+        </div>
+      </header>
+
+      <section class="collection-list" aria-labelledby="collectionTopicsHeading">
+        <div class="collection-heading">
+          <h2 id="collectionTopicsHeading">Topics in this path</h2>
+          <span id="collectionCount"></span>
+        </div>
+        <div class="collection-grid" id="collectionGrid"></div>
+      </section>
+    </article>
+
+    <section class="collection-error" id="collectionError" hidden>
+      <h1>Collection not found</h1>
+      <p>This link does not match a curated collection.</p>
+      <a href="/">Return to the catalogue</a>
+    </section>
+  </main>
+
+  <script type="module" src="/src/collection-page.js"></script>
+</body>
+</html>
