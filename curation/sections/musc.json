@@ -1,1 +1,206 @@
-{}
+{
+  "MUSC.01": {
+    "difficulty": "intermediate",
+    "note": "The tuning overview explains why fixed-pitch instruments need temperament, how equal divisions make every key usable, and what interval purity is sacrificed.",
+    "article": {
+      "title": "Tuning Systems",
+      "url": "https://opencurriculum.org/5570/tuning-systems/",
+      "source": "OpenCurriculum",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Calculate a pure 3:2 fifth and a twelve-tone-equal-tempered fifth from the same starting frequency, then measure the discrepancy in cents across a circle of fifths.",
+      "minutes": 30
+    }
+  },
+  "MUSC.02": {
+    "difficulty": "introductory",
+    "note": "UNSW's music-acoustics material connects periodic vibration, fundamentals, integer-multiple partials, resonance and instrument timbre using audible examples.",
+    "article": {
+      "title": "Music Acoustics",
+      "url": "https://www.phys.unsw.edu.au/music/",
+      "source": "UNSW Sydney School of Physics",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Synthesize one fundamental plus its first eight harmonics, change their amplitudes, and describe how the perceived timbre changes while pitch stays constant.",
+      "minutes": 35
+    }
+  },
+  "MUSC.03": {
+    "difficulty": "intermediate",
+    "note": "The cross-cultural study finds both shared and culture-specific emotional cues, showing that the Western major-happy/minor-sad association is real for many listeners but not a universal acoustic law.",
+    "article": {
+      "title": "Harmonic Organisation Conveys Both Universal and Culture-Specific Cues for Emotional Expression in Music",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33439887/",
+      "source": "Eline Smit et al. — PubMed",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create matched major and minor versions of one melody, vary tempo and timbre independently, and ask listeners which feature most changes perceived emotion.",
+      "minutes": 35
+    }
+  },
+  "MUSC.04": {
+    "difficulty": "intermediate",
+    "note": "Open Music Theory develops species counterpoint as simultaneous independent melodies and then connects those constraints to imitation and fugal writing.",
+    "article": {
+      "title": "Counterpoint and Galant Schemas",
+      "url": "https://viva.pressbooks.pub/openmusictheory/part/counterpoint/",
+      "source": "Open Music Theory",
+      "type": "book",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write eight bars of first-species two-voice counterpoint, checking melodic independence, consonance, contrary motion, voice crossing and treatment of perfect intervals.",
+      "minutes": 45
+    }
+  },
+  "MUSC.05": {
+    "difficulty": "intermediate",
+    "note": "The digital-audio course explains timbre, spectra, masking and reconstruction, providing the foundation for missing fundamentals and other psychoacoustic effects.",
+    "article": {
+      "title": "Digital Audio",
+      "url": "https://music.arts.uci.edu/dobrian/digitalaudio.htm",
+      "source": "University of California, Irvine — Christopher Dobrian",
+      "type": "course",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Remove the fundamental from a harmonic complex, compare perceived pitch with a spectrogram, then create a repeating Shepard-tone sequence and explain the octave ambiguity.",
+      "minutes": 35
+    }
+  },
+  "MUSC.06": {
+    "difficulty": "introductory",
+    "note": "UCI's Max cookbook gives a concrete account of attack, decay, sustain and release as a control signal used to shape amplitude and other synthesis parameters.",
+    "article": {
+      "title": "ADSR Amplitude Envelope",
+      "url": "https://music.arts.uci.edu/dobrian/maxcookbook/adsr-amplitude-envelope",
+      "source": "University of California, Irvine — Max Cookbook",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build one oscillator into a filter and ADSR envelope, then make plucked, bowed, brass-like and pad-like presets by changing only waveform, cutoff and envelope timing.",
+      "minutes": 40
+    }
+  },
+  "MUSC.07": {
+    "difficulty": "introductory",
+    "note": "The Library of Congress recording-registry essay documents Gregory Coleman's six-second break and its extraordinary afterlife across sampling, hip-hop, jungle and electronic music.",
+    "article": {
+      "title": "Amen, Brother — The Winstons",
+      "url": "https://www.loc.gov/programs/national-recording-preservation-board/recording-registry/descriptions-and-essays/",
+      "source": "Library of Congress National Recording Registry",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Slice one drum break into hits, rearrange it at three tempos, and document how chopping, pitch, time-stretching and layering turn the same recording into different rhythmic vocabularies.",
+      "minutes": 40
+    }
+  },
+  "MUSC.08": {
+    "difficulty": "introductory",
+    "note": "Roland's history explains the 808's analog voice circuits, sequencer, commercial failure, discontinuation and later adoption across hip-hop, techno and pop.",
+    "article": {
+      "title": "The TR-808 Story",
+      "url": "https://www.roland.com/us/promos/roland_tr-808/",
+      "source": "Roland",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Program a sixteen-step pattern using kick, snare, clap and hi-hat, then alter decay, tuning, accents and swing to hear why the machine behaves like an instrument rather than a static sample bank.",
+      "minutes": 35
+    }
+  },
+  "MUSC.09": {
+    "difficulty": "introductory",
+    "note": "Antares' official history connects Andy Hildebrand's geophysical signal-processing work to real-time pitch detection, correction and the deliberately audible zero-retune-speed effect.",
+    "article": {
+      "title": "About AutoTune: Voice Technology and History",
+      "url": "https://antarestech.com/about",
+      "source": "Antares Audio Technologies",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Process the same vocal with slow, medium and zero retune speed, then compare pitch accuracy, transitions, vibrato, naturalness and the stylised hard-tuned effect.",
+      "minutes": 30
+    }
+  },
+  "MUSC.10": {
+    "difficulty": "intermediate",
+    "note": "The University of Iowa demonstration frames hall design through reverberation, absorption, reflections, clarity and the trade-off between warmth and intelligibility.",
+    "article": {
+      "title": "Concert Hall Acoustics",
+      "url": "https://instructional-resources.physics.uiowa.edu/3c4010-concert-hall-acoustics",
+      "source": "University of Iowa Department of Physics and Astronomy",
+      "type": "course",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Estimate reverberation time for two rooms using volume and absorption, then predict effects on intimacy, clarity, bass warmth, speech and orchestral blend.",
+      "minutes": 30
+    }
+  },
+  "MUSC.11": {
+    "difficulty": "intermediate",
+    "note": "Open Music Theory treats meter as interacting pulse layers, providing the foundation for hearing and notating cross-rhythm and polyrhythmic structures.",
+    "article": {
+      "title": "Meter and Time Signatures",
+      "url": "https://openmusictheory.github.io/meter.html",
+      "source": "Open Music Theory",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Clap a 3:2 and then a 4:3 polyrhythm, place both rhythms on a shared subdivision grid, and identify the points where attacks coincide.",
+      "minutes": 25
+    }
+  },
+  "MUSC.12": {
+    "difficulty": "intermediate",
+    "note": "EBU R 128 explains the industry shift from peak normalization toward measured programme loudness, true-peak limits and loudness range, which reduces the reward for mastering everything louder.",
+    "article": {
+      "title": "Loudness Normalisation and Permitted Maximum Level of Audio Signals",
+      "url": "https://tech.ebu.ch/publications/r128",
+      "source": "European Broadcasting Union",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create two masters with different compression and limiting but loudness-normalize them to the same LUFS value, then compare punch, fatigue, transients and loudness range.",
+      "minutes": 35
+    }
+  }
+}
