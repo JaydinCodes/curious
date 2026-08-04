@@ -1,3 +1,16 @@
+import {
+  sections,
+  topics,
+  store,
+  main,
+  done,
+  last,
+  slipWatch,
+  slipRead,
+  updateProgress,
+  applyFilters,
+} from './catalog.js';
+
 /* ---------------------------------------------------------------------------
    progress+ : pins, last-touched, streak, neglected-drawer hint, device sync.
    A separate enhancement layer: if anything in here throws, the catalog above
