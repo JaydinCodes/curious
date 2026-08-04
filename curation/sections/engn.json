@@ -1,1 +1,233 @@
-{}
+{
+  "ENGN.01": {
+    "difficulty": "introductory",
+    "note": "IMAX's official overview explains the integrated system of large-format capture, projection, sound, screen geometry, and theatre design rather than treating IMAX as only a screen size.",
+    "article": {
+      "title": "The IMAX Experience",
+      "url": "https://www.imax.com/the-imax-experience",
+      "source": "IMAX",
+      "type": "article",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare standard cinema and IMAX by capture format, image area, projection, aspect ratio, screen geometry, seating field of view, and sound system.",
+      "minutes": 25
+    }
+  },
+  "ENGN.02": {
+    "difficulty": "intermediate",
+    "note": "Formula 1's technical explainer uses a current race car to connect wing profiles, pressure differences, ground effect, downforce, drag, and setup compromises.",
+    "article": {
+      "title": "F1 EXPLAINS: Downforce and why F1 cars have wings — with McLaren aero specialist Emel Cankaya",
+      "url": "https://www.formula1.com/en/latest/article/f1-explains-downforce-and-why-f1-cars-have-wings-with-mclaren-aero.10xj8CJPz8s7CmwfoyWmCU",
+      "source": "Formula 1",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the aerodynamic forces on an F1 car and explain how increasing wing angle changes cornering grip, tyre load, drag, top speed, and energy use.",
+      "minutes": 25
+    }
+  },
+  "ENGN.03": {
+    "difficulty": "introductory",
+    "note": "The Bluetooth SIG overview introduces the radio, protocol stack, topology, Classic and Low Energy modes, frequency use, and interoperability ecosystem.",
+    "article": {
+      "title": "Bluetooth Technology Overview",
+      "url": "https://www.bluetooth.com/learn-about-bluetooth/tech-overview/",
+      "source": "Bluetooth Special Interest Group",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace a Bluetooth Low Energy connection from advertising and scanning through connection, service discovery, characteristic access, and disconnection.",
+      "minutes": 25
+    }
+  },
+  "ENGN.04": {
+    "difficulty": "intermediate",
+    "note": "Intel's manufacturing overview follows processor fabrication from purified silicon and wafers through repeated deposition, lithography, etching, doping, interconnect, testing, cutting, and packaging.",
+    "article": {
+      "title": "How Are Intel® Processors Made?",
+      "url": "https://www.intel.com/content/www/us/en/support/articles/000096573/processors.html",
+      "source": "Intel",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a process flow from silicon ingot to packaged CPU and mark which stages add material, remove material, change electrical properties, or inspect defects.",
+      "minutes": 30
+    }
+  },
+  "ENGN.05": {
+    "difficulty": "introductory",
+    "note": "D23's animation glossary entry explains the transparent celluloid layer that allowed moving characters to be painted separately from reusable backgrounds.",
+    "article": {
+      "title": "Cel",
+      "url": "https://d23.com/a-to-z/cel/",
+      "source": "D23 — The Official Disney Fan Club",
+      "type": "reference",
+      "minutes": 10,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan a two-second animation on twos: draw 12 numbered poses, identify keyframes and in-betweens, and separate the moving subject from a reusable background.",
+      "minutes": 40
+    }
+  },
+  "ENGN.06": {
+    "difficulty": "introductory",
+    "note": "NASA's propulsion guide explains the compressor, combustor, turbine and nozzle, then distinguishes turbojet, turbofan, turboprop and turboshaft arrangements.",
+    "article": {
+      "title": "Gas Turbine Propulsion",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/turbine-engines/",
+      "source": "NASA Glenn Research Center",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Label a turbofan cutaway and track pressure, temperature, velocity, energy transfer, and airflow through fan, compressor, combustor, turbine, bypass and nozzle.",
+      "minutes": 30
+    }
+  },
+  "ENGN.07": {
+    "difficulty": "intermediate",
+    "note": "BYU's acoustics group explains active noise control as destructive interference produced through sensing, processing, and secondary sound sources, including practical limitations.",
+    "article": {
+      "title": "Active Noise Control",
+      "url": "https://acoustics.byu.edu/active-noise-control",
+      "source": "Brigham Young University Acoustics Research Group",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw a feedforward ANC system with reference microphone, adaptive filter, speaker, error microphone and listener, then explain why low steady frequencies are easiest to cancel.",
+      "minutes": 25
+    }
+  },
+  "ENGN.08": {
+    "difficulty": "intermediate",
+    "note": "WSDOT's Tacoma Narrows history explains the load path of suspension bridges and uses the 1940 failure to show why aerodynamic stability must be designed, not assumed.",
+    "article": {
+      "title": "Suspension Bridge Basics",
+      "url": "https://www.wsdot.wa.gov/TNBHistory/suspension-bridges.htm",
+      "source": "Washington State Department of Transportation",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Why the Tacoma Narrows Bridge Collapsed",
+      "url": "https://wsdot.wa.gov/TNBhistory/bridges-failure.htm",
+      "source": "Washington State Department of Transportation",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw the load path from deck to suspenders, main cables, towers and anchorages, then add wind-induced torsion and the design features used to resist it.",
+      "minutes": 30
+    }
+  },
+  "ENGN.09": {
+    "difficulty": "intermediate",
+    "note": "The NRC definition identifies the universal reactor functions: controlled fission, fuel, moderation where applicable, neutron economy, cooling, monitoring, control rods, shielding and protection.",
+    "article": {
+      "title": "Nuclear reactor",
+      "url": "https://www.nrc.gov/reading-rm/basic-ref/glossary/nuclear-reactor",
+      "source": "U.S. Nuclear Regulatory Commission",
+      "type": "reference",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw a thermal reactor and explain the separate jobs of fuel, moderator, coolant, control rods, pressure boundary, steam system, containment and emergency cooling.",
+      "minutes": 30
+    }
+  },
+  "ENGN.10": {
+    "difficulty": "introductory",
+    "note": "DOE explains batteries through chemical potential, electron flow in the external circuit, ion flow through electrolyte, charging reversibility, degradation and safety research.",
+    "article": {
+      "title": "DOE Explains...Batteries",
+      "url": "https://www.energy.gov/science/doe-explainsbatteries",
+      "source": "U.S. Department of Energy Office of Science",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Draw charge and discharge for a lithium-ion cell, showing electron and ion directions, anode, cathode, electrolyte, separator and one pathway to thermal runaway.",
+      "minutes": 25
+    }
+  },
+  "ENGN.11": {
+    "difficulty": "introductory",
+    "note": "GPS.gov explains the space, control and user segments, satellite time broadcasts and receiver positioning; its trilateration activity turns signal travel time into measured distance.",
+    "article": {
+      "title": "GPS",
+      "url": "https://www.gps.gov/gps",
+      "source": "GPS.gov — U.S. Government",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Trilateration",
+      "url": "https://www.gps.gov/trilateration",
+      "source": "GPS.gov / NOAA",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use four simulated satellite positions and travel times to solve receiver location and clock offset, then list atmospheric, orbital and multipath error sources.",
+      "minutes": 40
+    }
+  },
+  "ENGN.12": {
+    "difficulty": "introductory",
+    "note": "OpenStax connects focal length, aperture, shutter and image formation to the sensor plane, giving the optical foundation beneath digital-camera electronics.",
+    "article": {
+      "title": "The Camera",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/2-6-the-camera",
+      "source": "OpenStax University Physics Volume 3",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "deeper": {
+      "title": "Understanding Focal Length",
+      "url": "https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/understanding-focal-length",
+      "source": "Nikon Learn & Explore",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Photograph one subject using different focal lengths, apertures and shutter speeds, then explain changes in angle of view, perspective, depth of field, motion and sensor exposure.",
+      "minutes": 40
+    }
+  }
+}
