@@ -17,9 +17,11 @@ const DEEPER_LABELS = Object.freeze({
   reference: 'Deeper',
 });
 
-function setCuratedLink(anchor, resource, fallbackLabel) {
+function setCuratedLink(anchor, resource, fallbackLabel, slot) {
   anchor.href = resource.url;
   anchor.classList.add('is-curated');
+  anchor.dataset.resourceSlot = slot;
+  anchor.dataset.resourceType = getResourceType(slot, resource);
 
   const title = resource.title || fallbackLabel;
   const source = resource.source ? ` — ${resource.source}` : '';
@@ -37,6 +39,8 @@ function createResourceEntry(slot, resource) {
   anchor.href = resource.url;
   anchor.target = '_blank';
   anchor.rel = 'noopener';
+  anchor.dataset.resourceSlot = slot;
+  anchor.dataset.resourceType = getResourceType(slot, resource);
 
   const title = document.createElement('span');
   title.className = 'resource-title';
@@ -109,12 +113,16 @@ function upgradeInstance(card, entry) {
 
   if (entry.video?.url) {
     const watchLink = links.querySelector('.chip-watch');
-    if (watchLink) setCuratedLink(watchLink, entry.video, 'Watch');
+    if (watchLink) {
+      setCuratedLink(watchLink, entry.video, 'Watch', 'video');
+    }
   }
 
   if (entry.article?.url) {
     const readLink = links.querySelector('.chip-read');
-    if (readLink) setCuratedLink(readLink, entry.article, 'Read');
+    if (readLink) {
+      setCuratedLink(readLink, entry.article, 'Read', 'article');
+    }
   }
 
   if (entry.deeper?.url) {
@@ -122,7 +130,7 @@ function upgradeInstance(card, entry) {
     deeperLink.className = 'chip chip-deeper is-curated';
     deeperLink.target = '_blank';
     deeperLink.rel = 'noopener';
-    setCuratedLink(deeperLink, entry.deeper, 'Deeper');
+    setCuratedLink(deeperLink, entry.deeper, 'Deeper', 'deeper');
 
     const marker = document.createElement('span');
     marker.className = 'chip-mark';
