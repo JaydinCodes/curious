@@ -10,11 +10,12 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="learning.css">
 <link rel="stylesheet" href="growth.css">
+<link rel="stylesheet" href="browse.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-browse-mode="focus">
 
 <a class="skip-link" href="#main">Skip to catalog</a>
 <nav class="drawer-nav" id="nav" aria-label="Section jump links"></nav>
@@ -111,13 +112,39 @@
   </section>
 </header>
 
+<section class="browse-toolbar" id="browseToolbar" aria-label="Catalogue browsing controls">
+  <div class="browse-toolbar-row">
+    <div class="browse-copy">
+      <span class="browse-kicker">Browse the catalogue</span>
+      <strong>One drawer at a time</strong>
+    </div>
+
+    <div class="browse-controls">
+      <button class="browse-step" id="previousBrowseSection" type="button">← Previous</button>
+
+      <label class="browse-control" for="browseSection">
+        <span>Drawer</span>
+        <select id="browseSection" aria-label="Choose a catalogue section"></select>
+      </label>
+
+      <div class="browse-mode" role="group" aria-label="Catalogue layout">
+        <button type="button" class="on" data-browse-mode="focus" aria-pressed="true">One drawer</button>
+        <button type="button" data-browse-mode="all" aria-pressed="false">All drawers</button>
+      </div>
+
+      <button class="browse-step" id="nextBrowseSection" type="button">Next →</button>
+    </div>
+  </div>
+  <p class="browse-summary" id="browseSummary"></p>
+</section>
+
 <main id="main" tabindex="-1"></main>
 <p class="no-results" id="noResults">Nothing in the drawers matches that. Try a shorter word.</p>
 
 <button class="to-top" id="toTop" type="button">&#8593; TOP</button>
 
 <footer>
-  <p>Curated cards show exact resources, difficulty, estimated time, an exercise, and a dedicated learning page. Search fallbacks remain available when curation cannot load.</p>
+  <p>Catalogue cards stay compact. Open a topic page for the complete learning path, exercise, study prompts, reflection and related topics.</p>
   <p>Aggregate analytics counts searches, draws, completions and resource clicks without cookies, identifiers or raw search text. <a class="privacy-link" href="/privacy.html">Privacy and opt-out</a>.</p>
   <p class="kbd-line">Shortcuts: <kbd>/</kbd> focus filter &middot; <kbd>Esc</kbd> clear filter &middot; <kbd>R</kbd> draw a random card. Marks, starts and reflections are saved in this browser.</p>
 </footer>
