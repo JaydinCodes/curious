@@ -1,1 +1,206 @@
-{}
+{
+  "MATH.01": {
+    "difficulty": "advanced",
+    "note": "Stanford's entry explains the first and second incompleteness theorems, their formal assumptions, and common overstatements about what Gödel proved.",
+    "article": {
+      "title": "Gödel’s Incompleteness Theorems",
+      "url": "https://plato.stanford.edu/entries/goedel-incompleteness/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Write down the difference between consistency, completeness, and decidability, then explain which property each incompleteness theorem limits.",
+      "minutes": 20
+    }
+  },
+  "MATH.02": {
+    "difficulty": "intermediate",
+    "note": "The Stanford entry develops Bayes' theorem from conditional probability and distinguishes the mathematical rule from broader Bayesian inference.",
+    "article": {
+      "title": "Bayes’ Theorem",
+      "url": "https://plato.stanford.edu/entries/bayes-theorem/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose a medical-test example with a low base rate and calculate the posterior probability after one positive result.",
+      "minutes": 20
+    }
+  },
+  "MATH.03": {
+    "difficulty": "intermediate",
+    "note": "Stanford's set-theory overview introduces cardinality, Cantor's theory of the infinite, and why different infinite sets can have different sizes.",
+    "article": {
+      "title": "Set Theory",
+      "url": "https://plato.stanford.edu/entries/set-theory/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Construct a diagonal argument showing that binary sequences cannot be completely listed, then connect it to the uncountability of the real numbers.",
+      "minutes": 25
+    }
+  },
+  "MATH.04": {
+    "difficulty": "intermediate",
+    "note": "The Clay Mathematics Institute gives the official Millennium Prize framing of efficient verification, efficient solution, and the significance of P versus NP.",
+    "article": {
+      "title": "P vs NP",
+      "url": "https://www.claymath.org/millennium/p-vs-np/",
+      "source": "Clay Mathematics Institute",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one search problem such as Sudoku or travelling salesperson and separate the work needed to verify a proposed answer from the work needed to find one.",
+      "minutes": 20
+    }
+  },
+  "MATH.05": {
+    "difficulty": "intermediate",
+    "note": "MIT's signals-and-systems lecture treats the Fourier transform as the continuous-frequency extension of Fourier-series analysis.",
+    "article": {
+      "title": "Lecture 16: Fourier Transform",
+      "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-16-fourier-transform/",
+      "source": "MIT OpenCourseWare",
+      "type": "course",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Generate a signal made from two sine waves, plot it in time, compute its discrete Fourier transform, and identify the two frequency peaks.",
+      "minutes": 35
+    }
+  },
+  "MATH.06": {
+    "difficulty": "intermediate",
+    "note": "MathWorld gives a compact derivation and reference treatment of Euler's formula, from which Euler's identity follows by substituting pi.",
+    "article": {
+      "title": "Euler Formula",
+      "url": "https://mathworld.wolfram.com/EulerFormula.html",
+      "source": "Wolfram MathWorld",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Use the power-series expansions of exponential, sine, and cosine to derive Euler's formula term by term.",
+      "minutes": 25
+    }
+  },
+  "MATH.07": {
+    "difficulty": "intermediate",
+    "note": "Scholarpedia's expert-authored history connects nonlinear dynamical systems, sensitive dependence, attractors, bifurcations, and deterministic chaos.",
+    "article": {
+      "title": "History of Dynamical Systems",
+      "url": "https://www.scholarpedia.org/article/History_of_dynamical_systems",
+      "source": "Scholarpedia — Philip Holmes",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Iterate the logistic map for two initial values that differ only in the sixth decimal place and graph how their trajectories separate.",
+      "minutes": 30
+    }
+  },
+  "MATH.08": {
+    "difficulty": "introductory",
+    "note": "MIT's plane-geometry and topology course supplies an accessible route into continuity, deformation, winding, and topological invariants.",
+    "article": {
+      "title": "Geometry and Topology in the Plane",
+      "url": "https://ocw.mit.edu/courses/18-900-geometry-and-topology-in-the-plane-spring-2023/",
+      "source": "MIT OpenCourseWare",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Classify several drawn shapes by connected components and holes, then explain which can be continuously deformed into one another.",
+      "minutes": 25
+    }
+  },
+  "MATH.09": {
+    "difficulty": "introductory",
+    "note": "NIST's Monte Carlo tool and documentation provide a practical institutional introduction to simulation-based uncertainty analysis.",
+    "article": {
+      "title": "Monte Carlo Tool",
+      "url": "https://www.nist.gov/services-resources/software/monte-carlo-tool",
+      "source": "National Institute of Standards and Technology",
+      "type": "reference",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Estimate pi by sampling random points in a square, counting those inside the inscribed circle, and plotting error against sample size.",
+      "minutes": 30
+    }
+  },
+  "MATH.10": {
+    "difficulty": "intermediate",
+    "note": "NIST's normal-distribution handbook entry explains the distribution and explicitly identifies the central limit theorem as its main theoretical justification.",
+    "article": {
+      "title": "Normal Distribution",
+      "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda3661.htm",
+      "source": "NIST/SEMATECH e-Handbook of Statistical Methods",
+      "type": "reference",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Simulate repeated samples from a strongly skewed distribution and compare histograms of the raw values with histograms of their sample means.",
+      "minutes": 30
+    }
+  },
+  "MATH.11": {
+    "difficulty": "intermediate",
+    "note": "MIT's opening graph-theory lecture introduces graphs as mathematical objects and connects structural questions to modern combinatorics.",
+    "article": {
+      "title": "Lecture 1: Introduction to Graph Theory and Additive Combinatorics",
+      "url": "https://ocw.mit.edu/courses/18-225-graph-theory-and-additive-combinatorics-fall-2023/resources/lecture-1-introduction-to-graph-theory-and-additive-combinatorics/",
+      "source": "MIT OpenCourseWare",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Model the Seven Bridges of Königsberg as a graph, calculate every vertex degree, and use Euler's criterion to explain why the walk is impossible.",
+      "minutes": 20
+    }
+  },
+  "MATH.12": {
+    "difficulty": "introductory",
+    "note": "Princeton's programming assignment turns the birthday collision result into an experiment and connects probability calculations with simulation.",
+    "article": {
+      "title": "The Birthday Problem",
+      "url": "https://www.cs.princeton.edu/courses/archive/fall10/cos126/assignments/05bday.html",
+      "source": "Princeton University Computer Science",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Simulate rooms of increasing size until the shared-birthday probability crosses 50 percent, then compare the simulation with the exact formula.",
+      "minutes": 30
+    }
+  }
+}
