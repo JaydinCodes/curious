@@ -1,1 +1,206 @@
-{}
+{
+  "THEO.01": {
+    "difficulty": "intermediate",
+    "note": "Yale's Thessalonians course models how Pauline letters are read as occasional correspondence and directly addresses chronology, community setting, and disputed authorship.",
+    "article": {
+      "title": "Thessalonians (1 and 2)",
+      "url": "https://online.yale.edu/courses/thessalonians-1-and-2",
+      "source": "Yale Online / Yale Bible Study",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one Pauline letter and outline its sender, recipients, occasion, major argument, and current scholarly authorship status.",
+      "minutes": 30
+    }
+  },
+  "THEO.02": {
+    "difficulty": "intermediate",
+    "note": "The Stanford entry provides the broader philosophical history of hermeneutics and the disciplined interpretation of texts, meaning, context, and understanding.",
+    "article": {
+      "title": "Hermeneutics",
+      "url": "https://plato.stanford.edu/entries/hermeneutics/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Interpret one short biblical passage in three stages: historical-literary context, textual claim, and contemporary application, keeping the stages distinct.",
+      "minutes": 30
+    }
+  },
+  "THEO.03": {
+    "difficulty": "intermediate",
+    "note": "Yale's course treats canon formation historically, including the gradual recognition of texts and differences between communities rather than a single one-time decision.",
+    "article": {
+      "title": "Formation of the Biblical Canon",
+      "url": "https://online.yale.edu/courses/formation-biblical-canon",
+      "source": "Yale Online / Yale Bible Study",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a timeline of major Hebrew Bible and New Testament canon milestones, noting where different Christian traditions retain different collections.",
+      "minutes": 30
+    }
+  },
+  "THEO.04": {
+    "difficulty": "intermediate",
+    "note": "Bible.org's scholarly overview lays out the literary relationships among Matthew, Mark, and Luke and compares the main proposed source theories.",
+    "article": {
+      "title": "The Synoptic Problem",
+      "url": "https://bible.org/article/synoptic-problem",
+      "source": "Bible.org",
+      "type": "article",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Place one triple-tradition passage from Matthew, Mark, and Luke side by side and mark identical wording, omissions, additions, and changed order.",
+      "minutes": 35
+    }
+  },
+  "THEO.05": {
+    "difficulty": "intermediate",
+    "note": "CSNTM explains why manuscripts matter and provides a concrete entry into the surviving witnesses that textual critics compare.",
+    "article": {
+      "title": "Why Manuscripts?",
+      "url": "https://www.csntm.org/why-manuscripts/",
+      "source": "Center for the Study of New Testament Manuscripts",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare two textual variants using manuscript age, geographical spread, transcriptional difficulty, and internal context; then defend a preferred reading.",
+      "minutes": 30
+    }
+  },
+  "THEO.06": {
+    "difficulty": "introductory",
+    "note": "The Israel Antiquities Authority introduces the discovery, date range, languages, contents, and significance of the Dead Sea Scrolls.",
+    "article": {
+      "title": "Introduction to the Dead Sea Scrolls",
+      "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/introduction?locale=en_US",
+      "source": "Leon Levy Dead Sea Scrolls Digital Library — Israel Antiquities Authority",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Sort examples of scrolls into biblical manuscripts, apocryphal works, and sectarian writings, then explain what each category can and cannot establish.",
+      "minutes": 20
+    }
+  },
+  "THEO.07": {
+    "difficulty": "intermediate",
+    "note": "The Israel Antiquities Authority's historical background places the scrolls within Hellenistic and Roman Judea and the diverse Jewish groups of the Second Temple period.",
+    "article": {
+      "title": "Historical Background",
+      "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/historical-background?locale=en_US",
+      "source": "Leon Levy Dead Sea Scrolls Digital Library — Israel Antiquities Authority",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a comparison chart for Pharisees, Sadducees, Essenes, revolutionary movements, and the early Jesus movement, including sources and uncertainties.",
+      "minutes": 30
+    }
+  },
+  "THEO.08": {
+    "difficulty": "intermediate",
+    "note": "This historian-written overview uses Nicaea and Chalcedon to show how imperial politics, episcopal authority, and precise Christological language interacted in the councils.",
+    "article": {
+      "title": "Council of Chalcedon",
+      "url": "https://www.worldhistory.org/Council_of_Chalcedon/",
+      "source": "World History Encyclopedia — Rebecca Denova",
+      "type": "article",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Make a council table for Nicaea, Constantinople, Ephesus, and Chalcedon listing date, controversy, principal decision, and later dissent.",
+      "minutes": 30
+    }
+  },
+  "THEO.09": {
+    "difficulty": "advanced",
+    "note": "The Stanford entry surveys major theodicies and defenses while distinguishing attempts to explain evil from attempts to show logical compatibility.",
+    "article": {
+      "title": "Theodicies",
+      "url": "https://plato.stanford.edu/entries/theodicies/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 50,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare free-will, soul-making, and skeptical-theist responses to one concrete case of suffering, including the strongest objection to each.",
+      "minutes": 30
+    }
+  },
+  "THEO.10": {
+    "difficulty": "introductory",
+    "note": "Smarthistory connects theology, institutional conflict, vernacular scripture, visual culture, and print in a broad introduction to the Protestant Reformation.",
+    "article": {
+      "title": "The Protestant Reformation",
+      "url": "https://smarthistory.org/the-protestant-reformation/",
+      "source": "Smarthistory",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace one Reformation dispute from the original church practice through Luther's objection, print circulation, political adoption, and Catholic response.",
+      "minutes": 30
+    }
+  },
+  "THEO.11": {
+    "difficulty": "introductory",
+    "note": "This joint Greek Orthodox Archdiocese and Hellenic Bible Society project introduces the Septuagint as the ancient Greek translation used widely in early Christianity.",
+    "article": {
+      "title": "About Septuagint.Bible",
+      "url": "https://www.septuagint.bible/",
+      "source": "Greek Orthodox Archdiocese of America and Hellenic Bible Society",
+      "type": "reference",
+      "minutes": 15,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare one Old Testament quotation in the New Testament with its Septuagint and Masoretic Hebrew-based English forms, then describe the meaningful differences.",
+      "minutes": 30
+    }
+  },
+  "THEO.12": {
+    "difficulty": "advanced",
+    "note": "Stanford's philosophy-of-religion overview situates cosmological, teleological, ontological, moral, and evidential arguments alongside major objections.",
+    "article": {
+      "title": "Philosophy of Religion",
+      "url": "https://plato.stanford.edu/entries/philosophy-religion/",
+      "source": "Stanford Encyclopedia of Philosophy",
+      "type": "reference",
+      "minutes": 55,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Steelman one classical argument for God as numbered premises and a conclusion, then write the strongest objection and a possible reply.",
+      "minutes": 35
+    }
+  }
+}
