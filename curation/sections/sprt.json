@@ -1,1 +1,206 @@
-{}
+{
+  "SPRT.01": {
+    "difficulty": "introductory",
+    "note": "StatsBomb explains expected goals as a probabilistic model trained on historical shots and makes clear that values vary because models use different features and data quality.",
+    "article": {
+      "title": "What is xG? How is it calculated?",
+      "url": "https://statsbomb.com/soccer-metrics/expected-goals-xg-explained/",
+      "source": "Hudl StatsBomb",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Build a simple shot table with distance, angle, body part, assist type and outcome, then estimate which variables should raise or lower scoring probability and why.",
+      "minutes": 30
+    }
+  },
+  "SPRT.02": {
+    "difficulty": "introductory",
+    "note": "SABR's research guide defines sabermetrics as the search for objective knowledge about baseball and shows how questions, data quality and context matter beyond the Moneyball story.",
+    "article": {
+      "title": "A Guide to Sabermetric Research",
+      "url": "https://sabr.org/sabermetrics",
+      "source": "Society for American Baseball Research",
+      "type": "course",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Choose one traditional baseball statistic and design a context-adjusted alternative, stating the decision it should improve and the biases it still cannot remove.",
+      "minutes": 35
+    }
+  },
+  "SPRT.03": {
+    "difficulty": "introductory",
+    "note": "British Cycling's retrospective documents Brailsford's one-percent framing while placing it among coaching, talent, technology, sport science and organizational changes rather than attributing success to tiny tweaks alone.",
+    "article": {
+      "title": "Sir Dave Brailsford at British Cycling — A Career Retrospective",
+      "url": "https://www.britishcycling.org.uk/gbcyclingteam/article/gbr20140411-British-Cycling---The-Brailsford-years-0",
+      "source": "British Cycling",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Break one performance goal into ten contributing systems, estimate the likely effect and measurement cost of improving each, and reject changes whose claimed gains cannot be tested.",
+      "minutes": 30
+    }
+  },
+  "SPRT.04": {
+    "difficulty": "intermediate",
+    "note": "The consensus statement defines internal and external training load, explains why monitoring is useful, and emphasizes individual context instead of universal workload thresholds.",
+    "article": {
+      "title": "Monitoring Athlete Training Loads: Consensus Statement",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28463642/",
+      "source": "International Journal of Sports Physiology and Performance — PubMed",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Plan a four-week training block with objective external load, subjective internal load, recovery markers, progression, deloading and rules for changing the plan when responses differ.",
+      "minutes": 40
+    }
+  },
+  "SPRT.05": {
+    "difficulty": "intermediate",
+    "note": "Joyner and Coyle frame elite endurance through the interaction of maximal oxygen uptake, lactate threshold and movement economy rather than treating any one number as destiny.",
+    "article": {
+      "title": "Endurance Exercise Performance: The Physiology of Champions",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17901124/",
+      "source": "M. J. Joyner and E. F. Coyle — PubMed",
+      "type": "paper",
+      "minutes": 40,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compare two hypothetical runners with different VO2 max, fractional threshold and running economy, then explain why the athlete with the larger VO2 max need not be faster.",
+      "minutes": 30
+    }
+  },
+  "SPRT.06": {
+    "difficulty": "intermediate",
+    "note": "The official Court judgment records how transfer fees after contract expiry and nationality quotas conflicted with EU freedom-of-movement law for workers.",
+    "article": {
+      "title": "Judgment of the Court of 15 December 1995 — Bosman, Case C-415/93",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0415",
+      "source": "Court of Justice of the European Union — EUR-Lex",
+      "type": "reference",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Trace the pre-Bosman and post-Bosman career path of an out-of-contract EU player, separating employment mobility, transfer compensation, squad quotas and later market consequences.",
+      "minutes": 30
+    }
+  },
+  "SPRT.07": {
+    "difficulty": "intermediate",
+    "note": "FIFA's Training Centre analyses contemporary principles such as blocks, third-player combinations and counter-pressing while showing tactics as coordinated behaviours, not just formation diagrams.",
+    "article": {
+      "title": "Core Principles of Play",
+      "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/landing-page-core-principles.php",
+      "source": "FIFA Training Centre",
+      "type": "course",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Analyse one match in possession, transition and out of possession, recording shape, pressing triggers, rest defence, overloads, rotations and adaptations to the opponent.",
+      "minutes": 60
+    }
+  },
+  "SPRT.08": {
+    "difficulty": "intermediate",
+    "note": "The paper exposes the probabilistic assumptions beneath Elo, including expected scores, update sensitivity and the special difficulty of modelling draws and team sports.",
+    "article": {
+      "title": "Understanding and Pushing the Limits of the Elo Rating Algorithm",
+      "url": "https://arxiv.org/abs/1910.06081",
+      "source": "Leszek Szczecinski and Aymen Djebbi — arXiv",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Implement Elo updates for four players, vary the K-factor and expected-score scale, and show how upset results, inactivity, draws and new entrants affect ratings.",
+      "minutes": 45
+    }
+  },
+  "SPRT.09": {
+    "difficulty": "intermediate",
+    "note": "The German ghost-game study uses COVID-era empty stadiums as a natural experiment and finds that crowd effects vary by league rather than explaining all of home advantage.",
+    "article": {
+      "title": "Does Crowd Support Drive the Home Advantage in Professional Football? Evidence from German Ghost Games during the COVID-19 Pandemic",
+      "url": "https://doi.org/10.1177/15270025211026552",
+      "source": "Kai Fischer and Justus Haucap — Journal of Sports Economics",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Design a home-advantage model with travel, familiarity, crowd, referee decisions, team strength and schedule, then explain why before-after empty-stadium comparisons can still be confounded.",
+      "minutes": 35
+    }
+  },
+  "SPRT.10": {
+    "difficulty": "introductory",
+    "note": "The university module introduces linear and angular kinematics, kinetics, force plates and motion analysis as tools for explaining movement rather than merely judging how technique looks.",
+    "article": {
+      "title": "Introduction to Sport and Exercise Biomechanics",
+      "url": "https://www.kent.ac.uk/courses/modules/module/SPOR4013",
+      "source": "University of Kent",
+      "type": "course",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Record a jump or throw in slow motion, estimate joint angles and centre-of-mass motion, and draw the external forces and moments that produce the movement.",
+      "minutes": 45
+    }
+  },
+  "SPRT.11": {
+    "difficulty": "advanced",
+    "note": "WADA's current operating guidelines explain longitudinal biological monitoring, adaptive limits, expert review, sample requirements and how the passport complements direct substance detection.",
+    "article": {
+      "title": "Athlete Biological Passport Operating Guidelines",
+      "url": "https://www.wada-ama.org/sites/default/files/resources/files/wada-abp-operating-guidelines-v5.0-en.pdf",
+      "source": "World Anti-Doping Agency",
+      "type": "reference",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Create a fictional longitudinal blood profile, add plausible altitude, illness and doping scenarios, and describe why expert review and chain-of-custody evidence are needed before sanction.",
+      "minutes": 40
+    }
+  },
+  "SPRT.12": {
+    "difficulty": "advanced",
+    "note": "The systematic review found widespread high risk of bias, weak reporting, overfitting and little external validation, so current models should not be treated as dependable individual injury forecasts.",
+    "article": {
+      "title": "Just How Confident Can We Be in Predicting Sports Injuries? A Systematic Review of Existing Musculoskeletal Injury Prediction Models in Sport",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35689749/",
+      "source": "Garrett S. Bullock et al. — Sports Medicine / PubMed",
+      "type": "paper",
+      "minutes": 45,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Audit an injury model for leakage, class imbalance, calibration, missing data, overfitting, external validation and decision usefulness, then distinguish prediction from preventable cause.",
+      "minutes": 40
+    }
+  }
+}
