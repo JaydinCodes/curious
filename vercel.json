@@ -2,6 +2,30 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/topics/:slug",
+      "destination": "/api/topic-page"
+    },
+    {
+      "source": "/collections/:slug",
+      "destination": "/api/collection-page"
+    },
+    {
+      "source": "/today",
+      "destination": "/api/today"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/sitemap\\.xml",
+      "dest": "/api/sitemap"
+    },
+    {
+      "src": "/robots\\.txt",
+      "dest": "/api/robots"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -12,13 +36,19 @@
       ]
     },
     {
-      "source": "/index.html",
+      "source": "/index",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/progress",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/api/analytics",
       "headers": [
         { "key": "Cache-Control", "value": "no-store" }
       ]
