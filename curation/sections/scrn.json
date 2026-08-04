@@ -1,1 +1,206 @@
-{}
+{
+  "SCRN.01": {
+    "difficulty": "introductory",
+    "note": "UC Press's description of Kuleshov's own writings identifies juxtaposition as the source of meanings not contained in either shot alone.",
+    "article": {
+      "title": "Kuleshov on Film",
+      "url": "https://www.ucpress.edu/book/9780520302280/kuleshov-on-film",
+      "source": "Lev Kuleshov — University of California Press",
+      "type": "book",
+      "minutes": 30,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Edit the same neutral face against food, a coffin and a child at play, then ask viewers what emotion or intention they inferred from each sequence.",
+      "minutes": 35
+    }
+  },
+  "SCRN.02": {
+    "difficulty": "intermediate",
+    "note": "The critical article examines Campbell's model as an influential storytelling tool while challenging its dominance, cultural selectivity and claim to universality.",
+    "article": {
+      "title": "One Myth to Rule Them All and in the Darkness Bind Them: A Critical Examination of Joseph Campbell's The Hero's Journey",
+      "url": "https://pure.solent.ac.uk/en/publications/one-myth-to-rule-them-all-and-in-the-darkness-bind-them-a-critica/",
+      "source": "Southampton Solent University research repository",
+      "type": "paper",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Map one film onto the Hero's Journey, mark stages that must be stretched or omitted, then outline a different story whose structure resists the template.",
+      "minutes": 30
+    }
+  },
+  "SCRN.03": {
+    "difficulty": "introductory",
+    "note": "BFI's discussion of filmmakers who break classical grammar makes the normal continuity system visible: screen direction, eyelines, matching action and the 180-degree axis.",
+    "article": {
+      "title": "4 Hard-and-Fast Rules of Filmmaking… and How The Passion of Joan of Arc Breaks Them",
+      "url": "https://www.bfi.org.uk/features/passion-joan-arc-carl-dreyer-style",
+      "source": "British Film Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Shoot a short two-person exchange twice: once with consistent axis, eyelines and match-on-action, and once with deliberate violations; compare spatial comprehension.",
+      "minutes": 45
+    }
+  },
+  "SCRN.04": {
+    "difficulty": "intermediate",
+    "note": "The ASC manual's scope shows cinematography as an integration of lenses, exposure, lighting, colour science, sensors, composition and production workflow.",
+    "article": {
+      "title": "American Cinematographer Manual, 11th Edition",
+      "url": "https://store.ascmag.com/products/ac-manual-11th-ed-paperback",
+      "source": "American Society of Cinematographers",
+      "type": "book",
+      "minutes": 60,
+      "verifiedAt": "2026-08-04",
+      "paywalled": true
+    },
+    "exercise": {
+      "prompt": "Shoot one scene with two focal lengths and two lighting ratios while preserving exposure, then compare perspective, depth, facial rendering, contrast and emotional emphasis.",
+      "minutes": 50
+    }
+  },
+  "SCRN.05": {
+    "difficulty": "introductory",
+    "note": "The Academy's sound-and-music guide explains production sound, dialogue replacement, sound effects and Foley through practical classroom activities.",
+    "article": {
+      "title": "Sound and Music Activities Guide",
+      "url": "https://www.oscars.org/sites/oscars/files/complete_sound_and_music_activities_guide.pdf",
+      "source": "Academy of Motion Picture Arts and Sciences",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Mute a one-minute scene and rebuild footsteps, cloth, props, ambience and designed effects from recorded household objects, synchronising each sound to picture.",
+      "minutes": 60
+    }
+  },
+  "SCRN.06": {
+    "difficulty": "intermediate",
+    "note": "Blackmagic's official training separates technical correction from creative grading and teaches scopes, shot matching, primary balance, secondary isolation and look development.",
+    "article": {
+      "title": "DaVinci Resolve Training",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/training",
+      "source": "Blackmagic Design",
+      "type": "course",
+      "minutes": 90,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Balance three mismatched shots with scopes before creating a look, then make warm-cool and low-high contrast variants while preserving skin and neutral references.",
+      "minutes": 60
+    }
+  },
+  "SCRN.07": {
+    "difficulty": "intermediate",
+    "note": "The Academy's Jurassic Park programme documents the landmark blend of animatronics, stop-motion knowledge, practical photography and CGI rather than framing effects as a simple either-or choice.",
+    "article": {
+      "title": "Jurassic Park",
+      "url": "https://www.oscars.org/events/jurassic-park",
+      "source": "Academy of Motion Picture Arts and Sciences",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Break one creature shot into practical, digital and compositing layers and explain how shared lighting, camera motion, contact, shadows, texture and scale sell the integration.",
+      "minutes": 30
+    }
+  },
+  "SCRN.08": {
+    "difficulty": "introductory",
+    "note": "McCloud's own presentation introduces comics as a visual language where sequence, simplification, panel choice and reader inference create time and action between images.",
+    "article": {
+      "title": "Scott McCloud on Comics",
+      "url": "https://www.ted.com/speakers/scott_mccloud",
+      "source": "TED — Scott McCloud",
+      "type": "video",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Tell the same action in three six-panel pages using different panel transitions and gutter sizes, then compare how much motion and time the reader must infer.",
+      "minutes": 45
+    }
+  },
+  "SCRN.09": {
+    "difficulty": "introductory",
+    "note": "The Open University's film-music resource treats music as structurally related to image, character, mood and narrative, providing a foundation for analysing recurring themes and leitmotifs.",
+    "article": {
+      "title": "Using Film Music in the Classroom",
+      "url": "https://www.open.edu/openlearn/education-development/using-film-music-the-classroom/content-section-0",
+      "source": "The Open University — OpenLearn",
+      "type": "course",
+      "minutes": 35,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Compose a short leitmotif for one character and transform its tempo, harmony, orchestration and contour for safety, threat, loss and return.",
+      "minutes": 45
+    }
+  },
+  "SCRN.10": {
+    "difficulty": "introductory",
+    "note": "The storytelling principle is treated as setup and payoff rather than a literal requirement that every object must become plot machinery.",
+    "article": {
+      "title": "Chekhov’s Gun — Everything You Need to Know",
+      "url": "https://www.nfi.edu/chekhovs-gun/",
+      "source": "Nashville Film Institute",
+      "type": "article",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Audit a short story scene by scene, marking setup, reminder, escalation and payoff; remove details that neither deepen character, atmosphere nor causality.",
+      "minutes": 30
+    }
+  },
+  "SCRN.11": {
+    "difficulty": "intermediate",
+    "note": "The Library of Congress traces the Production Code from industry self-regulation through stricter enforcement and eventual replacement by ratings, making its creative pressure historically concrete.",
+    "article": {
+      "title": "When ‘Pre-’ Met ‘Code’ — Eighty Years Ago Today",
+      "url": "https://blogs.loc.gov/now-see-hear/2014/07/when-pre-met-code-eighty-years-ago-today/",
+      "source": "Library of Congress",
+      "type": "article",
+      "minutes": 25,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Take one prohibited subject and write two versions of a scene: explicit and Code-era implied, using framing, dialogue, reaction, ellipsis, metaphor and off-screen space.",
+      "minutes": 40
+    }
+  },
+  "SCRN.12": {
+    "difficulty": "introductory",
+    "note": "BFI's cinematography tour explains how Academy, widescreen and Scope formats arose from technical and commercial systems and then became compositional choices.",
+    "article": {
+      "title": "Cinematography Tour — Aspect Ratio",
+      "url": "https://www.screenonline.org.uk/tours/cinematography/tour5.html",
+      "source": "BFI Screenonline",
+      "type": "course",
+      "minutes": 20,
+      "verifiedAt": "2026-08-04",
+      "paywalled": false
+    },
+    "exercise": {
+      "prompt": "Frame the same scene in 1.33:1, 1.85:1 and 2.39:1 without cropping afterward, then compare faces, groups, environment, movement and negative space.",
+      "minutes": 35
+    }
+  }
+}
